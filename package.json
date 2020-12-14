@@ -1,0 +1,22 @@
+{
+  "name": "sb-theme",
+  "version": "0.0.1",
+  "description": "",
+  "main": "build.js",
+  "scripts": {
+    "dev": "node dev",
+    "build": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@WebBuchser/git/SbTheme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "chokidar": "^3.4.3",
+    "sass": "^1.30.0"
+  }
+}
