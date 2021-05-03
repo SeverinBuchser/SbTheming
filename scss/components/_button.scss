@@ -1,19 +1,30 @@
-.btn {
-  color: white;
-  border: 0;
-  outline: 0;
-  padding: $--spacing-xl;
-  border-radius: $--spacing-xl;
-  &.btn--success {
-    background-color: $success;
-  }
-  &.btn--warn {
-    background-color: $warn;
-  }
-  &.btn--primary {
-    background-color: primary('indian-red');
-  }
-  &.btn--secondary {
-    background-color: secondary('indian-red');
+$btn-sizes: (
+"s": $--spacing-s,
+"m": $--spacing-m,
+"l": $--spacing-l,
+"xl": $--spacing-xl,
+);
+
+@debug "Create .btn class:";
+@each $size in map-keys($btn-sizes) {
+  @debug ".btn-#{$size}";
+  .btn-#{$size} {
+    color: white;
+    border: 0;
+    outline: 0;
+    padding: 0 map-get($btn-sizes, $size) 0 map-get($btn-sizes, $size);
+
+    &.btn--success {
+      background-color: $success;
+    }
+    &.btn--warn {
+      background-color: $warn;
+    }
+    &.btn--primary {
+      background-color: primary('indian-red');
+    }
+    &.btn--secondary {
+      background-color: secondary('indian-red');
+    }
   }
 }

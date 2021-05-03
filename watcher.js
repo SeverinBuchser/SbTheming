@@ -5,7 +5,9 @@ const chokidar = require('chokidar');
   file in the './scss' directory.
 */
 module.exports = function watcher(callback) {
-  chokidar.watch('./scss')
+  chokidar.watch('./scss', {
+    ignoreInitial: true
+  })
   .on('change', callback)
   .on('addDir', callback)
 }

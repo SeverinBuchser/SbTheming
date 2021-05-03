@@ -1,20 +1,76 @@
-.btn {
+.btn-s {
   color: white;
   border: 0;
   outline: 0;
-  padding: 1.8rem;
-  border-radius: 1.8rem;
+  padding: 0 1rem 0 1rem;
 }
-.btn.btn--success {
+.btn-s.btn--success {
   background-color: #00B74A;
 }
-.btn.btn--warn {
+.btn-s.btn--warn {
   background-color: #D7263D;
 }
-.btn.btn--primary {
+.btn-s.btn--primary {
   background-color: #DB5461;
 }
-.btn.btn--secondary {
+.btn-s.btn--secondary {
+  background-color: #3D5467;
+}
+
+.btn-m {
+  color: white;
+  border: 0;
+  outline: 0;
+  padding: 0 1.2rem 0 1.2rem;
+}
+.btn-m.btn--success {
+  background-color: #00B74A;
+}
+.btn-m.btn--warn {
+  background-color: #D7263D;
+}
+.btn-m.btn--primary {
+  background-color: #DB5461;
+}
+.btn-m.btn--secondary {
+  background-color: #3D5467;
+}
+
+.btn-l {
+  color: white;
+  border: 0;
+  outline: 0;
+  padding: 0 1.5rem 0 1.5rem;
+}
+.btn-l.btn--success {
+  background-color: #00B74A;
+}
+.btn-l.btn--warn {
+  background-color: #D7263D;
+}
+.btn-l.btn--primary {
+  background-color: #DB5461;
+}
+.btn-l.btn--secondary {
+  background-color: #3D5467;
+}
+
+.btn-xl {
+  color: white;
+  border: 0;
+  outline: 0;
+  padding: 0 1.8rem 0 1.8rem;
+}
+.btn-xl.btn--success {
+  background-color: #00B74A;
+}
+.btn-xl.btn--warn {
+  background-color: #D7263D;
+}
+.btn-xl.btn--primary {
+  background-color: #DB5461;
+}
+.btn-xl.btn--secondary {
   background-color: #3D5467;
 }
 
