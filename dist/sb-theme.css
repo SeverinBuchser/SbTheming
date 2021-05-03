@@ -1,3 +1,21 @@
-
+.btn {
+  color: white;
+  border: 0;
+  outline: 0;
+  padding: 1.8rem;
+  border-radius: 1.8rem;
+}
+.btn.btn--success {
+  background-color: #00B74A;
+}
+.btn.btn--warn {
+  background-color: #D7263D;
+}
+.btn.btn--primary {
+  background-color: #DB5461;
+}
+.btn.btn--secondary {
+  background-color: #3D5467;
+}
 
 /*# sourceMappingURL=../sb-theme.css.map */

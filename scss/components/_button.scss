@@ -1,0 +1,19 @@
+.btn {
+  color: white;
+  border: 0;
+  outline: 0;
+  padding: $--spacing-xl;
+  border-radius: $--spacing-xl;
+  &.btn--success {
+    background-color: $success;
+  }
+  &.btn--warn {
+    background-color: $warn;
+  }
+  &.btn--primary {
+    background-color: primary('indian-red');
+  }
+  &.btn--secondary {
+    background-color: secondary('indian-red');
+  }
+}

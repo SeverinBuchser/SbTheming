@@ -21,8 +21,11 @@ watcher((path, status) => {
     outFile: './dist/sb-theme.css',
     outputStyle: 'expanded'
   }, (error, result) => {
-    const map = JSON.parse(result.map.toString());
-    fs.writeFile(map.file, result.css, () => {})
-    fs.writeFile('./dist/sb-theme.css.map', result.map, () => {})
+    if (error) console.log(error)
+    else {
+      const map = JSON.parse(result.map.toString());
+      fs.writeFile(map.file, result.css, () => {})
+      fs.writeFile('./dist/sb-theme.css.map', result.map, () => {})
+    }
   })
 })

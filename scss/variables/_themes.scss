@@ -1,0 +1,44 @@
+// consistant theme colors
+$success: #00B74A;
+$warn: #D7263D;
+
+// theme indian red
+$indian-red-primary: #DB5461;
+$indian-red-secondary: #3D5467;
+$indian-red-dark: #270722;
+$indian-red-bright: #FFFFFF;
+
+// theme celadon blue
+$celadon-blue-primary: #2978A0;
+$celadon-blue-secondary: #FFC857;
+$celadon-blue-dark: #02182B;
+$celadon-blue-bright: #FFFFFF;
+
+// theme cornflower blue
+$cornflower-blue-primary: #8E94F2;
+$cornflower-blue-secondary: #B47AEA;
+$cornflower-blue-dark: #272727;
+$cornflower-blue-bright: #FFFFFF;
+
+$themes: (
+  "indian-red": (
+    "primary": $indian-red-primary,
+    "secondary": $indian-red-secondary,
+    "dark": $indian-red-dark,
+    "bright": $indian-red-bright
+  ),
+  "celadon-blue": (
+    "primary": $celadon-blue-primary,
+    "secondary": $celadon-blue-secondary,
+    "dark": $celadon-blue-dark,
+    "bright": $celadon-blue-bright
+  ),
+  "cornflower-blue": (
+    "primary": $cornflower-blue-primary,
+    "secondary": $cornflower-blue-secondary,
+    "dark": $cornflower-blue-dark,
+    "bright": $cornflower-blue-bright
+  )
+);
+
+$theme-names: map-keys($themes);
