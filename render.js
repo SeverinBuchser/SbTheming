@@ -22,7 +22,7 @@ module.exports = function render(renderOptions) {
     outFile: './dist/' +  renderOptions.outFile,
     outputStyle: renderOptions.outStyle
   }, (error, result) => {
-    if (error) console.log(error);
+    if (error) console.log(error.message);
     else {
       const map = JSON.parse(result.map.toString());
       fs.writeFile(map.file, result.css, () => {});

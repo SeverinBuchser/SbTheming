@@ -1,30 +1,77 @@
-$btn-sizes: (
-"s": $--spacing-s,
-"m": $--spacing-m,
-"l": $--spacing-l,
-"xl": $--spacing-xl,
-);
+/*
+  Creates a button-theme-class for a specific theme. The class defines colors,
+  beloging to the theme.
+*/
+@mixin buttonTheme($theme-name) {
+  @debug "Create button-theme-classes: #{$theme-name}";
+  @debug ".btn.#{$theme-name}";
+  .btn.#{$theme-name} {
+    @include buttonThemeHover($theme-name, 'primary');
+    @include buttonThemeHover($theme-name, 'secondary');
+  }
+}
 
-@debug "Create .btn class:";
-@each $size in map-keys($btn-sizes) {
-  @debug ".btn-#{$size}";
-  .btn-#{$size} {
-    color: white;
-    border: 0;
-    outline: 0;
-    padding: 0 map-get($btn-sizes, $size) 0 map-get($btn-sizes, $size);
 
-    &.btn--success {
-      background-color: $success;
-    }
-    &.btn--warn {
-      background-color: $warn;
-    }
-    &.btn--primary {
-      background-color: primary('indian-red');
-    }
-    &.btn--secondary {
-      background-color: secondary('indian-red');
+/*
+  Adds hover to a theme-button-color-class.
+*/
+@mixin buttonThemeHover($theme-name, $color-name) {
+  @include buttonColorHover($color-name, get-theme($theme-name, $color-name));
+}
+
+
+/*
+  Adds hover to a button-color-class. On hover, the color gets darker by 10%.
+*/
+@mixin buttonColorHover($color-name, $color) {
+  @debug "-> .btn--#{$color-name}";
+  &.btn--#{$color-name} {
+    background-color: $color;
+    color: choose-contrast-color($color);
+    @include ease(300ms);
+
+    &:hover {
+      $temp-color: invert($color);
+      background-color: $temp-color;
+      color: choose-contrast-color($temp-color);
     }
   }
+}
+
+
+/*
+  Defines the default button class with all its sizes. The sizes:
+  - s
+  - m
+  - l
+  - xl
+  mean, that the padding of the button is bigger or smaller. The size
+  definitions can be found in the variables folder "_spacing.scss".
+*/
+@debug "Create button-class: .btn";
+.btn {
+  color: white;
+  border: 0;
+  outline: 0;
+
+  @debug "Create button-size-classes:";
+  @each $size in map-keys($spacings) {
+    @debug "-> .btn-#{$size}";
+    &.btn-#{$size} {
+      @include paddingX(map-get($spacings, $size));
+      @include paddingY(map-get($spacings, $size)/2);
+      @include border-radius($size);
+    }
+  }
+  @debug "Create button-standard-color-classes:";
+  @include buttonColorHover('success', $success);
+  @include buttonColorHover('warn', $warn);
+}
+
+
+/*
+  Include every theme of the button-theme-class.
+*/
+@each $theme-name in $theme-names {
+  @include buttonTheme($theme-name);
 }

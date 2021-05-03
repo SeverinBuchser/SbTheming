@@ -7,7 +7,6 @@ const path = require('path');
 const livereload = require('livereload');
 const connectLivereload = require('connect-livereload');
 const liveReloadServer = livereload.createServer();
-const dev = require('./dev');
 
 liveReloadServer.watch([
   path.join(__dirname, '/example'),
@@ -50,5 +49,3 @@ app.use(connectLivereload())
 .listen(port, () => {
   console.log('Example server listening at ' + `http://localhos:${port}`.green)
 })
-
-dev();

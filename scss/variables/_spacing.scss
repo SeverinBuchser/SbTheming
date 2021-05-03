@@ -2,3 +2,22 @@ $--spacing-s: 1rem;
 $--spacing-m: 1.2rem;
 $--spacing-l: 1.5rem;
 $--spacing-xl: 1.8rem;
+
+$spacings: (
+"s": $--spacing-s,
+"m": $--spacing-m,
+"l": $--spacing-l,
+"xl": $--spacing-xl,
+);
+
+$--spacing-s-half: $--spacing-s/2;
+$--spacing-m-half: $--spacing-m/2;
+$--spacing-l-half: $--spacing-l/2;
+$--spacing-xl-half: $--spacing-xl/2;
+
+$spacings-half: (
+"s": $--spacing-s-half,
+"m": $--spacing-m-half,
+"l": $--spacing-l-half,
+"xl": $--spacing-xl-half,
+);

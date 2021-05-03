@@ -1,0 +1,7 @@
+@mixin border-radius($size) {
+  border-radius: radius($size);
+}
+
+@mixin border-radius-half($size) {
+  border-radius: radius-half($size);
+}

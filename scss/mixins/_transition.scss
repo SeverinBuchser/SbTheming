@@ -1,0 +1,19 @@
+@mixin easeInOut($time) {
+  transition: all $time ease-in-out;
+}
+
+@mixin easeIn($time) {
+  transition: all $time ease-in;
+}
+
+@mixin easeOut($time) {
+  transition: all $time ease-in;
+}
+
+@mixin ease($time) {
+  transition: all $time ease;
+}
+
+@mixin linear($time) {
+  transition: all $time linear;
+}
