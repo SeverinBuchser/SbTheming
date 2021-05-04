@@ -1,24 +1,32 @@
 // consistant theme colors
-$success: #00B74A;
-$warn: #D7263D;
+$success: #28df99;
+$warn: #FF2453;
+
+$success-inverse: #1FD08C;
+$warn-inverse: #F00034;
 
 // theme indian red
-$indian-red-primary: #DB5461;
-$indian-red-secondary: #3D5467;
-$indian-red-dark: #270722;
-$indian-red-bright: #FFFFFF;
+$indian-red-primary: #845EC2;
+$indian-red-secondary: #3596B5;
+$indian-red-dark: #296073;
+$indian-red-bright: #ADC5CF;
+
+$indian-red-primary-inverse: #e89098;
+$indian-red-secondary-inverse: #3D5467;
+$indian-red-dark-inverse: #270722;
+$indian-red-bright-inverse: #FFFFFF;
 
 // theme celadon blue
-$celadon-blue-primary: #2978A0;
-$celadon-blue-secondary: #FFC857;
-$celadon-blue-dark: #02182B;
-$celadon-blue-bright: #FFFFFF;
+$celadon-blue-primary: #D2C72A;
+$celadon-blue-secondary: #006E5F;
+$celadon-blue-dark: #373300;
+$celadon-blue-bright: #F2FEDC;
 
 // theme cornflower blue
-$cornflower-blue-primary: #8E94F2;
-$cornflower-blue-secondary: #B47AEA;
-$cornflower-blue-dark: #272727;
-$cornflower-blue-bright: #FFFFFF;
+$cornflower-blue-primary: #22E3FA;
+$cornflower-blue-secondary: #A24000;
+$cornflower-blue-dark: #003F54;
+$cornflower-blue-bright: #E6F4F1;
 
 $themes: (
   "indian-red": (
@@ -41,4 +49,26 @@ $themes: (
   )
 );
 
+$themes-inverse: (
+  "indian-red": (
+    "primary": $indian-red-primary-inverse,
+    "secondary": $indian-red-secondary-inverse,
+    "dark": $indian-red-dark-inverse,
+    "bright": $indian-red-bright-inverse
+  ),
+  "celadon-blue": (
+    "primary": $celadon-blue-primary,
+    "secondary": $celadon-blue-secondary,
+    "dark": $celadon-blue-dark,
+    "bright": $celadon-blue-bright
+  ),
+  "cornflower-blue": (
+    "primary": $cornflower-blue-primary,
+    "secondary": $cornflower-blue-secondary,
+    "dark": $cornflower-blue-dark,
+    "bright": $cornflower-blue-bright
+  )
+);
+
 $theme-names: map-keys($themes);
+$theme-names-inverse: map-keys($themes-inverse);

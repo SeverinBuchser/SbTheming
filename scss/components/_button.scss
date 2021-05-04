@@ -16,14 +16,18 @@
   Adds hover to a theme-button-color-class.
 */
 @mixin buttonThemeHover($theme-name, $color-name) {
-  @include buttonColorHover($color-name, get-theme($theme-name, $color-name));
+  @include buttonColorHover(
+    $color-name,
+    get-theme($theme-name, $color-name),
+    get-theme-inverse($theme-name, $color-name)
+  );
 }
 
 
 /*
   Adds hover to a button-color-class. On hover, the color gets darker by 10%.
 */
-@mixin buttonColorHover($color-name, $color) {
+@mixin buttonColorHover($color-name, $color, $color-inverse) {
   @debug "-> .btn--#{$color-name}";
   &.btn--#{$color-name} {
     background-color: $color;
@@ -31,9 +35,8 @@
     @include ease(300ms);
 
     &:hover {
-      $temp-color: invert($color);
-      background-color: $temp-color;
-      color: choose-contrast-color($temp-color);
+      background-color: $color-inverse;
+      color: choose-contrast-color($color-inverse);
     }
   }
 }
@@ -53,6 +56,8 @@
   color: white;
   border: 0;
   outline: 0;
+  cursor: pointer;
+  @include font-default-regular;
 
   @debug "Create button-size-classes:";
   @each $size in map-keys($spacings) {
@@ -61,11 +66,12 @@
       @include paddingX(map-get($spacings, $size));
       @include paddingY(map-get($spacings, $size)/2);
       @include border-radius($size);
+      @include font-size($size);
     }
   }
   @debug "Create button-standard-color-classes:";
-  @include buttonColorHover('success', $success);
-  @include buttonColorHover('warn', $warn);
+  @include buttonColorHover('success', $success, $success-inverse);
+  @include buttonColorHover('warn', $warn, $warn-inverse);
 }
 
 

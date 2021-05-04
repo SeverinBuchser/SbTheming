@@ -18,3 +18,26 @@
 @function secondary($theme-name) {
   @return get-theme($theme-name, 'secondary');
 }
+
+
+
+@function get-theme-inverse($theme-name, $theme-color) {
+  $theme: map-get($themes-inverse, $theme-name);
+  @return map-get($theme, $theme-color);
+}
+
+@function dark-inverse($theme-name) {
+  @return get-theme-inverse($theme-name, 'dark');
+}
+
+@function bright-inverse($theme-name) {
+  @return get-theme-inverse($theme-name, 'bright');
+}
+
+@function primary-inverse($theme-name) {
+  @return get-theme-inverse($theme-name, 'primary');
+}
+
+@function secondary-inverse($theme-name) {
+  @return get-theme-inverse($theme-name, 'secondary');
+}
