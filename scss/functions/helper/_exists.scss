@@ -1,0 +1,12 @@
+/*
+  Checks if the name exists in names. Returns true if it exists and false otherwise.
+*/
+@function exists($names, $name) {
+  $exists: false;
+  @each $test in $names {
+    @if $test == $name {
+      $exists: true;
+    }
+  }
+  @return $exists;
+}

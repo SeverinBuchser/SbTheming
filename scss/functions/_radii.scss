@@ -1,7 +1,0 @@
-@function radius($spacing) {
-  @return map-get($spacings, $spacing);
-}
-
-@function radius-half($spacing-half) {
-  @return map-get($spacings-half, $spacing-half);
-}
