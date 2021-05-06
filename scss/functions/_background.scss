@@ -1,0 +1,22 @@
+/*
+  Returns the background color, specified by the parameter.
+*/
+@function getBackgroundColor($background-color) {
+  @if not backgroundColorExists($background-color) {
+    @error "Background-color with name '#{$background-color}' does not exist!";
+  }
+  @return map-get($background-colors, $background-color);
+}
+
+/*
+  Checks if the background color exists. Returns true if it exists and false otherwise.
+*/
+@function backgroundColorExists($background-color) {
+  $background-color-exists: false;
+  @each $background-color-test in $background-color-names {
+    @if $background-color-test == $background-color {
+      $background-color-exists: true;
+    }
+  }
+  @return $background-color-exists;
+}

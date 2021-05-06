@@ -1,0 +1,67 @@
+@debug "";
+@debug "";
+
+/*
+  Adds hover to a button-color-class. On hover, the color gets darker by 10%.
+*/
+@mixin button-color-class($button-color) {
+  @debug "-> .btn--#{$button-color}";
+  &.btn--#{$button-color} {
+    background: getButtonBackgroundColor($button-color);
+    color: getButtonTextColor($button-color);
+    @include ease(300ms);
+    &:hover {
+      background: getButtonHoverBackgroundColor($button-color);
+      color: getButtonHoverTextColor($button-color);
+    }
+  }
+}
+
+/*
+  Adds different size-classes to the button-class.
+*/
+@mixin button-size-class($button-size) {
+  @debug "-> .btn-#{$button-size}";
+  &.btn--#{$button-size} {
+    @include paddingX(map-get($spacings, $button-size));
+    @include paddingY(map-get($spacings-half, $button-size));
+    @include border-radius($button-size);
+    @include font-size($button-size);
+  }
+}
+
+/*
+  Defines the default button class with all its sizes. The sizes:
+  - s
+  - m
+  - l
+  - xl
+  mean, that the padding of the button is bigger or smaller. The size
+  definitions can be found in the variables folder "_spacing.scss".
+  It also includes all different button colors:
+  - warn
+  - success
+  - info
+  - primary
+  - secondary
+  The color definitions can be found in the variables folder under
+  classes and then "_button.scss".
+*/
+@debug "Create button-class: .btn";
+.btn {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  @include font-weight('regular');
+  @include fontface('default');
+
+  @debug "Create button-persistent-color-classes:";
+  @each $button-color in $button-color-names {
+    @include button-color-class($button-color);
+  }
+
+  @debug "Create button-size-classes:";
+  @each $button-size in map-keys($spacings) {
+    @include button-size-class($button-size);
+  }
+}

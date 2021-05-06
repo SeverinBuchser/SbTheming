@@ -1,41 +1,11 @@
-@mixin font-default-regular {
-  font-family: $--fontface-default;
-  font-weight: $--font-weight-regular;
+@mixin font-weight($font-weight) {
+  font-weight: getFontWeight($font-weight);
 }
 
-@mixin font-default-bold {
-  font-family: $--fontface-default;
-  font-weight: $--font-weight-bold;
+@mixin fontface($fontface) {
+  font-family: getFontface($fontface);
 }
 
-@mixin font-size($size) {
-  font-size: map-get($font-sizes, $size);
-}
-
-@mixin font-size-s{
-  font-size: $--font-size-s;
-}
-
-@mixin font-size-d {
-  font-size: $--font-size-d;
-}
-
-@mixin font-size-m {
-  font-size: $--font-size-m;
-}
-
-@mixin font-size-l{
-  font-size: $--font-size-l;
-}
-
-@mixin font-size-xl {
-  font-size: $--font-size-xl;
-}
-
-.font-regular {
-  @include font-default-regular;
-}
-
-.font-bold {
-  @include font-default-bold;
+@mixin font-size($font-size) {
+  font-size: getFontSize($font-size);
 }

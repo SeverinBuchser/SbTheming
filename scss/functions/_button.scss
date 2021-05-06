@@ -1,0 +1,55 @@
+/*
+  Returns a map with background-color and text-color of a button color:
+  (
+    'background': {color},
+    'text': {color}
+  )
+*/
+@function getButtonColors($button-color) {
+  @if not buttonColorExists($button-color) {
+    @error "Button color with name '#{$button-color}' does not exist!";
+  } @else {
+    @return map-get($button-colors, $button-color);
+  }
+}
+
+/*
+  Checks if the button color exists. Returns true if it exists and false otherwise.
+*/
+@function buttonColorExists($button-color) {
+  $exists: false;
+  @each $button-color-test in $button-color {
+    @if $button-color-test == $button-color {
+      $exists: true;
+    }
+  }
+  @return $exists;
+}
+
+/*
+  Returns the background-color of the button-colors.
+*/
+@function getButtonBackgroundColor($button-color) {
+  @return map-get(getButtonColors($button-color), 'background');
+}
+
+/*
+  Returns the text-color of the button-colors.
+*/
+@function getButtonTextColor($button-color) {
+  @return map-get(getButtonColors($button-color), 'text');
+}
+
+/*
+  Returns the hover-background-color of the button-colors.
+*/
+@function getButtonHoverBackgroundColor($button-color) {
+  @return map-get(getButtonColors($button-color), 'hover-background');
+}
+
+/*
+  Returns the hover-text-color of the button-colors.
+*/
+@function getButtonHoverTextColor($button-color) {
+  @return map-get(getButtonColors($button-color), 'hover-text');
+}

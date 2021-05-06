@@ -16,30 +16,66 @@
     - Regular 400
 */
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-/**
- * Calculate the luminance for a color.
- * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
- */
-/**
- * Calculate the contrast ratio between two colors.
- * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
- */
-/**
- * Determine whether to use dark or light text on top of given color.
- * Returns black for dark text and white for light text.
- */
-.font-regular {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-}
-
-.font-bold {
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-}
-
+/*
+  Font-weights
+*/
+/*
+  Fontfaces
+*/
+/*
+  Font-sizes
+*/
+/*
+  Returns a map with background-color and text-color of a button color:
+  (
+    'background': {color},
+    'text': {color}
+  )
+*/
+/*
+  Checks if the button color exists. Returns true if it exists and false otherwise.
+*/
+/*
+  Returns the background-color of the button-colors.
+*/
+/*
+  Returns the text-color of the button-colors.
+*/
+/*
+  Returns the hover-background-color of the button-colors.
+*/
+/*
+  Returns the hover-text-color of the button-colors.
+*/
+/*
+  Returns the font-weight, specified by the parameter.
+*/
+/*
+  Checks if the font weight exists. Returns true if it exists and false otherwise.
+*/
+/*
+  Returns the fontface, specified by the parameter.
+*/
+/*
+  Checks if the fontface exists. Returns true if it exists and false otherwise.
+*/
+/*
+  Returns the font-size, specified by the parameter.
+*/
+/*
+  Checks if the font size exists. Returns true if it exists and false otherwise.
+*/
+/*
+  Returns the background color, specified by the parameter.
+*/
+/*
+  Checks if the background color exists. Returns true if it exists and false otherwise.
+*/
 /*
   Adds hover to a button-color-class. On hover, the color gets darker by 10%.
+*/
+/*
+  Adds different size-classes to the button-class.
 */
 /*
   Defines the default button class with all its sizes. The sizes:
@@ -49,14 +85,66 @@
   - xl
   mean, that the padding of the button is bigger or smaller. The size
   definitions can be found in the variables folder "_spacing.scss".
+  It also includes all different button colors:
+  - warn
+  - success
+  - info
+  - primary
+  - secondary
+  The color definitions can be found in the variables folder under
+  classes and then "_button.scss".
 */
 .btn {
-  color: white;
   border: 0;
   outline: 0;
   cursor: pointer;
-  font-family: "Inter", sans-serif;
   font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+.btn.btn--warn {
+  background: #FF0522;
+  color: #22272C;
+  transition: all 300ms ease;
+}
+.btn.btn--warn:hover {
+  background: #292f35;
+  color: #FF0522;
+}
+.btn.btn--success {
+  background: #52C832;
+  color: #22272C;
+  transition: all 300ms ease;
+}
+.btn.btn--success:hover {
+  background: #292f35;
+  color: #52C832;
+}
+.btn.btn--info {
+  background: #FFD147;
+  color: #22272C;
+  transition: all 300ms ease;
+}
+.btn.btn--info:hover {
+  background: #292f35;
+  color: #FFD147;
+}
+.btn.btn--primary {
+  background: #579AFF;
+  color: #22272C;
+  transition: all 300ms ease;
+}
+.btn.btn--primary:hover {
+  background: #292f35;
+  color: #579AFF;
+}
+.btn.btn--secondary {
+  background: #84F9BD;
+  color: #22272C;
+  transition: all 300ms ease;
+}
+.btn.btn--secondary:hover {
+  background: #292f35;
+  color: #84F9BD;
 }
 .btn.btn--s {
   padding-left: 0.75rem;
@@ -98,92 +186,82 @@
   border-radius: 3rem;
   font-size: 5rem;
 }
-.btn.btn--warn {
-  background-color: #FF2453;
-  color: black;
-  transition: all 300ms ease;
-}
-.btn.btn--warn:hover {
-  background-color: #f00034;
-  color: black;
-}
-.btn.btn--success {
-  background-color: #28df99;
-  color: black;
-  transition: all 300ms ease;
-}
-.btn.btn--success:hover {
-  background-color: #1bb97c;
-  color: black;
-}
-.btn.btn--primary {
-  background-color: #93deff;
-  color: black;
-  transition: all 300ms ease;
-}
-.btn.btn--primary:hover {
-  background-color: #60ceff;
-  color: black;
-}
-.btn.btn--secondary {
-  background-color: #84F9BD;
-  color: black;
-  transition: all 300ms ease;
-}
-.btn.btn--secondary:hover {
-  background-color: #53f7a3;
-  color: black;
-}
 
-body, html {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-}
-
-/*
-  Adds background-theme-color-class.
-*/
 /*
   Adds background-persistent-color-class.
 */
 /*
-  Includes all themes and creates a background-theme-color-class for each color
-  in each theme.
-*/
-.bg-dark-dark {
-  background: #22272C;
-}
-
-.bg-dark-bright {
-  background: #FFFFFF;
-}
-
-.bg-bright-dark {
-  background: #FFFFFF;
-}
-
-.bg-bright-bright {
-  background: #22272C;
-}
-
-/*
-  Includes all persistent colors and creates a background-color-class for each
+  Includes all background-colors and creates a background-color-class for each
   of these colors.
 */
 .bg-warn {
-  background: #FF2453;
+  background-color: #FF0522;
 }
 
 .bg-success {
-  background: #28df99;
+  background-color: #52C832;
+}
+
+.bg-info {
+  background-color: #FFD147;
 }
 
 .bg-primary {
-  background: #93deff;
+  background-color: #579AFF;
 }
 
 .bg-secondary {
-  background: #84F9BD;
+  background-color: #84F9BD;
+}
+
+.bg-dark {
+  background-color: #22272C;
+}
+
+.bg-bright {
+  background-color: #FFFFFF;
+}
+
+body, html {
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+}
+
+.font-weight-regular {
+  font-weight: 400;
+}
+
+.font-weight-bold {
+  font-weight: 600;
+}
+
+.fontface-default {
+  font-weight: "Inter", sans-serif;
+}
+
+.fontface-display {
+  font-weight: "Abril Fatface", cursive;
+}
+
+.font-size-s {
+  font-size: 0.75rem;
+}
+
+.font-size-d {
+  font-size: 1.05rem;
+}
+
+.font-size-m {
+  font-size: 1.25rem;
+}
+
+.font-size-l {
+  font-size: 2rem;
+}
+
+.font-size-xl {
+  font-size: 5rem;
 }
 
 /*# sourceMappingURL=../sb-theme.css.map */

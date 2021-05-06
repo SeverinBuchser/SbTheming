@@ -1,0 +1,34 @@
+$button-colors: (
+  'warn': (
+    'background': $btn-warn-background,
+    'text': $btn-warn-text,
+    'hover-background': $btn-warn-hover-background,
+    'hover-text': $btn-warn-hover-text
+  ),
+  'success': (
+    'background': $btn-success-background,
+    'text': $btn-success-text,
+    'hover-background': $btn-success-hover-background,
+    'hover-text': $btn-success-hover-text
+  ),
+  'info': (
+    'background': $btn-info-background,
+    'text': $btn-info-text,
+    'hover-background': $btn-info-hover-background,
+    'hover-text': $btn-info-hover-text
+  ),
+  'primary': (
+    'background': $btn-primary-background,
+    'text': $btn-primary-text,
+    'hover-background': $btn-primary-hover-background,
+    'hover-text': $btn-primary-hover-text
+  ),
+  'secondary': (
+    'background': $btn-secondary-background,
+    'text': $btn-secondary-text,
+    'hover-background': $btn-secondary-hover-background,
+    'hover-text': $btn-secondary-hover-text
+  )
+);
+
+$button-color-names: map-keys($button-colors);

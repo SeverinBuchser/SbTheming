@@ -1,0 +1,63 @@
+/*
+  Imports the following font faces from goolge fonts (https://fonts.google.com/):
+
+  - Inter (https://fonts.google.com/specimen/Inter)
+    - Thin 100
+    - Extra-light 200
+    - Light 300
+    - Regular 400
+    - Medium 500
+    - Semi-bold 600
+    - Bold 700
+    - Extra-bold 800
+    - Black 900
+
+  - Abril Fatface (https://fonts.google.com/specimen/Abril+Fatface)
+    - Regular 400
+*/
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/*
+  Font-weights
+*/
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+
+$font-weights: (
+  'regular': $font-weight-regular,
+  'bold': $font-weight-bold
+);
+
+$font-weight-names: map-keys($font-weights);
+
+/*
+  Fontfaces
+*/
+$fontface-default: 'Inter', sans-serif;
+$fontface-display: 'Abril Fatface', cursive;
+
+$fontfaces: (
+  'default': $fontface-default,
+  'display': $fontface-display
+);
+
+$fontface-names: map-keys($fontfaces);
+
+/*
+  Font-sizes
+*/
+$font-size-s: 0.75rem;
+$font-size-d: 1.05rem;
+$font-size-m: 1.25rem;
+$font-size-l: 2rem;
+$font-size-xl: 5rem;
+
+$font-sizes: (
+  "s": $font-size-s,
+  "d": $font-size-d,
+  "m": $font-size-m,
+  "l": $font-size-l,
+  "xl": $font-size-xl,
+);
+
+$font-size-names: map-keys($font-sizes);

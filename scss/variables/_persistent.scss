@@ -1,0 +1,8 @@
+$persistent-colors: (
+  'warn': $warn,
+  'success': $success,
+  'primary': $primary,
+  'secondary': $secondary,
+  'info': $info
+);
+$persistent-color-names: map-keys($persistent-colors);

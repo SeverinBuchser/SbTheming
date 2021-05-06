@@ -1,0 +1,18 @@
+/*
+  Adds background-persistent-color-class.
+*/
+@mixin background-color-class($background-color) {
+  @debug "-> .bg-#{$background-color}";
+  .bg-#{$background-color} {
+    @include background-color($background-color)
+  }
+}
+
+/*
+  Includes all background-colors and creates a background-color-class for each
+  of these colors.
+*/
+@debug "Create background-color-classes:";
+@each $background-color in $background-color-names {
+  @include background-color-class($background-color);
+}

@@ -1,0 +1,47 @@
+$success: #52C832;
+$warn: #FF0522;
+$info: #FFD147;
+
+$primary: #579AFF;
+$secondary: #84F9BD;
+
+$dark: #22272C;
+$bright: #FFFFFF;
+
+
+// button
+$btn-warn-background: $warn;
+$btn-warn-text: $dark;
+$btn-warn-hover-background: lighten($dark, 3%);
+$btn-warn-hover-text: $warn;
+
+$btn-success-background: $success;
+$btn-success-text: $dark;
+$btn-success-hover-background: lighten($dark, 3%);
+$btn-success-hover-text: $success;
+
+$btn-info-background: $info;
+$btn-info-text: $dark;
+$btn-info-hover-background: lighten($dark, 3%);
+$btn-info-hover-text: $info;
+
+$btn-primary-background: $primary;
+$btn-primary-text: $dark;
+$btn-primary-hover-background: lighten($dark, 3%);
+$btn-primary-hover-text: $primary;
+
+$btn-secondary-background: $secondary;
+$btn-secondary-text: $dark;
+$btn-secondary-hover-background: lighten($dark, 3%);
+$btn-secondary-hover-text: $secondary;
+
+
+
+// background
+$bg-warn: $warn;
+$bg-success: $success;
+$bg-info: $info;
+$bg-primary: $primary;
+$bg-secondary: $secondary;
+$bg-dark: $dark;
+$bg-bright: $bright;

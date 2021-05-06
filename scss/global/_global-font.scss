@@ -1,3 +1,5 @@
 body, html {
-  @include font-default-regular;
+  @include font-weight('regular');
+  @include fontface('default');
+  @include font-size('d');
 }
