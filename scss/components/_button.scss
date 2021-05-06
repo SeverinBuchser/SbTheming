@@ -1,33 +1,8 @@
 /*
-  Creates a button-theme-class for a specific theme. The class defines colors,
-  beloging to the theme.
-*/
-@mixin buttonTheme($theme-name) {
-  @debug "Create button-theme-classes: #{$theme-name}";
-  @debug ".btn.#{$theme-name}";
-  .btn.#{$theme-name} {
-    @include buttonThemeHover($theme-name, 'primary');
-    @include buttonThemeHover($theme-name, 'secondary');
-  }
-}
-
-
-/*
-  Adds hover to a theme-button-color-class.
-*/
-@mixin buttonThemeHover($theme-name, $color-name) {
-  @include buttonColorHover(
-    $color-name,
-    get-theme($theme-name, $color-name),
-    get-theme-inverse($theme-name, $color-name)
-  );
-}
-
-
-/*
   Adds hover to a button-color-class. On hover, the color gets darker by 10%.
 */
-@mixin buttonColorHover($color-name, $color, $color-inverse) {
+@mixin buttonPersistentColorHover($color-name) {
+  $color: getColor($color-name);
   @debug "-> .btn--#{$color-name}";
   &.btn--#{$color-name} {
     background-color: $color;
@@ -35,8 +10,8 @@
     @include ease(300ms);
 
     &:hover {
-      background-color: $color-inverse;
-      color: choose-contrast-color($color-inverse);
+      background-color: darken($color, 10%);
+      color: choose-contrast-color(darken($color, 10%));
     }
   }
 }
@@ -62,22 +37,16 @@
   @debug "Create button-size-classes:";
   @each $size in map-keys($spacings) {
     @debug "-> .btn-#{$size}";
-    &.btn-#{$size} {
+    &.btn--#{$size} {
       @include paddingX(map-get($spacings, $size));
       @include paddingY(map-get($spacings, $size)/2);
       @include border-radius($size);
       @include font-size($size);
     }
   }
-  @debug "Create button-standard-color-classes:";
-  @include buttonColorHover('success', $success, $success-inverse);
-  @include buttonColorHover('warn', $warn, $warn-inverse);
-}
 
-
-/*
-  Include every theme of the button-theme-class.
-*/
-@each $theme-name in $theme-names {
-  @include buttonTheme($theme-name);
+  @debug "Create button-persistent-color-classes:";
+  @each $color-name in $persistent-color-names {
+    @include buttonPersistentColorHover($color-name);
+  }
 }

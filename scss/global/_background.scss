@@ -1,0 +1,39 @@
+/*
+  Adds background-theme-color-class.
+*/
+@mixin themeBackground($theme-name, $theme-color-name) {
+  @debug "-> .bg-#{$theme-name}-#{$theme-color-name}";
+  .bg-#{$theme-name}-#{$theme-color-name} {
+    background: getThemeColor($theme-name, $theme-color-name);
+  }
+}
+
+/*
+  Adds background-persistent-color-class.
+*/
+@mixin background($color-name) {
+  @debug "-> .bg-#{$color-name}";
+  .bg-#{$color-name} {
+    background: getColor($color-name);
+  }
+}
+
+/*
+  Includes all themes and creates a background-theme-color-class for each color
+  in each theme.
+*/
+@debug "Create background-theme-color-classes:";
+@each $theme-name in $theme-names {
+  @each $theme-color-name in $theme-color-names {
+    @include themeBackground($theme-name, $theme-color-name);
+  }
+}
+
+/*
+  Includes all persistent colors and creates a background-color-class for each
+  of these colors.
+*/
+@debug "Create background-persistent-color-classes:";
+@each $color-name in $persistent-color-names {
+  @include background($color-name);
+}

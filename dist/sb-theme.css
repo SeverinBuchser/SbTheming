@@ -39,13 +39,6 @@
 }
 
 /*
-  Creates a button-theme-class for a specific theme. The class defines colors,
-  beloging to the theme.
-*/
-/*
-  Adds hover to a theme-button-color-class.
-*/
-/*
   Adds hover to a button-color-class. On hover, the color gets darker by 10%.
 */
 /*
@@ -65,7 +58,7 @@
   font-family: "Inter", sans-serif;
   font-weight: 400;
 }
-.btn.btn-s {
+.btn.btn--s {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   padding-top: 0.375rem;
@@ -73,7 +66,7 @@
   border-radius: 0.75rem;
   font-size: 0.75rem;
 }
-.btn.btn-d {
+.btn.btn--d {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -81,7 +74,7 @@
   border-radius: 1rem;
   font-size: 1.05rem;
 }
-.btn.btn-m {
+.btn.btn--m {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
@@ -89,7 +82,7 @@
   border-radius: 1.5rem;
   font-size: 1.25rem;
 }
-.btn.btn-l {
+.btn.btn--l {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 1rem;
@@ -97,7 +90,7 @@
   border-radius: 2rem;
   font-size: 2rem;
 }
-.btn.btn-xl {
+.btn.btn--xl {
   padding-left: 3rem;
   padding-right: 3rem;
   padding-top: 1.5rem;
@@ -105,88 +98,92 @@
   border-radius: 3rem;
   font-size: 5rem;
 }
-.btn.btn--success {
-  background-color: #28df99;
-  color: black;
-  transition: all 300ms ease;
-}
-.btn.btn--success:hover {
-  background-color: #1FD08C;
-  color: black;
-}
 .btn.btn--warn {
   background-color: #FF2453;
   color: black;
   transition: all 300ms ease;
 }
 .btn.btn--warn:hover {
-  background-color: #F00034;
+  background-color: #f00034;
   color: black;
 }
-
-/*
-  Include every theme of the button-theme-class.
-*/
-.btn.indian-red.btn--primary {
-  background-color: #845EC2;
-  color: white;
-  transition: all 300ms ease;
-}
-.btn.indian-red.btn--primary:hover {
-  background-color: #e89098;
-  color: black;
-}
-.btn.indian-red.btn--secondary {
-  background-color: #3596B5;
+.btn.btn--success {
+  background-color: #28df99;
   color: black;
   transition: all 300ms ease;
 }
-.btn.indian-red.btn--secondary:hover {
-  background-color: #3D5467;
-  color: white;
+.btn.btn--success:hover {
+  background-color: #1bb97c;
+  color: black;
 }
-
-.btn.celadon-blue.btn--primary {
-  background-color: #D2C72A;
+.btn.btn--primary {
+  background-color: #93deff;
   color: black;
   transition: all 300ms ease;
 }
-.btn.celadon-blue.btn--primary:hover {
-  background-color: #D2C72A;
+.btn.btn--primary:hover {
+  background-color: #60ceff;
   color: black;
 }
-.btn.celadon-blue.btn--secondary {
-  background-color: #006E5F;
-  color: white;
-  transition: all 300ms ease;
-}
-.btn.celadon-blue.btn--secondary:hover {
-  background-color: #006E5F;
-  color: white;
-}
-
-.btn.cornflower-blue.btn--primary {
-  background-color: #22E3FA;
+.btn.btn--secondary {
+  background-color: #84F9BD;
   color: black;
   transition: all 300ms ease;
 }
-.btn.cornflower-blue.btn--primary:hover {
-  background-color: #22E3FA;
+.btn.btn--secondary:hover {
+  background-color: #53f7a3;
   color: black;
-}
-.btn.cornflower-blue.btn--secondary {
-  background-color: #A24000;
-  color: white;
-  transition: all 300ms ease;
-}
-.btn.cornflower-blue.btn--secondary:hover {
-  background-color: #A24000;
-  color: white;
 }
 
 body, html {
   font-family: "Inter", sans-serif;
   font-weight: 400;
+}
+
+/*
+  Adds background-theme-color-class.
+*/
+/*
+  Adds background-persistent-color-class.
+*/
+/*
+  Includes all themes and creates a background-theme-color-class for each color
+  in each theme.
+*/
+.bg-dark-dark {
+  background: #22272C;
+}
+
+.bg-dark-bright {
+  background: #FFFFFF;
+}
+
+.bg-bright-dark {
+  background: #FFFFFF;
+}
+
+.bg-bright-bright {
+  background: #22272C;
+}
+
+/*
+  Includes all persistent colors and creates a background-color-class for each
+  of these colors.
+*/
+.bg-warn {
+  background: #FF2453;
+}
+
+.bg-success {
+  background: #28df99;
+}
+
+.bg-primary {
+  background: #93deff;
+}
+
+.bg-secondary {
+  background: #84F9BD;
 }
 
 /*# sourceMappingURL=../sb-theme.css.map */

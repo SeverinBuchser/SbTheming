@@ -2,73 +2,36 @@
 $success: #28df99;
 $warn: #FF2453;
 
-$success-inverse: #1FD08C;
-$warn-inverse: #F00034;
+$primary: #93deff;
+$secondary: #84F9BD;
 
-// theme indian red
-$indian-red-primary: #845EC2;
-$indian-red-secondary: #3596B5;
-$indian-red-dark: #296073;
-$indian-red-bright: #ADC5CF;
+// dark theme color definitions
 
-$indian-red-primary-inverse: #e89098;
-$indian-red-secondary-inverse: #3D5467;
-$indian-red-dark-inverse: #270722;
-$indian-red-bright-inverse: #FFFFFF;
+$background-1: #22272C;
+$background-2: #FFFFFF;
 
-// theme celadon blue
-$celadon-blue-primary: #D2C72A;
-$celadon-blue-secondary: #006E5F;
-$celadon-blue-dark: #373300;
-$celadon-blue-bright: #F2FEDC;
-
-// theme cornflower blue
-$cornflower-blue-primary: #22E3FA;
-$cornflower-blue-secondary: #A24000;
-$cornflower-blue-dark: #003F54;
-$cornflower-blue-bright: #E6F4F1;
-
-$themes: (
-  "indian-red": (
-    "primary": $indian-red-primary,
-    "secondary": $indian-red-secondary,
-    "dark": $indian-red-dark,
-    "bright": $indian-red-bright
-  ),
-  "celadon-blue": (
-    "primary": $celadon-blue-primary,
-    "secondary": $celadon-blue-secondary,
-    "dark": $celadon-blue-dark,
-    "bright": $celadon-blue-bright
-  ),
-  "cornflower-blue": (
-    "primary": $cornflower-blue-primary,
-    "secondary": $cornflower-blue-secondary,
-    "dark": $cornflower-blue-dark,
-    "bright": $cornflower-blue-bright
-  )
+$persistent-colors: (
+  'warn': $warn,
+  'success': $success,
+  'primary': $primary,
+  'secondary': $secondary
 );
 
-$themes-inverse: (
-  "indian-red": (
-    "primary": $indian-red-primary-inverse,
-    "secondary": $indian-red-secondary-inverse,
-    "dark": $indian-red-dark-inverse,
-    "bright": $indian-red-bright-inverse
+$themes: (
+  "dark": (
+    "dark": $background-1,
+    "bright": $background-2
   ),
-  "celadon-blue": (
-    "primary": $celadon-blue-primary,
-    "secondary": $celadon-blue-secondary,
-    "dark": $celadon-blue-dark,
-    "bright": $celadon-blue-bright
-  ),
-  "cornflower-blue": (
-    "primary": $cornflower-blue-primary,
-    "secondary": $cornflower-blue-secondary,
-    "dark": $cornflower-blue-dark,
-    "bright": $cornflower-blue-bright
+  "bright": (
+    "dark": $background-2,
+    "bright": $background-1
   )
 );
 
 $theme-names: map-keys($themes);
-$theme-names-inverse: map-keys($themes-inverse);
+$theme-color-names: (
+  "dark",
+  "bright"
+);
+
+$persistent-color-names: map-keys($persistent-colors);
