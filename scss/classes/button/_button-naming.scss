@@ -1,3 +1,7 @@
+/*****************************************************************************
+                              Button - Naming
+******************************************************************************/
+
 $button-colors: (
   'warn': (
     'background': $btn-warn-background,
@@ -31,4 +35,19 @@ $button-colors: (
   )
 );
 
-$button-color-names: map-keys($button-colors);
+$button-default-padding: $button-padding-d;
+$button-default-font-size: $button-font-size-d;
+$button-sizes: (
+  's': (
+    'padding': $button-padding-s,
+    'font': $button-font-size-s
+  ),
+  'm': (
+    'padding': $button-padding-m,
+    'font': $button-font-size-m
+  ),
+  'l': (
+    'padding': $button-padding-l,
+    'font': $button-font-size-l
+  ),
+);

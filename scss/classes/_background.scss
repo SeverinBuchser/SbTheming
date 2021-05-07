@@ -2,7 +2,7 @@
   Adds background-persistent-color-class.
 */
 @mixin background-color-class($background-color) {
-  .bg-#{$background-color} {
+  .sb-bg-#{$background-color} {
     @include background-color($background-color)
   }
 }

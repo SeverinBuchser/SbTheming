@@ -1,3 +1,7 @@
+/*****************************************************************************
+                            Button - Functions
+******************************************************************************/
+
 /*
   Returns a map with background-color and text-color of a button color:
   (
@@ -6,7 +10,7 @@
   )
 */
 @function getButtonColors($button-color) {
-  @if not exists($button-color-names, $button-color) {
+  @if not exists(map-keys($button-colors), $button-color) {
     @error "Button color with name '#{$button-color}' does not exist!";
   }
   @return map-get($button-colors, $button-color);

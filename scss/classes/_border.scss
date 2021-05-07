@@ -2,7 +2,7 @@
 @each $border-color in $border-color-names {
   @each $border-width in $border-width-names {
     @each $border-radius in $border-radius-names {
-      .border-#{$border-color}-#{$border-width}-#{$border-radius} {
+      .sb-border-#{$border-color}-#{$border-width}-#{$border-radius} {
         @include border-color($border-color);
         @include border-width($border-width);
         @include border-radius($border-radius);
@@ -12,7 +12,7 @@
   }
 }
 @each $border-radius in $border-radius-names {
-  .border-radius-#{$border-radius} {
+  .sb-border-radius-#{$border-radius} {
     @include border-radius($border-radius);
   }
 }

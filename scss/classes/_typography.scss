@@ -1,20 +1,20 @@
 @debug "Create font-weight-classes";
 @each $font-weight in $font-weight-names {
-  .font-weight-#{$font-weight} {
+  .sb-font-weight-#{$font-weight} {
     font-weight: getFontWeight($font-weight);
   }
 }
 
 @debug "Create fontface-classes";
 @each $fontface in $fontface-names {
-  .fontface-#{$fontface} {
+  .sb-fontface-#{$fontface} {
     font-weight: getFontface($fontface);
   }
 }
 
 @debug "Create font-size-classes";
 @each $font-size in $font-size-names {
-  .font-size-#{$font-size} {
+  .sb-font-size-#{$font-size} {
     @include font-size($font-size);
   }
 }

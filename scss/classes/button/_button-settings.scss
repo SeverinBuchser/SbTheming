@@ -1,15 +1,8 @@
-$success: #52C832;
-$warn: #FF0522;
-$info: #FFD147;
+/*****************************************************************************
+                              Button - Settings
+******************************************************************************/
 
-$primary: #579AFF;
-$secondary: #84F9BD;
-
-$dark: #22272C;
-$bright: #FFFFFF;
-
-
-// button
+// colors
 $btn-warn-background: $warn;
 $btn-warn-text: $dark;
 $btn-warn-hover-background: lighten($dark, 3%);
@@ -35,19 +28,18 @@ $btn-secondary-text: $dark;
 $btn-secondary-hover-background: lighten($dark, 3%);
 $btn-secondary-hover-text: $secondary;
 
+// paddings
+$button-padding-s: $spacing-s;
+$button-padding-d: $spacing-d;
+$button-padding-m: $spacing-m;
+$button-padding-l: $spacing-l;
 
+// font sizes
+$button-font-size-delta: 0.2rem;
+$button-font-size-s: $spacing-s + $button-font-size-delta;
+$button-font-size-d: $spacing-d + $button-font-size-delta;
+$button-font-size-m: $spacing-m + $button-font-size-delta;
+$button-font-size-l: $spacing-l + $button-font-size-delta;
 
-// background
-$bg-warn: $warn;
-$bg-success: $success;
-$bg-info: $info;
-$bg-primary: $primary;
-$bg-secondary: $secondary;
-$bg-dark: $dark;
-$bg-bright: $bright;
-
-
-
-// border
-$border-color-dark: $dark;
-$border-color-bright: $bright;
+// border-radius
+$button-border-radius: $border-radius-s;

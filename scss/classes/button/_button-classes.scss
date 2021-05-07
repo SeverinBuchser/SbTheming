@@ -1,0 +1,86 @@
+/*
+  Adds color and hover to a button. Also creates the incerse of the colors.
+
+  It also includes all different button colors:
+  - warn
+  - success
+  - info
+  - primary
+  - secondary
+  The color definitions can be found in the "_button-settings.scss" file.
+*/
+@mixin button-color-class($button-color) {
+  &.btn--#{$button-color} {
+    background: getButtonBackgroundColor($button-color);
+    color: getButtonTextColor($button-color);
+    @include ease(300ms);
+    &:hover {
+      background: getButtonHoverBackgroundColor($button-color);
+      color: getButtonHoverTextColor($button-color);
+    }
+    @include button-empty-color-class($button-color);
+  }
+}
+
+/*
+  Adds inverse colors as in the normal class.
+*/
+@mixin button-empty-color-class($button-color) {
+  &.is-plain {
+    background: getButtonHoverBackgroundColor($button-color);
+    color: getButtonHoverTextColor($button-color);
+    @include ease(300ms);
+    &:hover {
+      background: getButtonBackgroundColor($button-color);
+      color: getButtonTextColor($button-color);
+    }
+  }
+}
+
+/*
+  Adds different sizes to the button.
+
+  The sizes:
+  - s
+  - d (default, no extra class name)
+  - m
+  - l
+  mean, that the padding of the button is bigger or smaller. The size
+  definitions can be found in the "_button-settings.scss" file.
+*/
+@mixin button-size-class($button-size) {
+  &.btn--#{$button-size} {
+    $size: map-get($button-sizes, $button-size);
+    @include paddingX(map-get($size, 'padding'));
+    @include paddingY(map-get($size, 'padding')/2);
+    font-size: map-get($size, 'font');
+  }
+}
+
+/*
+  Defines the root button class with all its sizes and colors.
+
+  ROOT: .sb-btn
+*/
+@debug "Create button-classes";
+.sb-btn {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  border-radius: $button-border-radius;
+  @include font-weight('regular');
+  @include fontface('default');
+
+  @include paddingX($button-default-padding);
+  @include paddingY($button-default-padding/2);
+
+  @debug "Create button-size-classes";
+  @each $button-size in map-keys($button-sizes) {
+    @include button-size-class($button-size);
+  }
+
+  @debug "Create button-color-classes";
+  @each $button-color in map-keys($button-colors) {
+    @include button-color-class($button-color);
+  }
+}
