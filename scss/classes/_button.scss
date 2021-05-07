@@ -56,12 +56,13 @@
   The color definitions can be found in the variables folder under
   classes and then "_button.scss".
 */
-@debug "Create button-class: .btn";
+@debug "Create button-classes";
 .btn {
   border: 0;
   outline: 0;
   cursor: pointer;
-  @include font-weight('regular');
+  @extend .border-radius-s;
+  @extend .font-weight-regular;
   @include fontface('default');
 
   @debug "Create button-color-classes";
