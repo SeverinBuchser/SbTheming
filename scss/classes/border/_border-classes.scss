@@ -1,7 +1,22 @@
+/*****************************************************************************
+                            Border - Classes
+******************************************************************************/
+
+/*
+  Creates a border class for each border color, width and radius.
+
+
+  Attributes:
+  - color: 'dark', 'bright'
+  - width: 's', 'd', 'm', 'l'
+  - radius: 's', 'd', 'm', 'l'
+
+  ROOT '.sb-border-[color]-[width]-[radius]'
+*/
 @debug "Create border-classes";
-@each $border-color in $border-color-names {
-  @each $border-width in $border-width-names {
-    @each $border-radius in $border-radius-names {
+@each $border-color in map-keys($border-colors) {
+  @each $border-width in map-keys($border-widths) {
+    @each $border-radius in map-keys($border-radii) {
       .sb-border-#{$border-color}-#{$border-width}-#{$border-radius} {
         @include border-color($border-color);
         @include border-width($border-width);
@@ -11,7 +26,17 @@
     }
   }
 }
-@each $border-radius in $border-radius-names {
+
+/*
+  Creates a border radius class for each border radius.
+
+
+  Attributes:
+  - radius: 's', 'd', 'm', 'l'
+
+  ROOT '.sb-border-radius-[radius]'
+*/
+@each $border-radius in map-keys($border-radii) {
   .sb-border-radius-#{$border-radius} {
     @include border-radius($border-radius);
   }

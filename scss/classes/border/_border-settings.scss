@@ -1,21 +1,19 @@
-$border-widths: (
-  's': $border-width-s,
-  'd': $border-width-d,
-  'm': $border-width-m,
-  'l': $border-width-l
-);
-$border-width-names: map-keys($border-widths);
+/*****************************************************************************
+                            Border - Settings
+******************************************************************************/
 
-$border-radii: (
-  's': $border-radius-s,
-  'd': $border-radius-d,
-  'm': $border-radius-m,
-  'l': $border-radius-l
-);
-$border-radius-names: map-keys($border-radii);
+// border colors
+$border-color-dark: $dark;
+$border-color-bright: $bright;
 
-$border-colors: (
-  'dark': $border-color-dark,
-  'bright': $border-color-bright
-);
-$border-color-names: map-keys($border-colors);
+// border widths
+$border-width-s: 1px;
+$border-width-d: 2px;
+$border-width-m: 3px;
+$border-width-l: 4px;
+
+// border radii
+$border-radius-s: $spacing-s;
+$border-radius-d: $spacing-d;
+$border-radius-m: $spacing-m;
+$border-radius-l: $spacing-l;
