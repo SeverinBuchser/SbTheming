@@ -60,6 +60,15 @@
   Returns the background color, specified by the parameter.
 */
 /*
+  Returns the border-width, specified by the parameter.
+*/
+/*
+  Returns the border-radius, specified by the parameter.
+*/
+/*
+  Returns the border-color, specified by the parameter.
+*/
+/*
   Adds hover to a button-color-class. On hover, the color gets darker by 10%.
 */
 /*
@@ -287,6 +296,356 @@
 
 .font-size-xl {
   font-size: 5rem;
+}
+
+.border-dark-s-s {
+  border-radius: #22272C;
+  border-radius: 1px;
+  border-radius: 0.5rem;
+  border-style: solid;
+}
+
+.border-dark-s-d {
+  border-radius: #22272C;
+  border-radius: 1px;
+  border-radius: 0.75rem;
+  border-style: solid;
+}
+
+.border-dark-s-m {
+  border-radius: #22272C;
+  border-radius: 1px;
+  border-radius: 1rem;
+  border-style: solid;
+}
+
+.border-dark-s-l {
+  border-radius: #22272C;
+  border-radius: 1px;
+  border-radius: 1.25rem;
+  border-style: solid;
+}
+
+.border-dark-s-xl {
+  border-radius: #22272C;
+  border-radius: 1px;
+  border-radius: 1.5rem;
+  border-style: solid;
+}
+
+.border-dark-d-s {
+  border-radius: #22272C;
+  border-radius: 2px;
+  border-radius: 0.5rem;
+  border-style: solid;
+}
+
+.border-dark-d-d {
+  border-radius: #22272C;
+  border-radius: 2px;
+  border-radius: 0.75rem;
+  border-style: solid;
+}
+
+.border-dark-d-m {
+  border-radius: #22272C;
+  border-radius: 2px;
+  border-radius: 1rem;
+  border-style: solid;
+}
+
+.border-dark-d-l {
+  border-radius: #22272C;
+  border-radius: 2px;
+  border-radius: 1.25rem;
+  border-style: solid;
+}
+
+.border-dark-d-xl {
+  border-radius: #22272C;
+  border-radius: 2px;
+  border-radius: 1.5rem;
+  border-style: solid;
+}
+
+.border-dark-m-s {
+  border-radius: #22272C;
+  border-radius: 3px;
+  border-radius: 0.5rem;
+  border-style: solid;
+}
+
+.border-dark-m-d {
+  border-radius: #22272C;
+  border-radius: 3px;
+  border-radius: 0.75rem;
+  border-style: solid;
+}
+
+.border-dark-m-m {
+  border-radius: #22272C;
+  border-radius: 3px;
+  border-radius: 1rem;
+  border-style: solid;
+}
+
+.border-dark-m-l {
+  border-radius: #22272C;
+  border-radius: 3px;
+  border-radius: 1.25rem;
+  border-style: solid;
+}
+
+.border-dark-m-xl {
+  border-radius: #22272C;
+  border-radius: 3px;
+  border-radius: 1.5rem;
+  border-style: solid;
+}
+
+.border-dark-l-s {
+  border-radius: #22272C;
+  border-radius: 4px;
+  border-radius: 0.5rem;
+  border-style: solid;
+}
+
+.border-dark-l-d {
+  border-radius: #22272C;
+  border-radius: 4px;
+  border-radius: 0.75rem;
+  border-style: solid;
+}
+
+.border-dark-l-m {
+  border-radius: #22272C;
+  border-radius: 4px;
+  border-radius: 1rem;
+  border-style: solid;
+}
+
+.border-dark-l-l {
+  border-radius: #22272C;
+  border-radius: 4px;
+  border-radius: 1.25rem;
+  border-style: solid;
+}
+
+.border-dark-l-xl {
+  border-radius: #22272C;
+  border-radius: 4px;
+  border-radius: 1.5rem;
+  border-style: solid;
+}
+
+.border-dark-xl-s {
+  border-radius: #22272C;
+  border-radius: 5px;
+  border-radius: 0.5rem;
+  border-style: solid;
+}
+
+.border-dark-xl-d {
+  border-radius: #22272C;
+  border-radius: 5px;
+  border-radius: 0.75rem;
+  border-style: solid;
+}
+
+.border-dark-xl-m {
+  border-radius: #22272C;
+  border-radius: 5px;
+  border-radius: 1rem;
+  border-style: solid;
+}
+
+.border-dark-xl-l {
+  border-radius: #22272C;
+  border-radius: 5px;
+  border-radius: 1.25rem;
+  border-style: solid;
+}
+
+.border-dark-xl-xl {
+  border-radius: #22272C;
+  border-radius: 5px;
+  border-radius: 1.5rem;
+  border-style: solid;
+}
+
+.border-bright-s-s {
+  border-radius: #FFFFFF;
+  border-radius: 1px;
+  border-radius: 0.5rem;
+  border-style: solid;
+}
+
+.border-bright-s-d {
+  border-radius: #FFFFFF;
+  border-radius: 1px;
+  border-radius: 0.75rem;
+  border-style: solid;
+}
+
+.border-bright-s-m {
+  border-radius: #FFFFFF;
+  border-radius: 1px;
+  border-radius: 1rem;
+  border-style: solid;
+}
+
+.border-bright-s-l {
+  border-radius: #FFFFFF;
+  border-radius: 1px;
+  border-radius: 1.25rem;
+  border-style: solid;
+}
+
+.border-bright-s-xl {
+  border-radius: #FFFFFF;
+  border-radius: 1px;
+  border-radius: 1.5rem;
+  border-style: solid;
+}
+
+.border-bright-d-s {
+  border-radius: #FFFFFF;
+  border-radius: 2px;
+  border-radius: 0.5rem;
+  border-style: solid;
+}
+
+.border-bright-d-d {
+  border-radius: #FFFFFF;
+  border-radius: 2px;
+  border-radius: 0.75rem;
+  border-style: solid;
+}
+
+.border-bright-d-m {
+  border-radius: #FFFFFF;
+  border-radius: 2px;
+  border-radius: 1rem;
+  border-style: solid;
+}
+
+.border-bright-d-l {
+  border-radius: #FFFFFF;
+  border-radius: 2px;
+  border-radius: 1.25rem;
+  border-style: solid;
+}
+
+.border-bright-d-xl {
+  border-radius: #FFFFFF;
+  border-radius: 2px;
+  border-radius: 1.5rem;
+  border-style: solid;
+}
+
+.border-bright-m-s {
+  border-radius: #FFFFFF;
+  border-radius: 3px;
+  border-radius: 0.5rem;
+  border-style: solid;
+}
+
+.border-bright-m-d {
+  border-radius: #FFFFFF;
+  border-radius: 3px;
+  border-radius: 0.75rem;
+  border-style: solid;
+}
+
+.border-bright-m-m {
+  border-radius: #FFFFFF;
+  border-radius: 3px;
+  border-radius: 1rem;
+  border-style: solid;
+}
+
+.border-bright-m-l {
+  border-radius: #FFFFFF;
+  border-radius: 3px;
+  border-radius: 1.25rem;
+  border-style: solid;
+}
+
+.border-bright-m-xl {
+  border-radius: #FFFFFF;
+  border-radius: 3px;
+  border-radius: 1.5rem;
+  border-style: solid;
+}
+
+.border-bright-l-s {
+  border-radius: #FFFFFF;
+  border-radius: 4px;
+  border-radius: 0.5rem;
+  border-style: solid;
+}
+
+.border-bright-l-d {
+  border-radius: #FFFFFF;
+  border-radius: 4px;
+  border-radius: 0.75rem;
+  border-style: solid;
+}
+
+.border-bright-l-m {
+  border-radius: #FFFFFF;
+  border-radius: 4px;
+  border-radius: 1rem;
+  border-style: solid;
+}
+
+.border-bright-l-l {
+  border-radius: #FFFFFF;
+  border-radius: 4px;
+  border-radius: 1.25rem;
+  border-style: solid;
+}
+
+.border-bright-l-xl {
+  border-radius: #FFFFFF;
+  border-radius: 4px;
+  border-radius: 1.5rem;
+  border-style: solid;
+}
+
+.border-bright-xl-s {
+  border-radius: #FFFFFF;
+  border-radius: 5px;
+  border-radius: 0.5rem;
+  border-style: solid;
+}
+
+.border-bright-xl-d {
+  border-radius: #FFFFFF;
+  border-radius: 5px;
+  border-radius: 0.75rem;
+  border-style: solid;
+}
+
+.border-bright-xl-m {
+  border-radius: #FFFFFF;
+  border-radius: 5px;
+  border-radius: 1rem;
+  border-style: solid;
+}
+
+.border-bright-xl-l {
+  border-radius: #FFFFFF;
+  border-radius: 5px;
+  border-radius: 1.25rem;
+  border-style: solid;
+}
+
+.border-bright-xl-xl {
+  border-radius: #FFFFFF;
+  border-radius: 5px;
+  border-radius: 1.5rem;
+  border-style: solid;
 }
 
 body, html {

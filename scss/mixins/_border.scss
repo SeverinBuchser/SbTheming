@@ -1,7 +1,11 @@
-@mixin border-radius($size) {
-  border-radius: radius($size);
+@mixin border-radius($border-radius) {
+  border-radius: getBorderRadius($border-radius);
 }
 
-@mixin border-radius-half($size) {
-  border-radius: radius-half($size);
+@mixin border-color($border-color) {
+  border-radius: getBorderColor($border-color);
+}
+
+@mixin border-width($border-width) {
+  border-radius: getBorderWidth($border-width);
 }
