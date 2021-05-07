@@ -506,6 +506,12 @@
                             Border - Naming
 ******************************************************************************/
 /*****************************************************************************
+                            Border - Functions
+******************************************************************************/
+/*
+  Returns the background-color, specified by the parameter.
+*/
+/*****************************************************************************
                             Background - Classes
 ******************************************************************************/
 /*
@@ -518,31 +524,31 @@
   ROOT '.sb-bg-[color]'
 */
 .sb-bg-warn {
-  background-color: getBackgroundColor("warn");
+  background-color: #FF0522;
 }
 
 .sb-bg-success {
-  background-color: getBackgroundColor("success");
+  background-color: #52C832;
 }
 
 .sb-bg-info {
-  background-color: getBackgroundColor("info");
+  background-color: #FFD147;
 }
 
 .sb-bg-primary {
-  background-color: getBackgroundColor("primary");
+  background-color: #579AFF;
 }
 
 .sb-bg-secondary {
-  background-color: getBackgroundColor("secondary");
+  background-color: #84F9BD;
 }
 
 .sb-bg-dark {
-  background-color: getBackgroundColor("dark");
+  background-color: #22272C;
 }
 
 .sb-bg-bright {
-  background-color: getBackgroundColor("bright");
+  background-color: #FFFFFF;
 }
 
 .sb-font-weight-regular {
