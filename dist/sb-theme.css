@@ -34,9 +34,6 @@
 /*
   Returns the font-size, specified by the parameter.
 */
-/*
-  Returns the background color, specified by the parameter.
-*/
 /*****************************************************************************
                             Border - Settings
 ******************************************************************************/
@@ -502,39 +499,50 @@
   color: #22272C;
 }
 
+/*****************************************************************************
+                            Background - Settings
+******************************************************************************/
+/*****************************************************************************
+                            Border - Naming
+******************************************************************************/
+/*****************************************************************************
+                            Background - Classes
+******************************************************************************/
 /*
-  Adds background-persistent-color-class.
-*/
-/*
-  Includes all background-colors and creates a background-color-class for each
-  of these colors.
+  Creates a background class for each background color.
+
+
+  Attributes:
+  - color: 'warn', 'success', 'info', 'primary', 'secondary', 'dark', 'bright'
+
+  ROOT '.sb-bg-[color]'
 */
 .sb-bg-warn {
-  background-color: #FF0522;
+  background-color: getBackgroundColor("warn");
 }
 
 .sb-bg-success {
-  background-color: #52C832;
+  background-color: getBackgroundColor("success");
 }
 
 .sb-bg-info {
-  background-color: #FFD147;
+  background-color: getBackgroundColor("info");
 }
 
 .sb-bg-primary {
-  background-color: #579AFF;
+  background-color: getBackgroundColor("primary");
 }
 
 .sb-bg-secondary {
-  background-color: #84F9BD;
+  background-color: getBackgroundColor("secondary");
 }
 
 .sb-bg-dark {
-  background-color: #22272C;
+  background-color: getBackgroundColor("dark");
 }
 
 .sb-bg-bright {
-  background-color: #FFFFFF;
+  background-color: getBackgroundColor("bright");
 }
 
 .sb-font-weight-regular {

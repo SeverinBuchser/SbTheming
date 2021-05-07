@@ -12,7 +12,7 @@
   ROOT '.sb-bg-[color]'
 */
 @debug "Create background-color-classes";
-@each $background-color in $background-color-names {
+@each $background-color in map-keys($background-colors) {
   .sb-bg-#{$background-color} {
     @include background-color($background-color)
   }

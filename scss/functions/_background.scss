@@ -1,9 +1,0 @@
-/*
-  Returns the background color, specified by the parameter.
-*/
-@function getBackgroundColor($background-color) {
-  @if not exists($background-color-names, $background-color) {
-    @error "Background-color with name '#{$background-color}' does not exist!";
-  }
-  @return map-get($background-colors, $background-color);
-}
