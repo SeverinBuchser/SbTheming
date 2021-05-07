@@ -1,16 +1,14 @@
 /*****************************************************************************
                               Button - Classes
 ******************************************************************************/
-/*
-  Adds color and hover to a button. Also creates the incerse of the colors.
 
-  It also includes all different button colors:
-  - warn
-  - success
-  - info
-  - primary
-  - secondary
-  The color definitions can be found in the "_button-settings.scss" file.
+/*
+  Adds color and hover to a button. Also creates the inverse of the colors.
+
+  Attributes:
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.btn--[color]' for ROOT '.sb-btn'
 */
 @mixin button-color-class($button-color) {
   &.btn--#{$button-color} {
@@ -27,6 +25,11 @@
 
 /*
   Adds inverse colors as in the normal class.
+
+  Attributes:
+  - NONE
+
+  OPTION '.is-plain' for OPTION '.btn--[color]'
 */
 @mixin button-empty-color-class($button-color) {
   &.is-plain {
@@ -43,13 +46,10 @@
 /*
   Adds different sizes to the button.
 
-  The sizes:
-  - s
-  - d (default, no extra class name)
-  - m
-  - l
-  mean, that the padding of the button is bigger or smaller. The size
-  definitions can be found in the "_button-settings.scss" file.
+  Attributes:
+  - size: 's', 'm', 'l'[, 'd']
+
+  OPTION '.btn--[size] for ROOT '.sb-btn'
 */
 @mixin button-size-class($button-size) {
   &.btn--#{$button-size} {
