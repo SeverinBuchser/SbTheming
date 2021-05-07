@@ -11,3 +11,8 @@
     }
   }
 }
+@each $border-radius in $border-radius-names {
+  .border-radius-#{$border-radius} {
+    @include border-radius($border-radius);
+  }
+}

@@ -648,6 +648,26 @@
   border-style: solid;
 }
 
+.border-radius-s {
+  border-radius: 0.5rem;
+}
+
+.border-radius-d {
+  border-radius: 0.75rem;
+}
+
+.border-radius-m {
+  border-radius: 1rem;
+}
+
+.border-radius-l {
+  border-radius: 1.25rem;
+}
+
+.border-radius-xl {
+  border-radius: 1.5rem;
+}
+
 body, html {
   font-weight: 400;
   font-family: "Inter", sans-serif;
