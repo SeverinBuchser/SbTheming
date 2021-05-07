@@ -1,17 +1,19 @@
-/*
-  Adds background-persistent-color-class.
-*/
-@mixin background-color-class($background-color) {
-  .sb-bg-#{$background-color} {
-    @include background-color($background-color)
-  }
-}
+/*****************************************************************************
+                            Background - Classes
+******************************************************************************/
 
 /*
-  Includes all background-colors and creates a background-color-class for each
-  of these colors.
+  Creates a background class for each background color.
+
+
+  Attributes:
+  - color: 'warn', 'success', 'info', 'primary', 'secondary', 'dark', 'bright'
+
+  ROOT '.sb-bg-[color]'
 */
 @debug "Create background-color-classes";
 @each $background-color in $background-color-names {
-  @include background-color-class($background-color);
+  .sb-bg-#{$background-color} {
+    @include background-color($background-color)
+  }
 }
