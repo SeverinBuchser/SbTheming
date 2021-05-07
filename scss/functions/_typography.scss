@@ -2,23 +2,10 @@
   Returns the font-weight, specified by the parameter.
 */
 @function getFontWeight($font-weight) {
-  @if not fontWeightExists($font-weight) {
+  @if not exists($font-weight-names, $font-weight) {
     @error "Font-weight with name '#{$font-weight}' does not exist!";
   }
   @return map-get($font-weights, $font-weight);
-}
-
-/*
-  Checks if the font weight exists. Returns true if it exists and false otherwise.
-*/
-@function fontWeightExists($font-weight) {
-  $font-weight-exists: false;
-  @each $font-weight-test in $font-weight-names {
-    @if $font-weight-test == $font-weight {
-      $font-weight-exists: true;
-    }
-  }
-  @return $font-weight-exists;
 }
 
 
@@ -26,47 +13,19 @@
   Returns the fontface, specified by the parameter.
 */
 @function getFontface($fontface) {
-  @if not fontfaceExists($fontface) {
+  @if not exists($fontface-names, $fontface) {
     @error "Fontface with name '#{$fontface}' does not exist!";
   }
   @return map-get($fontfaces, $fontface);
 }
-
-/*
-  Checks if the fontface exists. Returns true if it exists and false otherwise.
-*/
-@function fontfaceExists($fontface) {
-  $fontface-exists: false;
-  @each $fontface-test in $fontface-names {
-    @if $fontface-test == $fontface {
-      $fontface-exists: true;
-    }
-  }
-  @return $fontface-exists;
-}
-
-
 
 
 /*
   Returns the font-size, specified by the parameter.
 */
 @function getFontSize($font-size) {
-  @if not fontSizeExists($font-size) {
+  @if not exists($font-size-names, $font-size) {
     @error "Font-size with name '#{$font-size}' does not exist!";
   }
   @return map-get($font-sizes, $font-size);
-}
-
-/*
-  Checks if the font size exists. Returns true if it exists and false otherwise.
-*/
-@function fontSizeExists($font-size) {
-  $font-size-exists: false;
-  @each $font-size-test in $font-size-names {
-    @if $font-size-test == $font-size {
-      $font-size-exists: true;
-    }
-  }
-  @return $font-size-exists;
 }

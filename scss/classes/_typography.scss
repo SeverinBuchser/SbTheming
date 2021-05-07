@@ -1,25 +1,19 @@
-@debug "";
-@debug "";
-@debug "Create font-classes:";
-@debug "Create font-weight-classes:";
+@debug "Create font-weight-classes";
 @each $font-weight in $font-weight-names {
-  @debug "-> .font-weight-#{$font-weight}";
   .font-weight-#{$font-weight} {
     font-weight: getFontWeight($font-weight);
   }
 }
 
-@debug "Create fontface-classes:";
+@debug "Create fontface-classes";
 @each $fontface in $fontface-names {
-  @debug "-> .fontface-#{$fontface}";
   .fontface-#{$fontface} {
     font-weight: getFontface($fontface);
   }
 }
 
-@debug "Create font-size-classes:";
+@debug "Create font-size-classes";
 @each $font-size in $font-size-names {
-  @debug "-> .font-size-#{$font-size}";
   .font-size-#{$font-size} {
     @include font-size($font-size);
   }

@@ -2,23 +2,10 @@
   Returns the border-width, specified by the parameter.
 */
 @function getBorderWidth($border-width) {
-  @if not borderWidthExists($border-width) {
+  @if not exists($border-width-names, $border-width) {
     @error "Border-wdith with name '#{$border-width}' does not exist!";
   }
   @return map-get($border-widths, $border-width);
-}
-
-/*
-  Checks if the border-width exists. Returns true if it exists and false otherwise.
-*/
-@function borderWidthExists($border-width) {
-  $border-width-exists: false;
-  @each $border-width-test in $border-width-names {
-    @if $border-width-test == $border-width {
-      $border-width-exists: true;
-    }
-  }
-  @return $border-width-exists;
 }
 
 
@@ -26,47 +13,19 @@
   Returns the border-radius, specified by the parameter.
 */
 @function getBorderRadius($border-radius) {
-  @if not borderRadiusExists($border-radius) {
+  @if not exists($border-radius-names, $border-radius) {
     @error "Border-radius with name '#{$border-radius}' does not exist!";
   }
   @return map-get($border-radii, $border-radius);
 }
-
-/*
-  Checks if the border-radius exists. Returns true if it exists and false otherwise.
-*/
-@function borderRadiusExists($border-radius) {
-  $border-radius-exists: false;
-  @each $border-radius-test in $border-radius-names {
-    @if $border-radius-test == $border-radius {
-      $border-radius-exists: true;
-    }
-  }
-  @return $border-radius-exists;
-}
-
-
 
 
 /*
   Returns the border-color, specified by the parameter.
 */
 @function getBorderColor($border-color) {
-  @if not borderColorExists($border-color) {
+  @if not exists($border-color-names, $border-color) {
     @error "Border-color with name '#{$border-color}' does not exist!";
   }
   @return map-get($border-colors, $border-color);
-}
-
-/*
-  Checks if the border-color exists. Returns true if it exists and false otherwise.
-*/
-@function borderColorExists($border-color) {
-  $border-color-exists: false;
-  @each $border-color-test in $border-color-names {
-    @if $border-color-test == $border-color {
-      $border-color-exists: true;
-    }
-  }
-  @return $border-color-exists;
 }

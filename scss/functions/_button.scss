@@ -6,24 +6,10 @@
   )
 */
 @function getButtonColors($button-color) {
-  @if not buttonColorExists($button-color) {
+  @if not exists($button-color-names, $button-color) {
     @error "Button color with name '#{$button-color}' does not exist!";
-  } @else {
-    @return map-get($button-colors, $button-color);
   }
-}
-
-/*
-  Checks if the button color exists. Returns true if it exists and false otherwise.
-*/
-@function buttonColorExists($button-color) {
-  $exists: false;
-  @each $button-color-test in $button-color {
-    @if $button-color-test == $button-color {
-      $exists: true;
-    }
-  }
-  @return $exists;
+  @return map-get($button-colors, $button-color);
 }
 
 /*

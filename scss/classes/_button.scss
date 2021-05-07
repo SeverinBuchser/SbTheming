@@ -1,11 +1,7 @@
-@debug "";
-@debug "";
-
 /*
   Adds hover to a button-color-class. On hover, the color gets darker by 10%.
 */
 @mixin button-color-class($button-color) {
-  @debug "-> .btn--#{$button-color}";
   &.btn--#{$button-color} {
     background: getButtonBackgroundColor($button-color);
     color: getButtonTextColor($button-color);
@@ -21,7 +17,6 @@
   Adds hover to a button-color-class. On hover, the color gets darker by 10%.
 */
 @mixin button-empty-color-class($button-color) {
-  @debug "-> .btn-empty--#{$button-color}";
   &.btn-empty--#{$button-color} {
     background: getButtonHoverBackgroundColor($button-color);
     color: getButtonHoverTextColor($button-color);
@@ -37,7 +32,6 @@
   Adds different size-classes to the button-class.
 */
 @mixin button-size-class($button-size) {
-  @debug "-> .btn-#{$button-size}";
   &.btn--#{$button-size} {
     @include paddingX(map-get($spacings, $button-size));
     @include paddingY(map-get($spacings-half, $button-size));
@@ -70,17 +64,17 @@
   @include font-weight('regular');
   @include fontface('default');
 
-  @debug "Create button-color-classes:";
+  @debug "Create button-color-classes";
   @each $button-color in $button-color-names {
     @include button-color-class($button-color);
   }
 
-  @debug "Create button-empty-color-classes:";
+  @debug "Create button-empty-color-classes";
   @each $button-color in $button-color-names {
     @include button-empty-color-class($button-color);
   }
 
-  @debug "Create button-size-classes:";
+  @debug "Create button-size-classes";
   @each $button-size in map-keys($spacings) {
     @include button-size-class($button-size);
   }
