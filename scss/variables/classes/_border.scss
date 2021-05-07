@@ -1,0 +1,36 @@
+$border-width-s: 1px;
+$border-width-d: 2px;
+$border-width-m: 3px;
+$border-width-l: 4px;
+$border-width-xl: 5px;
+
+$border-widths: (
+  's': $border-width-s,
+  'd': $border-width-d,
+  'm': $border-width-m,
+  'l': $border-width-l,
+  'xl': $border-width-xl
+);
+$border-width-names: map-keys($border-widths);
+
+
+$border-radius-s: 0.5rem;
+$border-radius-d: 0.75rem;
+$border-radius-m: 1rem;
+$border-radius-l: 1.25rem;
+$border-radius-xl: 1.5rem;
+
+$border-radii: (
+  's': $border-radius-s,
+  'd': $border-radius-d,
+  'm': $border-radius-m,
+  'l': $border-radius-l,
+  'xl': $border-radius-xl
+);
+$border-radius-names: map-keys($border-radii);
+
+$border-colors: (
+  'dark': $border-color-dark,
+  'bright': $border-color-bright
+);
+$border-color-names: map-keys($border-colors);
