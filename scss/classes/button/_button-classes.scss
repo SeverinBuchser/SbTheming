@@ -1,5 +1,5 @@
 /*****************************************************************************
-                              Button - Classes
+                            Button - Classes
 ******************************************************************************/
 
 /*
@@ -56,7 +56,7 @@
     $size: map-get($button-sizes, $button-size);
     @include paddingX(map-get($size, 'padding'));
     @include paddingY(map-get($size, 'padding')/2);
-    font-size: map-get($size, 'font');
+    font-size: map-get($size, 'font-size');
   }
 }
 
@@ -77,12 +77,10 @@
   @include paddingX($button-default-padding);
   @include paddingY($button-default-padding/2);
 
-  @debug "Create button-size-classes";
   @each $button-size in map-keys($button-sizes) {
     @include button-size-class($button-size);
   }
 
-  @debug "Create button-color-classes";
   @each $button-color in map-keys($button-colors) {
     @include button-color-class($button-color);
   }

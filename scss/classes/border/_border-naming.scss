@@ -2,13 +2,13 @@
                             Border - Naming
 ******************************************************************************/
 
-// border-colors
+// colors
 $border-colors: (
   'dark': $border-color-dark,
   'bright': $border-color-bright
 );
 
-// border-widths
+// widths
 $border-widths: (
   's': $border-width-s,
   'd': $border-width-d,
@@ -16,7 +16,7 @@ $border-widths: (
   'l': $border-width-l
 );
 
-// border-radii
+// radii
 $border-radii: (
   's': $border-radius-s,
   'd': $border-radius-d,

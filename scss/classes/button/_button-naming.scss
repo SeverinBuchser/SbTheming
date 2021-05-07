@@ -1,7 +1,8 @@
 /*****************************************************************************
-                              Button - Naming
+                            Button - Naming
 ******************************************************************************/
 
+// colors
 $button-colors: (
   'warn': (
     'background': $btn-warn-background,
@@ -35,19 +36,21 @@ $button-colors: (
   )
 );
 
-$button-default-padding: $button-padding-d;
-$button-default-font-size: $button-font-size-d;
+
+// sizes (padding and font-size)
+$button-default-padding: $button-padding-d; // default padding
+$button-default-font-size: $button-font-size-d; // default font-size
 $button-sizes: (
   's': (
     'padding': $button-padding-s,
-    'font': $button-font-size-s
+    'font-size': $button-font-size-s
   ),
   'm': (
     'padding': $button-padding-m,
-    'font': $button-font-size-m
+    'font-size': $button-font-size-m
   ),
   'l': (
     'padding': $button-padding-l,
-    'font': $button-font-size-l
+    'font-size': $button-font-size-l
   ),
 );
