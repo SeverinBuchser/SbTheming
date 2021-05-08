@@ -1,8 +1,12 @@
+/*****************************************************************************
+                              Typography - Functions
+******************************************************************************/
+
 /*
   Returns the font-weight, specified by the parameter.
 */
 @function getFontWeight($font-weight) {
-  @if not exists($font-weight-names, $font-weight) {
+  @if not exists(map-keys($font-weights), $font-weight) {
     @error "Font-weight with name '#{$font-weight}' does not exist!";
   }
   @return map-get($font-weights, $font-weight);
@@ -13,7 +17,7 @@
   Returns the fontface, specified by the parameter.
 */
 @function getFontface($fontface) {
-  @if not exists($fontface-names, $fontface) {
+  @if not exists(map-keys($fontfaces), $fontface) {
     @error "Fontface with name '#{$fontface}' does not exist!";
   }
   @return map-get($fontfaces, $fontface);
@@ -24,7 +28,7 @@
   Returns the font-size, specified by the parameter.
 */
 @function getFontSize($font-size) {
-  @if not exists($font-size-names, $font-size) {
+  @if not exists(map-keys($font-sizes), $font-size) {
     @error "Font-size with name '#{$font-size}' does not exist!";
   }
   @return map-get($font-sizes, $font-size);

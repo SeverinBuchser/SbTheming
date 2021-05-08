@@ -1,38 +1,5 @@
 /*
-  Imports the following font faces from goolge fonts (https://fonts.google.com/):
-
-  - Inter (https://fonts.google.com/specimen/Inter)
-    - Thin 100
-    - Extra-light 200
-    - Light 300
-    - Regular 400
-    - Medium 500
-    - Semi-bold 600
-    - Bold 700
-    - Extra-bold 800
-    - Black 900
-
-  - Abril Fatface (https://fonts.google.com/specimen/Abril+Fatface)
-    - Regular 400
-*/
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-/*
-  Font-weights
-*/
-/*
-  Fontfaces
-*/
-/*
   Checks if the name exists in names. Returns true if it exists and false otherwise.
-*/
-/*
-  Returns the font-weight, specified by the parameter.
-*/
-/*
-  Returns the fontface, specified by the parameter.
-*/
-/*
-  Returns the font-size, specified by the parameter.
 */
 /*****************************************************************************
                             Border - Settings
@@ -66,6 +33,7 @@
 
   ROOT '.sb-border-[color]-[width]-[radius]'
 */
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 .sb-border-dark-s-s {
   border-radius: #22272C;
   border-radius: 1px;
@@ -385,8 +353,8 @@
   border-radius: 0.5rem;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
-  font-weight: 400;
-  font-family: "Inter", sans-serif;
+  font-weight: getFontWeight("regular");
+  font-family: getFontface("default");
 }
 .sb-btn.btn--s {
   font-size: 0.7352941176rem;
@@ -565,8 +533,8 @@
   border-radius: 0.9375rem;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
+  font-family: getFontface("default");
+  font-weight: getFontWeight("regular");
 }
 .sb-pill.pill--s {
   font-size: 0.7352941176rem;
@@ -730,6 +698,52 @@
   background-color: #FFFFFF;
 }
 
+/*****************************************************************************
+                              Typography - Settings
+******************************************************************************/
+/*
+  Imports the following font faces from goolge fonts (https://fonts.google.com/):
+
+  - Inter (https://fonts.google.com/specimen/Inter)
+    - Thin 100
+    - Extra-light 200
+    - Light 300
+    - Regular 400
+    - Medium 500
+    - Semi-bold 600
+    - Bold 700
+    - Extra-bold 800
+    - Black 900
+
+  - Abril Fatface (https://fonts.google.com/specimen/Abril+Fatface)
+    - Regular 400
+*/
+/*****************************************************************************
+                              Typography - Naming
+******************************************************************************/
+/*****************************************************************************
+                              Typography - Functions
+******************************************************************************/
+/*
+  Returns the font-weight, specified by the parameter.
+*/
+/*
+  Returns the fontface, specified by the parameter.
+*/
+/*
+  Returns the font-size, specified by the parameter.
+*/
+/*****************************************************************************
+                              Typography - Classes
+******************************************************************************/
+/*
+  Defines the root font-weight class with all its weights.
+
+  Attributes:
+  - weight: 'regular', 'bold'
+
+  ROOT: .sb-font-weight-[weight]
+*/
 .sb-font-weight-regular {
   font-weight: 400;
 }
@@ -738,6 +752,14 @@
   font-weight: 600;
 }
 
+/*
+  Defines the root fontface class with all its fontfaces.
+
+  Attributes:
+  - fontface: 'default', 'display'
+
+  ROOT: .sb-fontface-[fontface]
+*/
 .sb-fontface-default {
   font-weight: "Inter", sans-serif;
 }
@@ -746,6 +768,14 @@
   font-weight: "Abril Fatface", cursive;
 }
 
+/*
+  Defines the root font-size class with all its sizes.
+
+  Attributes:
+  - size: 's', 'm', 'l', 'd'
+
+  ROOT: .sb-font-size-[size]
+*/
 .sb-font-size-s {
   font-size: 0.75rem;
 }

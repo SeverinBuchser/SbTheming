@@ -1,3 +1,7 @@
+/*****************************************************************************
+                              Typography - Settings
+******************************************************************************/
+
 /*
   Imports the following font faces from goolge fonts (https://fonts.google.com/):
 
@@ -17,45 +21,17 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/*
-  Font-weights
-*/
+// weights
 $font-weight-regular: 400;
 $font-weight-bold: 600;
 
-$font-weights: (
-  'regular': $font-weight-regular,
-  'bold': $font-weight-bold
-);
-
-$font-weight-names: map-keys($font-weights);
-
-/*
-  Fontfaces
-*/
+// fontfaces
 $fontface-default: 'Inter', sans-serif;
 $fontface-display: 'Abril Fatface', cursive;
 
-$fontfaces: (
-  'default': $fontface-default,
-  'display': $fontface-display
-);
-
-$fontface-names: map-keys($fontfaces);
-
-// font sizes
+// sizes
 $font-size-s: 0.75rem;
 $font-size-d: 1rem;
 $font-size-m: 1.25rem;
 $font-size-l: 1.5rem;
 $font-size-xl: 1.75rem;
-
-$font-sizes: (
-  "s": $font-size-s,
-  "d": $font-size-d,
-  "m": $font-size-m,
-  "l": $font-size-l,
-  "xl": $font-size-xl,
-);
-
-$font-size-names: map-keys($font-sizes);
