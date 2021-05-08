@@ -1,6 +1,0 @@
-@function getColor($persistent-color-name) {
-  @if not exists($persistent-color-names, $persistent-colorname) {
-    @error "Color with name '#{$persistent-color-name}' does not exist!";
-  }
-  @return map-get($persistent-colors, $persistent-color-name);
-}
