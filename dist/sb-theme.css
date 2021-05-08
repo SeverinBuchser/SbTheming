@@ -587,6 +587,189 @@
   font-size: 1.75rem;
 }
 
+/*****************************************************************************
+                              Pill - Settings
+******************************************************************************/
+/*****************************************************************************
+                              Pill - Naming
+******************************************************************************/
+/*****************************************************************************
+                              Pill - Functions
+******************************************************************************/
+/*
+  Returns a map with background-color and text-color of a pill color:
+  (
+    'background': {color},
+    'text': {color}
+  )
+*/
+/*
+  Returns the background-color of the pill-colors.
+*/
+/*
+  Returns the text-color of the pill-colors.
+*/
+/*
+  Returns the hover-background-color of the pill-colors.
+*/
+/*
+  Returns the hover-text-color of the pill-colors.
+*/
+/*****************************************************************************
+                              Pill - Classes
+******************************************************************************/
+/*
+  Adds color and hover to a pill. Also creates the inverse of the colors.
+
+  Attributes:
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.pill--[color]' for ROOT '.sb-pill'
+*/
+/*
+  Adds inverse colors as in the normal class.
+
+  Attributes:
+  - NONE
+
+  OPTION '.is-plain' for OPTION '.pill--[color]'
+*/
+/*
+  Adds different sizes to the pill.
+
+  Attributes:
+  - size: 's', 'm', 'l'[, 'd']
+
+  OPTION '.pill--[size] for ROOT '.sb-pill'
+*/
+/*
+  Defines the root pill class with all its sizes and colors.
+
+  ROOT: .sb-pill
+*/
+.sb-pill {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  line-height: 0.9375rem;
+  height: 1.875rem;
+  border-radius: 0.9375rem;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+.sb-pill.pill--s {
+  font-size: 0.7352941176rem;
+  line-height: 0.7352941176rem;
+  height: 1.25rem;
+  border-radius: 0.625rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.sb-pill.pill--m {
+  font-size: 1.4705882353rem;
+  line-height: 1.4705882353rem;
+  height: 2.5rem;
+  border-radius: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.sb-pill.pill--l {
+  font-size: 1.8382352941rem;
+  line-height: 1.8382352941rem;
+  height: 3.125rem;
+  border-radius: 1.5625rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.sb-pill.pill--warn {
+  background: #FF0522;
+  color: #22272C;
+  transition: all 300ms ease;
+}
+.sb-pill.pill--warn:hover {
+  background: #292f35;
+  color: #FF0522;
+}
+.sb-pill.pill--warn.is-plain {
+  background: #292f35;
+  color: #FF0522;
+}
+.sb-pill.pill--warn.is-plain:hover {
+  background: #FF0522;
+  color: #22272C;
+}
+.sb-pill.pill--success {
+  background: #52C832;
+  color: #22272C;
+  transition: all 300ms ease;
+}
+.sb-pill.pill--success:hover {
+  background: #292f35;
+  color: #52C832;
+}
+.sb-pill.pill--success.is-plain {
+  background: #292f35;
+  color: #52C832;
+}
+.sb-pill.pill--success.is-plain:hover {
+  background: #52C832;
+  color: #22272C;
+}
+.sb-pill.pill--info {
+  background: #FFD147;
+  color: #22272C;
+  transition: all 300ms ease;
+}
+.sb-pill.pill--info:hover {
+  background: #292f35;
+  color: #FFD147;
+}
+.sb-pill.pill--info.is-plain {
+  background: #292f35;
+  color: #FFD147;
+}
+.sb-pill.pill--info.is-plain:hover {
+  background: #FFD147;
+  color: #22272C;
+}
+.sb-pill.pill--primary {
+  background: #579AFF;
+  color: #22272C;
+  transition: all 300ms ease;
+}
+.sb-pill.pill--primary:hover {
+  background: #292f35;
+  color: #579AFF;
+}
+.sb-pill.pill--primary.is-plain {
+  background: #292f35;
+  color: #579AFF;
+}
+.sb-pill.pill--primary.is-plain:hover {
+  background: #579AFF;
+  color: #22272C;
+}
+.sb-pill.pill--secondary {
+  background: #84F9BD;
+  color: #22272C;
+  transition: all 300ms ease;
+}
+.sb-pill.pill--secondary:hover {
+  background: #292f35;
+  color: #84F9BD;
+}
+.sb-pill.pill--secondary.is-plain {
+  background: #292f35;
+  color: #84F9BD;
+}
+.sb-pill.pill--secondary.is-plain:hover {
+  background: #84F9BD;
+  color: #22272C;
+}
+
 body, html {
   font-weight: 400;
   font-family: "Inter", sans-serif;
