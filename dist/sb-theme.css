@@ -379,34 +379,35 @@
   border: 0;
   outline: 0;
   cursor: pointer;
+  font-size: 0.9375rem;
+  line-height: 0.9375rem;
+  height: 1.875rem;
   border-radius: 0.5rem;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
   font-weight: 400;
   font-family: "Inter", sans-serif;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
 }
 .sb-btn.btn--s {
+  font-size: 0.7352941176rem;
+  line-height: 0.7352941176rem;
+  height: 1.25rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  font-size: 0.7rem;
 }
 .sb-btn.btn--m {
+  font-size: 1.4705882353rem;
+  line-height: 1.4705882353rem;
+  height: 2.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  font-size: 1.2rem;
 }
 .sb-btn.btn--l {
+  font-size: 1.8382352941rem;
+  line-height: 1.8382352941rem;
+  height: 3.125rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-  font-size: 1.45rem;
 }
 .sb-btn.btn--warn {
   background: #FF0522;
@@ -420,7 +421,6 @@
 .sb-btn.btn--warn.is-plain {
   background: #292f35;
   color: #FF0522;
-  transition: all 300ms ease;
 }
 .sb-btn.btn--warn.is-plain:hover {
   background: #FF0522;
@@ -438,7 +438,6 @@
 .sb-btn.btn--success.is-plain {
   background: #292f35;
   color: #52C832;
-  transition: all 300ms ease;
 }
 .sb-btn.btn--success.is-plain:hover {
   background: #52C832;
@@ -456,7 +455,6 @@
 .sb-btn.btn--info.is-plain {
   background: #292f35;
   color: #FFD147;
-  transition: all 300ms ease;
 }
 .sb-btn.btn--info.is-plain:hover {
   background: #FFD147;
@@ -474,7 +472,6 @@
 .sb-btn.btn--primary.is-plain {
   background: #292f35;
   color: #579AFF;
-  transition: all 300ms ease;
 }
 .sb-btn.btn--primary.is-plain:hover {
   background: #579AFF;
@@ -492,99 +489,10 @@
 .sb-btn.btn--secondary.is-plain {
   background: #292f35;
   color: #84F9BD;
-  transition: all 300ms ease;
 }
 .sb-btn.btn--secondary.is-plain:hover {
   background: #84F9BD;
   color: #22272C;
-}
-
-/*****************************************************************************
-                            Background - Settings
-******************************************************************************/
-/*****************************************************************************
-                            Border - Naming
-******************************************************************************/
-/*****************************************************************************
-                            Border - Functions
-******************************************************************************/
-/*
-  Returns the background-color, specified by the parameter.
-*/
-/*****************************************************************************
-                            Background - Classes
-******************************************************************************/
-/*
-  Creates a background class for each background color.
-
-
-  Attributes:
-  - color: 'warn', 'success', 'info', 'primary', 'secondary', 'dark', 'bright'
-
-  ROOT '.sb-bg-[color]'
-*/
-.sb-bg-warn {
-  background-color: #FF0522;
-}
-
-.sb-bg-success {
-  background-color: #52C832;
-}
-
-.sb-bg-info {
-  background-color: #FFD147;
-}
-
-.sb-bg-primary {
-  background-color: #579AFF;
-}
-
-.sb-bg-secondary {
-  background-color: #84F9BD;
-}
-
-.sb-bg-dark {
-  background-color: #22272C;
-}
-
-.sb-bg-bright {
-  background-color: #FFFFFF;
-}
-
-.sb-font-weight-regular {
-  font-weight: 400;
-}
-
-.sb-font-weight-bold {
-  font-weight: 600;
-}
-
-.sb-fontface-default {
-  font-weight: "Inter", sans-serif;
-}
-
-.sb-fontface-display {
-  font-weight: "Abril Fatface", cursive;
-}
-
-.sb-font-size-s {
-  font-size: 0.75rem;
-}
-
-.sb-font-size-d {
-  font-size: 1rem;
-}
-
-.sb-font-size-m {
-  font-size: 1.25rem;
-}
-
-.sb-font-size-l {
-  font-size: 1.5rem;
-}
-
-.sb-font-size-xl {
-  font-size: 1.75rem;
 }
 
 /*****************************************************************************
@@ -768,6 +676,94 @@
 .sb-pill.pill--secondary.is-plain:hover {
   background: #84F9BD;
   color: #22272C;
+}
+
+/*****************************************************************************
+                            Background - Settings
+******************************************************************************/
+/*****************************************************************************
+                            Border - Naming
+******************************************************************************/
+/*****************************************************************************
+                            Border - Functions
+******************************************************************************/
+/*
+  Returns the background-color, specified by the parameter.
+*/
+/*****************************************************************************
+                            Background - Classes
+******************************************************************************/
+/*
+  Creates a background class for each background color.
+
+
+  Attributes:
+  - color: 'warn', 'success', 'info', 'primary', 'secondary', 'dark', 'bright'
+
+  ROOT '.sb-bg-[color]'
+*/
+.sb-bg-warn {
+  background-color: #FF0522;
+}
+
+.sb-bg-success {
+  background-color: #52C832;
+}
+
+.sb-bg-info {
+  background-color: #FFD147;
+}
+
+.sb-bg-primary {
+  background-color: #579AFF;
+}
+
+.sb-bg-secondary {
+  background-color: #84F9BD;
+}
+
+.sb-bg-dark {
+  background-color: #22272C;
+}
+
+.sb-bg-bright {
+  background-color: #FFFFFF;
+}
+
+.sb-font-weight-regular {
+  font-weight: 400;
+}
+
+.sb-font-weight-bold {
+  font-weight: 600;
+}
+
+.sb-fontface-default {
+  font-weight: "Inter", sans-serif;
+}
+
+.sb-fontface-display {
+  font-weight: "Abril Fatface", cursive;
+}
+
+.sb-font-size-s {
+  font-size: 0.75rem;
+}
+
+.sb-font-size-d {
+  font-size: 1rem;
+}
+
+.sb-font-size-m {
+  font-size: 1.25rem;
+}
+
+.sb-font-size-l {
+  font-size: 1.5rem;
+}
+
+.sb-font-size-xl {
+  font-size: 1.75rem;
 }
 
 body, html {

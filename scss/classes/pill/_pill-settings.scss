@@ -28,9 +28,9 @@ $pill-secondary-text: $dark;
 $pill-secondary-hover-background: lighten($dark, 3%);
 $pill-secondary-hover-text: $secondary;
 
-// heights
-$pill-pill-height-factor: 2.5;
-$pill-size-s: $spacing-s * $pill-pill-height-factor;
-$pill-size-d: $spacing-d * $pill-pill-height-factor;
-$pill-size-m: $spacing-m * $pill-pill-height-factor;
-$pill-size-l: $spacing-l * $pill-pill-height-factor;
+// sizes
+$pill-pill-size-factor: 2.5;
+$pill-size-s: $spacing-s * $pill-pill-size-factor;
+$pill-size-d: $spacing-d * $pill-pill-size-factor;
+$pill-size-m: $spacing-m * $pill-pill-size-factor;
+$pill-size-l: $spacing-l * $pill-pill-size-factor;

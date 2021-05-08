@@ -28,18 +28,13 @@ $btn-secondary-text: $dark;
 $btn-secondary-hover-background: lighten($dark, 3%);
 $btn-secondary-hover-text: $secondary;
 
-// paddings
-$button-padding-s: $spacing-s;
-$button-padding-d: $spacing-d;
-$button-padding-m: $spacing-m;
-$button-padding-l: $spacing-l;
+// heights
+$button-size-factor: 2.5;
+$button-size-s: $spacing-s * $button-size-factor;
+$button-size-d: $spacing-d * $button-size-factor;
+$button-size-m: $spacing-m * $button-size-factor;
+$button-size-l: $spacing-l * $button-size-factor;
 
-// font-sizes
-$button-font-size-delta: 0.2rem;
-$button-font-size-s: $spacing-s + $button-font-size-delta;
-$button-font-size-d: $spacing-d + $button-font-size-delta;
-$button-font-size-m: $spacing-m + $button-font-size-delta;
-$button-font-size-l: $spacing-l + $button-font-size-delta;
 
 // border-radius
 $button-border-radius: $border-radius-s;

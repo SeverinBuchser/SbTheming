@@ -35,7 +35,6 @@
   &.is-plain {
     background: getButtonHoverBackgroundColor($button-color);
     color: getButtonHoverTextColor($button-color);
-    @include ease(300ms);
     &:hover {
       background: getButtonBackgroundColor($button-color);
       color: getButtonTextColor($button-color);
@@ -53,10 +52,10 @@
 */
 @mixin button-size-class($button-size) {
   &.btn--#{$button-size} {
-    $size: map-get($button-sizes, $button-size);
-    @include paddingX(map-get($size, 'padding'));
-    @include paddingY(map-get($size, 'padding')/2);
-    font-size: map-get($size, 'font-size');
+    font-size: map-get($button-sizes, $button-size)/1.7;
+    line-height: map-get($button-sizes, $button-size)/1.7;
+    height: map-get($button-sizes, $button-size);
+    @include paddingX(map-get($button-sizes, $button-size)/2.5);
   }
 }
 
@@ -70,12 +69,15 @@
   border: 0;
   outline: 0;
   cursor: pointer;
+  
+  font-size: $button-default-size/2;
+  line-height: $button-default-size/2;
+  height: $button-default-size;
   border-radius: $button-border-radius;
+  @include paddingX($button-default-size/2);
+
   @include font-weight('regular');
   @include fontface('default');
-
-  @include paddingX($button-default-padding);
-  @include paddingY($button-default-padding/2);
 
   @each $button-size in map-keys($button-sizes) {
     @include button-size-class($button-size);

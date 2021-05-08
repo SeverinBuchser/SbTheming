@@ -36,21 +36,10 @@ $button-colors: (
   )
 );
 
-
-// sizes (padding and font-size)
-$button-default-padding: $button-padding-d; // default padding
-$button-default-font-size: $button-font-size-d; // default font-size
+// sizes
+$button-default-size: $button-size-d; // default size
 $button-sizes: (
-  's': (
-    'padding': $button-padding-s,
-    'font-size': $button-font-size-s
-  ),
-  'm': (
-    'padding': $button-padding-m,
-    'font-size': $button-font-size-m
-  ),
-  'l': (
-    'padding': $button-padding-l,
-    'font-size': $button-font-size-l
-  ),
+  's': $button-size-s,
+  'm': $button-size-m,
+  'l': $button-size-l,
 );
