@@ -28,7 +28,7 @@
 @debug "Create fontface-classes";
 @each $fontface in map-keys($fontfaces) {
   .sb-fontface-#{$fontface} {
-    font-weight: getFontface($fontface);
+    font-family: getFontface($fontface);
   }
 }
 

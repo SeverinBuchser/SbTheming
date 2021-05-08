@@ -761,11 +761,11 @@
   ROOT: .sb-fontface-[fontface]
 */
 .sb-fontface-default {
-  font-weight: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .sb-fontface-display {
-  font-weight: "Abril Fatface", cursive;
+  font-family: "Abril Fatface", cursive;
 }
 
 /*
