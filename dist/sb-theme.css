@@ -815,6 +815,14 @@
                               Icon - Classes
 ******************************************************************************/
 /*
+  Adds color to an icon.
+
+  Attributes:
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.icon--[color]' for ROOT '.sb-icon'
+*/
+/*
   Adds different sizes to the icon.
 
   Attributes:
@@ -858,6 +866,21 @@
 }
 .sb-icon.icon--l {
   font-size: 2.25rem;
+}
+.sb-icon.icon--warn {
+  color: #FF0522;
+}
+.sb-icon.icon--success {
+  color: #52C832;
+}
+.sb-icon.icon--info {
+  color: #FFD147;
+}
+.sb-icon.icon--primary {
+  color: #579AFF;
+}
+.sb-icon.icon--secondary {
+  color: #84F9BD;
 }
 
 body, html {

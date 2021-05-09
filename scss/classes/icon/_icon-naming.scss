@@ -2,6 +2,15 @@
                               Icon - Naming
 ******************************************************************************/
 
+// colors
+$icon-colors: (
+  'warn': $icon-warn,
+  'success': $icon-success,
+  'info': $icon-info,
+  'primary': $icon-primary,
+  'secondary': $icon-secondary
+);
+
 // sizes
 $icon-size-default: $icon-size-d; // default icon size
 $icon-sizes: (
