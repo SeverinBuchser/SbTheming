@@ -24,7 +24,6 @@ When using [**Angular**](https://angular.io/) with [**SCSS** or **SASS**](https:
         },
         "architect": {
             "build": {
-                "builder": "@angular-devkit/build-angular:browser",
                 "options": {
                     "styles": [
                         "./node_modules/sb-theming/scss/sb-theme.scss"
@@ -48,7 +47,6 @@ When using [**Angular**](https://angular.io/) with **CSS** update your `angular.
         },
         "architect": {
             "build": {
-                "builder": "@angular-devkit/build-angular:browser",
                 "options": {
                     "styles": [
                         "./node_modules/sb-theming/dist/sb-theme.dist.css"

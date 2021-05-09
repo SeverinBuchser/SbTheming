@@ -1,7 +1,7 @@
 {
   "name": "sb-theming",
-  "version": "0.0.2",
-  "description": "SCSS library containing two themes.",
+  "version": "0.0.3",
+  "description": "SCSS Library",
   "author": "",
   "main": "build.js",
   "scripts": {
