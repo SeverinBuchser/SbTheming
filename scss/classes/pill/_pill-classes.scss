@@ -77,8 +77,8 @@
   border-radius: $pill-default-size/2;
   @include paddingX($pill-default-size/2);
 
-  @include fontface('default');
-  @include font-weight('regular');
+  font-weight: getFontWeight('regular');
+  font-family: getFontface('default');
 
   @each $pill-size in map-keys($pill-sizes) {
     @include pill-size-class($pill-size);

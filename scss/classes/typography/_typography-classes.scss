@@ -43,6 +43,6 @@
 @debug "Create font-size-classes";
 @each $font-size in map-keys($font-sizes) {
   .sb-font-size-#{$font-size} {
-    @include font-size($font-size);
+    font-size: getFontSize($font-size);
   }
 }

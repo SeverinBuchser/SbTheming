@@ -69,15 +69,16 @@
   border: 0;
   outline: 0;
   cursor: pointer;
-  
+
+  font-size: $button-default-size/2;
   font-size: $button-default-size/2;
   line-height: $button-default-size/2;
   height: $button-default-size;
   border-radius: $button-border-radius;
   @include paddingX($button-default-size/2);
 
-  @include font-weight('regular');
-  @include fontface('default');
+  font-weight: getFontWeight('regular');
+  font-family: getFontface('default');
 
   @each $button-size in map-keys($button-sizes) {
     @include button-size-class($button-size);
