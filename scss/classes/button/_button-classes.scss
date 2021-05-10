@@ -48,14 +48,49 @@
   Attributes:
   - size: 's', 'm', 'l'[, 'd']
 
-  OPTION '.btn--[size] for ROOT '.sb-btn'
+  OPTION '.btn--[size]' for ROOT '.sb-btn'
 */
 @mixin button-size-class($button-size) {
   &.btn--#{$button-size} {
-    font-size: map-get($button-sizes, $button-size)/1.7;
-    line-height: map-get($button-sizes, $button-size)/1.7;
-    height: map-get($button-sizes, $button-size);
-    @include paddingX(map-get($button-sizes, $button-size)/2.5);
+    @include paddingY(map-get($button-sizes, $button-size)/5);
+    @include paddingX(map-get($button-sizes, $button-size)/3);
+
+    @include button-pill-class($button-size);
+    @include button-round-class($button-size);
+  }
+}
+
+/*
+  Adds option if button is pill or normal.
+
+  Attributes:
+  - NONE
+
+  OPTION '.is-pill' for OPTION '.btn--[size]'
+*/
+@mixin button-pill-class($button-size) {
+  &.is-pill {
+    border-radius: map-get($button-sizes, $button-size);
+  }
+}
+
+/*
+  Adds option if button is round or normal.
+
+  Attributes:
+  - NONE
+
+  OPTION '.is-round' for OPTION '.btn--[size]'
+*/
+@mixin button-round-class($button-size) {
+  &.is-round {
+    $size-factor: 1.2;
+    $size: map-get($button-sizes, $button-size);
+    height: $size * $size-factor;
+    width: $size * $size-factor;
+    border-radius: $size / 2 * $size-factor;
+    min-width: 0;
+    padding: 0;
   }
 }
 
@@ -70,12 +105,10 @@
   outline: 0;
   cursor: pointer;
 
-  font-size: $button-default-size/2;
-  line-height: $button-default-size/2;
-  height: $button-default-size;
   border-radius: $button-border-radius;
-  @include paddingX($button-default-size/2);
+  min-width: $button-min-width;
 
+  font-size: $font-size-d;
   font-weight: getFontWeight('regular');
   font-family: getFontface('default');
 
@@ -86,4 +119,5 @@
   @each $button-color in map-keys($button-colors) {
     @include button-color-class($button-color);
   }
+
 }

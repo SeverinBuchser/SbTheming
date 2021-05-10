@@ -35,6 +35,8 @@ $button-size-d: $spacing-d * $button-size-factor;
 $button-size-m: $spacing-m * $button-size-factor;
 $button-size-l: $spacing-l * $button-size-factor;
 
-
 // border-radius
 $button-border-radius: $border-radius-s;
+
+// min width
+$button-min-width: 60px;

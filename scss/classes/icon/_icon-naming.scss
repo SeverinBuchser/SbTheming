@@ -12,9 +12,9 @@ $icon-colors: (
 );
 
 // sizes
-$icon-size-default: $icon-size-d; // default icon size
 $icon-sizes: (
   's': $icon-size-s,
   'm': $icon-size-m,
+  'd': $icon-size-d,
   'l': $icon-size-l
 );

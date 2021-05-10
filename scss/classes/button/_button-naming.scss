@@ -37,9 +37,9 @@ $button-colors: (
 );
 
 // sizes
-$button-default-size: $button-size-d; // default size
 $button-sizes: (
   's': $button-size-s,
+  'd': $button-size-d,
   'm': $button-size-m,
   'l': $button-size-l,
 );
