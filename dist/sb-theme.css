@@ -34,6 +34,7 @@
   ROOT '.sb-border-[color]-[width]-[radius]'
 */
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 .sb-border-dark-s-s {
   border-radius: #22272C;
   border-radius: 1px;
@@ -702,7 +703,7 @@
                               Typography - Settings
 ******************************************************************************/
 /*
-  Imports the following font faces from goolge fonts (https://fonts.google.com/):
+  Imports the following font faces from goolge fonts api (https://fonts.google.com/):
 
   - Inter (https://fonts.google.com/specimen/Inter)
     - Thin 100
@@ -794,6 +795,92 @@
 
 .sb-font-size-xl {
   font-size: 1.75rem;
+}
+
+/*****************************************************************************
+                              Icon - Settings
+******************************************************************************/
+/*
+  Imports material icons form the google fonts api (https://fonts.google.com/).
+
+  The icons can be found undr 'https://fonts.google.com/icons'.
+*/
+/*****************************************************************************
+                              Icon - Naming
+******************************************************************************/
+/*****************************************************************************
+                              Icon - Functions
+******************************************************************************/
+/*****************************************************************************
+                              Icon - Classes
+******************************************************************************/
+/*
+  Adds color to an icon.
+
+  Attributes:
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.icon--[color]' for ROOT '.sb-icon'
+*/
+/*
+  Adds different sizes to the icon.
+
+  Attributes:
+  - size: 's', 'm', 'l'[, 'd']
+
+  OPTION '.icon--[size] for ROOT '.sb-icon'
+*/
+/*
+  Defines the root icon class with all its sizes.
+
+  ROOT: .sb-icon
+*/
+.sb-icon {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5rem;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color: white;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+.sb-icon.icon--s {
+  font-size: 1.125rem;
+}
+.sb-icon.icon--m {
+  font-size: 1.875rem;
+}
+.sb-icon.icon--l {
+  font-size: 2.25rem;
+}
+.sb-icon.icon--warn {
+  color: #FF0522;
+}
+.sb-icon.icon--success {
+  color: #52C832;
+}
+.sb-icon.icon--info {
+  color: #FFD147;
+}
+.sb-icon.icon--primary {
+  color: #579AFF;
+}
+.sb-icon.icon--secondary {
+  color: #84F9BD;
 }
 
 body, html {
