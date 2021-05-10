@@ -1,5 +1,5 @@
 body, html {
-  @include font-weight('regular');
-  @include fontface('default');
-  @include font-size('d');
+  font-size: getFontSize('d');
+  font-weight: getFontWeight('regular');
+  font-family: getFontface('default');
 }

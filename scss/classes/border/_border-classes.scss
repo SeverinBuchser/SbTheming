@@ -18,9 +18,9 @@
   @each $border-width in map-keys($border-widths) {
     @each $border-radius in map-keys($border-radii) {
       .sb-border-#{$border-color}-#{$border-width}-#{$border-radius} {
-        @include border-color($border-color);
-        @include border-width($border-width);
-        @include border-radius($border-radius);
+        border-color: getBorderColor($border-color);
+        border-width: getBorderWidth($border-width);
+        border-radius: getBorderRadius($border-radius);
         border-style: solid;
       }
     }
@@ -39,6 +39,6 @@
 @debug "Create border-radius-classes";
 @each $border-radius in map-keys($border-radii) {
   .sb-border-radius-#{$border-radius} {
-    @include border-radius($border-radius);
+    border-radius: getBorderRadius($border-radius);
   }
 }
