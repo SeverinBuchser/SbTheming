@@ -4,35 +4,95 @@
 
 // colors
 $button-colors: (
+  // 'night': (
+  //     'night': (
+  //       'background': $button-warn-color-1,
+  //       'text': $button-warn-color-2
+  //     ),
+  //     'light': (
+  //       'background': $button-warn-color-1,
+  //       'text': $button-warn-color-3
+  //     )
+  // ),
+  // 'light': (
+  //     'night': (
+  //       'background': $button-warn-color-1,
+  //       'text': $button-warn-color-2
+  //     ),
+  //     'light': (
+  //       'background': $button-warn-color-1,
+  //       'text': $button-warn-color-3
+  //     )
+  // ),
   'warn': (
-    'background': $button-warn-background,
-    'text': $button-warn-text,
-    'hover-background': $button-warn-hover-background,
-    'hover-text': $button-warn-hover-text
+    'night': (
+      'background': $button-warn-color-1,
+      'text': $button-warn-color-2,
+      'hover-background': $button-warn-color-2,
+      'hover-text': $button-warn-color-1
+    ),
+    'light': (
+      'background': $button-warn-color-1,
+      'text': $button-warn-color-3,
+      'hover-background': $button-warn-color-3,
+      'hover-text': $button-warn-color-1
+    )
   ),
   'success': (
-    'background': $button-success-background,
-    'text': $button-success-text,
-    'hover-background': $button-success-hover-background,
-    'hover-text': $button-success-hover-text
+    'night': (
+      'background': $button-success-color-1,
+      'text': $button-success-color-2,
+      'hover-background': $button-success-color-2,
+      'hover-text': $button-success-color-1
+    ),
+    'light': (
+      'background': $button-success-color-1,
+      'text': $button-success-color-3,
+      'hover-background': $button-success-color-3,
+      'hover-text': $button-success-color-1
+    )
   ),
   'info': (
-    'background': $button-info-background,
-    'text': $button-info-text,
-    'hover-background': $button-info-hover-background,
-    'hover-text': $button-info-hover-text
+    'night': (
+      'background': $button-info-color-1,
+      'text': $button-info-color-2,
+      'hover-background': $button-info-color-2,
+      'hover-text': $button-info-color-1
+    ),
+    'light': (
+      'background': $button-info-color-1,
+      'text': $button-info-color-2,
+      'hover-background': $button-info-color-3,
+      'hover-text': $button-info-color-2
+    )
   ),
   'primary': (
-    'background': $button-primary-background,
-    'text': $button-primary-text,
-    'hover-background': $button-primary-hover-background,
-    'hover-text': $button-primary-hover-text
+    'night': (
+      'background': $button-primary-color-1,
+      'text': $button-primary-color-2,
+      'hover-background': $button-primary-color-2,
+      'hover-text': $button-primary-color-1
+    ),
+    'light': (
+      'background': $button-primary-color-1,
+      'text': $button-primary-color-3,
+      'hover-background': $button-primary-color-3,
+      'hover-text': $button-primary-color-2
+    )
   ),
   'secondary': (
-    'background': $button-secondary-background,
-    'text': $button-secondary-text,
-    'hover-background': $button-secondary-hover-background,
-    'hover-text': $button-secondary-hover-text
+    'night': (
+      'background': $button-secondary-color-1,
+      'text': $button-secondary-color-3,
+      'hover-background': $button-secondary-color-2,
+      'hover-text': $button-secondary-color-1
+    ),
+    'light': (
+      'background': $button-secondary-color-1,
+      'text': $button-secondary-color-3,
+      'hover-background': $button-secondary-color-3,
+      'hover-text': $button-secondary-color-1
+    )
   )
 );
 
