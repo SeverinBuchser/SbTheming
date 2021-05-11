@@ -19,13 +19,15 @@
 /*
   Returns the text-color of the icon-button-colors.
 */
-@function getIconButtonTextColor($icon-button-color) {
-  @return map-get(getIconButtonColors($icon-button-color), 'text');
+@function getIconButtonTextColor($icon-button-theme, $icon-button-color) {
+  $theme-colors: map-get(getIconButtonColors($icon-button-color), $icon-button-theme);
+  @return map-get($theme-colors, 'text');
 }
 
 /*
   Returns the hover-text-color of the icon-button-colors.
 */
-@function getIconButtonHoverTextColor($icon-button-color) {
-  @return map-get(getIconButtonColors($icon-button-color), 'hover-text');
+@function getIconButtonHoverTextColor($icon-button-theme, $icon-button-color) {
+  $theme-colors: map-get(getIconButtonColors($icon-button-color), $icon-button-theme);
+  @return map-get($theme-colors, 'hover-text');
 }

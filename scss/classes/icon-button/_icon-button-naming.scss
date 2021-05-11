@@ -5,23 +5,53 @@
 // colors
 $icon-button-colors: (
   'warn': (
-    'text': $icon-button-warn-text,
-    'hover-text': $icon-button-warn-hover-text
+    'night': (
+      'text': $icon-button-warn-color-2,
+      'hover-text': $icon-button-warn-color-1
+    ),
+    'light': (
+      'text': $icon-button-warn-color-3,
+      'hover-text': $icon-button-warn-color-1
+    )
   ),
   'success': (
-    'text': $icon-button-success-text,
-    'hover-text': $icon-button-success-hover-text
+    'night': (
+      'text': $icon-button-success-color-2,
+      'hover-text': $icon-button-success-color-1
+    ),
+    'light': (
+      'text': $icon-button-success-color-3,
+      'hover-text': $icon-button-success-color-1
+    )
   ),
   'info': (
-    'text': $icon-button-info-text,
-    'hover-text': $icon-button-info-hover-text
+    'night': (
+      'text': $icon-button-info-color-2,
+      'hover-text': $icon-button-info-color-1
+    ),
+    'light': (
+      'text': $icon-button-info-color-2,
+      'hover-text': $icon-button-info-color-2
+    )
   ),
   'primary': (
-    'text': $icon-button-primary-text,
-    'hover-text': $icon-button-primary-hover-text
+    'night': (
+      'text': $icon-button-primary-color-2,
+      'hover-text': $icon-button-primary-color-1
+    ),
+    'light': (
+      'text': $icon-button-primary-color-3,
+      'hover-text': $icon-button-primary-color-2
+    )
   ),
   'secondary': (
-    'text': $icon-button-secondary-text,
-    'hover-text': $icon-button-secondary-hover-text
+    'night': (
+      'text': $icon-button-secondary-color-3,
+      'hover-text': $icon-button-secondary-color-1
+    ),
+    'light': (
+      'text': $icon-button-secondary-color-3,
+      'hover-text': $icon-button-secondary-color-1
+    )
   )
 );

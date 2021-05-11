@@ -10,19 +10,19 @@
 
   OPTION '.btn--[color]' for ROOT '.sb-icon-btn'
 */
-@mixin icon-button-color-class ($icon-button-color) {
-  &.btn--#{$icon-button-color} {
+@mixin icon-button-color-class ($icon-button-theme, $icon-button-color) {
+  &.btn--#{$icon-button-theme}-#{$icon-button-color} {
     .sb-icon {
       @include ease(300ms);
-      color: getIconButtonTextColor($icon-button-color);
+      color: getIconButtonTextColor($icon-button-theme, $icon-button-color);
     }
 
     &:hover {
       .sb-icon {
-        color: getIconButtonHoverTextColor($icon-button-color);
+        color: getIconButtonHoverTextColor($icon-button-theme, $icon-button-color);
       }
     }
-    @include icon-button-plain-color-class($icon-button-color);
+    @include icon-button-plain-color-class($icon-button-theme, $icon-button-color);
   }
 }
 
@@ -34,16 +34,16 @@
 
   OPTION '.is-plain' for OPTION '.btn--[color]' -> ROOT '.sb-btn'
 */
-@mixin icon-button-plain-color-class ($icon-button-color) {
+@mixin icon-button-plain-color-class ($icon-button-theme, $icon-button-color) {
   &.is-plain {
     .sb-icon {
       @include ease(300ms);
-      color: getIconButtonHoverTextColor($icon-button-color);
+      color: getIconButtonHoverTextColor($icon-button-theme, $icon-button-color);
     }
 
     &:hover {
       .sb-icon {
-        color: getIconButtonTextColor($icon-button-color);
+        color: getIconButtonTextColor($icon-button-theme, $icon-button-color);
       }
     }
   }
@@ -60,6 +60,8 @@
   @extend .sb-btn;
 
   @each $icon-button-color in map-keys($icon-button-colors) {
-     @include icon-button-color-class($icon-button-color);
+    @each $icon-button-theme in map-keys(map-get($icon-button-colors, $icon-button-color)) {
+       @include icon-button-color-class($icon-button-theme, $icon-button-color);
+    }
   }
 }
