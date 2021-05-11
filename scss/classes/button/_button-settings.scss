@@ -3,30 +3,26 @@
 ******************************************************************************/
 
 // colors
-$button-warn-background: $warn;
-$button-warn-text: $dark;
-$button-warn-hover-background: lighten($dark, 3%);
-$button-warn-hover-text: $warn;
+$button-warn-color-1: $warn;
+$button-warn-color-2: $night;
+$button-warn-color-3: $light;
 
-$button-success-background: $success;
-$button-success-text: $dark;
-$button-success-hover-background: lighten($dark, 3%);
-$button-success-hover-text: $success;
+$button-success-color-1: $success;
+$button-success-color-2: $night;
+$button-success-color-3: $light;
 
-$button-info-background: $info;
-$button-info-text: $dark;
-$button-info-hover-background: lighten($dark, 3%);
-$button-info-hover-text: $info;
+$button-info-color-1: $info;
+$button-info-color-2: $night;
+$button-info-color-3: $light;
 
-$button-primary-background: $primary;
-$button-primary-text: $dark;
-$button-primary-hover-background: lighten($dark, 3%);
-$button-primary-hover-text: $primary;
+$button-primary-color-1: $primary;
+$button-primary-color-2: $night;
+$button-primary-color-3: $light;
 
-$button-secondary-background: $secondary;
-$button-secondary-text: $dark;
-$button-secondary-hover-background: lighten($dark, 3%);
-$button-secondary-hover-text: $secondary;
+$button-secondary-color-1: $secondary;
+$button-secondary-color-2: $night;
+$button-secondary-color-3: $light;
+
 
 // heights
 $button-size-factor: 2.5;
