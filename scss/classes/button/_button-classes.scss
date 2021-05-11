@@ -10,16 +10,16 @@
 
   OPTION '.btn--[color]' for ROOT '.sb-btn'
 */
-@mixin button-color-class($button-color) {
-  &.btn--#{$button-color} {
-    background: getButtonBackgroundColor($button-color);
-    color: getButtonTextColor($button-color);
+@mixin button-color-class($button-theme, $button-color) {
+  &.btn--#{$button-theme}-#{$button-color} {
+    background: getButtonBackgroundColor($button-theme, $button-color);
+    color: getButtonTextColor($button-theme, $button-color);
     @include ease(300ms);
     &:hover {
-      background: getButtonHoverBackgroundColor($button-color);
-      color: getButtonHoverTextColor($button-color);
+      background: getButtonBackgroundColorInverse($button-theme, $button-color);
+      color: getButtonTextColorInverse($button-theme, $button-color);
     }
-    @include button-plain-color-class($button-color);
+    @include button-plain-color-class($button-theme, $button-color);
   }
 }
 
@@ -31,13 +31,13 @@
 
   OPTION '.is-plain' for OPTION '.btn--[color]' -> ROOT '.sb-btn'
 */
-@mixin button-plain-color-class($button-color) {
+@mixin button-plain-color-class($button-theme, $button-color) {
   &.is-plain {
-    background: getButtonHoverBackgroundColor($button-color);
-    color: getButtonHoverTextColor($button-color);
+    background: getButtonBackgroundColorInverse($button-theme, $button-color);
+    color: getButtonTextColorInverse($button-theme, $button-color);
     &:hover {
-      background: getButtonBackgroundColor($button-color);
-      color: getButtonTextColor($button-color);
+      background: getButtonBackgroundColor($button-theme, $button-color);
+      color: getButtonTextColor($button-theme, $button-color);
     }
   }
 }
@@ -118,7 +118,9 @@
   }
 
   @each $button-color in map-keys($button-colors) {
-    @include button-color-class($button-color);
+    @each $button-theme in map-keys(map-get($button-colors, $button-color)) {
+      @include button-color-class($button-theme, $button-color);
+    }
   }
 
 }
