@@ -5,10 +5,14 @@
 /*
   Returns a map with background-color and text-color of a button color:
   (
-    'background': {color},
-    'text': {color},
-    'hover-background': {color},
-    'hover-text': {color}
+    'night': (
+      'background': {color},
+      'text': {color}
+    ),
+    'light': (
+      'background': {color},
+      'text': {color}
+    ),
   )
 */
 @function getButtonColors($button-color) {
@@ -21,27 +25,31 @@
 /*
   Returns the background-color of the button-colors.
 */
-@function getButtonBackgroundColor($button-color) {
-  @return map-get(getButtonColors($button-color), 'background');
+@function getButtonBackgroundColor($button-theme, $button-color) {
+  $theme-colors: map-get(getButtonColors($button-color), $button-theme);
+  @return map-get($theme-colors, 'background');
 }
 
 /*
   Returns the text-color of the button-colors.
 */
-@function getButtonTextColor($button-color) {
-  @return map-get(getButtonColors($button-color), 'text');
+@function getButtonTextColor($button-theme, $button-color) {
+  $theme-colors: map-get(getButtonColors($button-color), $button-theme);
+  @return map-get($theme-colors, 'text');
 }
 
 /*
-  Returns the hover-background-color of the button-colors.
+  Returns the inverse background-color of the button-colors.
 */
-@function getButtonHoverBackgroundColor($button-color) {
-  @return map-get(getButtonColors($button-color), 'hover-background');
+@function getButtonBackgroundColorInverse($button-theme, $button-color) {
+  $theme-colors: map-get(getButtonColors($button-color), $button-theme);
+  @return map-get($theme-colors, 'hover-background');
 }
 
 /*
-  Returns the hover-text-color of the button-colors.
+  Returns the inverse text-color of the button-colors.
 */
-@function getButtonHoverTextColor($button-color) {
-  @return map-get(getButtonColors($button-color), 'hover-text');
+@function getButtonTextColorInverse($button-theme, $button-color) {
+  $theme-colors: map-get(getButtonColors($button-color), $button-theme);
+  @return map-get($theme-colors, 'hover-text');
 }
