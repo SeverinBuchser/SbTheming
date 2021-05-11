@@ -1,0 +1,31 @@
+/*****************************************************************************
+                              Icon-Button - Functions
+******************************************************************************/
+
+/*
+  Returns a map with text colors of an icon-button color:
+  (
+    'text': {color},
+    'hover-text': {color}
+  )
+*/
+@function getIconButtonColors($icon-button-color) {
+  @if not exists(map-keys($icon-button-colors), $icon-button-color) {
+    @error "Icon-Button color with name '#{$icon-button-color}' does not exist!";
+  }
+  @return map-get($icon-button-colors, $icon-button-color);
+}
+
+/*
+  Returns the text-color of the icon-button-colors.
+*/
+@function getIconButtonTextColor($icon-button-color) {
+  @return map-get(getIconButtonColors($icon-button-color), 'text');
+}
+
+/*
+  Returns the hover-text-color of the icon-button-colors.
+*/
+@function getIconButtonHoverTextColor($icon-button-color) {
+  @return map-get(getIconButtonColors($icon-button-color), 'hover-text');
+}

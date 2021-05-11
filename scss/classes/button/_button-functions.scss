@@ -6,7 +6,9 @@
   Returns a map with background-color and text-color of a button color:
   (
     'background': {color},
-    'text': {color}
+    'text': {color},
+    'hover-background': {color},
+    'hover-text': {color}
   )
 */
 @function getButtonColors($button-color) {

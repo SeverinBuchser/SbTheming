@@ -1,0 +1,27 @@
+/*****************************************************************************
+                              Icon-Button - Naming
+******************************************************************************/
+
+// colors
+$icon-button-colors: (
+  'warn': (
+    'text': $icon-button-warn-text,
+    'hover-text': $icon-button-warn-hover-text
+  ),
+  'success': (
+    'text': $icon-button-success-text,
+    'hover-text': $icon-button-success-hover-text
+  ),
+  'info': (
+    'text': $icon-button-info-text,
+    'hover-text': $icon-button-info-hover-text
+  ),
+  'primary': (
+    'text': $icon-button-primary-text,
+    'hover-text': $icon-button-primary-hover-text
+  ),
+  'secondary': (
+    'text': $icon-button-secondary-text,
+    'hover-text': $icon-button-secondary-hover-text
+  )
+);

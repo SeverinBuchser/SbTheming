@@ -3,30 +3,30 @@
 ******************************************************************************/
 
 // colors
-$btn-warn-background: $warn;
-$btn-warn-text: $dark;
-$btn-warn-hover-background: lighten($dark, 3%);
-$btn-warn-hover-text: $warn;
+$button-warn-background: $warn;
+$button-warn-text: $dark;
+$button-warn-hover-background: lighten($dark, 3%);
+$button-warn-hover-text: $warn;
 
-$btn-success-background: $success;
-$btn-success-text: $dark;
-$btn-success-hover-background: lighten($dark, 3%);
-$btn-success-hover-text: $success;
+$button-success-background: $success;
+$button-success-text: $dark;
+$button-success-hover-background: lighten($dark, 3%);
+$button-success-hover-text: $success;
 
-$btn-info-background: $info;
-$btn-info-text: $dark;
-$btn-info-hover-background: lighten($dark, 3%);
-$btn-info-hover-text: $info;
+$button-info-background: $info;
+$button-info-text: $dark;
+$button-info-hover-background: lighten($dark, 3%);
+$button-info-hover-text: $info;
 
-$btn-primary-background: $primary;
-$btn-primary-text: $dark;
-$btn-primary-hover-background: lighten($dark, 3%);
-$btn-primary-hover-text: $primary;
+$button-primary-background: $primary;
+$button-primary-text: $dark;
+$button-primary-hover-background: lighten($dark, 3%);
+$button-primary-hover-text: $primary;
 
-$btn-secondary-background: $secondary;
-$btn-secondary-text: $dark;
-$btn-secondary-hover-background: lighten($dark, 3%);
-$btn-secondary-hover-text: $secondary;
+$button-secondary-background: $secondary;
+$button-secondary-text: $dark;
+$button-secondary-hover-background: lighten($dark, 3%);
+$button-secondary-hover-text: $secondary;
 
 // heights
 $button-size-factor: 2.5;

@@ -395,7 +395,9 @@
   Returns a map with background-color and text-color of a button color:
   (
     'background': {color},
-    'text': {color}
+    'text': {color},
+    'hover-background': {color},
+    'hover-text': {color}
   )
 */
 /*
@@ -427,7 +429,7 @@
   Attributes:
   - NONE
 
-  OPTION '.is-plain' for OPTION '.btn--[color]'
+  OPTION '.is-plain' for OPTION '.btn--[color]' -> ROOT '.sb-btn'
 */
 /*
   Adds different sizes to the button.
@@ -443,7 +445,7 @@
   Attributes:
   - NONE
 
-  OPTION '.is-pill' for OPTION '.btn--[size]'
+  OPTION '.is-pill' for OPTION '.btn--[size]' -> ROOT '.sb-btn'
 */
 /*
   Adds option if button is round or normal.
@@ -451,17 +453,18 @@
   Attributes:
   - NONE
 
-  OPTION '.is-round' for OPTION '.btn--[size]'
+  OPTION '.is-round' for OPTION '.btn--[size]' -> ROOT '.sb-btn'
 */
 /*
   Defines the root button class with all its sizes and colors.
 
-  ROOT: .sb-btn
+  ROOT .sb-btn
 */
 .sb-btn {
   border: 0;
   outline: 0;
   cursor: pointer;
+  display: block;
   border-radius: 0.6rem;
   min-width: 60px;
   font-size: 1rem;
@@ -682,9 +685,6 @@
                               Icon - Naming
 ******************************************************************************/
 /*****************************************************************************
-                              Icon - Functions
-******************************************************************************/
-/*****************************************************************************
                               Icon - Classes
 ******************************************************************************/
 /*
@@ -753,6 +753,125 @@
 }
 .sb-icon.icon--secondary {
   color: #84F9BD;
+}
+
+/*****************************************************************************
+                              Icon-Button - Settings
+******************************************************************************/
+/*****************************************************************************
+                              Icon-Button - Naming
+******************************************************************************/
+/*****************************************************************************
+                              Icon-Button - Functions
+******************************************************************************/
+/*
+  Returns a map with text colors of an icon-button color:
+  (
+    'text': {color},
+    'hover-text': {color}
+  )
+*/
+/*
+  Returns the text-color of the icon-button-colors.
+*/
+/*
+  Returns the hover-text-color of the icon-button-colors.
+*/
+/*****************************************************************************
+                              Icon-Button - Classes
+******************************************************************************/
+/*
+  Adds color and hover to an icon-button. Also creates the inverse of the colors.
+
+  Attributes:
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.btn--[color]' for ROOT '.sb-icon-btn'
+*/
+/*
+  Adds color and hover to an icon-button. Also creates the inverse of the colors.
+
+  Attributes:
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.is-plain' for OPTION '.btn--[color]' -> ROOT '.sb-btn'
+*/
+/*
+  Extends the root button class to also support icon colors when hovering.
+  For complete ROOT see button-classes.
+
+
+  ROOT .sb-btn
+*/
+.sb-btn.btn--warn .sb-icon {
+  transition: all 300ms ease;
+  color: #22272C;
+}
+.sb-btn.btn--warn:hover .sb-icon {
+  color: #FF0522;
+}
+.sb-btn.btn--warn.is-plain .sb-icon {
+  transition: all 300ms ease;
+  color: #FF0522;
+}
+.sb-btn.btn--warn.is-plain:hover .sb-icon {
+  color: #22272C;
+}
+.sb-btn.btn--success .sb-icon {
+  transition: all 300ms ease;
+  color: #22272C;
+}
+.sb-btn.btn--success:hover .sb-icon {
+  color: #52C832;
+}
+.sb-btn.btn--success.is-plain .sb-icon {
+  transition: all 300ms ease;
+  color: #52C832;
+}
+.sb-btn.btn--success.is-plain:hover .sb-icon {
+  color: #22272C;
+}
+.sb-btn.btn--info .sb-icon {
+  transition: all 300ms ease;
+  color: #22272C;
+}
+.sb-btn.btn--info:hover .sb-icon {
+  color: #FFD147;
+}
+.sb-btn.btn--info.is-plain .sb-icon {
+  transition: all 300ms ease;
+  color: #FFD147;
+}
+.sb-btn.btn--info.is-plain:hover .sb-icon {
+  color: #22272C;
+}
+.sb-btn.btn--primary .sb-icon {
+  transition: all 300ms ease;
+  color: #22272C;
+}
+.sb-btn.btn--primary:hover .sb-icon {
+  color: #579AFF;
+}
+.sb-btn.btn--primary.is-plain .sb-icon {
+  transition: all 300ms ease;
+  color: #579AFF;
+}
+.sb-btn.btn--primary.is-plain:hover .sb-icon {
+  color: #22272C;
+}
+.sb-btn.btn--secondary .sb-icon {
+  transition: all 300ms ease;
+  color: #22272C;
+}
+.sb-btn.btn--secondary:hover .sb-icon {
+  color: #84F9BD;
+}
+.sb-btn.btn--secondary.is-plain .sb-icon {
+  transition: all 300ms ease;
+  color: #84F9BD;
+}
+.sb-btn.btn--secondary.is-plain:hover .sb-icon {
+  color: #22272C;
 }
 
 body, html {

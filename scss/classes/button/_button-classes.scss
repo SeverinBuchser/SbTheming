@@ -19,7 +19,7 @@
       background: getButtonHoverBackgroundColor($button-color);
       color: getButtonHoverTextColor($button-color);
     }
-    @include button-empty-color-class($button-color);
+    @include button-plain-color-class($button-color);
   }
 }
 
@@ -29,9 +29,9 @@
   Attributes:
   - NONE
 
-  OPTION '.is-plain' for OPTION '.btn--[color]'
+  OPTION '.is-plain' for OPTION '.btn--[color]' -> ROOT '.sb-btn'
 */
-@mixin button-empty-color-class($button-color) {
+@mixin button-plain-color-class($button-color) {
   &.is-plain {
     background: getButtonHoverBackgroundColor($button-color);
     color: getButtonHoverTextColor($button-color);
@@ -66,7 +66,7 @@
   Attributes:
   - NONE
 
-  OPTION '.is-pill' for OPTION '.btn--[size]'
+  OPTION '.is-pill' for OPTION '.btn--[size]' -> ROOT '.sb-btn'
 */
 @mixin button-pill-class($button-size) {
   &.is-pill {
@@ -80,7 +80,7 @@
   Attributes:
   - NONE
 
-  OPTION '.is-round' for OPTION '.btn--[size]'
+  OPTION '.is-round' for OPTION '.btn--[size]' -> ROOT '.sb-btn'
 */
 @mixin button-round-class($button-size) {
   &.is-round {
@@ -97,13 +97,14 @@
 /*
   Defines the root button class with all its sizes and colors.
 
-  ROOT: .sb-btn
+  ROOT .sb-btn
 */
 @debug "Create button-classes";
 .sb-btn {
   border: 0;
   outline: 0;
   cursor: pointer;
+  display: block;
 
   border-radius: $button-border-radius;
   min-width: $button-min-width;
