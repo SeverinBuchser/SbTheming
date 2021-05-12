@@ -2,32 +2,75 @@
                               Toggle-Switch - Classes
 ******************************************************************************/
 
-@mixin toggle-switch-color-class() {
-  
+@mixin toggle-switch-color-class($toggle-switch-theme, $toggle-switch-color) {
+  &.toggle-switch--#{$toggle-switch-theme}-#{$toggle-switch-color} {
+    &.is-off {
+      background: getButtonBackgroundColorInverse($toggle-switch-theme, $toggle-switch-color);
+      .sb-toggle-switch__toggle {
+        background: getButtonTextColorInverse($toggle-switch-theme, $toggle-switch-color);
+      }
+    }
+
+    &.is-on {
+      background: getButtonBackgroundColor($toggle-switch-theme, $toggle-switch-color);
+      .sb-toggle-switch__toggle {
+        background: getButtonTextColor($toggle-switch-theme, $toggle-switch-color);
+      }
+    }
+  }
+}
+
+@mixin toggle-switch-size-class($toggle-switch-size) {
+
+  $toggle-switch-size-unit: map-get($toggle-switch-sizes, $toggle-switch-size);
+  $toggle-switch-width: $toggle-switch-size-unit * 4;
+  $toggle-switch-height: $toggle-switch-size-unit * 2;
+  $toggle-diameter: $toggle-switch-size-unit * 1.3;
+  $padding: ($toggle-switch-height - $toggle-diameter) / 2;
+  $toggle-switch-innerwidth: $toggle-switch-width - 2 * $padding;
+
+  &.toggle-switch--#{$toggle-switch-size} {
+    width: $toggle-switch-width;
+    height: $toggle-switch-height;
+    border-radius: $toggle-switch-height / 2;
+
+    .sb-toggle-switch__toggle {
+      top: $padding;
+      left: $padding;
+      width: $toggle-diameter;
+      height: $toggle-diameter;
+      border-radius: $toggle-diameter / 2;
+    }
+
+    &.is-off {
+      .sb-toggle-switch__toggle {
+        transform: translateX(0);
+      }
+    }
+    &.is-on {
+      .sb-toggle-switch__toggle {
+        transform: translateX($toggle-switch-innerwidth - $toggle-diameter);
+      }
+    }
+  }
 }
 
 .sb-toggle-switch {
   position: relative;
-  width: 60px;
-  height: 30px;
-  background: $light;
-  border-radius: 15px;
   cursor: pointer;
+  @include ease(300ms);
   .sb-toggle-switch__toggle {
     position: absolute;
-    top: 5px;
-    left: 10px;
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    background-color: $primary;
     @include ease(300ms);
+  }
 
-    &.is-off {
-      transform: translateX(0);
+  @each $toggle-switch-color in map-keys($background-text-colors) {
+    @each $toggle-switch-theme in map-keys(map-get($background-text-colors, $toggle-switch-color)) {
+      @include toggle-switch-color-class($toggle-switch-theme, $toggle-switch-color);
     }
-    &.is-on {
-      transform: translateX(20px);
-    }
+  }
+
+  @each $toggle-switch-size in map-keys($toggle-switch-sizes) {
+    @include toggle-switch-size-class($toggle-switch-size);
   }
 }
