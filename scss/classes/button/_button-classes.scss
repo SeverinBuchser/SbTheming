@@ -6,9 +6,10 @@
   Adds color and hover to a button. Also creates the inverse of the colors.
 
   Attributes:
+  - theme: 'light', 'night'
   - color: 'warn', 'success', 'info', 'primary', 'secondary'
 
-  OPTION '.btn--[color]' for ROOT '.sb-btn'
+  OPTION '.btn--[theme]-[color]' for ROOT '.sb-btn'
 */
 @mixin button-color-class($button-theme, $button-color) {
   &.btn--#{$button-theme}-#{$button-color} {

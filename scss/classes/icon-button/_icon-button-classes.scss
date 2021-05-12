@@ -6,9 +6,10 @@
   Adds color and hover to an icon-button. Also creates the inverse of the colors.
 
   Attributes:
+  - theme: 'light', 'night'
   - color: 'warn', 'success', 'info', 'primary', 'secondary'
 
-  OPTION '.btn--[color]' for ROOT '.sb-icon-btn'
+  OPTION '.btn--[theme]-[color]' for ROOT '.sb-icon-btn'
 */
 @mixin icon-button-color-class ($icon-button-theme, $icon-button-color) {
   &.btn--#{$icon-button-theme}-#{$icon-button-color} {
@@ -30,7 +31,7 @@
   Adds color and hover to an icon-button. Also creates the inverse of the colors.
 
   Attributes:
-  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+  - NONE
 
   OPTION '.is-plain' for OPTION '.btn--[color]' -> ROOT '.sb-btn'
 */
