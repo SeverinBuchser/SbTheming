@@ -53,8 +53,9 @@
 */
 @mixin button-size-class($button-size) {
   &.btn--#{$button-size} {
-    @include paddingY(map-get($button-sizes, $button-size)/5);
-    @include paddingX(map-get($button-sizes, $button-size)/3);
+    min-width: map-get($button-sizes, $button-size) * 4;
+    height: map-get($button-sizes, $button-size) * 2;
+    @include paddingX(map-get($button-sizes, $button-size)/1.5);
 
     @include button-pill-class($button-size);
     @include button-round-class($button-size);
@@ -85,11 +86,11 @@
 */
 @mixin button-round-class($button-size) {
   &.is-round {
-    $size-factor: 1.2;
+    $size-factor: 2;
     $size: map-get($button-sizes, $button-size);
     height: $size * $size-factor;
     width: $size * $size-factor;
-    border-radius: $size / 2 * $size-factor;
+    border-radius: $size * $size-factor / 2;
     min-width: 0;
     padding: 0;
   }
@@ -108,7 +109,6 @@
   display: block;
 
   border-radius: $button-border-radius;
-  min-width: $button-min-width;
 
   font-size: $font-size-d;
   font-weight: getFontWeight('regular');

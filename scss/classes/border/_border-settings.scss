@@ -7,13 +7,13 @@ $border-color-dark: $dark;
 $border-color-bright: $bright;
 
 // widths
-$border-width-s: 1px;
-$border-width-d: 2px;
-$border-width-m: 3px;
-$border-width-l: 4px;
+$border-width-s: 2px;
+$border-width-d: 3px;
+$border-width-m: 4px;
+$border-width-l: 5px;
 
 // radii
-$border-radius-s: $spacing-s;
-$border-radius-d: $spacing-d;
-$border-radius-m: $spacing-m;
-$border-radius-l: $spacing-l;
+$border-radius-s: $spacing-s / 1.3;
+$border-radius-d: $spacing-d / 1.3;
+$border-radius-m: $spacing-m / 1.3;
+$border-radius-l: $spacing-l / 1.3;
