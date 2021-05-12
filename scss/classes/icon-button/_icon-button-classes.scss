@@ -59,8 +59,8 @@
 .sb-btn {
   @extend .sb-btn;
 
-  @each $icon-button-color in map-keys($icon-button-colors) {
-    @each $icon-button-theme in map-keys(map-get($icon-button-colors, $icon-button-color)) {
+  @each $icon-button-color in map-keys($background-text-colors) {
+    @each $icon-button-theme in map-keys(map-get($background-text-colors, $icon-button-color)) {
        @include icon-button-color-class($icon-button-theme, $icon-button-color);
     }
   }

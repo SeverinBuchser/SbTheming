@@ -5,15 +5,17 @@
 /*
   Returns a map with text colors of an icon-button color:
   (
+    'background': {color},
     'text': {color},
+    'hover-background': {color},
     'hover-text': {color}
   )
 */
 @function getIconButtonColors($icon-button-color) {
-  @if not exists(map-keys($icon-button-colors), $icon-button-color) {
+  @if not exists(map-keys($background-text-colors), $icon-button-color) {
     @error "Icon-Button color with name '#{$icon-button-color}' does not exist!";
   }
-  @return map-get($icon-button-colors, $icon-button-color);
+  @return map-get($background-text-colors, $icon-button-color);
 }
 
 /*

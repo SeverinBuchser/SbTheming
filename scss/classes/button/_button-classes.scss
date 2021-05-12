@@ -117,8 +117,8 @@
     @include button-size-class($button-size);
   }
 
-  @each $button-color in map-keys($button-colors) {
-    @each $button-theme in map-keys(map-get($button-colors, $button-color)) {
+  @each $button-color in map-keys($background-text-colors) {
+    @each $button-theme in map-keys(map-get($background-text-colors, $button-color)) {
       @include button-color-class($button-theme, $button-color);
     }
   }

@@ -1,0 +1,33 @@
+/*****************************************************************************
+                              Toggle-Switch - Classes
+******************************************************************************/
+
+@mixin toggle-switch-color-class() {
+  
+}
+
+.sb-toggle-switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background: $light;
+  border-radius: 15px;
+  cursor: pointer;
+  .sb-toggle-switch__toggle {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: $primary;
+    @include ease(300ms);
+
+    &.is-off {
+      transform: translateX(0);
+    }
+    &.is-on {
+      transform: translateX(20px);
+    }
+  }
+}

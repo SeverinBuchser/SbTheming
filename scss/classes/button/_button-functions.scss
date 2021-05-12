@@ -16,10 +16,10 @@
   )
 */
 @function getButtonColors($button-color) {
-  @if not exists(map-keys($button-colors), $button-color) {
+  @if not exists(map-keys($background-text-colors), $button-color) {
     @error "Button color with name '#{$button-color}' does not exist!";
   }
-  @return map-get($button-colors, $button-color);
+  @return map-get($background-text-colors, $button-color);
 }
 
 /*
