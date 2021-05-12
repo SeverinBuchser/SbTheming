@@ -12,12 +12,12 @@
 */
 @mixin button-color-class($button-theme, $button-color) {
   &.btn--#{$button-theme}-#{$button-color} {
-    background: getButtonBackgroundColor($button-theme, $button-color);
-    color: getButtonTextColor($button-theme, $button-color);
+    background: getBackgroundColor($button-theme, $button-color);
+    color: getTextColor($button-theme, $button-color);
     @include ease(300ms);
     &:hover {
-      background: getButtonBackgroundColorInverse($button-theme, $button-color);
-      color: getButtonTextColorInverse($button-theme, $button-color);
+      background: getBackgroundColorInverse($button-theme, $button-color);
+      color: getTextColorInverse($button-theme, $button-color);
     }
     @include button-plain-color-class($button-theme, $button-color);
   }
@@ -33,11 +33,11 @@
 */
 @mixin button-plain-color-class($button-theme, $button-color) {
   &.is-plain {
-    background: getButtonBackgroundColorInverse($button-theme, $button-color);
-    color: getButtonTextColorInverse($button-theme, $button-color);
+    background: getBackgroundColorInverse($button-theme, $button-color);
+    color: getTextColorInverse($button-theme, $button-color);
     &:hover {
-      background: getButtonBackgroundColor($button-theme, $button-color);
-      color: getButtonTextColor($button-theme, $button-color);
+      background: getBackgroundColor($button-theme, $button-color);
+      color: getTextColor($button-theme, $button-color);
     }
   }
 }

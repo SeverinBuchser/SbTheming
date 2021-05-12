@@ -14,6 +14,6 @@
 @debug "Create background-color-classes";
 @each $background-color in map-keys($background-colors) {
   .sb-bg-#{$background-color} {
-    @include background-color($background-color)
+    background-color: red;
   }
 }

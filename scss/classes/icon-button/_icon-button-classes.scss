@@ -14,12 +14,12 @@
   &.btn--#{$icon-button-theme}-#{$icon-button-color} {
     .sb-icon {
       @include ease(300ms);
-      color: getIconButtonTextColor($icon-button-theme, $icon-button-color);
+      color: getTextColor($icon-button-theme, $icon-button-color);
     }
 
     &:hover {
       .sb-icon {
-        color: getIconButtonHoverTextColor($icon-button-theme, $icon-button-color);
+        color: getTextColorInverse($icon-button-theme, $icon-button-color);
       }
     }
     @include icon-button-plain-color-class($icon-button-theme, $icon-button-color);
@@ -38,12 +38,12 @@
   &.is-plain {
     .sb-icon {
       @include ease(300ms);
-      color: getIconButtonHoverTextColor($icon-button-theme, $icon-button-color);
+      color: getTextColorInverse($icon-button-theme, $icon-button-color);
     }
 
     &:hover {
       .sb-icon {
-        color: getIconButtonTextColor($icon-button-theme, $icon-button-color);
+        color: getTextColor($icon-button-theme, $icon-button-color);
       }
     }
   }

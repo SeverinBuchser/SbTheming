@@ -1,5 +1,5 @@
 /*****************************************************************************
-                        Background Text Color - Naming
+                        Background Text - Naming
 ******************************************************************************/
 
 // colors
@@ -8,70 +8,70 @@ $background-text-colors: (
     'night': (
       'background': $background-text-warn-color-1,
       'text': $background-text-warn-color-2,
-      'hover-background': $background-text-warn-color-2,
-      'hover-text': $background-text-warn-color-1
+      'inverse-background': $background-text-warn-color-2,
+      'inverse-text': $background-text-warn-color-1
     ),
     'light': (
       'background': $background-text-warn-color-1,
       'text': $background-text-warn-color-3,
-      'hover-background': $background-text-warn-color-3,
-      'hover-text': $background-text-warn-color-1
+      'inverse-background': $background-text-warn-color-3,
+      'inverse-text': $background-text-warn-color-1
     )
   ),
   'success': (
     'night': (
       'background': $background-text-success-color-1,
       'text': $background-text-success-color-2,
-      'hover-background': $background-text-success-color-2,
-      'hover-text': $background-text-success-color-1
+      'inverse-background': $background-text-success-color-2,
+      'inverse-text': $background-text-success-color-1
     ),
     'light': (
       'background': $background-text-success-color-1,
       'text': $background-text-success-color-3,
-      'hover-background': $background-text-success-color-3,
-      'hover-text': $background-text-success-color-1
+      'inverse-background': $background-text-success-color-3,
+      'inverse-text': $background-text-success-color-1
     )
   ),
   'info': (
     'night': (
       'background': $background-text-info-color-1,
       'text': $background-text-info-color-2,
-      'hover-background': $background-text-info-color-2,
-      'hover-text': $background-text-info-color-1
+      'inverse-background': $background-text-info-color-2,
+      'inverse-text': $background-text-info-color-1
     ),
     'light': (
       'background': $background-text-info-color-1,
       'text': $background-text-info-color-2,
-      'hover-background': $background-text-info-color-3,
-      'hover-text': $background-text-info-color-2
+      'inverse-background': $background-text-info-color-3,
+      'inverse-text': $background-text-info-color-2
     )
   ),
   'primary': (
     'night': (
       'background': $background-text-primary-color-1,
       'text': $background-text-primary-color-2,
-      'hover-background': $background-text-primary-color-2,
-      'hover-text': $background-text-primary-color-1
+      'inverse-background': $background-text-primary-color-2,
+      'inverse-text': $background-text-primary-color-1
     ),
     'light': (
       'background': $background-text-primary-color-1,
       'text': $background-text-primary-color-3,
-      'hover-background': $background-text-primary-color-3,
-      'hover-text': $background-text-primary-color-2
+      'inverse-background': $background-text-primary-color-3,
+      'inverse-text': $background-text-primary-color-2
     )
   ),
   'secondary': (
     'night': (
       'background': $background-text-secondary-color-1,
       'text': $background-text-secondary-color-3,
-      'hover-background': $background-text-secondary-color-2,
-      'hover-text': $background-text-secondary-color-1
+      'inverse-background': $background-text-secondary-color-2,
+      'inverse-text': $background-text-secondary-color-1
     ),
     'light': (
       'background': $background-text-secondary-color-1,
       'text': $background-text-secondary-color-3,
-      'hover-background': $background-text-secondary-color-3,
-      'hover-text': $background-text-secondary-color-1
+      'inverse-background': $background-text-secondary-color-3,
+      'inverse-text': $background-text-secondary-color-1
     )
   )
 );

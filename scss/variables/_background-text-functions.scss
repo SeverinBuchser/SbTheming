@@ -1,0 +1,55 @@
+/*****************************************************************************
+                            Background Text - Functions
+******************************************************************************/
+
+/*
+  Returns a map with background-color and text-color for normal and inverse:
+  (
+    'night': (
+      'background': {color},
+      'text': {color}
+    ),
+    'light': (
+      'background': {color},
+      'text': {color}
+    ),
+  )
+*/
+@function getColors($color) {
+  @if not exists(map-keys($background-text-colors), $color) {
+    @error "Colors with name '#{$color}' do not exist!";
+  }
+  @return map-get($background-text-colors, $color);
+}
+
+/*
+  Returns the background-color of the colors.
+*/
+@function getBackgroundColor($theme, $color) {
+  $theme-colors: map-get(getColors($color), $theme);
+  @return map-get($theme-colors, 'background');
+}
+
+/*
+  Returns the text-color of the colors.
+*/
+@function getTextColor($theme, $color) {
+  $theme-colors: map-get(getColors($color), $theme);
+  @return map-get($theme-colors, 'text');
+}
+
+/*
+  Returns the inverse background-color of the colors.
+*/
+@function getBackgroundColorInverse($theme, $color) {
+  $theme-colors: map-get(getColors($color), $theme);
+  @return map-get($theme-colors, 'inverse-background');
+}
+
+/*
+  Returns the inverse text-color of the colors.
+*/
+@function getTextColorInverse($theme, $color) {
+  $theme-colors: map-get(getColors($color), $theme);
+  @return map-get($theme-colors, 'inverse-text');
+}

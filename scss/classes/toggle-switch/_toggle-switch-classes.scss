@@ -5,16 +5,16 @@
 @mixin toggle-switch-color-class($toggle-switch-theme, $toggle-switch-color) {
   &.toggle-switch--#{$toggle-switch-theme}-#{$toggle-switch-color} {
     &.is-off {
-      background: getButtonBackgroundColorInverse($toggle-switch-theme, $toggle-switch-color);
+      background: getBackgroundColorInverse($toggle-switch-theme, $toggle-switch-color);
       .sb-toggle-switch__toggle {
-        background: getButtonTextColorInverse($toggle-switch-theme, $toggle-switch-color);
+        background: getTextColorInverse($toggle-switch-theme, $toggle-switch-color);
       }
     }
 
     &.is-on {
-      background: getButtonBackgroundColor($toggle-switch-theme, $toggle-switch-color);
+      background: getBackgroundColor($toggle-switch-theme, $toggle-switch-color);
       .sb-toggle-switch__toggle {
-        background: getButtonTextColor($toggle-switch-theme, $toggle-switch-color);
+        background: getTextColor($toggle-switch-theme, $toggle-switch-color);
       }
     }
   }
