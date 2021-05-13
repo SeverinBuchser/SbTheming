@@ -59,14 +59,15 @@
 
   OPTION '.btn--[size]' for ROOT '.sb-btn'
 */
-@mixin button-size-class($button-size) {
-  &.btn--#{$button-size} {
-    min-width: map-get($button-sizes, $button-size) * 4;
-    height: map-get($button-sizes, $button-size) * 2;
-    @include paddingX(map-get($button-sizes, $button-size)/1.5);
+@mixin button-size-class($form-height) {
+  $height: map-get($form-heights, $form-height);
+  &.btn--#{$form-height} {
+    min-width: $height * 2;
+    height: $height;
+    @include paddingX($height/1.5);
 
-    @include button-pill-class($button-size);
-    @include button-round-class($button-size);
+    @include button-pill-class($form-height);
+    @include button-round-class($form-height);
   }
 }
 
@@ -78,9 +79,9 @@
 
   OPTION '.is-pill' for OPTION '.btn--[size]' -> ROOT '.sb-btn'
 */
-@mixin button-pill-class($button-size) {
+@mixin button-pill-class($form-height) {
   &.is-pill {
-    border-radius: map-get($button-sizes, $button-size);
+    border-radius: map-get($form-heights, $form-height);
   }
 }
 
@@ -92,13 +93,12 @@
 
   OPTION '.is-round' for OPTION '.btn--[size]' -> ROOT '.sb-btn'
 */
-@mixin button-round-class($button-size) {
+@mixin button-round-class($form-height) {
   &.is-round {
-    $size-factor: 2;
-    $size: map-get($button-sizes, $button-size);
-    height: $size * $size-factor;
-    width: $size * $size-factor;
-    border-radius: $size * $size-factor / 2;
+    $height: map-get($form-heights, $form-height);
+    height: $height;
+    width: $height;
+    border-radius: $height / 2;
     min-width: 0;
     padding: 0;
   }
@@ -119,7 +119,7 @@
 
   border-radius: $button-border-radius;
 
-  font-size: $font-size-d;
+  font-size: getFontSize('d');
   font-weight: getFontWeight('regular');
   font-family: getFontface('default');
 
@@ -128,8 +128,8 @@
     cursor: not-allowed;
   }
 
-  @each $button-size in map-keys($button-sizes) {
-    @include button-size-class($button-size);
+  @each $form-height in map-keys($form-heights) {
+    @include button-size-class($form-height);
   }
 
   @each $button-color in map-keys($background-text-colors) {

@@ -41,26 +41,25 @@
 
   OPTION '.toggle-switch--[size]' for ROOT '.sb-toggle-switch'
 */
-@mixin toggle-switch-size-class($toggle-switch-size) {
+@mixin toggle-switch-size-class($form-height) {
 
-  $toggle-switch-size-unit: map-get($toggle-switch-sizes, $toggle-switch-size);
-  $toggle-switch-width: $toggle-switch-size-unit * 4;
-  $toggle-switch-height: $toggle-switch-size-unit * 2;
-  $toggle-diameter: $toggle-switch-size-unit * 1.3;
-  $padding: ($toggle-switch-height - $toggle-diameter) / 2;
-  $toggle-switch-innerwidth: $toggle-switch-width - 2 * $padding;
+  $height: map-get($form-heights, $form-height);
+  $width: $height * 2;
+  $diameter: $height / 3 * 2;
+  $padding: ($height - $diameter) / 2;
+  $innerwidth: $width - 2 * $padding;
 
-  &.toggle-switch--#{$toggle-switch-size} {
-    width: $toggle-switch-width;
-    height: $toggle-switch-height;
-    border-radius: $toggle-switch-height / 2;
+  &.toggle-switch--#{$form-height} {
+    width: $width;
+    height: $height;
+    border-radius: $height / 2;
 
     .sb-toggle-switch__toggle {
       top: $padding;
       left: $padding;
-      width: $toggle-diameter;
-      height: $toggle-diameter;
-      border-radius: $toggle-diameter / 2;
+      width: $diameter;
+      height: $diameter;
+      border-radius: $diameter / 2;
     }
 
     &.is-off {
@@ -70,7 +69,7 @@
     }
     &.is-on {
       .sb-toggle-switch__toggle {
-        transform: translateX($toggle-switch-innerwidth - $toggle-diameter);
+        transform: translateX($innerwidth - $diameter);
       }
     }
   }
@@ -104,7 +103,7 @@
     }
   }
 
-  @each $toggle-switch-size in map-keys($toggle-switch-sizes) {
-    @include toggle-switch-size-class($toggle-switch-size);
+  @each $form-height in map-keys($form-heights) {
+    @include toggle-switch-size-class($form-height);
   }
 }

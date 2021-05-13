@@ -38,17 +38,17 @@
 
   OPTION '.checkbox--[size]' for ROOT '.sb-checkbox'
 */
-@mixin checkbox-size-class($checkbox-size) {
-  $checkbox-size-unit: map-get($checkbox-sizes, $checkbox-size);
+@mixin checkbox-size-class($form-height) {
+  $height: map-get($form-heights, $form-height);
 
-  &.checkbox--#{$checkbox-size} {
-    height: $checkbox-size-unit * 2;
-    width: $checkbox-size-unit * 2;
-    border-radius: $checkbox-size-unit/1.5;
+  &.checkbox--#{$form-height} {
+    height: $height;
+    width: $height;
+    border-radius: $height / 3;
 
     .sb-checkbox__tick {
       .sb-icon {
-        font-size: $checkbox-size-unit * 1.5;
+        font-size: $height / 5 * 4;
       }
     }
   }
@@ -98,7 +98,7 @@
     }
   }
 
-  @each $checkbox-size in map-keys($checkbox-sizes) {
-    @include checkbox-size-class($checkbox-size);
+  @each $form-height in map-keys($form-heights) {
+    @include checkbox-size-class($form-height);
   }
 }
