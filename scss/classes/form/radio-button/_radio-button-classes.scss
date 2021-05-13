@@ -1,0 +1,91 @@
+/*****************************************************************************
+                              Radio-Button - Classes
+******************************************************************************/
+
+/*
+  Adds different colors to a radio button. The coloring is based on the two states
+  of the checkbos: 'checked' and 'unchecked'. The two states have to be set
+  dynamically.
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.radio-button--[theme]-[color]' for ROOT '.sb-radio-button'
+*/
+@mixin radio-button-color-class($radio-button-theme, $radio-button-color) {
+  &.radio-button--#{$radio-button-theme}-#{$radio-button-color} {
+    background: getBackgroundColorInverse($radio-button-theme, $radio-button-color);
+    border-color: getBackgroundColor($radio-button-theme, $radio-button-color);
+
+    &.is-checked {
+      .sb-radio-button__mark {
+        background: getBackgroundColor($radio-button-theme, $radio-button-color);
+      }
+    }
+  }
+}
+
+/*
+  Adds different sizes to a radio button. The sizes concern widht, height and
+  border-radius (circle).
+
+  Attributes:
+  - size: 's', 'd', 'm', 'l'
+
+  OPTION '.radio-button--[size]' for ROOT '.sb-radio-button'
+*/
+@mixin radio-button-size-class($form-height) {
+  $height: map-get($form-heights, $form-height);
+
+  &.radio-button--#{$form-height} {
+    height: $height;
+    width: $height;
+  }
+}
+
+/*
+  Creates class for a radio button. The class defines colors and sizes for The
+  radio button and the mark.
+
+  Attributes:
+  - NONE
+
+  ROOT .sb-radio-button
+*/
+.sb-radio-button {
+  box-sizing: border-box;
+  border: 2px solid;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+  .sb-radio-button__mark {
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+    @include ease(300ms);
+  }
+  &.is-unchecked {
+    .sb-radio-button__mark {
+      background: transparent;
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+
+  @each $radio-button-color in map-keys($background-text-colors) {
+    @each $radio-button-theme in map-keys(map-get($background-text-colors, $radio-button-color)) {
+      @include radio-button-color-class($radio-button-theme, $radio-button-color);
+    }
+  }
+
+  @each $form-height in map-keys($form-heights) {
+    @include radio-button-size-class($form-height);
+  }
+}
