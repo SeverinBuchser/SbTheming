@@ -94,6 +94,10 @@
     @include ease(300ms);
   }
 
+  &.disabled {
+    cursor: not-allowed;
+  }
+
   @each $toggle-switch-color in map-keys($background-text-colors) {
     @each $toggle-switch-theme in map-keys(map-get($background-text-colors, $toggle-switch-color)) {
       @include toggle-switch-color-class($toggle-switch-theme, $toggle-switch-color);
