@@ -18,10 +18,12 @@
       color: getTextColor($icon-button-theme, $icon-button-color);
     }
 
-    &:hover {
-      .sb-icon {
-        color: getTextColorInverse($icon-button-theme, $icon-button-color);
-      }
+    &:hover .sb-icon {
+      color: getTextColorInverse($icon-button-theme, $icon-button-color);
+    }
+
+    &:disabled:hover .sb-icon {
+      color: getTextColor($icon-button-theme, $icon-button-color);
     }
     @include icon-button-plain-color-class($icon-button-theme, $icon-button-color);
   }
@@ -42,10 +44,12 @@
       color: getTextColorInverse($icon-button-theme, $icon-button-color);
     }
 
-    &:hover {
-      .sb-icon {
+    &:hover.sb-icon {
         color: getTextColor($icon-button-theme, $icon-button-color);
-      }
+    }
+
+    &:disabled:hover .sb-icon {
+      color: getTextColorInverse($icon-button-theme, $icon-button-color);
     }
   }
 }
