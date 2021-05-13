@@ -20,6 +20,10 @@
       background: getBackgroundColorInverse($button-theme, $button-color);
       color: getTextColorInverse($button-theme, $button-color);
     }
+    &:disabled:hover {
+      background: getBackgroundColor($button-theme, $button-color);
+      color: getTextColor($button-theme, $button-color);
+    }
     @include button-plain-color-class($button-theme, $button-color);
   }
 }
@@ -39,6 +43,10 @@
     &:hover {
       background: getBackgroundColor($button-theme, $button-color);
       color: getTextColor($button-theme, $button-color);
+    }
+    &:disabled:hover {
+      background: getBackgroundColorInverse($button-theme, $button-color);
+      color: getTextColorInverse($button-theme, $button-color);
     }
   }
 }
@@ -107,12 +115,18 @@
   outline: 0;
   cursor: pointer;
   display: block;
+  box-sizing: border-box;
 
   border-radius: $button-border-radius;
 
   font-size: $font-size-d;
   font-weight: getFontWeight('regular');
   font-family: getFontface('default');
+
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 
   @each $button-size in map-keys($button-sizes) {
     @include button-size-class($button-size);
