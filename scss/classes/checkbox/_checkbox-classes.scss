@@ -66,6 +66,7 @@
 .sb-checkbox {
   box-sizing: border-box;
   border: 2px solid;
+  cursor: pointer;
   @include ease(300ms);
 
   .sb-checkbox__tick {
@@ -85,6 +86,11 @@
       color: transparent;
     }
   }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+
 
   @each $checkbox-color in map-keys($background-text-colors) {
     @each $checkbox-theme in map-keys(map-get($background-text-colors, $checkbox-color)) {
