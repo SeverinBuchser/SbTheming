@@ -1,0 +1,23 @@
+/*****************************************************************************
+                              Checkbox-Group - Classes
+******************************************************************************/
+
+.sb-form-group-separator {
+  border: 1px solid $light;
+}
+
+.sb-form-group {
+  padding: $spacing-s;
+  &.is-options {
+    display: grid;
+    grid-gap: $spacing-s;
+
+    .sb-form-group-options__option {
+      display: flex;
+
+      .sb-form-group-options__option-label {
+        margin-left: $spacing-s;
+      }
+    }
+  }
+}
