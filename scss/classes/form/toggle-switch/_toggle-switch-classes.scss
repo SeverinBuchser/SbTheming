@@ -13,19 +13,19 @@
 
   OPTION '.toggle-switch--[theme]-[color]' for ROOT '.sb-toggle-switch'
 */
-@mixin toggle-switch-color-class($toggle-switch-theme, $toggle-switch-color) {
-  &.toggle-switch--#{$toggle-switch-theme}-#{$toggle-switch-color} {
+@mixin toggle-switch-color-class($theme, $color) {
+  &.toggle-switch--#{$theme}-#{$color} {
+    border: 2px solid getThemeTextHoverColorForBackground($theme, $color);
     &.is-off {
-      background: getBackgroundColorInverse($toggle-switch-theme, $toggle-switch-color);
       .sb-toggle-switch__toggle {
-        background: getTextColorInverse($toggle-switch-theme, $toggle-switch-color);
+        background: getThemeTextHoverColorForBackground($theme, $color);
       }
     }
 
     &.is-on {
-      background: getBackgroundColor($toggle-switch-theme, $toggle-switch-color);
+      background: getBackgroundColor($color);
       .sb-toggle-switch__toggle {
-        background: getTextColor($toggle-switch-theme, $toggle-switch-color);
+        background: getThemeTextColorForBackground($theme, $color);
       }
     }
   }
@@ -55,8 +55,8 @@
     border-radius: $height / 2;
 
     .sb-toggle-switch__toggle {
-      top: $padding;
-      left: $padding;
+      top: calc(#{$padding} - 2px);
+      left: calc(#{$padding} - 2px);
       width: $diameter;
       height: $diameter;
       border-radius: $diameter / 2;
@@ -85,8 +85,9 @@
   ROOT .sb-toggle-switch
 */
 .sb-toggle-switch {
-  position: relative;
+  box-sizing: border-box;
   cursor: pointer;
+  position: relative;
   @include ease(300ms);
   .sb-toggle-switch__toggle {
     position: absolute;
@@ -97,9 +98,9 @@
     cursor: not-allowed;
   }
 
-  @each $toggle-switch-color in map-keys($background-text-colors) {
-    @each $toggle-switch-theme in map-keys(map-get($background-text-colors, $toggle-switch-color)) {
-      @include toggle-switch-color-class($toggle-switch-theme, $toggle-switch-color);
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include toggle-switch-color-class($theme, $color);
     }
   }
 

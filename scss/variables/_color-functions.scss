@@ -1,0 +1,353 @@
+/*****************************************************************************
+                            Color - Functions
+******************************************************************************/
+
+
+
+/********************* Theme Background Color - Functions ********************/
+
+/*
+  Returns a map for the requested theme if the theme exists. The theme name can
+  either be 'night' or 'light'. If some other value get reuqested, the function
+  will throw an error. The map contains theme dependent root and child
+  background colors:
+  (
+    'root': {background color},
+    'child': {background color}
+  )
+*/
+@function getThemeBackgroundColors($theme) {
+  @if not exists(map-keys($theme-background-colors), $theme) {
+    @error "Background colors for theme with name '#{$theme}' do not exist!";
+  }
+  @return map-get($theme-background-colors, $theme);
+}
+
+/*
+  Returns the background color for the requested theme and field if the theme
+  and field exist. The theme name can either be 'night' or 'light'. If some
+  other value gets reuqested, the function will throw an error. The field name
+  can either be 'root' or 'child'. If some other value gets requested, the
+  funtion will thorw an error.
+*/
+@function getThemeBackgroundColor($theme, $rootOrChild) {
+  $theme-colors: getThemeBackgroundColors($theme);
+  @if not exists(map-keys($theme-colors), $rootOrChild) {
+    @error "Background colors for field with name '#{$rootOrChild}' do not"
+    + " exist!";
+  }
+  @return  map-get($theme-colors, $rootOrChild);
+}
+
+/*
+  Returns the root background color for the requested theme if the theme exists.
+  The theme name can either be 'night' or 'light'. If some other value gets
+  reuqested, the function will throw an error.
+*/
+@function getThemeRootBackgroundColor($theme) {
+  @return getThemeBackgroundColor($theme, 'root');
+}
+
+/*
+  Returns the child background color for the requested theme if the theme
+  exists. The theme name can either be 'night' or 'light'. If some other value
+  gets reuqested, the function will throw an error.
+*/
+@function getThemeChildBackgroundColor($theme) {
+  @return getThemeBackgroundColor($theme, 'child');
+}
+
+
+
+/*********************** Theme Text Color - Functions ************************/
+
+/*
+  Returns the text color for the requested theme if the theme exists. The theme
+  name can either be 'night' or 'light'. If some other value get reuqested, the
+  function will throw an error.
+*/
+@function getThemeTextColor($theme) {
+  @if not exists(map-keys($theme-text-color-root-and-child), $theme) {
+    @error "Text color for theme with name '#{$theme}' does not exist!";
+  }
+  @return map-get($theme-text-color-root-and-child, $theme);
+}
+
+
+
+/*********************** Background Color - Functions ************************/
+
+/*
+  Returns the background color for the requested color if the color exists.
+  The color name can either be 'warn', 'success', 'info', 'primary' or
+  'secondary'. If some other value get reuqested, the function will throw an
+  error.
+*/
+@function getBackgroundColor($color) {
+  @if not exists(map-keys($background-colors), $color) {
+    @error "Background color for color with name '#{$color}' does not exist!";
+  }
+  @return map-get($background-colors, $color);
+}
+
+
+
+/**************** Theme Text Color for Background - Functions ****************/
+
+/*
+  Returns a map for the requested theme if the theme exists. The theme name can
+  either be 'night' or 'light'. If some other value get reuqested, the function
+  will throw an error. The map contains theme dependent text colors for the
+  theme independent background colors:
+  (
+    'warn': {text color},
+    'success': {text color},
+    'info': {text color},
+    'primary': {text color},
+    'secondary': {text color}
+  )
+*/
+@function getThemeTextColorsForBackground($theme) {
+  @if not exists(map-keys($theme-text-color-background), $theme) {
+    @error "Text colors for backgrounds for theme with name '#{$theme}' do not"
+    + " exist!";
+  }
+  @return map-get($theme-text-color-background, $theme);
+}
+
+/*
+  Returns the text color for the requested theme and background color if the
+  theme and background color exist. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+  The background color name can either be 'warn', 'success', 'info', 'primary'
+  or 'secondary'. If some other value gets requested, the funtion will thorw an
+  error.
+*/
+@function getThemeTextColorForBackground($theme, $color) {
+  $theme-colors: getThemeTextColorsForBackground($theme);
+  @if not exists(map-keys($theme-colors), $color) {
+    @error "Text color for background color with name '#{$color}' does not"
+    + " exist!";
+  }
+  @return  map-get($theme-colors, $color);
+}
+
+/*
+  Returns the text color for the background color 'warn' for the requested theme
+  if the theme exists. The theme name can either be 'night' or 'light'. If some
+  other value gets reuqested, the function will throw an error.
+*/
+@function getThemeWarnTextColorForBackground($theme) {
+  @return getThemeTextColorForBackground($theme, 'warn');
+}
+
+/*
+  Returns the text color for the background color 'success' for the requested theme
+  if the theme exists. The theme name can either be 'night' or 'light'. If some
+  other value gets reuqested, the function will throw an error.
+*/
+@function getThemeSuccessTextColorForBackground($theme) {
+  @return getThemeTextColorForBackground($theme, 'success');
+}
+
+/*
+  Returns the text color for the background color 'info' for the requested theme
+  if the theme exists. The theme name can either be 'night' or 'light'. If some
+  other value gets reuqested, the function will throw an error.
+*/
+@function getThemeInfoTextColorForBackground($theme) {
+  @return getThemeTextColorForBackground($theme, 'info');
+}
+
+/*
+  Returns the text color for the background color 'primary' for the requested
+  theme if the theme exists. The theme name can either be 'night' or 'light'.
+  If some other value gets reuqested, the function will throw an error.
+*/
+@function getThemePrimaryTextColorForBackground($theme) {
+  @return getThemeTextColorForBackground($theme, 'primary');
+}
+
+/*
+  Returns the text color for the background color 'secondary' for the requested
+  theme if the theme exists. The theme name can either be 'night' or 'light'.
+  If some other value gets reuqested, the function will throw an error.
+*/
+@function getThemeSecondaryTextColorForBackground($theme) {
+  @return getThemeTextColorForBackground($theme, 'secondary');
+}
+
+
+
+/********** Theme Background Hover Color for Background - Functions **********/
+
+/*
+  Returns a map for the requested theme if the theme exists. The theme name can
+  either be 'night' or 'light'. If some other value get reuqested, the function
+  will throw an error. The map contains theme dependent background hover colors
+  for the theme independent background colors:
+  (
+    'warn': {background hover color},
+    'success': {background hover color},
+    'info': {background hover color},
+    'primary': {background hover color},
+    'secondary': {background hover color},
+  )
+*/
+@function getThemeBackgroundHoverColorsForBackground($theme) {
+  @if not exists(map-keys($theme-background-hover-color-background), $theme) {
+    @error "Background hover colors for backgrounds for theme with name"
+    + " '#{$theme}' do not exist!";
+  }
+  @return map-get($theme-background-hover-color-background, $theme);
+}
+
+/*
+  Returns the background hover color for the requested theme and background
+  color if the theme and background color exist. The theme name can either be
+  'night' or 'light'. If some other value gets reuqested, the function will
+  throw an error. The background color name can either be 'warn', 'success',
+  'info', 'primary' or 'secondary'. If some other value gets requested, the
+  funtion will thorw an error.
+*/
+@function getThemeBackgroundHoverColorForBackground($theme, $color) {
+  $theme-colors: getThemeBackgroundHoverColorsForBackground($theme);
+  @if not exists(map-keys($theme-colors), $color) {
+    @error "Background hover color for background color with name '#{$color}'"
+    + " does not exist!";
+  }
+  @return map-get($theme-colors, $color);
+}
+
+/*
+  Returns the background hover color for the background color 'warn' for the
+  requested theme if the theme exists. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+*/
+@function getThemeWarnBackgroundHoverColorForBackground($theme) {
+  @return getThemeBackgroundHoverColorForBackground($theme, 'warn');
+}
+
+/*
+  Returns the background hover color for the background color 'success' for the
+  requested theme if the theme exists. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+*/
+@function getThemeSuccessBackgroundHoverColorForBackground($theme) {
+  @return getThemeBackgroundHoverColorForBackground($theme, 'success');
+}
+
+/*
+  Returns the background hover color for the background color 'info' for the
+  requested theme if the theme exists. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+*/
+@function getThemeInfoBackgroundHoverColorForBackground($theme) {
+  @return getThemeBackgroundHoverColorForBackground($theme, 'info');
+}
+
+/*
+  Returns the background hover color for the background color 'primary' for the
+  requested theme if the theme exists. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+*/
+@function getThemePrimaryBackgroundHoverColorForBackground($theme) {
+  @return getThemeBackgroundHoverColorForBackground($theme, 'primary');
+}
+
+/*
+  Returns the background hover color for the background color 'secondary' for
+  the requested theme if the theme exists. The theme name can either be 'night'
+  or 'light'. If some other value gets reuqested, the function will throw an
+  error.
+*/
+@function getThemeSecondaryBackgroundHoverColorForBackground($theme) {
+  @return getThemeBackgroundHoverColorForBackground($theme, 'secondary');
+}
+
+
+
+/************* Theme Text Hover Color for Background - Functions *************/
+
+/*
+  Returns a map for the requested theme if the theme exists. The theme name can
+  either be 'night' or 'light'. If some other value get reuqested, the function
+  will throw an error. The map contains theme dependent text hover colors for
+  the theme independent background colors:
+  (
+    'warn': {text color},
+    'success': {text color},
+    'info': {text color},
+    'primary': {text color},
+    'secondary': {text color}
+  )
+*/
+@function getThemeTextHoverColorsForBackground($theme) {
+  @if not exists(map-keys($theme-text-hover-color-theme-background), $theme) {
+    @error "Text hover colors for backgrounds for theme with name '#{$theme}'"
+    + " do not exist!";
+  }
+  @return map-get($theme-text-hover-color-theme-background, $theme);
+}
+
+/*
+  Returns the text hover color for the requested theme and background color if
+  the theme and background color exist. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+  The background color name can either be 'warn', 'success', 'info', 'primary'
+  or 'secondary'. If some other value gets requested, the funtion will thorw an
+  error.
+*/
+@function getThemeTextHoverColorForBackground($theme, $color) {
+  $theme-colors: getThemeTextHoverColorsForBackground($theme);
+  @if not exists(map-keys($theme-colors), $color) {
+    @error "Text hover color for background color with name '#{$color}' does"
+    + " not exist!";
+  }
+  @return  map-get($theme-colors, $color);
+}
+
+/*
+  Returns the text hover color for the background color 'warn' for the requested
+  theme if the theme exists. The theme name can either be 'night' or 'light'.
+  If some other value gets reuqested, the function will throw an error.
+*/
+@function getThemeWarnTextHoverColorForBackground($theme) {
+  @return getThemeTextHoverColorForBackground($theme, 'warn');
+}
+
+/*
+  Returns the text hover color for the background color 'success' for the
+  requested theme if the theme exists. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+*/
+@function getThemeSuccessTextHoverColorForBackground($theme) {
+  @return getThemeTextHoverColorForBackground($theme, 'success');
+}
+
+/*
+  Returns the text hover color for the background color 'info' for the requested
+  theme if the theme exists. The theme name can either be 'night' or 'light'.
+  If some other value gets reuqested, the function will throw an error.
+*/
+@function getThemeInfoTextHoverColorForBackground($theme) {
+  @return getThemeTextHoverColorForBackground($theme, 'info');
+}
+
+/*
+  Returns the text hover color for the background color 'primary' for the
+  requested theme if the theme exists. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+*/
+@function getThemePrimaryTextHoverColorForBackground($theme) {
+  @return getThemeTextHoverColorForBackground($theme, 'primary');
+}
+
+/*
+  Returns the text hover color for the background color 'secondary' for the
+  requested theme if the theme exists. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+*/
+@function getThemeSecondaryTextHoverColorForBackground($theme) {
+  @return getThemeTextHoverColorForBackground($theme, 'secondary');
+}

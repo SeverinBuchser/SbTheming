@@ -13,17 +13,13 @@
 
   OPTION '.checkbox--[theme]-[color]' for ROOT '.sb-checkbox'
 */
-@mixin checkbox-color-class($checkbox-theme, $checkbox-color) {
-  &.checkbox--#{$checkbox-theme}-#{$checkbox-color} {
-    border-color: getBackgroundColor($checkbox-theme, $checkbox-color);
-    &.is-unchecked {
-      background: getBackgroundColorInverse($checkbox-theme, $checkbox-color);
-    }
-
+@mixin checkbox-color-class($theme, $color) {
+  &.checkbox--#{$theme}-#{$color} {
+    border-color: getBackgroundColor($color);
     &.is-checked {
-      background: getBackgroundColor($checkbox-theme, $checkbox-color);
+      background: getBackgroundColor($color);
       .sb-checkbox__tick .sb-icon {
-        color: getTextColor($checkbox-theme, $checkbox-color);
+        color: getThemeTextColorForBackground($theme, $color);
       }
     }
   }
@@ -92,9 +88,9 @@
   }
 
 
-  @each $checkbox-color in map-keys($background-text-colors) {
-    @each $checkbox-theme in map-keys(map-get($background-text-colors, $checkbox-color)) {
-      @include checkbox-color-class($checkbox-theme, $checkbox-color);
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include checkbox-color-class($theme, $color);
     }
   }
 

@@ -11,21 +11,20 @@
 
   OPTION '.btn--[theme]-[color]' for ROOT '.sb-icon-btn'
 */
-@mixin icon-button-color-class ($icon-button-theme, $icon-button-color) {
-  &.btn--#{$icon-button-theme}-#{$icon-button-color} {
+@mixin icon-button-color-class ($theme, $color) {
+  &.btn--#{$theme}-#{$color} {
     .sb-icon {
-      @include ease(300ms);
-      color: getTextColor($icon-button-theme, $icon-button-color);
+      color: getThemeTextColorForBackground($theme, $color);
     }
 
     &:hover .sb-icon {
-      color: getTextColorInverse($icon-button-theme, $icon-button-color);
+      color: getThemeTextHoverColorForBackground($theme, $color);
     }
 
     &:disabled:hover .sb-icon {
-      color: getTextColor($icon-button-theme, $icon-button-color);
+      color: getThemeTextColorForBackground($theme, $color);
     }
-    @include icon-button-plain-color-class($icon-button-theme, $icon-button-color);
+    @include icon-button-plain-color-class($theme, $color);
   }
 }
 
@@ -37,19 +36,18 @@
 
   OPTION '.is-plain' for OPTION '.btn--[color]' -> ROOT '.sb-btn'
 */
-@mixin icon-button-plain-color-class ($icon-button-theme, $icon-button-color) {
+@mixin icon-button-plain-color-class ($theme, $color) {
   &.is-plain {
     .sb-icon {
-      @include ease(300ms);
-      color: getTextColorInverse($icon-button-theme, $icon-button-color);
+      color: getThemeTextHoverColorForBackground($theme, $color);
     }
 
     &:hover.sb-icon {
-        color: getTextColor($icon-button-theme, $icon-button-color);
+        color: getThemeTextColorForBackground($theme, $color);
     }
 
     &:disabled:hover .sb-icon {
-      color: getTextColorInverse($icon-button-theme, $icon-button-color);
+      color: getThemeTextHoverColorForBackground($theme, $color);
     }
   }
 }
@@ -64,9 +62,13 @@
 .sb-btn {
   @extend .sb-btn;
 
-  @each $icon-button-color in map-keys($background-text-colors) {
-    @each $icon-button-theme in map-keys(map-get($background-text-colors, $icon-button-color)) {
-       @include icon-button-color-class($icon-button-theme, $icon-button-color);
+  .sb-icon {
+    @include ease(300ms);
+  }
+
+  @each $theme in $theme-names{
+    @each $color in $color-names {
+       @include icon-button-color-class($theme, $color);
     }
   }
 }

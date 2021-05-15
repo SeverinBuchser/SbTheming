@@ -2,6 +2,12 @@
                               Checkbox-Group - Classes
 ******************************************************************************/
 
+@mixin form-group-color-class($theme, $color) {
+  &.form-group--#{$theme}-#{$color} {
+    color: getThemeTextColor($theme);
+  }
+}
+
 .sb-form-group-separator {
   border: 1px solid $light;
 }
@@ -23,5 +29,11 @@
 
   .sb-form-group__title {
     font-size: getFontSize('m');
+  }
+
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include form-group-color-class($theme, $color);
+    }
   }
 }

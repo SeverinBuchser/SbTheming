@@ -13,15 +13,12 @@
 
   OPTION '.radio-button--[theme]-[color]' for ROOT '.sb-radio-button'
 */
-@mixin radio-button-color-class($radio-button-theme, $radio-button-color) {
-  &.radio-button--#{$radio-button-theme}-#{$radio-button-color} {
-    background: getBackgroundColorInverse($radio-button-theme, $radio-button-color);
-    border-color: getBackgroundColor($radio-button-theme, $radio-button-color);
+@mixin radio-button-color-class($color) {
+  &.radio-button--#{$color} {
+    border-color: getBackgroundColor($color);
 
     &.is-checked {
-      .sb-radio-button__mark {
-        background: getBackgroundColor($radio-button-theme, $radio-button-color);
-      }
+      background: getBackgroundColor($color);
     }
   }
 }
@@ -61,28 +58,15 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-
-  .sb-radio-button__mark {
-    height: 80%;
-    width: 80%;
-    border-radius: 50%;
-    @include ease(300ms);
-  }
-  &.is-unchecked {
-    .sb-radio-button__mark {
-      background: transparent;
-    }
-  }
+  @include ease(300ms);
 
   &.disabled {
     cursor: not-allowed;
   }
 
 
-  @each $radio-button-color in map-keys($background-text-colors) {
-    @each $radio-button-theme in map-keys(map-get($background-text-colors, $radio-button-color)) {
-      @include radio-button-color-class($radio-button-theme, $radio-button-color);
-    }
+  @each $color in $color-names {
+    @include radio-button-color-class($color);
   }
 
   @each $form-height in map-keys($form-heights) {

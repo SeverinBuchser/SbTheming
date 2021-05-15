@@ -7,13 +7,13 @@
 
 
   Attributes:
-  - color: 'warn', 'success', 'info', 'primary', 'secondary', 'dark', 'bright'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
 
   ROOT '.sb-bg-[color]'
 */
 @debug "Create background-color-classes";
-@each $background-color in map-keys($background-colors) {
-  .sb-bg-#{$background-color} {
-    background-color: red;
+@each $color in map-keys($background-colors) {
+  .sb-bg-#{$color} {
+    background-color: getBackgroundColor($color);
   }
 }
