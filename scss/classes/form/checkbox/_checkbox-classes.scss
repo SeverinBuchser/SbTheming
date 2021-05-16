@@ -15,11 +15,15 @@
 */
 @mixin checkbox-color-class($theme, $color) {
   &.checkbox--#{$theme}-#{$color} {
-    border-color: getBackgroundColor($color);
+    .sb-checkbox__checkbox-wrapper .sb-checkbox__checkbox {
+      border-color: getBackgroundColor($color);
+    }
     &.is-checked {
-      background: getBackgroundColor($color);
-      .sb-checkbox__tick .sb-icon {
-        color: getThemeTextColorForBackground($theme, $color);
+      .sb-checkbox__checkbox-wrapper .sb-checkbox__checkbox {
+        background: getBackgroundColor($color);
+        .sb-checkbox__tick .sb-icon {
+          color: getThemeTextColorForBackground($theme, $color);
+        }
       }
     }
   }
@@ -38,13 +42,15 @@
   $height: map-get($form-heights, $form-height);
 
   &.checkbox--#{$form-height} {
-    height: $height;
-    width: $height;
-    border-radius: $height / 3;
+    .sb-checkbox__checkbox-wrapper .sb-checkbox__checkbox {
+      height: $height;
+      width: $height;
+      border-radius: $height / 3;
 
-    .sb-checkbox__tick {
-      .sb-icon {
-        font-size: $height / 5 * 4;
+      .sb-checkbox__tick {
+        .sb-icon {
+          font-size: $height / 5 * 4;
+        }
       }
     }
   }
@@ -60,26 +66,98 @@
   ROOT .sb-checkbox
 */
 .sb-checkbox {
-  box-sizing: border-box;
-  border: 2px solid;
-  cursor: pointer;
-  @include ease(300ms);
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: $spacing-s;
 
-  .sb-checkbox__tick {
-    height: 100%;
-    width: 100%;
-    .sb-icon {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      @include ease(300ms);
+  .sb-checkbox__label {
+    display: none;
+  }
+
+  &.is-label {
+    .sb-checkbox__label {
+      display: block;
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+    }
+
+    &.label-is-right {
+      .sb-checkbox__label {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+      .sb-checkbox__checkbox-wrapper {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+    }
+
+    &.label-is-left {
+      .sb-checkbox__label {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+      .sb-checkbox__checkbox-wrapper {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+    }
+
+    &.label-is-top {
+      grid-template-columns: auto;
+      .sb-checkbox__label {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+      .sb-checkbox__checkbox-wrapper {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+    }
+
+    &.label-is-bottom {
+      grid-template-columns: auto;
+      .sb-checkbox__label {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+      .sb-checkbox__checkbox-wrapper {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
     }
   }
+
+  .sb-checkbox__checkbox-wrapper .sb-checkbox__checkbox {
+    box-sizing: border-box;
+    border: 2px solid;
+    cursor: pointer;
+    @include ease(300ms);
+
+    .sb-checkbox__tick {
+      height: 100%;
+      width: 100%;
+      .sb-icon {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include ease(300ms);
+      }
+    }
+  }
+
+
   &.is-unchecked {
-    .sb-checkbox__tick .sb-icon {
-      color: transparent;
+    .sb-checkbox__checkbox-wrapper .sb-checkbox__checkbox {
+      .sb-checkbox__tick .sb-icon {
+        color: transparent;
+      }
     }
   }
 
