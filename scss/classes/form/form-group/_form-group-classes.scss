@@ -1,0 +1,122 @@
+/*****************************************************************************
+                              Checkbox-Group - Classes
+******************************************************************************/
+
+/*
+  Adds color to a form group separator. Sets the separator according to the
+  background.
+
+  Attributes:
+  - theme: 'light', 'night'
+
+  OPTION '.sb-el-form-group-separator--[theme]' for ROOT
+  '.sb-el-form-group-separator'
+*/
+@mixin form-group-separator-color-class($theme) {
+  &.#{$sb-el-form-group-separator-root}--#{$theme} {
+    padding-left: $spacing-s;
+    border-color: getThemeTextColor($theme);
+  }
+}
+
+/*
+  Defines the root form group separator class;
+
+  ROOT .sb-el-form-group-separator
+*/
+$sb-el-form-group-separator-root: 'sb-el-form-group-separator';
+.#{$sb-el-form-group-separator-root} {
+  border: 1px solid;
+  border-bottom: 0;
+  margin: $spacing-s;
+
+  @each $theme in $theme-names {
+    @include form-group-separator-color-class($theme);
+  }
+}
+
+/*
+  Adds color to a form group.
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.sb-el-form-group--[theme]-[color]' for ROOT '.sb-el-form-group'
+*/
+@mixin form-group-color-class($theme, $color) {
+  &.#{$sb-el-form-group-root}--#{$theme}-#{$color} {
+    color: getThemeTextColor($theme);
+  }
+}
+
+/*
+  Defines the root form group class with all its sizes and colors.
+
+  ROOT .sb-el-form-group
+*/
+$sb-el-form-group-root: 'sb-el-form-group';
+.#{$sb-el-form-group-root} {
+  padding: $spacing-s;
+  &.is-options {
+    display: grid;
+    grid-gap: $spacing-s;
+
+    .#{$sb-el-form-group-root}__options-wrapper {
+      display: flex;
+      .#{$sb-el-form-group-root}__options {
+        display: grid;
+        grid-gap: $spacing-s;
+        width: auto;
+        .#{$sb-el-form-group-root}__option {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .#{$sb-el-form-group-root}__title {
+    font-size: getFontSize('m');
+  }
+
+  &.is-left {
+    .#{$sb-el-form-group-root}__title {
+      justify-self: left;
+    }
+    &.is-options {
+      .#{$sb-el-form-group-root}__options-wrapper {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &.is-center {
+    .#{$sb-el-form-group-root}__title {
+      justify-self: center;
+    }
+    &.is-options {
+      .#{$sb-el-form-group-root}__options-wrapper {
+        justify-content: center;
+      }
+    }
+  }
+
+  &.is-right {
+    .#{$sb-el-form-group-root}__title {
+      justify-self: right;
+    }
+    &.is-options {
+      .#{$sb-el-form-group-root}__options-wrapper {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+
+
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include form-group-color-class($theme, $color);
+    }
+  }
+}
