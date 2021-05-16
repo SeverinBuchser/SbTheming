@@ -11,16 +11,16 @@
   - theme: 'light', 'night'
   - color: 'warn', 'success', 'info', 'primary', 'secondary'
 
-  OPTION '.radio-button--[theme]-[color]' for ROOT '.sb-radio-button'
+  OPTION '.sb-el-radio-button--[theme]-[color]' for ROOT '.sb-el-radio-button'
 */
 @mixin radio-button-color-class($color) {
-  &.radio-button--#{$color} {
-    .sb-radio-button__radio-wrapper .sb-radio-button__radio {
+  &.#{$sb-el-radio-button-root}--#{$color} {
+    .#{$sb-el-radio-button-root}__radio-wrapper .#{$sb-el-radio-button-root}__radio {
       border-color: getBackgroundColor($color);
     }
 
     &.is-checked {
-      .sb-radio-button__radio-wrapper .sb-radio-button__radio {
+      .#{$sb-el-radio-button-root}__radio-wrapper .#{$sb-el-radio-button-root}__radio {
         background: getBackgroundColor($color);
       }
     }
@@ -34,13 +34,13 @@
   Attributes:
   - size: 's', 'd', 'm', 'l'
 
-  OPTION '.radio-button--[size]' for ROOT '.sb-radio-button'
+  OPTION '.sb-el-radio-button--[size]' for ROOT '.sb-el-radio-button'
 */
 @mixin radio-button-size-class($form-height) {
   $height: map-get($form-heights, $form-height);
 
-  &.radio-button--#{$form-height} {
-    .sb-radio-button__radio-wrapper .sb-radio-button__radio {
+  &.#{$sb-el-radio-button-root}--#{$form-height} {
+    .#{$sb-el-radio-button-root}__radio-wrapper .#{$sb-el-radio-button-root}__radio {
       height: $height;
       width: $height;
     }
@@ -54,19 +54,20 @@
   Attributes:
   - NONE
 
-  ROOT .sb-radio-button
+  ROOT .sb-el-radio-button
 */
-.sb-radio-button {
+$sb-el-radio-button-root: 'sb-el-radio-button';
+.#{$sb-el-radio-button-root} {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: $spacing-s;
 
-  .sb-radio-button__label {
+  .#{$sb-el-radio-button-root}__label {
     display: none;
   }
 
   &.is-label {
-    .sb-radio-button__label {
+    .#{$sb-el-radio-button-root}__label {
       display: block;
       span {
         display: flex;
@@ -77,22 +78,22 @@
     }
 
     &.label-is-right {
-      .sb-radio-button__label {
+      .#{$sb-el-radio-button-root}__label {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
       }
-      .sb-radio-button__radio-wrapper {
+      .#{$sb-el-radio-button-root}__radio-wrapper {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
       }
     }
 
     &.label-is-left {
-      .sb-radio-button__label {
+      .#{$sb-el-radio-button-root}__label {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
       }
-      .sb-radio-button__radio-wrapper {
+      .#{$sb-el-radio-button-root}__radio-wrapper {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
       }
@@ -100,11 +101,11 @@
 
     &.label-is-top {
       grid-template-columns: auto;
-      .sb-radio-button__label {
+      .#{$sb-el-radio-button-root}__label {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
       }
-      .sb-radio-button__radio-wrapper {
+      .#{$sb-el-radio-button-root}__radio-wrapper {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
       }
@@ -112,11 +113,11 @@
 
     &.label-is-bottom {
       grid-template-columns: auto;
-      .sb-radio-button__label {
+      .#{$sb-el-radio-button-root}__label {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
       }
-      .sb-radio-button__radio-wrapper {
+      .#{$sb-el-radio-button-root}__radio-wrapper {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
       }
@@ -127,14 +128,14 @@
     cursor: not-allowed;
   }
 
-  .sb-radio-button__radio-wrapper {
+  .#{$sb-el-radio-button-root}__radio-wrapper {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .sb-radio-button__radio {
+    .#{$sb-el-radio-button-root}__radio {
       box-sizing: border-box;
       border: 2px solid;
       cursor: pointer;

@@ -13,7 +13,6 @@
 
   ROOT '.sb-border-[color]-[width]-[radius]'
 */
-@debug "Create border-classes";
 @each $border-color in map-keys($border-colors) {
   @each $border-width in map-keys($border-widths) {
     @each $border-radius in map-keys($border-radii) {
@@ -36,7 +35,6 @@
 
   ROOT '.sb-border-radius-[radius]'
 */
-@debug "Create border-radius-classes";
 @each $border-radius in map-keys($border-radii) {
   .sb-border-radius-#{$border-radius} {
     border-radius: getBorderRadius($border-radius);

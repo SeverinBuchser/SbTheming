@@ -11,7 +11,6 @@
 
   ROOT '.sb-bg-[color]'
 */
-@debug "Create background-color-classes";
 @each $color in map-keys($background-colors) {
   .sb-bg-#{$color} {
     background-color: getBackgroundColor($color);

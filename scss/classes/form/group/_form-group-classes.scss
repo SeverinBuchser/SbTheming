@@ -3,27 +3,28 @@
 ******************************************************************************/
 
 @mixin form-group-color-class($theme, $color) {
-  &.form-group--#{$theme}-#{$color} {
+  &.#{$sb-el-form-group-root}--#{$theme}-#{$color} {
     color: getThemeTextColor($theme);
   }
 }
 
-.sb-form-group-separator {
+.sb-el-form-group-separator {
   border: 1px solid $light;
 }
 
-.sb-form-group {
+$sb-el-form-group-root: 'sb-el-form-group';
+.#{$sb-el-form-group-root} {
   padding: $spacing-s;
   &.is-options {
     display: grid;
     grid-gap: $spacing-s;
 
-    .sb-form-group-options__option {
+    .#{$sb-el-form-group-root}__option {
       display: flex;
     }
   }
 
-  .sb-form-group__title {
+  .#{$sb-el-form-group-root}__title {
     font-size: getFontSize('m');
   }
 

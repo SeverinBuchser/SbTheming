@@ -11,17 +11,17 @@
   - theme: 'light', 'night'
   - color: 'warn', 'success', 'info', 'primary', 'secondary'
 
-  OPTION '.checkbox--[theme]-[color]' for ROOT '.sb-checkbox'
+  OPTION '.sb-el-checkbox--[theme]-[color]' for ROOT '.sb-el-checkbox'
 */
 @mixin checkbox-color-class($theme, $color) {
-  &.checkbox--#{$theme}-#{$color} {
-    .sb-checkbox__checkbox-wrapper .sb-checkbox__checkbox {
+  &.#{$sb-el-checkbox-root}--#{$theme}-#{$color} {
+    .#{$sb-el-checkbox-root}__checkbox-wrapper .#{$sb-el-checkbox-root}__checkbox {
       border-color: getBackgroundColor($color);
     }
     &.is-checked {
-      .sb-checkbox__checkbox-wrapper .sb-checkbox__checkbox {
+      .#{$sb-el-checkbox-root}__checkbox-wrapper .#{$sb-el-checkbox-root}__checkbox {
         background: getBackgroundColor($color);
-        .sb-checkbox__tick .sb-icon {
+        .#{$sb-el-checkbox-root}__tick .sb-el-icon {
           color: getThemeTextColorForBackground($theme, $color);
         }
       }
@@ -36,19 +36,19 @@
   Attributes:
   - size: 's', 'd', 'm', 'l'
 
-  OPTION '.checkbox--[size]' for ROOT '.sb-checkbox'
+  OPTION '.sb-el-checkbox--[size]' for ROOT '.sb-el-checkbox'
 */
 @mixin checkbox-size-class($form-height) {
   $height: map-get($form-heights, $form-height);
 
-  &.checkbox--#{$form-height} {
-    .sb-checkbox__checkbox-wrapper .sb-checkbox__checkbox {
+  &.#{$sb-el-checkbox-root}--#{$form-height} {
+    .#{$sb-el-checkbox-root}__checkbox-wrapper .#{$sb-el-checkbox-root}__checkbox {
       height: $height;
       width: $height;
       border-radius: $height / 3;
 
-      .sb-checkbox__tick {
-        .sb-icon {
+      .#{$sb-el-checkbox-root}__tick {
+        .sb-el-icon {
           font-size: $height / 5 * 4;
         }
       }
@@ -63,19 +63,20 @@
   Attributes:
   - NONE
 
-  ROOT .sb-checkbox
+  ROOT .sb-el-checkbox
 */
-.sb-checkbox {
+$sb-el-checkbox-root: 'sb-el-checkbox';
+.#{$sb-el-checkbox-root} {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: $spacing-s;
 
-  .sb-checkbox__label {
+  .#{$sb-el-checkbox-root}__label {
     display: none;
   }
 
   &.is-label {
-    .sb-checkbox__label {
+    .#{$sb-el-checkbox-root}__label {
       display: block;
       span {
         display: flex;
@@ -86,11 +87,11 @@
     }
 
     &.label-is-right {
-      .sb-checkbox__label {
+      .#{$sb-el-checkbox-root}__label {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
       }
-      .sb-checkbox__checkbox-wrapper {
+      .#{$sb-el-checkbox-root}__checkbox-wrapper {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
       }
@@ -101,7 +102,7 @@
         grid-column: 1 / 2;
         grid-row: 1 / 2;
       }
-      .sb-checkbox__checkbox-wrapper {
+      .#{$sb-el-checkbox-root}__checkbox-wrapper {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
       }
@@ -109,11 +110,11 @@
 
     &.label-is-top {
       grid-template-columns: auto;
-      .sb-checkbox__label {
+      .#{$sb-el-checkbox-root}__label {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
       }
-      .sb-checkbox__checkbox-wrapper {
+      .#{$sb-el-checkbox-root}__checkbox-wrapper {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
       }
@@ -121,27 +122,27 @@
 
     &.label-is-bottom {
       grid-template-columns: auto;
-      .sb-checkbox__label {
+      .#{$sb-el-checkbox-root}__label {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
       }
-      .sb-checkbox__checkbox-wrapper {
+      .#{$sb-el-checkbox-root}__checkbox-wrapper {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
       }
     }
   }
 
-  .sb-checkbox__checkbox-wrapper .sb-checkbox__checkbox {
+  .#{$sb-el-checkbox-root}__checkbox-wrapper .#{$sb-el-checkbox-root}__checkbox {
     box-sizing: border-box;
     border: 2px solid;
     cursor: pointer;
     @include ease(300ms);
 
-    .sb-checkbox__tick {
+    .#{$sb-el-checkbox-root}__tick {
       height: 100%;
       width: 100%;
-      .sb-icon {
+      .sb-el-icon {
         height: 100%;
         width: 100%;
         display: flex;
@@ -154,8 +155,8 @@
 
 
   &.is-unchecked {
-    .sb-checkbox__checkbox-wrapper .sb-checkbox__checkbox {
-      .sb-checkbox__tick .sb-icon {
+    .#{$sb-el-checkbox-root}__checkbox-wrapper .#{$sb-el-checkbox-root}__checkbox {
+      .#{$sb-el-checkbox-root}__tick .sb-el-icon {
         color: transparent;
       }
     }

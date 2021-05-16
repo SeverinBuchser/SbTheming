@@ -11,20 +11,20 @@
   - theme: 'light', 'night'
   - color: 'warn', 'success', 'info', 'primary', 'secondary'
 
-  OPTION '.toggle-switch--[theme]-[color]' for ROOT '.sb-toggle-switch'
+  OPTION '.sb-el-toggle-switch--[theme]-[color]' for ROOT '.sb-el-toggle-switch'
 */
 @mixin toggle-switch-color-class($theme, $color) {
-  &.toggle-switch--#{$theme}-#{$color} {
+  &.#{$sb-el-toggle-switch-root}--#{$theme}-#{$color} {
     border: 2px solid getThemeTextHoverColorForBackground($theme, $color);
     &.is-off {
-      .sb-toggle-switch__toggle {
+      .#{$sb-el-toggle-switch-root}__toggle {
         background: getThemeTextHoverColorForBackground($theme, $color);
       }
     }
 
     &.is-on {
       background: getBackgroundColor($color);
-      .sb-toggle-switch__toggle {
+      .#{$sb-el-toggle-switch-root}__toggle {
         background: getThemeTextColorForBackground($theme, $color);
       }
     }
@@ -39,7 +39,7 @@
   Attributes:
   - size: 's', 'd', 'm', 'l'
 
-  OPTION '.toggle-switch--[size]' for ROOT '.sb-toggle-switch'
+  OPTION '.sb-el-toggle-switch--[size]' for ROOT '.sb-el-toggle-switch'
 */
 @mixin toggle-switch-size-class($form-height) {
 
@@ -49,12 +49,12 @@
   $padding: ($height - $diameter) / 2;
   $innerwidth: $width - 2 * $padding;
 
-  &.toggle-switch--#{$form-height} {
+  &.#{$sb-el-toggle-switch-root}--#{$form-height} {
     width: $width;
     height: $height;
     border-radius: $height / 2;
 
-    .sb-toggle-switch__toggle {
+    .#{$sb-el-toggle-switch-root}__toggle {
       top: calc(#{$padding} - 2px);
       left: calc(#{$padding} - 2px);
       width: $diameter;
@@ -63,12 +63,12 @@
     }
 
     &.is-off {
-      .sb-toggle-switch__toggle {
+      .#{$sb-el-toggle-switch-root}__toggle {
         transform: translateX(0);
       }
     }
     &.is-on {
-      .sb-toggle-switch__toggle {
+      .#{$sb-el-toggle-switch-root}__toggle {
         transform: translateX($innerwidth - $diameter);
       }
     }
@@ -82,14 +82,15 @@
   Attributes:
   - NONE
 
-  ROOT .sb-toggle-switch
+  ROOT .sb-el-toggle-switch
 */
-.sb-toggle-switch {
+$sb-el-toggle-switch-root: 'sb-el-toggle-switch';
+.#{$sb-el-toggle-switch-root} {
   box-sizing: border-box;
   cursor: pointer;
   position: relative;
   @include ease(300ms);
-  .sb-toggle-switch__toggle {
+  .#{$sb-el-toggle-switch-root}__toggle {
     position: absolute;
     @include ease(300ms);
   }

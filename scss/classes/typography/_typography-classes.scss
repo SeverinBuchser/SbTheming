@@ -10,7 +10,6 @@
 
   ROOT: .sb-font-weight-[weight]
 */
-@debug "Create font-weight-classes";
 @each $font-weight in map-keys($font-weights) {
   .sb-font-weight-#{$font-weight} {
     font-weight: getFontWeight($font-weight);
@@ -25,7 +24,6 @@
 
   ROOT: .sb-fontface-[fontface]
 */
-@debug "Create fontface-classes";
 @each $fontface in map-keys($fontfaces) {
   .sb-fontface-#{$fontface} {
     font-family: getFontface($fontface);
@@ -40,7 +38,6 @@
 
   ROOT: .sb-font-size-[size]
 */
-@debug "Create font-size-classes";
 @each $font-size in map-keys($font-sizes) {
   .sb-font-size-#{$font-size} {
     font-size: getFontSize($font-size);

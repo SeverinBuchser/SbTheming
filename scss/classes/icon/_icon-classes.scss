@@ -11,7 +11,7 @@
   OPTION '.icon--[color]' for ROOT '.sb-icon'
 */
 @mixin icon-color-class($icon-color) {
-  &.icon--#{$icon-color} {
+  &.#{$sb-el-icon-root}--#{$icon-color} {
     color: map-get($icon-colors, $icon-color);
   }
 }
@@ -25,7 +25,7 @@
   OPTION '.icon--[size] for ROOT '.sb-icon'
 */
 @mixin icon-size-class($icon-size) {
-  &.icon--#{$icon-size} {
+  &.#{$sb-el-icon-root}--#{$icon-size} {
     font-size: map-get($icon-sizes, $icon-size);
   }
 }
@@ -36,8 +36,8 @@
 
   ROOT: .sb-icon
 */
-@debug "Create icon-classes";
-.sb-icon {
+$sb-el-icon-root: 'sb-el-icon';
+.#{$sb-el-icon-root} {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
