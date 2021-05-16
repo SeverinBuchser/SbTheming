@@ -14,7 +14,6 @@
 */
 @mixin form-group-separator-color-class($theme) {
   &.#{$sb-el-form-group-separator-root}--#{$theme} {
-    padding-left: $spacing-s;
     border-color: getThemeTextColor($theme);
   }
 }
