@@ -2,23 +2,48 @@
                             Form - Classes
 ******************************************************************************/
 
+@mixin form-color-class($theme, $color) {
+  &.#{$sb-el-form-root}--#{$theme}-#{$color} {
+    .#{$sb-el-form-root}__header {
+      color: getThemeTextColor($theme);
+    }
+    .#{$sb-el-form-root}__footer {
+      border-color: getThemeTextColor($theme);
+    }
+  }
+}
+
 /*
   Defines the root button class with all its sizes and colors.
 
   ROOT .sb-el-form
 */
-$sb-el-button-root: 'sb-el-form';
-.#{$sb-el-button-root} {
-  width: 200px;
+$sb-el-form-root: 'sb-el-form';
+.#{$sb-el-form-root} {
+  border-radius: $spacing-s;
   padding: $spacing-s;
 
-  .#{$sb-el-button-root}__header {
+  .#{$sb-el-form-root}__header {
+    font-size: getFontSize('l');
+    display: flex;
+    margin: $spacing-d 0;
 
+    &.is-left {
+      justify-content: flex-start;
+    }
+
+    &.is-center {
+      justify-content: center;
+    }
+
+    &.is-right {
+      justify-content: flex-end;
+    }
   }
 
-  .#{$sb-el-button-root}__content {
+  .#{$sb-el-form-root}__content {
     display: grid;
-    grid-gap: 2*$spacing-s;
+    grid-gap: $spacing-d;
 
     .sb-el-form-group-separator {
       margin: 0;
@@ -29,21 +54,34 @@ $sb-el-button-root: 'sb-el-form';
     }
   }
 
-  .#{$sb-el-button-root}__footer {
-    border-top: 1px solid getThemeTextColor('night');
+  .#{$sb-el-form-root}__footer {
+    border-top: 1px solid;
     padding-top: $spacing-s;
-    margin-top: $spacing-s;
+    margin-top: $spacing-d;
     width: 100%;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: flex-end;
+
+    &.is-left {
+      justify-content: flex-start;
+    }
 
     &.is-center {
       justify-content: center;
     }
 
-    .#{$sb-el-button-root}__footer-element {
+    &.is-right {
+      justify-content: flex-end;
+    }
 
+    .#{$sb-el-form-root}__footer-element {
+
+    }
+  }
+
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include form-color-class($theme, $color);
     }
   }
 }
