@@ -164,6 +164,16 @@ $sb-el-checkbox-root: 'sb-el-checkbox';
 
   &.disabled {
     cursor: not-allowed;
+    &.is-label {
+      .#{$sb-el-checkbox-root}__label {
+        cursor: not-allowed;
+      }
+    }
+    .#{$sb-el-checkbox-root}__checkbox-wrapper .#{$sb-el-checkbox-root}__checkbox {
+      .#{$sb-el-checkbox-root}__tick {
+        cursor: not-allowed;
+      }
+    }
   }
 
 

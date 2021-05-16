@@ -126,6 +126,16 @@ $sb-el-radio-button-root: 'sb-el-radio-button';
 
   &.disabled {
     cursor: not-allowed;
+    &.is-label {
+      .#{$sb-el-radio-button-root}__label {
+        cursor: not-allowed;
+      }
+      .#{$sb-el-radio-button-root}__radio-wrapper {
+        .#{$sb-el-radio-button-root}__radio {
+          cursor: not-allowed;
+        }
+      }
+    }
   }
 
   .#{$sb-el-radio-button-root}__radio-wrapper {
