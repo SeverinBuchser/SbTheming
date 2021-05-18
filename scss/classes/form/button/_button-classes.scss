@@ -81,7 +81,7 @@
 */
 @mixin button-pill-class($form-height) {
   &.is-pill {
-    border-radius: map-get($form-heights, $form-height);
+    border-radius: map-get($form-heights, $form-height) / 2;
   }
 }
 

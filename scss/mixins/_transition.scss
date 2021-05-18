@@ -7,7 +7,7 @@
 }
 
 @mixin easeOut($time) {
-  transition: all $time ease-in;
+  transition: all $time ease-out;
 }
 
 @mixin ease($time) {
