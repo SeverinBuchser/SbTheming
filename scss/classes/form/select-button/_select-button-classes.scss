@@ -108,6 +108,7 @@
 $sb-el-select-button-root: 'sb-el-select-button';
 .#{$sb-el-select-button-root} {
   position: relative;
+  cursor: pointer;
 
   $button-animation-duration: 300ms;
   $options-animation-duration: 100ms;
