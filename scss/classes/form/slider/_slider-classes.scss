@@ -1,0 +1,140 @@
+/*****************************************************************************
+                              Slider - Classes
+******************************************************************************/
+
+@mixin style-thumbs {
+  &::-webkit-slider-thumb {
+    @content;
+  }
+
+  &::-moz-range-thumb {
+    @content;
+  }
+
+  &::-ms-thumb {
+    @content;
+  }
+}
+
+@mixin style-tracks {
+  &::-webkit-slider-runnable-track {
+    @content;
+  }
+
+  &::-moz-range-track {
+    @content;
+  }
+
+  &::-ms-track {
+    @content;
+  }
+
+  &::-ms-fill-lower {
+    @content;
+  }
+
+  &::-ms-fill-upper {
+    @content;
+  }
+}
+
+$sb-el-slider-root: 'sb-el-slider';
+.#{$sb-el-slider-root} {
+  display: grid;
+  grid-gap: $spacing-s;
+  grid-template-columns: 1fr 2*$spacing-s;
+  grid-auto-flow: column;
+
+  &.is-label {
+    grid-template-rows: auto auto;
+  }
+
+  &.is-value {
+    .#{$sb-el-slider-root}__slider {
+      grid-column: 1 / 2;
+    }
+  }
+
+  &.is-not-value {
+    .#{$sb-el-slider-root}__slider {
+      grid-column: 1 / 3;
+    }
+  }
+
+  .#{$sb-el-slider-root}__label {
+    grid-column: 1 / 3;
+    color: white;
+  }
+
+  .#{$sb-el-slider-root}__slider {
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    background: transparent;
+    width: 100%;
+    margin: 0;
+    &:focus {
+      outline: none;
+    }
+    &::-ms-track {
+      width: 100%;
+      cursor: pointer;
+
+      // Hides the slider so custom styles can be added
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+    &::-moz-range-thumb {
+      cursor: pointer;
+    }
+    &::-ms-thumb {
+      cursor: pointer;
+    }
+    @include style-thumbs {
+      height: 2*$spacing-s;
+      width: 2*$spacing-s;
+      border-radius: $spacing-s;
+      background: $primary;
+      transform: translateY(-$spacing-s * 0.5);
+    }
+
+    @include style-tracks {
+      border-radius: $spacing-s;
+      background: getThemeBackgroundHoverColorForBackground('light', 'primary');
+      height: $spacing-s;
+    }
+
+    &:hover {
+      @include style-thumbs {
+
+      }
+
+      @include style-tracks {
+
+      }
+    }
+
+    &:focus {
+      @include style-thumbs {
+
+      }
+
+      @include style-tracks {
+
+      }
+    }
+  }
+
+  .#{$sb-el-slider-root}__value {
+    grid-column: 2 / 3;
+    vertical-align: middle;
+    text-align: center;
+    color: white;
+  }
+
+}

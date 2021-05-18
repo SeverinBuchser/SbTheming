@@ -1,3 +1,192 @@
+/*****************************************************************************
+                        Color - Settings
+******************************************************************************/
+/*****************************************************************************
+                            Color - Functions
+******************************************************************************/
+/********************* Theme Background Color - Functions ********************/
+/*
+  Returns a map for the requested theme if the theme exists. The theme name can
+  either be 'night' or 'light'. If some other value get reuqested, the function
+  will throw an error. The map contains theme dependent root and child
+  background colors:
+  (
+    'root': {background color},
+    'child': {background color}
+  )
+*/
+/*
+  Returns the background color for the requested theme and field if the theme
+  and field exist. The theme name can either be 'night' or 'light'. If some
+  other value gets reuqested, the function will throw an error. The field name
+  can either be 'root' or 'child'. If some other value gets requested, the
+  funtion will thorw an error.
+*/
+/*
+  Returns the root background color for the requested theme if the theme exists.
+  The theme name can either be 'night' or 'light'. If some other value gets
+  reuqested, the function will throw an error.
+*/
+/*
+  Returns the child background color for the requested theme if the theme
+  exists. The theme name can either be 'night' or 'light'. If some other value
+  gets reuqested, the function will throw an error.
+*/
+/*********************** Theme Text Color - Functions ************************/
+/*
+  Returns the text color for the requested theme if the theme exists. The theme
+  name can either be 'night' or 'light'. If some other value get reuqested, the
+  function will throw an error.
+*/
+/*********************** Background Color - Functions ************************/
+/*
+  Returns the background color for the requested color if the color exists.
+  The color name can either be 'warn', 'success', 'info', 'primary' or
+  'secondary'. If some other value get reuqested, the function will throw an
+  error.
+*/
+/**************** Theme Text Color for Background - Functions ****************/
+/*
+  Returns a map for the requested theme if the theme exists. The theme name can
+  either be 'night' or 'light'. If some other value get reuqested, the function
+  will throw an error. The map contains theme dependent text colors for the
+  theme independent background colors:
+  (
+    'warn': {text color},
+    'success': {text color},
+    'info': {text color},
+    'primary': {text color},
+    'secondary': {text color}
+  )
+*/
+/*
+  Returns the text color for the requested theme and background color if the
+  theme and background color exist. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+  The background color name can either be 'warn', 'success', 'info', 'primary'
+  or 'secondary'. If some other value gets requested, the funtion will thorw an
+  error.
+*/
+/*
+  Returns the text color for the background color 'warn' for the requested theme
+  if the theme exists. The theme name can either be 'night' or 'light'. If some
+  other value gets reuqested, the function will throw an error.
+*/
+/*
+  Returns the text color for the background color 'success' for the requested theme
+  if the theme exists. The theme name can either be 'night' or 'light'. If some
+  other value gets reuqested, the function will throw an error.
+*/
+/*
+  Returns the text color for the background color 'info' for the requested theme
+  if the theme exists. The theme name can either be 'night' or 'light'. If some
+  other value gets reuqested, the function will throw an error.
+*/
+/*
+  Returns the text color for the background color 'primary' for the requested
+  theme if the theme exists. The theme name can either be 'night' or 'light'.
+  If some other value gets reuqested, the function will throw an error.
+*/
+/*
+  Returns the text color for the background color 'secondary' for the requested
+  theme if the theme exists. The theme name can either be 'night' or 'light'.
+  If some other value gets reuqested, the function will throw an error.
+*/
+/********** Theme Background Hover Color for Background - Functions **********/
+/*
+  Returns a map for the requested theme if the theme exists. The theme name can
+  either be 'night' or 'light'. If some other value get reuqested, the function
+  will throw an error. The map contains theme dependent background hover colors
+  for the theme independent background colors:
+  (
+    'warn': {background hover color},
+    'success': {background hover color},
+    'info': {background hover color},
+    'primary': {background hover color},
+    'secondary': {background hover color},
+  )
+*/
+/*
+  Returns the background hover color for the requested theme and background
+  color if the theme and background color exist. The theme name can either be
+  'night' or 'light'. If some other value gets reuqested, the function will
+  throw an error. The background color name can either be 'warn', 'success',
+  'info', 'primary' or 'secondary'. If some other value gets requested, the
+  funtion will thorw an error.
+*/
+/*
+  Returns the background hover color for the background color 'warn' for the
+  requested theme if the theme exists. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+*/
+/*
+  Returns the background hover color for the background color 'success' for the
+  requested theme if the theme exists. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+*/
+/*
+  Returns the background hover color for the background color 'info' for the
+  requested theme if the theme exists. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+*/
+/*
+  Returns the background hover color for the background color 'primary' for the
+  requested theme if the theme exists. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+*/
+/*
+  Returns the background hover color for the background color 'secondary' for
+  the requested theme if the theme exists. The theme name can either be 'night'
+  or 'light'. If some other value gets reuqested, the function will throw an
+  error.
+*/
+/************* Theme Text Hover Color for Background - Functions *************/
+/*
+  Returns a map for the requested theme if the theme exists. The theme name can
+  either be 'night' or 'light'. If some other value get reuqested, the function
+  will throw an error. The map contains theme dependent text hover colors for
+  the theme independent background colors:
+  (
+    'warn': {text color},
+    'success': {text color},
+    'info': {text color},
+    'primary': {text color},
+    'secondary': {text color}
+  )
+*/
+/*
+  Returns the text hover color for the requested theme and background color if
+  the theme and background color exist. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+  The background color name can either be 'warn', 'success', 'info', 'primary'
+  or 'secondary'. If some other value gets requested, the funtion will thorw an
+  error.
+*/
+/*
+  Returns the text hover color for the background color 'warn' for the requested
+  theme if the theme exists. The theme name can either be 'night' or 'light'.
+  If some other value gets reuqested, the function will throw an error.
+*/
+/*
+  Returns the text hover color for the background color 'success' for the
+  requested theme if the theme exists. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+*/
+/*
+  Returns the text hover color for the background color 'info' for the requested
+  theme if the theme exists. The theme name can either be 'night' or 'light'.
+  If some other value gets reuqested, the function will throw an error.
+*/
+/*
+  Returns the text hover color for the background color 'primary' for the
+  requested theme if the theme exists. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+*/
+/*
+  Returns the text hover color for the background color 'secondary' for the
+  requested theme if the theme exists. The theme name can either be 'night' or
+  'light'. If some other value gets reuqested, the function will throw an error.
+*/
 /*
   Checks if the name exists in names. Returns true if it exists and false otherwise.
 */
@@ -37,225 +226,225 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 .sb-border-dark-s-s {
   border-color: #22272C;
-  border-width: 1px;
-  border-radius: 0.6rem;
+  border-width: 2px;
+  border-radius: 0.5384615385rem;
   border-style: solid;
 }
 
 .sb-border-dark-s-d {
   border-color: #22272C;
-  border-width: 1px;
-  border-radius: 1rem;
+  border-width: 2px;
+  border-radius: 0.7692307692rem;
   border-style: solid;
 }
 
 .sb-border-dark-s-m {
   border-color: #22272C;
-  border-width: 1px;
-  border-radius: 1.4rem;
+  border-width: 2px;
+  border-radius: 1.0769230769rem;
   border-style: solid;
 }
 
 .sb-border-dark-s-l {
   border-color: #22272C;
-  border-width: 1px;
-  border-radius: 1.8rem;
+  border-width: 2px;
+  border-radius: 1.3846153846rem;
   border-style: solid;
 }
 
 .sb-border-dark-d-s {
   border-color: #22272C;
-  border-width: 2px;
-  border-radius: 0.6rem;
+  border-width: 3px;
+  border-radius: 0.5384615385rem;
   border-style: solid;
 }
 
 .sb-border-dark-d-d {
   border-color: #22272C;
-  border-width: 2px;
-  border-radius: 1rem;
+  border-width: 3px;
+  border-radius: 0.7692307692rem;
   border-style: solid;
 }
 
 .sb-border-dark-d-m {
   border-color: #22272C;
-  border-width: 2px;
-  border-radius: 1.4rem;
+  border-width: 3px;
+  border-radius: 1.0769230769rem;
   border-style: solid;
 }
 
 .sb-border-dark-d-l {
   border-color: #22272C;
-  border-width: 2px;
-  border-radius: 1.8rem;
+  border-width: 3px;
+  border-radius: 1.3846153846rem;
   border-style: solid;
 }
 
 .sb-border-dark-m-s {
   border-color: #22272C;
-  border-width: 3px;
-  border-radius: 0.6rem;
+  border-width: 4px;
+  border-radius: 0.5384615385rem;
   border-style: solid;
 }
 
 .sb-border-dark-m-d {
   border-color: #22272C;
-  border-width: 3px;
-  border-radius: 1rem;
+  border-width: 4px;
+  border-radius: 0.7692307692rem;
   border-style: solid;
 }
 
 .sb-border-dark-m-m {
   border-color: #22272C;
-  border-width: 3px;
-  border-radius: 1.4rem;
+  border-width: 4px;
+  border-radius: 1.0769230769rem;
   border-style: solid;
 }
 
 .sb-border-dark-m-l {
   border-color: #22272C;
-  border-width: 3px;
-  border-radius: 1.8rem;
+  border-width: 4px;
+  border-radius: 1.3846153846rem;
   border-style: solid;
 }
 
 .sb-border-dark-l-s {
   border-color: #22272C;
-  border-width: 4px;
-  border-radius: 0.6rem;
+  border-width: 5px;
+  border-radius: 0.5384615385rem;
   border-style: solid;
 }
 
 .sb-border-dark-l-d {
   border-color: #22272C;
-  border-width: 4px;
-  border-radius: 1rem;
+  border-width: 5px;
+  border-radius: 0.7692307692rem;
   border-style: solid;
 }
 
 .sb-border-dark-l-m {
   border-color: #22272C;
-  border-width: 4px;
-  border-radius: 1.4rem;
+  border-width: 5px;
+  border-radius: 1.0769230769rem;
   border-style: solid;
 }
 
 .sb-border-dark-l-l {
   border-color: #22272C;
-  border-width: 4px;
-  border-radius: 1.8rem;
+  border-width: 5px;
+  border-radius: 1.3846153846rem;
   border-style: solid;
 }
 
 .sb-border-bright-s-s {
   border-color: #FFFFFF;
-  border-width: 1px;
-  border-radius: 0.6rem;
+  border-width: 2px;
+  border-radius: 0.5384615385rem;
   border-style: solid;
 }
 
 .sb-border-bright-s-d {
   border-color: #FFFFFF;
-  border-width: 1px;
-  border-radius: 1rem;
+  border-width: 2px;
+  border-radius: 0.7692307692rem;
   border-style: solid;
 }
 
 .sb-border-bright-s-m {
   border-color: #FFFFFF;
-  border-width: 1px;
-  border-radius: 1.4rem;
+  border-width: 2px;
+  border-radius: 1.0769230769rem;
   border-style: solid;
 }
 
 .sb-border-bright-s-l {
   border-color: #FFFFFF;
-  border-width: 1px;
-  border-radius: 1.8rem;
+  border-width: 2px;
+  border-radius: 1.3846153846rem;
   border-style: solid;
 }
 
 .sb-border-bright-d-s {
   border-color: #FFFFFF;
-  border-width: 2px;
-  border-radius: 0.6rem;
+  border-width: 3px;
+  border-radius: 0.5384615385rem;
   border-style: solid;
 }
 
 .sb-border-bright-d-d {
   border-color: #FFFFFF;
-  border-width: 2px;
-  border-radius: 1rem;
+  border-width: 3px;
+  border-radius: 0.7692307692rem;
   border-style: solid;
 }
 
 .sb-border-bright-d-m {
   border-color: #FFFFFF;
-  border-width: 2px;
-  border-radius: 1.4rem;
+  border-width: 3px;
+  border-radius: 1.0769230769rem;
   border-style: solid;
 }
 
 .sb-border-bright-d-l {
   border-color: #FFFFFF;
-  border-width: 2px;
-  border-radius: 1.8rem;
+  border-width: 3px;
+  border-radius: 1.3846153846rem;
   border-style: solid;
 }
 
 .sb-border-bright-m-s {
   border-color: #FFFFFF;
-  border-width: 3px;
-  border-radius: 0.6rem;
+  border-width: 4px;
+  border-radius: 0.5384615385rem;
   border-style: solid;
 }
 
 .sb-border-bright-m-d {
   border-color: #FFFFFF;
-  border-width: 3px;
-  border-radius: 1rem;
+  border-width: 4px;
+  border-radius: 0.7692307692rem;
   border-style: solid;
 }
 
 .sb-border-bright-m-m {
   border-color: #FFFFFF;
-  border-width: 3px;
-  border-radius: 1.4rem;
+  border-width: 4px;
+  border-radius: 1.0769230769rem;
   border-style: solid;
 }
 
 .sb-border-bright-m-l {
   border-color: #FFFFFF;
-  border-width: 3px;
-  border-radius: 1.8rem;
+  border-width: 4px;
+  border-radius: 1.3846153846rem;
   border-style: solid;
 }
 
 .sb-border-bright-l-s {
   border-color: #FFFFFF;
-  border-width: 4px;
-  border-radius: 0.6rem;
+  border-width: 5px;
+  border-radius: 0.5384615385rem;
   border-style: solid;
 }
 
 .sb-border-bright-l-d {
   border-color: #FFFFFF;
-  border-width: 4px;
-  border-radius: 1rem;
+  border-width: 5px;
+  border-radius: 0.7692307692rem;
   border-style: solid;
 }
 
 .sb-border-bright-l-m {
   border-color: #FFFFFF;
-  border-width: 4px;
-  border-radius: 1.4rem;
+  border-width: 5px;
+  border-radius: 1.0769230769rem;
   border-style: solid;
 }
 
 .sb-border-bright-l-l {
   border-color: #FFFFFF;
-  border-width: 4px;
-  border-radius: 1.8rem;
+  border-width: 5px;
+  border-radius: 1.3846153846rem;
   border-style: solid;
 }
 
@@ -269,19 +458,19 @@
   ROOT '.sb-border-radius-[radius]'
 */
 .sb-border-radius-s {
-  border-radius: 0.6rem;
+  border-radius: 0.5384615385rem;
 }
 
 .sb-border-radius-d {
-  border-radius: 1rem;
+  border-radius: 0.7692307692rem;
 }
 
 .sb-border-radius-m {
-  border-radius: 1.4rem;
+  border-radius: 1.0769230769rem;
 }
 
 .sb-border-radius-l {
-  border-radius: 1.8rem;
+  border-radius: 1.3846153846rem;
 }
 
 /*****************************************************************************
@@ -383,257 +572,6 @@
 }
 
 /*****************************************************************************
-                            Button - Settings
-******************************************************************************/
-/*****************************************************************************
-                            Button - Naming
-******************************************************************************/
-/*****************************************************************************
-                            Button - Functions
-******************************************************************************/
-/*
-  Returns a map with background-color and text-color of a button color:
-  (
-    'background': {color},
-    'text': {color},
-    'hover-background': {color},
-    'hover-text': {color}
-  )
-*/
-/*
-  Returns the background-color of the button-colors.
-*/
-/*
-  Returns the text-color of the button-colors.
-*/
-/*
-  Returns the hover-background-color of the button-colors.
-*/
-/*
-  Returns the hover-text-color of the button-colors.
-*/
-/*****************************************************************************
-                            Button - Classes
-******************************************************************************/
-/*
-  Adds color and hover to a button. Also creates the inverse of the colors.
-
-  Attributes:
-  - color: 'warn', 'success', 'info', 'primary', 'secondary'
-
-  OPTION '.btn--[color]' for ROOT '.sb-btn'
-*/
-/*
-  Adds inverse colors as in the normal class.
-
-  Attributes:
-  - NONE
-
-  OPTION '.is-plain' for OPTION '.btn--[color]' -> ROOT '.sb-btn'
-*/
-/*
-  Adds different sizes to the button.
-
-  Attributes:
-  - size: 's', 'm', 'l'[, 'd']
-
-  OPTION '.btn--[size]' for ROOT '.sb-btn'
-*/
-/*
-  Adds option if button is pill or normal.
-
-  Attributes:
-  - NONE
-
-  OPTION '.is-pill' for OPTION '.btn--[size]' -> ROOT '.sb-btn'
-*/
-/*
-  Adds option if button is round or normal.
-
-  Attributes:
-  - NONE
-
-  OPTION '.is-round' for OPTION '.btn--[size]' -> ROOT '.sb-btn'
-*/
-/*
-  Defines the root button class with all its sizes and colors.
-
-  ROOT .sb-btn
-*/
-.sb-btn {
-  border: 0;
-  outline: 0;
-  cursor: pointer;
-  display: block;
-  border-radius: 0.6rem;
-  min-width: 60px;
-  font-size: 1rem;
-  font-weight: normal;
-  font-family: "Inter", sans-serif;
-}
-.sb-btn.btn--s {
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-.sb-btn.btn--s.is-pill {
-  border-radius: 1.5rem;
-}
-.sb-btn.btn--s.is-round {
-  height: 1.8rem;
-  width: 1.8rem;
-  border-radius: 0.9rem;
-  min-width: 0;
-  padding: 0;
-}
-.sb-btn.btn--d {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.8333333333rem;
-  padding-right: 0.8333333333rem;
-}
-.sb-btn.btn--d.is-pill {
-  border-radius: 2.5rem;
-}
-.sb-btn.btn--d.is-round {
-  height: 3rem;
-  width: 3rem;
-  border-radius: 1.5rem;
-  min-width: 0;
-  padding: 0;
-}
-.sb-btn.btn--m {
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
-  padding-left: 1.1666666667rem;
-  padding-right: 1.1666666667rem;
-}
-.sb-btn.btn--m.is-pill {
-  border-radius: 3.5rem;
-}
-.sb-btn.btn--m.is-round {
-  height: 4.2rem;
-  width: 4.2rem;
-  border-radius: 2.1rem;
-  min-width: 0;
-  padding: 0;
-}
-.sb-btn.btn--l {
-  padding-top: 0.9rem;
-  padding-bottom: 0.9rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-.sb-btn.btn--l.is-pill {
-  border-radius: 4.5rem;
-}
-.sb-btn.btn--l.is-round {
-  height: 5.4rem;
-  width: 5.4rem;
-  border-radius: 2.7rem;
-  min-width: 0;
-  padding: 0;
-}
-.sb-btn.btn--warn {
-  background: #FF0522;
-  color: #22272C;
-  transition: all 300ms ease;
-}
-.sb-btn.btn--warn:hover {
-  background: #292f35;
-  color: #FF0522;
-}
-.sb-btn.btn--warn.is-plain {
-  background: #292f35;
-  color: #FF0522;
-}
-.sb-btn.btn--warn.is-plain:hover {
-  background: #FF0522;
-  color: #22272C;
-}
-.sb-btn.btn--success {
-  background: #52C832;
-  color: #22272C;
-  transition: all 300ms ease;
-}
-.sb-btn.btn--success:hover {
-  background: #292f35;
-  color: #52C832;
-}
-.sb-btn.btn--success.is-plain {
-  background: #292f35;
-  color: #52C832;
-}
-.sb-btn.btn--success.is-plain:hover {
-  background: #52C832;
-  color: #22272C;
-}
-.sb-btn.btn--info {
-  background: #FFD147;
-  color: #22272C;
-  transition: all 300ms ease;
-}
-.sb-btn.btn--info:hover {
-  background: #292f35;
-  color: #FFD147;
-}
-.sb-btn.btn--info.is-plain {
-  background: #292f35;
-  color: #FFD147;
-}
-.sb-btn.btn--info.is-plain:hover {
-  background: #FFD147;
-  color: #22272C;
-}
-.sb-btn.btn--primary {
-  background: #579AFF;
-  color: #22272C;
-  transition: all 300ms ease;
-}
-.sb-btn.btn--primary:hover {
-  background: #292f35;
-  color: #579AFF;
-}
-.sb-btn.btn--primary.is-plain {
-  background: #292f35;
-  color: #579AFF;
-}
-.sb-btn.btn--primary.is-plain:hover {
-  background: #579AFF;
-  color: #22272C;
-}
-.sb-btn.btn--secondary {
-  background: #84F9BD;
-  color: #22272C;
-  transition: all 300ms ease;
-}
-.sb-btn.btn--secondary:hover {
-  background: #292f35;
-  color: #84F9BD;
-}
-.sb-btn.btn--secondary.is-plain {
-  background: #292f35;
-  color: #84F9BD;
-}
-.sb-btn.btn--secondary.is-plain:hover {
-  background: #84F9BD;
-  color: #22272C;
-}
-
-/*****************************************************************************
-                            Background - Settings
-******************************************************************************/
-/*****************************************************************************
-                            Border - Naming
-******************************************************************************/
-/*****************************************************************************
-                            Border - Functions
-******************************************************************************/
-/*
-  Returns the background-color, specified by the parameter.
-*/
-/*****************************************************************************
                             Background - Classes
 ******************************************************************************/
 /*
@@ -641,16 +579,16 @@
 
 
   Attributes:
-  - color: 'warn', 'success', 'info', 'primary', 'secondary', 'dark', 'bright'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
 
   ROOT '.sb-bg-[color]'
 */
 .sb-bg-warn {
-  background-color: #FF0522;
+  background-color: #ff546d;
 }
 
 .sb-bg-success {
-  background-color: #52C832;
+  background-color: #28df99;
 }
 
 .sb-bg-info {
@@ -658,19 +596,11 @@
 }
 
 .sb-bg-primary {
-  background-color: #579AFF;
+  background-color: #3d8bfd;
 }
 
 .sb-bg-secondary {
-  background-color: #84F9BD;
-}
-
-.sb-bg-dark {
-  background-color: #22272C;
-}
-
-.sb-bg-bright {
-  background-color: #FFFFFF;
+  background-color: #f75c9a;
 }
 
 /*****************************************************************************
@@ -708,7 +638,7 @@
 
   ROOT: .sb-icon
 */
-.sb-icon {
+.sb-el-icon {
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
@@ -727,150 +657,1794 @@
   /* Support for IE. */
   font-feature-settings: "liga";
 }
-.sb-icon.icon--s {
+.sb-el-icon.sb-el-icon--s {
   font-size: 1.08375rem;
 }
-.sb-icon.icon--m {
+.sb-el-icon.sb-el-icon--m {
   font-size: 2.16rem;
 }
-.sb-icon.icon--d {
+.sb-el-icon.sb-el-icon--d {
   font-size: 1.5rem;
 }
-.sb-icon.icon--l {
+.sb-el-icon.sb-el-icon--l {
   font-size: 2.73375rem;
 }
-.sb-icon.icon--warn {
-  color: #FF0522;
+.sb-el-icon.sb-el-icon--warn {
+  color: #ff546d;
 }
-.sb-icon.icon--success {
-  color: #52C832;
+.sb-el-icon.sb-el-icon--success {
+  color: #28df99;
 }
-.sb-icon.icon--info {
+.sb-el-icon.sb-el-icon--info {
   color: #FFD147;
 }
-.sb-icon.icon--primary {
-  color: #579AFF;
+.sb-el-icon.sb-el-icon--primary {
+  color: #3d8bfd;
 }
-.sb-icon.icon--secondary {
-  color: #84F9BD;
+.sb-el-icon.sb-el-icon--secondary {
+  color: #f75c9a;
 }
 
 /*****************************************************************************
-                              Icon-Button - Settings
-******************************************************************************/
-/*****************************************************************************
-                              Icon-Button - Naming
-******************************************************************************/
-/*****************************************************************************
-                              Icon-Button - Functions
+                            Form - Settings
 ******************************************************************************/
 /*
-  Returns a map with text colors of an icon-button color:
-  (
-    'text': {color},
-    'hover-text': {color}
-  )
-*/
-/*
-  Returns the text-color of the icon-button-colors.
-*/
-/*
-  Returns the hover-text-color of the icon-button-colors.
+  All form classes should have the same height properties. Benefits consistency.
 */
 /*****************************************************************************
-                              Icon-Button - Classes
+                              Form - Naming
+******************************************************************************/
+/*****************************************************************************
+                            Form - Classes
 ******************************************************************************/
 /*
-  Adds color and hover to an icon-button. Also creates the inverse of the colors.
+  Defines the root button class with all its sizes and colors.
+
+  ROOT .sb-el-form
+*/
+.sb-el-form {
+  border-radius: 0.7rem;
+  padding: 0.7rem;
+}
+.sb-el-form .sb-el-form__header {
+  font-size: 1.35rem;
+  display: flex;
+  margin: 1rem 0;
+}
+.sb-el-form .sb-el-form__header.is-left {
+  justify-content: flex-start;
+}
+.sb-el-form .sb-el-form__header.is-center {
+  justify-content: center;
+}
+.sb-el-form .sb-el-form__header.is-right {
+  justify-content: flex-end;
+}
+.sb-el-form .sb-el-form__content {
+  display: grid;
+  grid-gap: 1rem;
+}
+.sb-el-form .sb-el-form__content .sb-el-form-group-separator {
+  margin: 0;
+}
+.sb-el-form .sb-el-form__content .sb-el-form-group {
+  padding: 0;
+}
+.sb-el-form .sb-el-form__footer {
+  border-top: 1px solid;
+  padding-top: 0.7rem;
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.sb-el-form .sb-el-form__footer.is-left {
+  justify-content: flex-start;
+}
+.sb-el-form .sb-el-form__footer.is-center {
+  justify-content: center;
+}
+.sb-el-form .sb-el-form__footer.is-right {
+  justify-content: flex-end;
+}
+.sb-el-form.sb-el-form--night-warn .sb-el-form__header {
+  color: #FFFFFF;
+}
+.sb-el-form.sb-el-form--night-warn .sb-el-form__footer {
+  border-color: #FFFFFF;
+}
+.sb-el-form.sb-el-form--night-success .sb-el-form__header {
+  color: #FFFFFF;
+}
+.sb-el-form.sb-el-form--night-success .sb-el-form__footer {
+  border-color: #FFFFFF;
+}
+.sb-el-form.sb-el-form--night-info .sb-el-form__header {
+  color: #FFFFFF;
+}
+.sb-el-form.sb-el-form--night-info .sb-el-form__footer {
+  border-color: #FFFFFF;
+}
+.sb-el-form.sb-el-form--night-primary .sb-el-form__header {
+  color: #FFFFFF;
+}
+.sb-el-form.sb-el-form--night-primary .sb-el-form__footer {
+  border-color: #FFFFFF;
+}
+.sb-el-form.sb-el-form--night-secondary .sb-el-form__header {
+  color: #FFFFFF;
+}
+.sb-el-form.sb-el-form--night-secondary .sb-el-form__footer {
+  border-color: #FFFFFF;
+}
+.sb-el-form.sb-el-form--light-warn .sb-el-form__header {
+  color: #22272C;
+}
+.sb-el-form.sb-el-form--light-warn .sb-el-form__footer {
+  border-color: #22272C;
+}
+.sb-el-form.sb-el-form--light-success .sb-el-form__header {
+  color: #22272C;
+}
+.sb-el-form.sb-el-form--light-success .sb-el-form__footer {
+  border-color: #22272C;
+}
+.sb-el-form.sb-el-form--light-info .sb-el-form__header {
+  color: #22272C;
+}
+.sb-el-form.sb-el-form--light-info .sb-el-form__footer {
+  border-color: #22272C;
+}
+.sb-el-form.sb-el-form--light-primary .sb-el-form__header {
+  color: #22272C;
+}
+.sb-el-form.sb-el-form--light-primary .sb-el-form__footer {
+  border-color: #22272C;
+}
+.sb-el-form.sb-el-form--light-secondary .sb-el-form__header {
+  color: #22272C;
+}
+.sb-el-form.sb-el-form--light-secondary .sb-el-form__footer {
+  border-color: #22272C;
+}
+
+/*****************************************************************************
+                            Button - Settings
+******************************************************************************/
+/*****************************************************************************
+                            Button - Classes
+******************************************************************************/
+/*
+  Adds color and hover to a button. Also creates the inverse of the colors.
 
   Attributes:
+  - theme: 'light', 'night'
   - color: 'warn', 'success', 'info', 'primary', 'secondary'
 
-  OPTION '.btn--[color]' for ROOT '.sb-icon-btn'
+  OPTION '.sb-el-btn--[theme]-[color]' for ROOT '.sb-el-btn'
 */
 /*
-  Adds color and hover to an icon-button. Also creates the inverse of the colors.
+  Adds inverse colors as in the normal class.
 
   Attributes:
-  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+  - NONE
 
-  OPTION '.is-plain' for OPTION '.btn--[color]' -> ROOT '.sb-btn'
+  OPTION '.is-plain' for OPTION '.sb-el-btn--[color]' -> ROOT '.sb-el-btn'
 */
 /*
-  Extends the root button class to also support icon colors when hovering.
-  For complete ROOT see button-classes.
+  Adds different sizes to the button.
 
+  Attributes:
+  - size: 's', 'm', 'l'[, 'd']
 
-  ROOT .sb-btn
+  OPTION '.sb-el-btn--[size]' for ROOT '.sb-el-btn'
 */
-.sb-btn.btn--warn .sb-icon {
+/*
+  Adds option if button is pill or normal.
+
+  Attributes:
+  - NONE
+
+  OPTION '.is-pill' for OPTION '.sb-el-btn--[size]' -> ROOT '.sb-el-btn'
+*/
+/*
+  Adds option if button is round or normal.
+
+  Attributes:
+  - NONE
+
+  OPTION '.is-round' for OPTION '.sb-el-btn--[size]' -> ROOT '.sb-el-btn'
+*/
+/*
+  Defines the root button class with all its sizes and colors.
+
+  ROOT .sb-el-btn
+*/
+.sb-el-btn {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  border-radius: 0.5384615385rem;
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: "Inter", sans-serif;
+}
+.sb-el-btn:disabled {
+  cursor: not-allowed;
+}
+.sb-el-btn.sb-el-btn--s {
+  min-width: 2.8rem;
+  height: 1.4rem;
+  padding-left: 0.9333333333rem;
+  padding-right: 0.9333333333rem;
+}
+.sb-el-btn.sb-el-btn--s.is-pill {
+  border-radius: 0.7rem;
+}
+.sb-el-btn.sb-el-btn--s.is-round {
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 0.7rem;
+  min-width: 0;
+  padding: 0;
+}
+.sb-el-btn.sb-el-btn--d {
+  min-width: 4rem;
+  height: 2rem;
+  padding-left: 1.3333333333rem;
+  padding-right: 1.3333333333rem;
+}
+.sb-el-btn.sb-el-btn--d.is-pill {
+  border-radius: 1rem;
+}
+.sb-el-btn.sb-el-btn--d.is-round {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1rem;
+  min-width: 0;
+  padding: 0;
+}
+.sb-el-btn.sb-el-btn--m {
+  min-width: 5.6rem;
+  height: 2.8rem;
+  padding-left: 1.8666666667rem;
+  padding-right: 1.8666666667rem;
+}
+.sb-el-btn.sb-el-btn--m.is-pill {
+  border-radius: 1.4rem;
+}
+.sb-el-btn.sb-el-btn--m.is-round {
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 1.4rem;
+  min-width: 0;
+  padding: 0;
+}
+.sb-el-btn.sb-el-btn--l {
+  min-width: 7.2rem;
+  height: 3.6rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+}
+.sb-el-btn.sb-el-btn--l.is-pill {
+  border-radius: 1.8rem;
+}
+.sb-el-btn.sb-el-btn--l.is-round {
+  height: 3.6rem;
+  width: 3.6rem;
+  border-radius: 1.8rem;
+  min-width: 0;
+  padding: 0;
+}
+.sb-el-btn.sb-el-btn--night-warn {
+  background: #ff546d;
+  color: #22272C;
   transition: all 300ms ease;
+}
+.sb-el-btn.sb-el-btn--night-warn:hover {
+  background: rgba(255, 84, 109, 0.1);
+  color: #ff546d;
+}
+.sb-el-btn.sb-el-btn--night-warn:disabled:hover {
+  background: #ff546d;
   color: #22272C;
 }
-.sb-btn.btn--warn:hover .sb-icon {
-  color: #FF0522;
+.sb-el-btn.sb-el-btn--night-warn.is-plain {
+  background: rgba(255, 84, 109, 0.1);
+  color: #ff546d;
 }
-.sb-btn.btn--warn.is-plain .sb-icon {
-  transition: all 300ms ease;
-  color: #FF0522;
-}
-.sb-btn.btn--warn.is-plain:hover .sb-icon {
+.sb-el-btn.sb-el-btn--night-warn.is-plain:hover {
+  background: #ff546d;
   color: #22272C;
 }
-.sb-btn.btn--success .sb-icon {
+.sb-el-btn.sb-el-btn--night-warn.is-plain:disabled:hover {
+  background: rgba(255, 84, 109, 0.1);
+  color: #ff546d;
+}
+.sb-el-btn.sb-el-btn--night-success {
+  background: #28df99;
+  color: #22272C;
   transition: all 300ms ease;
+}
+.sb-el-btn.sb-el-btn--night-success:hover {
+  background: rgba(40, 223, 153, 0.1);
+  color: #28df99;
+}
+.sb-el-btn.sb-el-btn--night-success:disabled:hover {
+  background: #28df99;
   color: #22272C;
 }
-.sb-btn.btn--success:hover .sb-icon {
-  color: #52C832;
+.sb-el-btn.sb-el-btn--night-success.is-plain {
+  background: rgba(40, 223, 153, 0.1);
+  color: #28df99;
 }
-.sb-btn.btn--success.is-plain .sb-icon {
-  transition: all 300ms ease;
-  color: #52C832;
-}
-.sb-btn.btn--success.is-plain:hover .sb-icon {
+.sb-el-btn.sb-el-btn--night-success.is-plain:hover {
+  background: #28df99;
   color: #22272C;
 }
-.sb-btn.btn--info .sb-icon {
-  transition: all 300ms ease;
-  color: #22272C;
+.sb-el-btn.sb-el-btn--night-success.is-plain:disabled:hover {
+  background: rgba(40, 223, 153, 0.1);
+  color: #28df99;
 }
-.sb-btn.btn--info:hover .sb-icon {
+.sb-el-btn.sb-el-btn--night-info {
+  background: #FFD147;
+  color: #22272C;
+  transition: all 300ms ease;
+}
+.sb-el-btn.sb-el-btn--night-info:hover {
+  background: rgba(255, 209, 71, 0.1);
   color: #FFD147;
 }
-.sb-btn.btn--info.is-plain .sb-icon {
-  transition: all 300ms ease;
+.sb-el-btn.sb-el-btn--night-info:disabled:hover {
+  background: #FFD147;
+  color: #22272C;
+}
+.sb-el-btn.sb-el-btn--night-info.is-plain {
+  background: rgba(255, 209, 71, 0.1);
   color: #FFD147;
 }
-.sb-btn.btn--info.is-plain:hover .sb-icon {
+.sb-el-btn.sb-el-btn--night-info.is-plain:hover {
+  background: #FFD147;
   color: #22272C;
 }
-.sb-btn.btn--primary .sb-icon {
+.sb-el-btn.sb-el-btn--night-info.is-plain:disabled:hover {
+  background: rgba(255, 209, 71, 0.1);
+  color: #FFD147;
+}
+.sb-el-btn.sb-el-btn--night-primary {
+  background: #3d8bfd;
+  color: #FFFFFF;
   transition: all 300ms ease;
+}
+.sb-el-btn.sb-el-btn--night-primary:hover {
+  background: rgba(61, 139, 253, 0.1);
+  color: #3d8bfd;
+}
+.sb-el-btn.sb-el-btn--night-primary:disabled:hover {
+  background: #3d8bfd;
+  color: #FFFFFF;
+}
+.sb-el-btn.sb-el-btn--night-primary.is-plain {
+  background: rgba(61, 139, 253, 0.1);
+  color: #3d8bfd;
+}
+.sb-el-btn.sb-el-btn--night-primary.is-plain:hover {
+  background: #3d8bfd;
+  color: #FFFFFF;
+}
+.sb-el-btn.sb-el-btn--night-primary.is-plain:disabled:hover {
+  background: rgba(61, 139, 253, 0.1);
+  color: #3d8bfd;
+}
+.sb-el-btn.sb-el-btn--night-secondary {
+  background: #f75c9a;
+  color: #22272C;
+  transition: all 300ms ease;
+}
+.sb-el-btn.sb-el-btn--night-secondary:hover {
+  background: rgba(247, 92, 154, 0.1);
+  color: #f75c9a;
+}
+.sb-el-btn.sb-el-btn--night-secondary:disabled:hover {
+  background: #f75c9a;
   color: #22272C;
 }
-.sb-btn.btn--primary:hover .sb-icon {
-  color: #579AFF;
+.sb-el-btn.sb-el-btn--night-secondary.is-plain {
+  background: rgba(247, 92, 154, 0.1);
+  color: #f75c9a;
 }
-.sb-btn.btn--primary.is-plain .sb-icon {
-  transition: all 300ms ease;
-  color: #579AFF;
-}
-.sb-btn.btn--primary.is-plain:hover .sb-icon {
+.sb-el-btn.sb-el-btn--night-secondary.is-plain:hover {
+  background: #f75c9a;
   color: #22272C;
 }
-.sb-btn.btn--secondary .sb-icon {
+.sb-el-btn.sb-el-btn--night-secondary.is-plain:disabled:hover {
+  background: rgba(247, 92, 154, 0.1);
+  color: #f75c9a;
+}
+.sb-el-btn.sb-el-btn--light-warn {
+  background: #ff546d;
+  color: #FFFFFF;
   transition: all 300ms ease;
+}
+.sb-el-btn.sb-el-btn--light-warn:hover {
+  background: rgba(255, 84, 109, 0.1);
+  color: #ff546d;
+}
+.sb-el-btn.sb-el-btn--light-warn:disabled:hover {
+  background: #ff546d;
+  color: #FFFFFF;
+}
+.sb-el-btn.sb-el-btn--light-warn.is-plain {
+  background: rgba(255, 84, 109, 0.1);
+  color: #ff546d;
+}
+.sb-el-btn.sb-el-btn--light-warn.is-plain:hover {
+  background: #ff546d;
+  color: #FFFFFF;
+}
+.sb-el-btn.sb-el-btn--light-warn.is-plain:disabled:hover {
+  background: rgba(255, 84, 109, 0.1);
+  color: #ff546d;
+}
+.sb-el-btn.sb-el-btn--light-success {
+  background: #28df99;
+  color: #FFFFFF;
+  transition: all 300ms ease;
+}
+.sb-el-btn.sb-el-btn--light-success:hover {
+  background: rgba(40, 223, 153, 0.2);
   color: #22272C;
 }
-.sb-btn.btn--secondary:hover .sb-icon {
-  color: #84F9BD;
+.sb-el-btn.sb-el-btn--light-success:disabled:hover {
+  background: #28df99;
+  color: #FFFFFF;
 }
-.sb-btn.btn--secondary.is-plain .sb-icon {
+.sb-el-btn.sb-el-btn--light-success.is-plain {
+  background: rgba(40, 223, 153, 0.2);
+  color: #22272C;
+}
+.sb-el-btn.sb-el-btn--light-success.is-plain:hover {
+  background: #28df99;
+  color: #FFFFFF;
+}
+.sb-el-btn.sb-el-btn--light-success.is-plain:disabled:hover {
+  background: rgba(40, 223, 153, 0.2);
+  color: #22272C;
+}
+.sb-el-btn.sb-el-btn--light-info {
+  background: #FFD147;
+  color: #22272C;
   transition: all 300ms ease;
-  color: #84F9BD;
 }
-.sb-btn.btn--secondary.is-plain:hover .sb-icon {
+.sb-el-btn.sb-el-btn--light-info:hover {
+  background: rgba(255, 209, 71, 0.3);
+  color: #22272C;
+}
+.sb-el-btn.sb-el-btn--light-info:disabled:hover {
+  background: #FFD147;
+  color: #22272C;
+}
+.sb-el-btn.sb-el-btn--light-info.is-plain {
+  background: rgba(255, 209, 71, 0.3);
+  color: #22272C;
+}
+.sb-el-btn.sb-el-btn--light-info.is-plain:hover {
+  background: #FFD147;
+  color: #22272C;
+}
+.sb-el-btn.sb-el-btn--light-info.is-plain:disabled:hover {
+  background: rgba(255, 209, 71, 0.3);
+  color: #22272C;
+}
+.sb-el-btn.sb-el-btn--light-primary {
+  background: #3d8bfd;
+  color: #FFFFFF;
+  transition: all 300ms ease;
+}
+.sb-el-btn.sb-el-btn--light-primary:hover {
+  background: rgba(61, 139, 253, 0.15);
+  color: #3d8bfd;
+}
+.sb-el-btn.sb-el-btn--light-primary:disabled:hover {
+  background: #3d8bfd;
+  color: #FFFFFF;
+}
+.sb-el-btn.sb-el-btn--light-primary.is-plain {
+  background: rgba(61, 139, 253, 0.15);
+  color: #3d8bfd;
+}
+.sb-el-btn.sb-el-btn--light-primary.is-plain:hover {
+  background: #3d8bfd;
+  color: #FFFFFF;
+}
+.sb-el-btn.sb-el-btn--light-primary.is-plain:disabled:hover {
+  background: rgba(61, 139, 253, 0.15);
+  color: #3d8bfd;
+}
+.sb-el-btn.sb-el-btn--light-secondary {
+  background: #f75c9a;
+  color: #FFFFFF;
+  transition: all 300ms ease;
+}
+.sb-el-btn.sb-el-btn--light-secondary:hover {
+  background: rgba(247, 92, 154, 0.15);
+  color: #f75c9a;
+}
+.sb-el-btn.sb-el-btn--light-secondary:disabled:hover {
+  background: #f75c9a;
+  color: #FFFFFF;
+}
+.sb-el-btn.sb-el-btn--light-secondary.is-plain {
+  background: rgba(247, 92, 154, 0.15);
+  color: #f75c9a;
+}
+.sb-el-btn.sb-el-btn--light-secondary.is-plain:hover {
+  background: #f75c9a;
+  color: #FFFFFF;
+}
+.sb-el-btn.sb-el-btn--light-secondary.is-plain:disabled:hover {
+  background: rgba(247, 92, 154, 0.15);
+  color: #f75c9a;
+}
+
+/*****************************************************************************
+                              Toggle-Switch - Classes
+******************************************************************************/
+/*
+  Adds different colors to a toggle switch. The color changes if the state of
+  the toggle switch is changing. The state is determined by the OPTION '.is-on'
+  or '.is-off'. The states have to be set dynamically.
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.sb-el-toggle-switch--[theme]-[color]' for ROOT '.sb-el-toggle-switch'
+*/
+/*
+  Adds different sizes to a toggle switch. Movement of the toggle does also get
+  defined. The movement is based on the toggle switch OPTION '.is-on' or '.is-off'.
+  The options have to be set dynamically.
+
+  Attributes:
+  - size: 's', 'd', 'm', 'l'
+
+  OPTION '.sb-el-toggle-switch--[size]' for ROOT '.sb-el-toggle-switch'
+*/
+/*
+  Creates class for a toggle switch. The class defines colors and sizes for The
+  toggle. The movement of the toggle is also defined in the size mixin.
+
+  Attributes:
+  - NONE
+
+  ROOT .sb-el-toggle-switch
+*/
+.sb-el-toggle-switch {
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+  transition: all 300ms ease;
+}
+.sb-el-toggle-switch .sb-el-toggle-switch__toggle {
+  position: absolute;
+  transition: all 300ms ease;
+}
+.sb-el-toggle-switch.disabled {
+  cursor: not-allowed;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-warn {
+  border: 2px solid #ff546d;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-warn.is-off .sb-el-toggle-switch__toggle {
+  background: #ff546d;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-warn.is-on {
+  background: #ff546d;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-warn.is-on .sb-el-toggle-switch__toggle {
+  background: #22272C;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-success {
+  border: 2px solid #28df99;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-success.is-off .sb-el-toggle-switch__toggle {
+  background: #28df99;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-success.is-on {
+  background: #28df99;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-success.is-on .sb-el-toggle-switch__toggle {
+  background: #22272C;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-info {
+  border: 2px solid #FFD147;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-info.is-off .sb-el-toggle-switch__toggle {
+  background: #FFD147;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-info.is-on {
+  background: #FFD147;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-info.is-on .sb-el-toggle-switch__toggle {
+  background: #22272C;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-primary {
+  border: 2px solid #3d8bfd;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-primary.is-off .sb-el-toggle-switch__toggle {
+  background: #3d8bfd;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-primary.is-on {
+  background: #3d8bfd;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-primary.is-on .sb-el-toggle-switch__toggle {
+  background: #FFFFFF;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-secondary {
+  border: 2px solid #f75c9a;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-secondary.is-off .sb-el-toggle-switch__toggle {
+  background: #f75c9a;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-secondary.is-on {
+  background: #f75c9a;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--night-secondary.is-on .sb-el-toggle-switch__toggle {
+  background: #22272C;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-warn {
+  border: 2px solid #ff546d;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-warn.is-off .sb-el-toggle-switch__toggle {
+  background: #ff546d;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-warn.is-on {
+  background: #ff546d;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-warn.is-on .sb-el-toggle-switch__toggle {
+  background: #FFFFFF;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-success {
+  border: 2px solid #22272C;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-success.is-off .sb-el-toggle-switch__toggle {
+  background: #22272C;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-success.is-on {
+  background: #28df99;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-success.is-on .sb-el-toggle-switch__toggle {
+  background: #FFFFFF;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-info {
+  border: 2px solid #22272C;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-info.is-off .sb-el-toggle-switch__toggle {
+  background: #22272C;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-info.is-on {
+  background: #FFD147;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-info.is-on .sb-el-toggle-switch__toggle {
+  background: #22272C;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-primary {
+  border: 2px solid #3d8bfd;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-primary.is-off .sb-el-toggle-switch__toggle {
+  background: #3d8bfd;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-primary.is-on {
+  background: #3d8bfd;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-primary.is-on .sb-el-toggle-switch__toggle {
+  background: #FFFFFF;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-secondary {
+  border: 2px solid #f75c9a;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-secondary.is-off .sb-el-toggle-switch__toggle {
+  background: #f75c9a;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-secondary.is-on {
+  background: #f75c9a;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--light-secondary.is-on .sb-el-toggle-switch__toggle {
+  background: #FFFFFF;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--s {
+  width: 2.8rem;
+  height: 1.4rem;
+  border-radius: 0.7rem;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--s .sb-el-toggle-switch__toggle {
+  top: calc(0.2333333333rem - 2px);
+  left: calc(0.2333333333rem - 2px);
+  width: 0.9333333333rem;
+  height: 0.9333333333rem;
+  border-radius: 0.4666666667rem;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--s.is-off .sb-el-toggle-switch__toggle {
+  transform: translateX(0);
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--s.is-on .sb-el-toggle-switch__toggle {
+  transform: translateX(1.4rem);
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--d {
+  width: 4rem;
+  height: 2rem;
+  border-radius: 1rem;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--d .sb-el-toggle-switch__toggle {
+  top: calc(0.3333333333rem - 2px);
+  left: calc(0.3333333333rem - 2px);
+  width: 1.3333333333rem;
+  height: 1.3333333333rem;
+  border-radius: 0.6666666667rem;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--d.is-off .sb-el-toggle-switch__toggle {
+  transform: translateX(0);
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--d.is-on .sb-el-toggle-switch__toggle {
+  transform: translateX(2rem);
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--m {
+  width: 5.6rem;
+  height: 2.8rem;
+  border-radius: 1.4rem;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--m .sb-el-toggle-switch__toggle {
+  top: calc(0.4666666667rem - 2px);
+  left: calc(0.4666666667rem - 2px);
+  width: 1.8666666667rem;
+  height: 1.8666666667rem;
+  border-radius: 0.9333333333rem;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--m.is-off .sb-el-toggle-switch__toggle {
+  transform: translateX(0);
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--m.is-on .sb-el-toggle-switch__toggle {
+  transform: translateX(2.8rem);
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--l {
+  width: 7.2rem;
+  height: 3.6rem;
+  border-radius: 1.8rem;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--l .sb-el-toggle-switch__toggle {
+  top: calc(0.6rem - 2px);
+  left: calc(0.6rem - 2px);
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 1.2rem;
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--l.is-off .sb-el-toggle-switch__toggle {
+  transform: translateX(0);
+}
+.sb-el-toggle-switch.sb-el-toggle-switch--l.is-on .sb-el-toggle-switch__toggle {
+  transform: translateX(3.6rem);
+}
+
+/*****************************************************************************
+                              Checkbox - Classes
+******************************************************************************/
+/*
+  Adds different colors to a checkbox. The coloring is based on the two states
+  of the checkbos: 'checked' and 'unchecked'. The two states have to be set
+  dynamically.
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.sb-el-checkbox--[theme]-[color]' for ROOT '.sb-el-checkbox'
+*/
+/*
+  Adds different sizes to a checkbox. The sizes concern widht, height and
+  border-radius.
+
+  Attributes:
+  - size: 's', 'd', 'm', 'l'
+
+  OPTION '.sb-el-checkbox--[size]' for ROOT '.sb-el-checkbox'
+*/
+/*
+  Creates class for a checkbox. The class defines colors and sizes for The
+  checkbox and the tick.
+
+  Attributes:
+  - NONE
+
+  ROOT .sb-el-checkbox
+*/
+.sb-el-checkbox {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 0.7rem;
+}
+.sb-el-checkbox .sb-el-checkbox__label {
+  display: none;
+}
+.sb-el-checkbox.is-label .sb-el-checkbox__label {
+  display: block;
+}
+.sb-el-checkbox.is-label .sb-el-checkbox__label span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.sb-el-checkbox.is-label.label-is-right .sb-el-checkbox__label {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.sb-el-checkbox.is-label.label-is-right .sb-el-checkbox__checkbox-wrapper {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.sb-el-checkbox.is-label.label-is-left .sb-checkbox__label {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.sb-el-checkbox.is-label.label-is-left .sb-el-checkbox__checkbox-wrapper {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.sb-el-checkbox.is-label.label-is-top {
+  grid-template-columns: auto;
+}
+.sb-el-checkbox.is-label.label-is-top .sb-el-checkbox__label {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.sb-el-checkbox.is-label.label-is-top .sb-el-checkbox__checkbox-wrapper {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.sb-el-checkbox.is-label.label-is-bottom {
+  grid-template-columns: auto;
+}
+.sb-el-checkbox.is-label.label-is-bottom .sb-el-checkbox__label {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.sb-el-checkbox.is-label.label-is-bottom .sb-el-checkbox__checkbox-wrapper {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.sb-el-checkbox .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  box-sizing: border-box;
+  border: 2px solid;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.sb-el-checkbox .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick {
+  height: 100%;
+  width: 100%;
+}
+.sb-el-checkbox .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 300ms ease;
+}
+.sb-el-checkbox.is-unchecked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  color: transparent;
+}
+.sb-el-checkbox.disabled {
+  cursor: not-allowed;
+}
+.sb-el-checkbox.disabled.is-label .sb-el-checkbox__label {
+  cursor: not-allowed;
+}
+.sb-el-checkbox.disabled .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick {
+  cursor: not-allowed;
+}
+.sb-el-checkbox.sb-el-checkbox--night-warn .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  border-color: #ff546d;
+}
+.sb-el-checkbox.sb-el-checkbox--night-warn.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  background: #ff546d;
+}
+.sb-el-checkbox.sb-el-checkbox--night-warn.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-checkbox.sb-el-checkbox--night-success .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  border-color: #28df99;
+}
+.sb-el-checkbox.sb-el-checkbox--night-success.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  background: #28df99;
+}
+.sb-el-checkbox.sb-el-checkbox--night-success.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-checkbox.sb-el-checkbox--night-info .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  border-color: #FFD147;
+}
+.sb-el-checkbox.sb-el-checkbox--night-info.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  background: #FFD147;
+}
+.sb-el-checkbox.sb-el-checkbox--night-info.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-checkbox.sb-el-checkbox--night-primary .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  border-color: #3d8bfd;
+}
+.sb-el-checkbox.sb-el-checkbox--night-primary.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  background: #3d8bfd;
+}
+.sb-el-checkbox.sb-el-checkbox--night-primary.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  color: #FFFFFF;
+}
+.sb-el-checkbox.sb-el-checkbox--night-secondary .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  border-color: #f75c9a;
+}
+.sb-el-checkbox.sb-el-checkbox--night-secondary.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  background: #f75c9a;
+}
+.sb-el-checkbox.sb-el-checkbox--night-secondary.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-checkbox.sb-el-checkbox--light-warn .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  border-color: #ff546d;
+}
+.sb-el-checkbox.sb-el-checkbox--light-warn.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  background: #ff546d;
+}
+.sb-el-checkbox.sb-el-checkbox--light-warn.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  color: #FFFFFF;
+}
+.sb-el-checkbox.sb-el-checkbox--light-success .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  border-color: #28df99;
+}
+.sb-el-checkbox.sb-el-checkbox--light-success.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  background: #28df99;
+}
+.sb-el-checkbox.sb-el-checkbox--light-success.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  color: #FFFFFF;
+}
+.sb-el-checkbox.sb-el-checkbox--light-info .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  border-color: #FFD147;
+}
+.sb-el-checkbox.sb-el-checkbox--light-info.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  background: #FFD147;
+}
+.sb-el-checkbox.sb-el-checkbox--light-info.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-checkbox.sb-el-checkbox--light-primary .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  border-color: #3d8bfd;
+}
+.sb-el-checkbox.sb-el-checkbox--light-primary.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  background: #3d8bfd;
+}
+.sb-el-checkbox.sb-el-checkbox--light-primary.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  color: #FFFFFF;
+}
+.sb-el-checkbox.sb-el-checkbox--light-secondary .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  border-color: #f75c9a;
+}
+.sb-el-checkbox.sb-el-checkbox--light-secondary.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  background: #f75c9a;
+}
+.sb-el-checkbox.sb-el-checkbox--light-secondary.is-checked .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  color: #FFFFFF;
+}
+.sb-el-checkbox.sb-el-checkbox--s .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 0.4666666667rem;
+}
+.sb-el-checkbox.sb-el-checkbox--s .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  font-size: 1.12rem;
+}
+.sb-el-checkbox.sb-el-checkbox--d .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 0.6666666667rem;
+}
+.sb-el-checkbox.sb-el-checkbox--d .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  font-size: 1.6rem;
+}
+.sb-el-checkbox.sb-el-checkbox--m .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 0.9333333333rem;
+}
+.sb-el-checkbox.sb-el-checkbox--m .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  font-size: 2.24rem;
+}
+.sb-el-checkbox.sb-el-checkbox--l .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox {
+  height: 3.6rem;
+  width: 3.6rem;
+  border-radius: 1.2rem;
+}
+.sb-el-checkbox.sb-el-checkbox--l .sb-el-checkbox__checkbox-wrapper .sb-el-checkbox__checkbox .sb-el-checkbox__tick .sb-el-icon {
+  font-size: 2.88rem;
+}
+
+/*****************************************************************************
+                              Radio-Button - Classes
+******************************************************************************/
+/*
+  Adds different colors to a radio button. The coloring is based on the two states
+  of the checkbos: 'checked' and 'unchecked'. The two states have to be set
+  dynamically.
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.sb-el-radio-button--[theme]-[color]' for ROOT '.sb-el-radio-button'
+*/
+/*
+  Adds different sizes to a radio button. The sizes concern widht, height and
+  border-radius (circle).
+
+  Attributes:
+  - size: 's', 'd', 'm', 'l'
+
+  OPTION '.sb-el-radio-button--[size]' for ROOT '.sb-el-radio-button'
+*/
+/*
+  Creates class for a radio button. The class defines colors and sizes for The
+  radio button and the mark.
+
+  Attributes:
+  - NONE
+
+  ROOT .sb-el-radio-button
+*/
+.sb-el-radio-button {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 0.7rem;
+}
+.sb-el-radio-button .sb-el-radio-button__label {
+  display: none;
+}
+.sb-el-radio-button.is-label .sb-el-radio-button__label {
+  display: block;
+}
+.sb-el-radio-button.is-label .sb-el-radio-button__label span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.sb-el-radio-button.is-label.label-is-right .sb-el-radio-button__label {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.sb-el-radio-button.is-label.label-is-right .sb-el-radio-button__radio-wrapper {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.sb-el-radio-button.is-label.label-is-left .sb-el-radio-button__label {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.sb-el-radio-button.is-label.label-is-left .sb-el-radio-button__radio-wrapper {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.sb-el-radio-button.is-label.label-is-top {
+  grid-template-columns: auto;
+}
+.sb-el-radio-button.is-label.label-is-top .sb-el-radio-button__label {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.sb-el-radio-button.is-label.label-is-top .sb-el-radio-button__radio-wrapper {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.sb-el-radio-button.is-label.label-is-bottom {
+  grid-template-columns: auto;
+}
+.sb-el-radio-button.is-label.label-is-bottom .sb-el-radio-button__label {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.sb-el-radio-button.is-label.label-is-bottom .sb-el-radio-button__radio-wrapper {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.sb-el-radio-button.disabled {
+  cursor: not-allowed;
+}
+.sb-el-radio-button.disabled.is-label .sb-el-radio-button__label {
+  cursor: not-allowed;
+}
+.sb-el-radio-button.disabled.is-label .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  cursor: not-allowed;
+}
+.sb-el-radio-button .sb-el-radio-button__radio-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sb-el-radio-button .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  box-sizing: border-box;
+  border: 2px solid;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 300ms ease;
+}
+.sb-el-radio-button.sb-el-radio-button--warn .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  border-color: #ff546d;
+}
+.sb-el-radio-button.sb-el-radio-button--warn.is-checked .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  background: #ff546d;
+}
+.sb-el-radio-button.sb-el-radio-button--success .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  border-color: #28df99;
+}
+.sb-el-radio-button.sb-el-radio-button--success.is-checked .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  background: #28df99;
+}
+.sb-el-radio-button.sb-el-radio-button--info .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  border-color: #FFD147;
+}
+.sb-el-radio-button.sb-el-radio-button--info.is-checked .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  background: #FFD147;
+}
+.sb-el-radio-button.sb-el-radio-button--primary .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  border-color: #3d8bfd;
+}
+.sb-el-radio-button.sb-el-radio-button--primary.is-checked .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  background: #3d8bfd;
+}
+.sb-el-radio-button.sb-el-radio-button--secondary .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  border-color: #f75c9a;
+}
+.sb-el-radio-button.sb-el-radio-button--secondary.is-checked .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  background: #f75c9a;
+}
+.sb-el-radio-button.sb-el-radio-button--s .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  height: 1.4rem;
+  width: 1.4rem;
+}
+.sb-el-radio-button.sb-el-radio-button--d .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  height: 2rem;
+  width: 2rem;
+}
+.sb-el-radio-button.sb-el-radio-button--m .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  height: 2.8rem;
+  width: 2.8rem;
+}
+.sb-el-radio-button.sb-el-radio-button--l .sb-el-radio-button__radio-wrapper .sb-el-radio-button__radio {
+  height: 3.6rem;
+  width: 3.6rem;
+}
+
+/*****************************************************************************
+                              Checkbox-Group - Classes
+******************************************************************************/
+/*
+  Adds color to a form group.
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.sb-el-form-group--[theme]-[color]' for ROOT '.sb-el-form-group'
+*/
+/*
+  Adds different sizes to the button.
+
+  Attributes:
+  - size: 's', 'm', 'l'[, 'd']
+
+  OPTION '.sb-el-btn--[size]' for ROOT '.sb-el-btn'
+*/
+/*
+  Adds option if button is pill or normal.
+
+  Attributes:
+  - NONE
+
+  OPTION '.is-pill' for OPTION '.sb-el-btn--[size]' -> ROOT '.sb-el-btn'
+*/
+/*
+  Defines the root form group class with all its sizes and colors.
+
+  ROOT .sb-el-form-group
+*/
+.sb-el-select-button {
+  position: relative;
+  cursor: pointer;
+}
+.sb-el-select-button .sb-el-select-button__button {
+  transition: all 300ms ease;
+  transition-delay: 100ms;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.sb-el-select-button .sb-el-select-button__button .sb-el-icon {
+  transition: all 300ms ease;
+}
+.sb-el-select-button .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  overflow: hidden;
+  height: auto;
+  transform-origin: top;
+  position: absolute;
+  transform: scaleY(0);
+  border-bottom-left-radius: 0.5384615385rem;
+  border-bottom-right-radius: 0.5384615385rem;
+  transition: all 100ms ease;
+}
+.sb-el-select-button .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option {
+  display: flex;
+  justify-content: center;
+  transition: all 300ms ease;
+}
+.sb-el-select-button .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:hover {
+  background: black;
+}
+.sb-el-select-button.is-open .sb-el-select-button__button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  transition: all 300ms ease;
+  transition-delay: 0;
+}
+.sb-el-select-button.is-open .sb-el-select-button__button .sb-el-icon {
+  transform: rotate(180deg);
+}
+.sb-el-select-button.is-open .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  transition-delay: 300ms;
+  transform: scaleY(1);
+}
+.sb-el-select-button.sb-el-select-button--s .sb-el-select-button__button {
+  width: 5.6rem;
+}
+.sb-el-select-button.sb-el-select-button--s .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option {
+  width: 4.2rem;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+.sb-el-select-button.sb-el-select-button--s.is-pill .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  border-bottom-left-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem;
+}
+.sb-el-select-button.sb-el-select-button--d .sb-el-select-button__button {
+  width: 8rem;
+}
+.sb-el-select-button.sb-el-select-button--d .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option {
+  width: 6.6rem;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+.sb-el-select-button.sb-el-select-button--d.is-pill .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.sb-el-select-button.sb-el-select-button--m .sb-el-select-button__button {
+  width: 11.2rem;
+}
+.sb-el-select-button.sb-el-select-button--m .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option {
+  width: 9.8rem;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+.sb-el-select-button.sb-el-select-button--m.is-pill .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  border-bottom-left-radius: 1.4rem;
+  border-bottom-right-radius: 1.4rem;
+}
+.sb-el-select-button.sb-el-select-button--l .sb-el-select-button__button {
+  width: 14.4rem;
+}
+.sb-el-select-button.sb-el-select-button--l .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option {
+  width: 13rem;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+.sb-el-select-button.sb-el-select-button--l.is-pill .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  border-bottom-left-radius: 1.8rem;
+  border-bottom-right-radius: 1.8rem;
+}
+.sb-el-select-button.sb-el-select-button--night-warn {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-warn .sb-el-select-button__button .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-warn .sb-el-select-button__button:hover .sb-el-icon {
+  color: #ff546d;
+}
+.sb-el-select-button.sb-el-select-button--night-warn .sb-el-select-button__button:disabled:hover .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-warn .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  background: #2d343a;
+}
+.sb-el-select-button.sb-el-select-button--night-warn .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option {
+  background: #ff546d;
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-warn .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:hover {
+  background: rgba(255, 84, 109, 0.1);
+  color: #ff546d;
+}
+.sb-el-select-button.sb-el-select-button--night-warn .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:disabled:hover {
+  background: #ff546d;
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-success {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-success .sb-el-select-button__button .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-success .sb-el-select-button__button:hover .sb-el-icon {
+  color: #28df99;
+}
+.sb-el-select-button.sb-el-select-button--night-success .sb-el-select-button__button:disabled:hover .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-success .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  background: #2d343a;
+}
+.sb-el-select-button.sb-el-select-button--night-success .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option {
+  background: #28df99;
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-success .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:hover {
+  background: rgba(40, 223, 153, 0.1);
+  color: #28df99;
+}
+.sb-el-select-button.sb-el-select-button--night-success .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:disabled:hover {
+  background: #28df99;
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-info {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-info .sb-el-select-button__button .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-info .sb-el-select-button__button:hover .sb-el-icon {
+  color: #FFD147;
+}
+.sb-el-select-button.sb-el-select-button--night-info .sb-el-select-button__button:disabled:hover .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-info .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  background: #2d343a;
+}
+.sb-el-select-button.sb-el-select-button--night-info .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option {
+  background: #FFD147;
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-info .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:hover {
+  background: rgba(255, 209, 71, 0.1);
+  color: #FFD147;
+}
+.sb-el-select-button.sb-el-select-button--night-info .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:disabled:hover {
+  background: #FFD147;
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-primary {
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--night-primary .sb-el-select-button__button .sb-el-icon {
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--night-primary .sb-el-select-button__button:hover .sb-el-icon {
+  color: #3d8bfd;
+}
+.sb-el-select-button.sb-el-select-button--night-primary .sb-el-select-button__button:disabled:hover .sb-el-icon {
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--night-primary .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  background: #2d343a;
+}
+.sb-el-select-button.sb-el-select-button--night-primary .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option {
+  background: #3d8bfd;
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--night-primary .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:hover {
+  background: rgba(61, 139, 253, 0.1);
+  color: #3d8bfd;
+}
+.sb-el-select-button.sb-el-select-button--night-primary .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:disabled:hover {
+  background: #3d8bfd;
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--night-secondary {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-secondary .sb-el-select-button__button .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-secondary .sb-el-select-button__button:hover .sb-el-icon {
+  color: #f75c9a;
+}
+.sb-el-select-button.sb-el-select-button--night-secondary .sb-el-select-button__button:disabled:hover .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-secondary .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  background: #2d343a;
+}
+.sb-el-select-button.sb-el-select-button--night-secondary .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option {
+  background: #f75c9a;
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--night-secondary .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:hover {
+  background: rgba(247, 92, 154, 0.1);
+  color: #f75c9a;
+}
+.sb-el-select-button.sb-el-select-button--night-secondary .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:disabled:hover {
+  background: #f75c9a;
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--light-warn {
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-warn .sb-el-select-button__button .sb-el-icon {
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-warn .sb-el-select-button__button:hover .sb-el-icon {
+  color: #ff546d;
+}
+.sb-el-select-button.sb-el-select-button--light-warn .sb-el-select-button__button:disabled:hover .sb-el-icon {
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-warn .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  background: #F6EDF8;
+}
+.sb-el-select-button.sb-el-select-button--light-warn .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option {
+  background: #ff546d;
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-warn .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:hover {
+  background: rgba(255, 84, 109, 0.1);
+  color: #ff546d;
+}
+.sb-el-select-button.sb-el-select-button--light-warn .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:disabled:hover {
+  background: #ff546d;
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-success {
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-success .sb-el-select-button__button .sb-el-icon {
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-success .sb-el-select-button__button:hover .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--light-success .sb-el-select-button__button:disabled:hover .sb-el-icon {
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-success .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  background: #F6EDF8;
+}
+.sb-el-select-button.sb-el-select-button--light-success .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option {
+  background: #28df99;
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-success .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:hover {
+  background: rgba(40, 223, 153, 0.2);
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--light-success .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:disabled:hover {
+  background: #28df99;
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-info {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--light-info .sb-el-select-button__button .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--light-info .sb-el-select-button__button:hover .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--light-info .sb-el-select-button__button:disabled:hover .sb-el-icon {
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--light-info .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  background: #F6EDF8;
+}
+.sb-el-select-button.sb-el-select-button--light-info .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option {
+  background: #FFD147;
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--light-info .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:hover {
+  background: rgba(255, 209, 71, 0.3);
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--light-info .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:disabled:hover {
+  background: #FFD147;
+  color: #22272C;
+}
+.sb-el-select-button.sb-el-select-button--light-primary {
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-primary .sb-el-select-button__button .sb-el-icon {
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-primary .sb-el-select-button__button:hover .sb-el-icon {
+  color: #3d8bfd;
+}
+.sb-el-select-button.sb-el-select-button--light-primary .sb-el-select-button__button:disabled:hover .sb-el-icon {
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-primary .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  background: #F6EDF8;
+}
+.sb-el-select-button.sb-el-select-button--light-primary .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option {
+  background: #3d8bfd;
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-primary .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:hover {
+  background: rgba(61, 139, 253, 0.15);
+  color: #3d8bfd;
+}
+.sb-el-select-button.sb-el-select-button--light-primary .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:disabled:hover {
+  background: #3d8bfd;
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-secondary {
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-secondary .sb-el-select-button__button .sb-el-icon {
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-secondary .sb-el-select-button__button:hover .sb-el-icon {
+  color: #f75c9a;
+}
+.sb-el-select-button.sb-el-select-button--light-secondary .sb-el-select-button__button:disabled:hover .sb-el-icon {
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-secondary .sb-el-select-button__options-wrapper .sb-el-select-button__options {
+  background: #F6EDF8;
+}
+.sb-el-select-button.sb-el-select-button--light-secondary .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option {
+  background: #f75c9a;
+  color: #FFFFFF;
+}
+.sb-el-select-button.sb-el-select-button--light-secondary .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:hover {
+  background: rgba(247, 92, 154, 0.15);
+  color: #f75c9a;
+}
+.sb-el-select-button.sb-el-select-button--light-secondary .sb-el-select-button__options-wrapper .sb-el-select-button__options .sb-el-select-button__option:disabled:hover {
+  background: #f75c9a;
+  color: #FFFFFF;
+}
+
+/*****************************************************************************
+                              Slider - Classes
+******************************************************************************/
+.sb-el-slider {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: 1fr 1.4rem;
+  grid-auto-flow: column;
+}
+.sb-el-slider.is-label {
+  grid-template-rows: auto auto;
+}
+.sb-el-slider.is-value .sb-el-slider__slider {
+  grid-column: 1/2;
+}
+.sb-el-slider.is-not-value .sb-el-slider__slider {
+  grid-column: 1/3;
+}
+.sb-el-slider .sb-el-slider__label {
+  grid-column: 1/3;
+  color: white;
+}
+.sb-el-slider .sb-el-slider__slider {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  background: transparent;
+  width: 100%;
+  margin: 0;
+}
+.sb-el-slider .sb-el-slider__slider:focus {
+  outline: none;
+}
+.sb-el-slider .sb-el-slider__slider::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.sb-el-slider .sb-el-slider__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+.sb-el-slider .sb-el-slider__slider::-moz-range-thumb {
+  cursor: pointer;
+}
+.sb-el-slider .sb-el-slider__slider::-ms-thumb {
+  cursor: pointer;
+}
+.sb-el-slider .sb-el-slider__slider::-webkit-slider-thumb {
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 0.7rem;
+  background: #3d8bfd;
+  transform: translateY(-0.35rem);
+}
+.sb-el-slider .sb-el-slider__slider::-moz-range-thumb {
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 0.7rem;
+  background: #3d8bfd;
+  transform: translateY(-0.35rem);
+}
+.sb-el-slider .sb-el-slider__slider::-ms-thumb {
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 0.7rem;
+  background: #3d8bfd;
+  transform: translateY(-0.35rem);
+}
+.sb-el-slider .sb-el-slider__slider::-webkit-slider-runnable-track {
+  border-radius: 0.7rem;
+  background: rgba(61, 139, 253, 0.15);
+  height: 0.7rem;
+}
+.sb-el-slider .sb-el-slider__slider::-moz-range-track {
+  border-radius: 0.7rem;
+  background: rgba(61, 139, 253, 0.15);
+  height: 0.7rem;
+}
+.sb-el-slider .sb-el-slider__slider::-ms-track {
+  border-radius: 0.7rem;
+  background: rgba(61, 139, 253, 0.15);
+  height: 0.7rem;
+}
+.sb-el-slider .sb-el-slider__slider::-ms-fill-lower {
+  border-radius: 0.7rem;
+  background: rgba(61, 139, 253, 0.15);
+  height: 0.7rem;
+}
+.sb-el-slider .sb-el-slider__slider::-ms-fill-upper {
+  border-radius: 0.7rem;
+  background: rgba(61, 139, 253, 0.15);
+  height: 0.7rem;
+}
+.sb-el-slider .sb-el-slider__value {
+  grid-column: 2/3;
+  vertical-align: middle;
+  text-align: center;
+  color: white;
+}
+
+/*****************************************************************************
+                              Checkbox-Group - Classes
+******************************************************************************/
+/*
+  Adds color to a form group separator. Sets the separator according to the
+  background.
+
+  Attributes:
+  - theme: 'light', 'night'
+
+  OPTION '.sb-el-form-group-separator--[theme]' for ROOT
+  '.sb-el-form-group-separator'
+*/
+/*
+  Defines the root form group separator class;
+
+  ROOT .sb-el-form-group-separator
+*/
+.sb-el-form-group-separator {
+  border: 1px solid;
+  border-bottom: 0;
+  margin: 0.7rem;
+}
+.sb-el-form-group-separator.sb-el-form-group-separator--night {
+  border-color: #FFFFFF;
+}
+.sb-el-form-group-separator.sb-el-form-group-separator--light {
+  border-color: #22272C;
+}
+
+/*
+  Adds color to a form group.
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.sb-el-form-group--[theme]-[color]' for ROOT '.sb-el-form-group'
+*/
+/*
+  Defines the root form group class with all its sizes and colors.
+
+  ROOT .sb-el-form-group
+*/
+.sb-el-form-group {
+  padding: 0.7rem;
+}
+.sb-el-form-group.is-options {
+  display: grid;
+  grid-gap: 0.7rem;
+}
+.sb-el-form-group.is-options .sb-el-form-group__options-wrapper {
+  display: flex;
+}
+.sb-el-form-group.is-options .sb-el-form-group__options-wrapper .sb-el-form-group__options {
+  display: grid;
+  grid-gap: 0.7rem;
+  width: auto;
+}
+.sb-el-form-group.is-options .sb-el-form-group__options-wrapper .sb-el-form-group__options .sb-el-form-group__option {
+  display: flex;
+}
+.sb-el-form-group .sb-el-form-group__title {
+  font-size: 1.2rem;
+}
+.sb-el-form-group.is-left .sb-el-form-group__title {
+  justify-self: left;
+}
+.sb-el-form-group.is-left.is-options .sb-el-form-group__options-wrapper {
+  justify-content: flex-start;
+}
+.sb-el-form-group.is-center .sb-el-form-group__title {
+  justify-self: center;
+}
+.sb-el-form-group.is-center.is-options .sb-el-form-group__options-wrapper {
+  justify-content: center;
+}
+.sb-el-form-group.is-right .sb-el-form-group__title {
+  justify-self: right;
+}
+.sb-el-form-group.is-right.is-options .sb-el-form-group__options-wrapper {
+  justify-content: flex-end;
+}
+.sb-el-form-group.sb-el-form-group--night-warn {
+  color: #FFFFFF;
+}
+.sb-el-form-group.sb-el-form-group--night-success {
+  color: #FFFFFF;
+}
+.sb-el-form-group.sb-el-form-group--night-info {
+  color: #FFFFFF;
+}
+.sb-el-form-group.sb-el-form-group--night-primary {
+  color: #FFFFFF;
+}
+.sb-el-form-group.sb-el-form-group--night-secondary {
+  color: #FFFFFF;
+}
+.sb-el-form-group.sb-el-form-group--light-warn {
+  color: #22272C;
+}
+.sb-el-form-group.sb-el-form-group--light-success {
+  color: #22272C;
+}
+.sb-el-form-group.sb-el-form-group--light-info {
+  color: #22272C;
+}
+.sb-el-form-group.sb-el-form-group--light-primary {
+  color: #22272C;
+}
+.sb-el-form-group.sb-el-form-group--light-secondary {
   color: #22272C;
 }
 
