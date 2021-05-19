@@ -56,62 +56,24 @@ $sb-el-form-group-separator-root: 'sb-el-form-group-separator';
 */
 $sb-el-form-group-root: 'sb-el-form-group';
 .#{$sb-el-form-group-root} {
-  padding: $spacing-s;
-  &.is-options {
-    display: grid;
-    grid-gap: $spacing-s;
+  display: flex;
+  flex-direction: column;
 
-    .#{$sb-el-form-group-root}__options-wrapper {
-      display: flex;
-      .#{$sb-el-form-group-root}__options {
-        display: grid;
-        grid-gap: $spacing-s;
-        width: auto;
-        .#{$sb-el-form-group-root}__option {
-          display: flex;
-        }
-      }
-    }
-  }
-
-  .#{$sb-el-form-group-root}__title {
+  .#{$sb-el-form-group-root}__header {
     font-size: getFontSize('m');
   }
 
   &.is-left {
-    .#{$sb-el-form-group-root}__title {
-      justify-self: left;
-    }
-    &.is-options {
-      .#{$sb-el-form-group-root}__options-wrapper {
-        justify-content: flex-start;
-      }
-    }
+    align-items: flex-start;
   }
 
   &.is-center {
-    .#{$sb-el-form-group-root}__title {
-      justify-self: center;
-    }
-    &.is-options {
-      .#{$sb-el-form-group-root}__options-wrapper {
-        justify-content: center;
-      }
-    }
+    align-items: center;
   }
 
   &.is-right {
-    .#{$sb-el-form-group-root}__title {
-      justify-self: right;
-    }
-    &.is-options {
-      .#{$sb-el-form-group-root}__options-wrapper {
-        justify-content: flex-end;
-      }
-    }
+    align-items: flex-end;
   }
-
-
 
   @each $theme in $theme-names {
     @each $color in $color-names {
