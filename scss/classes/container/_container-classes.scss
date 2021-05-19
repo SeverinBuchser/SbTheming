@@ -2,6 +2,11 @@
                             Container - Classes
 ******************************************************************************/
 
+/*
+  Defines the root container class with all its sizes and colors.
+
+  ROOT .sb-el-container
+*/
 $sb-el-container-root: 'sb-el-container';
 .#{$sb-el-container-root} {
   @each $theme in $theme-names {
