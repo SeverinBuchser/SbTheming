@@ -61,6 +61,7 @@ $sb-el-form-group-root: 'sb-el-form-group';
 
   .#{$sb-el-form-group-root}__header {
     font-size: getFontSize('m');
+    margin-bottom: $spacing-s;
   }
 
   &.is-left {
