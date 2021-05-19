@@ -17,6 +17,7 @@ $sb-el-container-root: 'sb-el-container';
   }
   @each $size in $container-size-names {
     &.#{$sb-el-container-root}--#{$size} {
+      margin: map-get($container-sizes, $size);
       padding: map-get($container-sizes, $size);
       border-radius: map-get($container-sizes, $size);
     }
