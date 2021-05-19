@@ -23,7 +23,7 @@ $sb-el-form-root: 'sb-el-form';
   .#{$sb-el-form-root}__header {
     font-size: getFontSize('l');
     display: flex;
-    margin: $spacing-d 0;
+    margin-bottom: $spacing-d;
 
     &.is-left {
       justify-content: flex-start;
