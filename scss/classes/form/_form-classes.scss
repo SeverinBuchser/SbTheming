@@ -20,9 +20,6 @@
 */
 $sb-el-form-root: 'sb-el-form';
 .#{$sb-el-form-root} {
-  border-radius: $spacing-s;
-  padding: $spacing-s;
-
   .#{$sb-el-form-root}__header {
     font-size: getFontSize('l');
     display: flex;
