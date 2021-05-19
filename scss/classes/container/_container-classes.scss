@@ -1,0 +1,19 @@
+/*****************************************************************************
+                            Container - Classes
+******************************************************************************/
+
+$sb-el-container-root: 'sb-el-container';
+.#{$sb-el-container-root} {
+  @each $theme in $theme-names {
+    &.#{$sb-el-container-root}--#{$theme} {
+      background: getThemeChildBackgroundColor($theme);
+      color: getThemeTextColor($theme);
+    }
+  }
+  @each $size in $container-size-names {
+    &.#{$sb-el-container-root}--#{$size} {
+      padding: map-get($container-sizes, $size);
+      border-radius: map-get($container-sizes, $size);
+    }
+  }
+}

@@ -1,0 +1,19 @@
+/*****************************************************************************
+                            Container - Naming
+******************************************************************************/
+
+// size names
+$container-size-names: (
+  's',
+  'd',
+  'm',
+  'l'
+);
+
+// sizes
+$container-sizes: (
+  's': $container-size-s,
+  'd': $container-size-d,
+  'm': $container-size-m,
+  'l': $container-size-l,
+);
