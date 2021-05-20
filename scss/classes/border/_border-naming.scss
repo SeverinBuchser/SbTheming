@@ -4,8 +4,13 @@
 
 // colors
 $border-colors: (
-  'dark': $border-color-dark,
-  'bright': $border-color-bright
+  'warn': $border-color-warn,
+  'success': $border-color-success,
+  'info': $border-color-info,
+  'primary': $border-color-primary,
+  'secondary': $border-color-secondary,
+  'night': $border-color-night,
+  'light': $border-color-light,
 );
 
 // widths

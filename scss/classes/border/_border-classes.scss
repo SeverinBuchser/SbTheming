@@ -13,14 +13,11 @@
 
   ROOT '.sb-border-[color]-[width]-[radius]'
 */
-@each $border-color in map-keys($border-colors) {
-  @each $border-width in map-keys($border-widths) {
-    @each $border-radius in map-keys($border-radii) {
-      .sb-border-#{$border-color}-#{$border-width}-#{$border-radius} {
-        border-color: getBorderColor($border-color);
-        border-width: getBorderWidth($border-width);
-        border-radius: getBorderRadius($border-radius);
-        border-style: solid;
+@each $color in map-keys($border-colors) {
+  @each $size in map-keys($border-widths) {
+    @each $radius in map-keys($border-radii) {
+      .sb-el-border-#{$color}-#{$size}-#{$radius} {
+        @include border($color, $size, $radius);
       }
     }
   }
@@ -35,8 +32,8 @@
 
   ROOT '.sb-border-radius-[radius]'
 */
-@each $border-radius in map-keys($border-radii) {
-  .sb-border-radius-#{$border-radius} {
-    border-radius: getBorderRadius($border-radius);
+@each $radius in map-keys($border-radii) {
+  .sb-el-border-radius-#{$radius} {
+    @include border-radius($radius);
   }
 }

@@ -3,14 +3,19 @@
 ******************************************************************************/
 
 // colors
-$border-color-dark: $dark;
-$border-color-bright: $bright;
+$border-color-night: darken($bright, 30%);
+$border-color-light: lighten($dark, 30%);
+$border-color-warn: $warn;
+$border-color-success: $success;
+$border-color-info: $info;
+$border-color-primary: $primary;
+$border-color-secondary: $secondary;
 
 // widths
-$border-width-s: 2px;
-$border-width-d: 3px;
-$border-width-m: 4px;
-$border-width-l: 5px;
+$border-width-s: 1px;
+$border-width-d: 2px;
+$border-width-m: 3px;
+$border-width-l: 4px;
 
 // radii
 $border-radius-s: $spacing-s / 1.3;

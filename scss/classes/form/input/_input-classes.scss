@@ -2,44 +2,100 @@
                               Input - Classes
 ******************************************************************************/
 
+@mixin input-color-class($theme, $color) {
+  &.#{$sb-el-input-root}--#{$theme}-#{$color} {
+    .#{$sb-el-input-root}__input {
+      color: getThemeTextColor($theme);
+    }
+    .#{$sb-el-input-root}__border {
+      @include border($theme, 'd');
+    }
+    .#{$sb-el-input-root}__placeholder {
+      background: getThemeChildBackgroundColor($theme);
+      color: transparentize(getThemeTextColor($theme), 0.3);
+
+      &.is-top {
+        color: getThemeTextColor($theme);
+      }
+    }
+    &.focus {
+      .#{$sb-el-input-root}__border {
+        @include border($color, 'd');
+      }
+    }
+  }
+}
+
+@mixin input-size-class($size) {
+  &.#{$sb-el-input-root}--#{$size} {
+    $form-height: map-get($form-heights, $size);
+    .#{$sb-el-input-root}__input {
+      height: $form-height;
+      @include paddingX($spacing-s);
+    }
+
+    .#{$sb-el-input-root}__placeholder {
+      $top-offset: 4px;
+
+      top: calc(
+            #{$form-height} / 2 -
+            #{$input-font-size} / 2 -
+            #{$border-width-d}
+           );
+      left: calc(#{$spacing-s} - 4px);
+      &.is-top {
+        transform: scale($input-font-scale)
+                   translateY(calc(
+                    -#{$form-height} / 2 -
+                    #{$input-font-size} / 2 -
+                    #{$top-offset} +
+                    #{$border-width-d}
+                  )) !important;
+      }
+    }
+  }
+}
+
 $sb-el-input-root: 'sb-el-input';
 .#{$sb-el-input-root} {
   position: relative;
+
   .#{$sb-el-input-root}__input {
-    box-sizing: border-box;
     background: transparent;
     outline: none;
-    border: 2px solid $warn;
-    border-radius: $button-border-radius;
-    padding: $spacing-s;
-    font: getFontSize('d') getFontface('default');
-    @include ease(200ms);
+    border: 0;
+    padding: 0;
+    font-family: getFontface('default');
+    font-size: $input-font-size;
   }
 
   .#{$sb-el-input-root}__placeholder {
-    $font-size: getFontSize('d');
-    box-sizing: border-box;
     position: absolute;
-    top: calc(-#{$font-size} / 2 - 2px);
-    left: calc(#{$spacing-s} - 2px);
-    transform-origin: left center;
-    transform: translateY(calc(#{$spacing-s} + #{$font-size} / 2 + 4px));
-    background: getThemeChildBackgroundColor('light');
-    color: transparentize(getThemeTextColor('light'), 0.3);
-    font-size: $font-size;
+    font-size: $input-font-size;
     pointer-events: none;
+    transform-origin: left center;
+
     @include paddingX(4px);
     @include ease(200ms);
-
-    &.is-top {
-      transform: scale(0.75) translateY(0);
-      color: getThemeTextColor('light');
-    }
   }
 
-  &.focus {
-    .#{$sb-el-input-root}__input {
-      border: 2px solid $primary;
+  .#{$sb-el-input-root}__border {
+    box-sizing: border-box;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  @each $size in map-keys($form-heights) {
+    @include input-size-class($size);
+  }
+
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include input-color-class($theme, $color);
     }
   }
 }

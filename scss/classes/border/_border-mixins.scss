@@ -1,0 +1,14 @@
+/*****************************************************************************
+                            Border - Mixins
+******************************************************************************/
+
+@mixin border($color, $size: 's', $radius: 's', $style: solid) {
+  border-color: getBorderColor($color);
+  border-width: getBorderWidth($size);
+  border-style: $style;
+  @include border-radius($radius);
+}
+
+@mixin border-radius($radius) {
+  border-radius: getBorderRadius($radius);
+}

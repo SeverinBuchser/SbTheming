@@ -131,8 +131,8 @@ $sb-el-select-button-root: 'sb-el-select-button';
       transform-origin:top;
       position: absolute;
       transform: scaleY(0);
-      border-bottom-left-radius: $button-border-radius;
-      border-bottom-right-radius: $button-border-radius;
+      border-bottom-left-radius: $border-radius-s;
+      border-bottom-right-radius: $border-radius-s;
       @include ease($options-animation-duration);
       z-index: 1000;
 
