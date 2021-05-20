@@ -134,6 +134,7 @@ $sb-el-select-button-root: 'sb-el-select-button';
       border-bottom-left-radius: $button-border-radius;
       border-bottom-right-radius: $button-border-radius;
       @include ease($options-animation-duration);
+      z-index: 1000;
 
       .#{$sb-el-select-button-root}__option {
         display: flex;

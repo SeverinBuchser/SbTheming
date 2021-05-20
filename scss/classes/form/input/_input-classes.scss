@@ -4,15 +4,42 @@
 
 $sb-el-input-root: 'sb-el-input';
 .#{$sb-el-input-root} {
+  position: relative;
   .#{$sb-el-input-root}__input {
+    box-sizing: border-box;
     background: transparent;
     outline: none;
-    border: 2px solid $primary;
+    border: 2px solid $warn;
     border-radius: $button-border-radius;
     padding: $spacing-s;
+    font: getFontSize('d') getFontface('default');
+    @include ease(200ms);
   }
 
   .#{$sb-el-input-root}__placeholder {
-    
+    $font-size: getFontSize('d');
+    box-sizing: border-box;
+    position: absolute;
+    top: calc(-#{$font-size} / 2 - 2px);
+    left: calc(#{$spacing-s} - 2px);
+    transform-origin: left center;
+    transform: translateY(calc(#{$spacing-s} + #{$font-size} / 2 + 4px));
+    background: getThemeChildBackgroundColor('light');
+    color: transparentize(getThemeTextColor('light'), 0.3);
+    font-size: $font-size;
+    pointer-events: none;
+    @include paddingX(4px);
+    @include ease(200ms);
+
+    &.is-top {
+      transform: scale(0.75) translateY(0);
+      color: getThemeTextColor('light');
+    }
+  }
+
+  &.focus {
+    .#{$sb-el-input-root}__input {
+      border: 2px solid $primary;
+    }
   }
 }
