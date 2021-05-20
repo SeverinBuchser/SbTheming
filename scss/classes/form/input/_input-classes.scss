@@ -1,0 +1,18 @@
+/*****************************************************************************
+                              Input - Classes
+******************************************************************************/
+
+$sb-el-input-root: 'sb-el-input';
+.#{$sb-el-input-root} {
+  .#{$sb-el-input-root}__input {
+    background: transparent;
+    outline: none;
+    border: 2px solid $primary;
+    border-radius: $button-border-radius;
+    padding: $spacing-s;
+  }
+
+  .#{$sb-el-input-root}__placeholder {
+    
+  }
+}
