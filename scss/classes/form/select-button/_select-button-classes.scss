@@ -63,13 +63,13 @@
   $height: getSize($size);
   &.#{$sb-el-select-button-root}--#{$size} {
     .#{$sb-el-select-button-root}__button {
-      width: 4 * $height;
+      width: 5 * $height;
     }
 
     .#{$sb-el-select-button-root}__options-wrapper {
       .#{$sb-el-select-button-root}__options {
         .#{$sb-el-select-button-root}__option {
-          width: 4 * $height - 2 * $spacing-s;
+          width: 5 * $height - 2 * $spacing-s;
           @include paddingX('s');
           @include paddingY($spacing-s / 2);
         }

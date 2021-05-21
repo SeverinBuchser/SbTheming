@@ -6,6 +6,20 @@
   &.#{$sb-el-alert-box-root}--#{$theme}-#{$color} {
     background: getBackgroundColor($color);
     color: getThemeTextColorForBackground($theme, $color);
+
+    .#{$sb-el-alert-box-root}__alert {
+      .#{$sb-el-alert-box-root}__arrow {
+        .sb-el-icon {
+          color: getThemeTextColorForBackground($theme, $color);
+        }
+      }
+    }
+
+    .#{$sb-el-alert-box-root}__icon {
+      .sb-el-icon {
+        color: getThemeTextColorForBackground($theme, $color);
+      }
+    }
   }
 }
 
@@ -20,7 +34,22 @@
 $sb-el-alert-box-root: 'sb-el-alert-box';
 .#{$sb-el-alert-box-root} {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+
+  .#{$sb-el-alert-box-root}__alert {
+    display: grid;
+    grid-gap: getSpacing('s');
+    grid-auto-flow: column;
+    align-items: center;
+    .#{$sb-el-alert-box-root}__arrow {
+      .sb-el-icon {
+
+      }
+    }
+  }
+
+
 
   @each $size in $size-names {
     @include alert-box-size-class($size);
