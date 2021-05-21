@@ -42,11 +42,10 @@ $sb-el-alert-box-root: 'sb-el-alert-box';
     grid-gap: getSpacing('s');
     grid-auto-flow: column;
     align-items: center;
-    .#{$sb-el-alert-box-root}__arrow {
-      .sb-el-icon {
+  }
 
-      }
-    }
+  &.is-flipped {
+    flex-direction: row-reverse;
   }
 
 
