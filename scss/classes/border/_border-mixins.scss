@@ -11,9 +11,25 @@
   border-width: getBorderWidth($size);
   border-style: $style;
   box-sizing: border-box;
-  @include border-radius($radius);
+  @include radius($radius);
 }
 
-@mixin border-radius($radius) {
+@mixin radiusTopLeft($radius) {
+  border-top-left-radius: getBorderRadius($radius);
+}
+
+@mixin radiusTopRight($radius) {
+  border-top-right-radius: getBorderRadius($radius);
+}
+
+@mixin radiusBottomRight($radius) {
+  border-bottom-left-radius: getBorderRadius($radius);
+}
+
+@mixin radiusBottomLeft($radius) {
+  border-bottom-right-radius: getBorderRadius($radius);
+}
+
+@mixin radius($radius) {
   border-radius: getBorderRadius($radius);
 }

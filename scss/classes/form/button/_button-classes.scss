@@ -116,8 +116,7 @@ $sb-el-button-root: 'sb-el-btn';
   display: block;
   box-sizing: border-box;
   @include ease(300ms, background, color);
-
-  border-radius: $button-border-radius;
+  @include radius('s');
 
   font-size: getFontSize('d');
   font-weight: getFontWeight('regular');

@@ -34,6 +34,6 @@
 */
 @each $radius in map-keys($border-radii) {
   .sb-el-border-radius-#{$radius} {
-    @include border-radius($radius);
+    @include radius($radius);
   }
 }

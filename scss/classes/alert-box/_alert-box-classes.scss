@@ -11,8 +11,8 @@
 
 @mixin alert-box-size-class($size) {
   &.#{$sb-el-alert-box-root}--#{$size} {
-    height: map-get($form-heights, $size);
-    @include border-radius($size);
+    height: getSize($size);
+    @include radius($size);
     @include paddingX($size);
   }
 }
@@ -22,8 +22,8 @@ $sb-el-alert-box-root: 'sb-el-alert-box';
   display: flex;
   align-items: center;
 
-  @each $form-height in map-keys($form-heights) {
-    @include alert-box-size-class($form-height);
+  @each $size in $size-names {
+    @include alert-box-size-class($size);
   }
 
   @each $theme in $theme-names {

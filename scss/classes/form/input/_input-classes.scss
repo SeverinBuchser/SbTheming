@@ -45,9 +45,9 @@
 */
 @mixin input-size-class($size) {
   &.#{$sb-el-input-root}--#{$size} {
-    $form-height: map-get($form-heights, $size);
+    $height: getSize($size);
     .#{$sb-el-input-root}__input {
-      height: $form-height;
+      height: $height;
       @include paddingX('s');
     }
 
@@ -55,14 +55,14 @@
       $top-offset: 4px;
 
       top: calc(
-        #{$form-height} / 2 -
+        #{$height} / 2 -
         #{$input-font-size} / 2 -
         #{$border-width-d}
       );
       left: calc(#{$spacing-s} - 4px);
       &.is-top {
         transform: scale($input-font-scale) translateY(calc(
-          -#{$form-height} / 2 -
+          -#{$height} / 2 -
           #{$input-font-size} / 2 -
           #{$top-offset} +
           #{$border-width-d}
