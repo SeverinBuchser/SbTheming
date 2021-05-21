@@ -1,0 +1,19 @@
+/*****************************************************************************
+                            Combine - Functions
+******************************************************************************/
+
+
+
+/*********************** Transition Combine - Functions **********************/
+
+@function combineTransitions($time, $timingfunction, $targets) {
+  $transition: '';
+  @each $target in $targets {
+    @if $transition == '' {
+      $transition: #{$target} + ' ' + #{$time} + ' ease';
+    } @else {
+      $transition: $transition + ', ' + #{$target} + ' ' + #{$time} + ' ease';
+    }
+  }
+  @return $transition;
+}

@@ -1,17 +1,9 @@
-@function composeTransitions($time, $timingfunction, $targets) {
-  $transition: '';
-  @each $target in $targets {
-    @if $transition == '' {
-      $transition: #{$target} + ' ' + #{$time} + ' ease';
-    } @else {
-      $transition: $transition + ', ' + #{$target} + ' ' + #{$time} + ' ease';
-    }
-  }
-  @return $transition;
-}
+/*****************************************************************************
+                            Border - Mixins
+******************************************************************************/
 
 @mixin transition($time, $timingfunction, $targets) {
-  transition: composeTransitions($time, $timingfunction, $targets);
+  transition: combineTransitions($time, $timingfunction, $targets);
 }
 
 @mixin easeInOut($time, $targets...) {
