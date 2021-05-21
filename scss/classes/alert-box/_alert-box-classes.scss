@@ -30,7 +30,7 @@
     @include paddingX($size);
 
     &.is-pill {
-      @include radius(10px);
+      @include radius(getSize($size));
     }
   }
 }
