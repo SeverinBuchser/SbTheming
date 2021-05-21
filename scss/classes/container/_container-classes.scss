@@ -17,7 +17,7 @@ $sb-el-container-root: 'sb-el-container';
   }
   @each $size in $spacing-names {
     &.#{$sb-el-container-root}--#{$size} {
-      @include margin($size);
+      @include margin('s');
       @include radius($size);
       @include padding($size);
     }
