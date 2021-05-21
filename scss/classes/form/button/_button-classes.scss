@@ -33,7 +33,8 @@
   Attributes:
   - NONE
 
-  OPTION '.is-plain' for OPTION '.sb-el-btn--[color]' -> ROOT '.sb-el-btn'
+  OPTION '.is-plain' for OPTION '.sb-el-btn--[theme]-[color]'
+  -> ROOT '.sb-el-btn'
 */
 @mixin button-plain-color-class($theme, $color) {
   &.is-plain {

@@ -2,6 +2,15 @@
                             Alert Box - Classes
 ******************************************************************************/
 
+/*
+  Adds color and hover to a alert box. Also creates the inverse of the colors.
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.sb-el-alert-box--[theme]-[color]' for ROOT '.sb-el-alert-box'
+*/
 @mixin alert-box-color-class($theme, $color) {
   &.#{$sb-el-alert-box-root}--#{$theme}-#{$color} {
     background: getBackgroundColor($color);
@@ -25,6 +34,15 @@
   }
 }
 
+/*
+  Adds inverse colors as in the normal class.
+
+  Attributes:
+  - NONE
+
+  OPTION '.is-plain' for OPTION '.sb-el-alert-box--[theme]-[color]'
+  -> ROOT '.sb-el-alert-box'
+*/
 @mixin alert-box-plain-color-class($theme, $color) {
   &.is-plain {
     background: getThemeBackgroundHoverColorForBackground($theme, $color);
@@ -46,6 +64,14 @@
   }
 }
 
+/*
+  Adds different sizes to the alert box.
+
+  Attributes:
+  - size: 's', 'm', 'l'[, 'd']
+
+  OPTION '.sb-el-alert-box--[size]' for ROOT '.sb-el-alert-box'
+*/
 @mixin alert-box-size-class($size) {
   &.#{$sb-el-alert-box-root}--#{$size} {
     height: getSize($size);
@@ -56,12 +82,26 @@
   }
 }
 
+/*
+  Adds option if button is pill or normal.
+
+  Attributes:
+  - NONE
+
+  OPTION '.is-pill' for OPTION '.sb-el-alert-box--[size]'
+  -> ROOT '.sb-el-alert-box'
+*/
 @mixin alert-box-pill-size-class($size) {
   &.is-pill {
     @include radius(getSize($size));
   }
 }
 
+/*
+  Defines the root button class with all its sizes and colors.
+
+  ROOT .sb-el-alert-box
+*/
 $sb-el-alert-box-root: 'sb-el-alert-box';
 .#{$sb-el-alert-box-root} {
   display: flex;
