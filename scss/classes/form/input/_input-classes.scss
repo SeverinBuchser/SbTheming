@@ -57,7 +57,7 @@
       top: calc(
         #{$height} / 2 -
         #{$input-font-size} / 2 -
-        #{$border-width-d}
+        #{$border-width-d} / 2
       );
       left: calc(#{$spacing-s} - 4px);
       &.is-top {
