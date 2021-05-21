@@ -76,7 +76,7 @@ $sb-el-input-root: 'sb-el-input';
     transform-origin: left center;
 
     @include paddingX(4px);
-    @include ease(200ms);
+    @include ease(200ms, transform, color);
   }
 
   .#{$sb-el-input-root}__border {

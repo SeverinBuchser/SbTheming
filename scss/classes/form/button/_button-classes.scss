@@ -15,7 +15,6 @@
   &.#{$sb-el-button-root}--#{$theme}-#{$color} {
     background: getBackgroundColor($color);
     color: getThemeTextColorForBackground($theme, $color);
-    @include ease(300ms, background, color);
     &:hover {
       background: getThemeBackgroundHoverColorForBackground($theme, $color);
       color: getThemeTextHoverColorForBackground($theme, $color);
@@ -116,6 +115,7 @@ $sb-el-button-root: 'sb-el-btn';
   cursor: pointer;
   display: block;
   box-sizing: border-box;
+  @include ease(300ms, background, color);
 
   border-radius: $button-border-radius;
 

@@ -15,7 +15,6 @@
   &.#{$sb-el-select-button-root}--#{$theme}-#{$color} {
     color: getThemeTextColorForBackground($theme, $color);
 
-
     .#{$sb-el-select-button-root}__button {
       .sb-el-icon {
         color: getThemeTextColorForBackground($theme, $color);
@@ -31,7 +30,6 @@
         }
       }
     }
-
 
     .#{$sb-el-select-button-root}__options-wrapper {
       .#{$sb-el-select-button-root}__options {
@@ -114,13 +112,13 @@ $sb-el-select-button-root: 'sb-el-select-button';
   $options-animation-duration: 100ms;
 
   .#{$sb-el-select-button-root}__button {
-    @include ease($button-animation-duration);
+    @include ease($button-animation-duration, background, color, border-radius);
     transition-delay: $options-animation-duration;
     display: flex;
     justify-content: space-around;
     align-items: center;
     .sb-el-icon {
-      @include ease(300ms);
+      @include ease($button-animation-duration, color, transform);
     }
   }
 
@@ -133,13 +131,13 @@ $sb-el-select-button-root: 'sb-el-select-button';
       transform: scaleY(0);
       border-bottom-left-radius: $border-radius-s;
       border-bottom-right-radius: $border-radius-s;
-      @include ease($options-animation-duration);
+      @include ease($options-animation-duration, transform);
       z-index: 1000;
 
       .#{$sb-el-select-button-root}__option {
         display: flex;
         justify-content: center;
-        @include ease(300ms);
+        @include ease(300ms, background, color);
         &:hover {
           background: black
         }
@@ -151,7 +149,11 @@ $sb-el-select-button-root: 'sb-el-select-button';
     .#{$sb-el-select-button-root}__button {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      @include ease($button-animation-duration);
+      @include ease($button-animation-duration,
+        background,
+        color,
+        border-radius
+      );
       transition-delay: 0;
 
       .sb-el-icon {

@@ -169,13 +169,6 @@ $sb-el-slider-root: 'sb-el-slider';
     &::-ms-thumb {
       cursor: pointer;
     }
-    @include style-thumbs {
-      @include ease(300ms);
-    }
-
-    @include style-tracks {
-      @include ease(300ms);
-    }
 
     &:active {
       cursor: grabbing;

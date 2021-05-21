@@ -89,10 +89,10 @@ $sb-el-toggle-switch-root: 'sb-el-toggle-switch';
   box-sizing: border-box;
   cursor: pointer;
   position: relative;
-  @include ease(300ms);
+  @include ease(300ms, background);
   .#{$sb-el-toggle-switch-root}__toggle {
     position: absolute;
-    @include ease(300ms);
+    @include ease(300ms, transform, background);
   }
 
   &.disabled {
