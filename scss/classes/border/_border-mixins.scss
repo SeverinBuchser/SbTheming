@@ -3,9 +3,14 @@
 ******************************************************************************/
 
 @mixin border($color, $size: 's', $radius: 's', $style: solid) {
-  border-color: getBorderColor($color);
+  @if ($color != none) {
+    border-color: getBorderColor($color);
+  } @else {
+    border-color: transparent;
+  }
   border-width: getBorderWidth($size);
   border-style: $style;
+  box-sizing: border-box;
   @include border-radius($radius);
 }
 

@@ -1,0 +1,14 @@
+/*****************************************************************************
+                            Alert Box - Classes
+******************************************************************************/
+
+$sb-el-alert-box-root: 'sb-el-alert-box';
+.#{$sb-el-alert-box-root} {
+  background: getBackgroundColor('warn');
+  color: getThemeTextColorForBackground('light', 'warn');
+  @include border-radius('d');
+  height: $form-height-d;
+  display: flex;
+  align-items: center;
+  @include paddingX($spacing-s)
+}

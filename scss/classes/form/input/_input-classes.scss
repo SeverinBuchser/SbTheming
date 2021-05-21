@@ -101,7 +101,6 @@ $sb-el-input-root: 'sb-el-input';
   }
 
   .#{$sb-el-input-root}__border {
-    box-sizing: border-box;
     position: absolute;
     height: 100%;
     width: 100%;
