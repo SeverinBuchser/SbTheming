@@ -1,19 +1,50 @@
-@mixin easeInOut($time) {
-  transition: all $time ease-in-out;
+@function composeTransitions($time, $timingfunction, $targets) {
+  $transition: '';
+  @each $target in $targets {
+    @if $transition == '' {
+      $transition: #{$target} + ' ' + #{$time} + ' ease';
+    } @else {
+      $transition: $transition + ', ' + #{$target} + ' ' + #{$time} + ' ease';
+    }
+  }
+  @return $transition;
 }
 
-@mixin easeIn($time) {
-  transition: all $time ease-in;
+@mixin transition($time, $timingfunction, $targets) {
+  transition: composeTransitions($time, $timingfunction, $targets);
 }
 
-@mixin easeOut($time) {
-  transition: all $time ease-out;
+@mixin easeInOut($time, $targets...) {
+  @if (length($targets) == 0) {
+    $targets: (all);
+  }
+  @include transition($time, ease-in-out, $targets);
 }
 
-@mixin ease($time) {
-  transition: all $time ease;
+@mixin easeIn($time, $target: all) {
+  @if (length($targets) == 0) {
+    $targets: (all);
+  }
+  @include transition($time, ease-in, $targets);
 }
 
-@mixin linear($time) {
-  transition: all $time linear;
+@mixin easeOut($time, $targets...) {
+  @if (length($targets) == 0) {
+    $targets: (all);
+  }
+  @include transition($time, ease-out, $targets);
+}
+
+@mixin ease($time, $targets...) {
+  @if (length($targets) == 0) {
+    $targets: (all);
+  }
+  @include transition($time, ease, $targets);
+}
+
+@mixin linear($time, $targets...) {
+  @if (length($targets) == 0) {
+    $targets: (all);
+  }
+  @include transition($time, linear, $targets);
 }

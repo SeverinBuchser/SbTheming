@@ -15,7 +15,7 @@
   &.#{$sb-el-button-root}--#{$theme}-#{$color} {
     background: getBackgroundColor($color);
     color: getThemeTextColorForBackground($theme, $color);
-    @include ease(300ms);
+    @include ease(300ms, background, color);
     &:hover {
       background: getThemeBackgroundHoverColorForBackground($theme, $color);
       color: getThemeTextHoverColorForBackground($theme, $color);
