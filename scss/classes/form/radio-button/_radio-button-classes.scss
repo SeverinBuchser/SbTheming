@@ -36,10 +36,10 @@
 
   OPTION '.sb-el-radio-button--[size]' for ROOT '.sb-el-radio-button'
 */
-@mixin radio-button-size-class($form-height) {
-  $height: map-get($form-heights, $form-height);
+@mixin radio-button-size-class($size) {
+  $height: getSize($size);
 
-  &.#{$sb-el-radio-button-root}--#{$form-height} {
+  &.#{$sb-el-radio-button-root}--#{$size} {
     .#{$sb-el-radio-button-root}__radio-wrapper .#{$sb-el-radio-button-root}__radio {
       height: $height;
       width: $height;
@@ -161,7 +161,7 @@ $sb-el-radio-button-root: 'sb-el-radio-button';
     @include radio-button-color-class($color);
   }
 
-  @each $form-height in map-keys($form-heights) {
-    @include radio-button-size-class($form-height);
+  @each $size in $size-names {
+    @include radio-button-size-class($size);
   }
 }

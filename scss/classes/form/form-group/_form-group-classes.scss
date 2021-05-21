@@ -27,7 +27,7 @@ $sb-el-form-group-separator-root: 'sb-el-form-group-separator';
 .#{$sb-el-form-group-separator-root} {
   border: 1px solid;
   border-bottom: 0;
-  margin: $spacing-s;
+  @include margin('s');
 
   @each $theme in $theme-names {
     @include form-group-separator-color-class($theme);
@@ -61,7 +61,7 @@ $sb-el-form-group-root: 'sb-el-form-group';
 
   .#{$sb-el-form-group-root}__header {
     font-size: getFontSize('m');
-    margin-bottom: $spacing-s;
+    @include marginBottom('s');
   }
 
   &.is-left {

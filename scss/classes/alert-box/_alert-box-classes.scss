@@ -2,13 +2,33 @@
                             Alert Box - Classes
 ******************************************************************************/
 
+@mixin alert-box-color-class($theme, $color) {
+  &.#{$sb-el-alert-box-root}--#{$theme}-#{$color} {
+    background: getBackgroundColor($color);
+    color: getThemeTextColorForBackground($theme, $color);
+  }
+}
+
+@mixin alert-box-size-class($size) {
+  &.#{$sb-el-alert-box-root}--#{$size} {
+    height: map-get($form-heights, $size);
+    @include border-radius($size);
+    @include paddingX($size);
+  }
+}
+
 $sb-el-alert-box-root: 'sb-el-alert-box';
 .#{$sb-el-alert-box-root} {
-  background: getBackgroundColor('warn');
-  color: getThemeTextColorForBackground('light', 'warn');
-  @include border-radius('d');
-  height: $form-height-d;
   display: flex;
   align-items: center;
-  @include paddingX($spacing-s)
+
+  @each $form-height in map-keys($form-heights) {
+    @include alert-box-size-class($form-height);
+  }
+
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include alert-box-color-class($theme, $color);
+    }
+  }
 }

@@ -2,12 +2,34 @@
                             Padding - Mixins
 ******************************************************************************/
 
+@mixin paddingLeft($padding) {
+  padding-left: getSpacing($padding);
+}
+
+@mixin paddingRight($padding) {
+  padding-right: getSpacing($padding);
+}
+
 @mixin paddingX($padding) {
+  $padding: getSpacing($padding);
   padding-left: $padding;
   padding-right: $padding;
 }
 
+@mixin paddingTop($padding) {
+  padding-top: getSpacing($padding);
+}
+
+@mixin paddingBottom($padding) {
+  padding-bottom: getSpacing($padding);
+}
+
 @mixin paddingY($padding) {
+  $padding: getSpacing($padding);
   padding-top: $padding;
   padding-bottom: $padding;
+}
+
+@mixin padding($padding) {
+  padding: getSpacing($padding);
 }

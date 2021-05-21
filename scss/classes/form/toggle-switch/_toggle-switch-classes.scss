@@ -41,15 +41,15 @@
 
   OPTION '.sb-el-toggle-switch--[size]' for ROOT '.sb-el-toggle-switch'
 */
-@mixin toggle-switch-size-class($form-height) {
+@mixin toggle-switch-size-class($size) {
 
-  $height: map-get($form-heights, $form-height);
+  $height: getSize($size);
   $width: $height * 2;
   $diameter: $height / 3 * 2;
   $padding: ($height - $diameter) / 2;
   $innerwidth: $width - 2 * $padding;
 
-  &.#{$sb-el-toggle-switch-root}--#{$form-height} {
+  &.#{$sb-el-toggle-switch-root}--#{$size} {
     width: $width;
     height: $height;
     border-radius: $height / 2;
@@ -105,7 +105,7 @@ $sb-el-toggle-switch-root: 'sb-el-toggle-switch';
     }
   }
 
-  @each $form-height in map-keys($form-heights) {
-    @include toggle-switch-size-class($form-height);
+  @each $size in $size-names {
+    @include toggle-switch-size-class($size);
   }
 }

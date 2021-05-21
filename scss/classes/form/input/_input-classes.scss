@@ -48,7 +48,7 @@
     $form-height: map-get($form-heights, $size);
     .#{$sb-el-input-root}__input {
       height: $form-height;
-      @include paddingX($spacing-s);
+      @include paddingX('s');
     }
 
     .#{$sb-el-input-root}__placeholder {
@@ -85,7 +85,7 @@ $sb-el-input-root: 'sb-el-input';
     background: transparent;
     outline: none;
     border: 0;
-    padding: 0;
+    @include padding(0);
     font-family: getFontface('default');
     font-size: $input-font-size;
   }
@@ -109,7 +109,7 @@ $sb-el-input-root: 'sb-el-input';
     pointer-events: none;
   }
 
-  @each $size in map-keys($form-heights) {
+  @each $size in $size-names {
     @include input-size-class($size);
   }
 

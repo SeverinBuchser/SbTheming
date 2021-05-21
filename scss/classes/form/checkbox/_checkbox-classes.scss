@@ -38,10 +38,10 @@
 
   OPTION '.sb-el-checkbox--[size]' for ROOT '.sb-el-checkbox'
 */
-@mixin checkbox-size-class($form-height) {
-  $height: map-get($form-heights, $form-height);
+@mixin checkbox-size-class($size) {
+  $height: getSize($size);
 
-  &.#{$sb-el-checkbox-root}--#{$form-height} {
+  &.#{$sb-el-checkbox-root}--#{$size} {
     .#{$sb-el-checkbox-root}__checkbox-wrapper .#{$sb-el-checkbox-root}__checkbox {
       height: $height;
       width: $height;
@@ -183,7 +183,7 @@ $sb-el-checkbox-root: 'sb-el-checkbox';
     }
   }
 
-  @each $form-height in map-keys($form-heights) {
-    @include checkbox-size-class($form-height);
+  @each $size in $size-names {
+    @include checkbox-size-class($size);
   }
 }

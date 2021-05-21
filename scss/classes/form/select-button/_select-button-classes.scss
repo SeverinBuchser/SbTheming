@@ -59,9 +59,9 @@
 
   OPTION '.sb-el-btn--[size]' for ROOT '.sb-el-btn'
 */
-@mixin select-button-size-class($form-height) {
-  $height: map-get($form-heights, $form-height);
-  &.#{$sb-el-select-button-root}--#{$form-height} {
+@mixin select-button-size-class($size) {
+  $height: getSize($size);
+  &.#{$sb-el-select-button-root}--#{$size} {
     .#{$sb-el-select-button-root}__button {
       width: 4 * $height;
     }
@@ -70,12 +70,12 @@
       .#{$sb-el-select-button-root}__options {
         .#{$sb-el-select-button-root}__option {
           width: 4 * $height - 2 * $spacing-s;
-          @include paddingX($spacing-s);
+          @include paddingX('s');
           @include paddingY($spacing-s / 2);
         }
       }
     }
-    @include select-button-pill-class($form-height);
+    @include select-button-pill-class($size);
   }
 }
 
@@ -87,12 +87,12 @@
 
   OPTION '.is-pill' for OPTION '.sb-el-btn--[size]' -> ROOT '.sb-el-btn'
 */
-@mixin select-button-pill-class($form-height) {
+@mixin select-button-pill-class($size) {
   &.is-pill {
     .#{$sb-el-select-button-root}__options-wrapper {
       .#{$sb-el-select-button-root}__options {
-        border-bottom-left-radius: map-get($form-heights, $form-height) / 2;
-        border-bottom-right-radius: map-get($form-heights, $form-height) / 2;
+        border-bottom-left-radius: getSize($size) / 2;
+        border-bottom-right-radius: getSize($size) / 2;
       }
     }
   }
@@ -168,8 +168,8 @@ $sb-el-select-button-root: 'sb-el-select-button';
     }
   }
 
-  @each $form-height in map-keys($form-heights) {
-    @include select-button-size-class($form-height);
+  @each $size in $size-names {
+    @include select-button-size-class($size);
   }
 
   @each $theme in $theme-names {

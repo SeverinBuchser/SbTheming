@@ -1,0 +1,21 @@
+/*****************************************************************************
+                            Size - Functions
+******************************************************************************/
+
+/*
+  Checks if the specified size is a predefined size or not. If so, the function
+  returns the predefined spacing, if it exists, and if it does not exits thorws
+  an error. If the padding is not predefined, the funtion just returns the
+  received value. The predefined spacings can be found in the variables
+  directory under '_spacing-settings.scss'.
+*/
+@function getSize($size) {
+  @if (type_of($size) == string) {
+    @if not exists($size-names, $size) {
+      @error "Size with name '#{$size}' does not exist!";
+    }
+    @return map-get($sizes, $size);
+  } @else {
+    @return $size;
+  }
+}

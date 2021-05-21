@@ -23,7 +23,7 @@ $sb-el-form-root: 'sb-el-form';
   .#{$sb-el-form-root}__header {
     font-size: getFontSize('l');
     display: flex;
-    margin-bottom: $spacing-d;
+    @include marginBottom('d');
 
     &.is-left {
       justify-content: flex-start;
@@ -40,10 +40,10 @@ $sb-el-form-root: 'sb-el-form';
 
   .#{$sb-el-form-root}__content {
     display: grid;
-    grid-gap: $spacing-d;
+    grid-gap: getSpacing('d');
 
     .sb-el-form-group-separator {
-      margin: 0;
+      @include margin(0);
     }
 
     .sb-el-form-group {
@@ -53,8 +53,8 @@ $sb-el-form-root: 'sb-el-form';
 
   .#{$sb-el-form-root}__footer {
     border-top: 1px solid;
-    padding-top: $spacing-s;
-    margin-top: $spacing-d;
+    @include paddingTop('s');
+    @include marginTop('d');
     width: 100%;
     display: flex;
     justify-content: flex-end;
