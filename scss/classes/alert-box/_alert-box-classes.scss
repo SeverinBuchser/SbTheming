@@ -28,6 +28,10 @@
     height: getSize($size);
     @include radius($size);
     @include paddingX($size);
+
+    &.is-pill {
+      @include radius(10px);
+    }
   }
 }
 
@@ -47,8 +51,6 @@ $sb-el-alert-box-root: 'sb-el-alert-box';
   &.is-flipped {
     flex-direction: row-reverse;
   }
-
-
 
   @each $size in $size-names {
     @include alert-box-size-class($size);
