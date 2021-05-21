@@ -20,6 +20,29 @@
         color: getThemeTextColorForBackground($theme, $color);
       }
     }
+
+    @include alert-box-plain-color-class($theme, $color);
+  }
+}
+
+@mixin alert-box-plain-color-class($theme, $color) {
+  &.is-plain {
+    background: getThemeBackgroundHoverColorForBackground($theme, $color);
+    color: getThemeTextHoverColorForBackground($theme, $color);
+
+    .#{$sb-el-alert-box-root}__alert {
+      .#{$sb-el-alert-box-root}__arrow {
+        .sb-el-icon {
+          color: getThemeTextHoverColorForBackground($theme, $color);
+        }
+      }
+    }
+
+    .#{$sb-el-alert-box-root}__icon {
+      .sb-el-icon {
+        color: getThemeTextHoverColorForBackground($theme, $color);
+      }
+    }
   }
 }
 
@@ -29,9 +52,13 @@
     @include radius($size);
     @include paddingX($size);
 
-    &.is-pill {
-      @include radius(getSize($size));
-    }
+    @include alert-box-pill-size-class($size);
+  }
+}
+
+@mixin alert-box-pill-size-class($size) {
+  &.is-pill {
+    @include radius(getSize($size));
   }
 }
 
