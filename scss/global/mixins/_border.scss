@@ -1,0 +1,64 @@
+/*****************************************************************************
+                            Border - Mixins
+******************************************************************************/
+
+@mixin borderSide($side, $color, $size: 's', $style: solid) {
+  @if ($color != none) {
+    border-#{$side}-color: getBorderColor($color);
+  } @else {
+    border-#{$side}-color: transparent;
+  }
+  border-#{$side}-width: getBorderWidth($size);
+  border-#{$side}-style: $style;
+  box-sizing: border-box;
+}
+
+@mixin border($color, $size: 's', $radius: 's', $style: solid) {
+  @include borderSide(left, $color, $size, $style);
+  @include borderSide(right, $color, $size, $style);
+  @include borderSide(top, $color, $size, $style);
+  @include borderSide(bottom, $color, $size, $style);
+  @include radius($radius);
+}
+
+@mixin borderLeft($color, $size: 's', $radius: 's', $style: solid) {
+  @include borderSide(left, $color, $size, $style);
+  @include radius($radius);
+}
+
+@mixin borderRight($color, $size: 's', $radius: 's', $style: solid) {
+  @include borderSide(right, $color, $size, $style);
+  @include radius($radius);
+}
+
+@mixin borderTop($color, $size: 's', $radius: 's', $style: solid) {
+  @include borderSide(top, $color, $size, $style);
+  @include radius($radius);
+}
+
+@mixin borderBottom($color, $size: 's', $radius: 's', $style: solid) {
+  @include borderSide(bottom, $color, $size, $style);
+  @include radius($radius);
+}
+
+
+
+@mixin radiusTopLeft($radius) {
+  border-top-left-radius: getBorderRadius($radius);
+}
+
+@mixin radiusTopRight($radius) {
+  border-top-right-radius: getBorderRadius($radius);
+}
+
+@mixin radiusBottomRight($radius) {
+  border-bottom-left-radius: getBorderRadius($radius);
+}
+
+@mixin radiusBottomLeft($radius) {
+  border-bottom-right-radius: getBorderRadius($radius);
+}
+
+@mixin radius($radius) {
+  border-radius: getBorderRadius($radius);
+}

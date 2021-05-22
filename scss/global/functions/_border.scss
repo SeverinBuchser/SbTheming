@@ -51,6 +51,9 @@
   be found in the border classes directory under '_border-settings.scss'.
 */
 @function getBorderRadius($radius) {
+  @if ($radius == none) {
+    @return none;
+  }
   @if (type_of($radius) == string) {
     @if not exists(map-keys($border-radii), $radius) {
       @error "Border-radius with name '#{$radius}' does not exist!";

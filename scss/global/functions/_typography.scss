@@ -1,0 +1,61 @@
+/*****************************************************************************
+                              Typography - Functions
+******************************************************************************/
+
+/*
+  Checks if the specified font weight is a predefined font weight or not. If so,
+  the function returns the predefined font weight, if it exists, and if it does
+  not exist, it thorws an error. If the font weight is not predefined, the
+  function just returns the received value. The predefined font weights can be
+  found in the variables directory in the settings file
+  '_typography-settings.scss'.
+*/
+@function getFontWeight($font-weight) {
+  @if (type_of($font-weight) == string) {
+    @if not exists(map-keys($font-weights), $font-weight) {
+      @error "Font-weight with name '#{$font-weight}' does not exist!";
+    }
+    @return map-get($font-weights, $font-weight);
+  } @else {
+    @return $font-weight;
+  }
+}
+
+
+/*
+  Checks if the specified font family is a predefined font family or not. If so,
+  the function returns the predefined font family, if it exists, and if it does
+  not exist, it thorws an error. If the font family is not predefined, the
+  function just returns the received value. The predefined font families can be
+  found in the variables directory in the settings file
+  '_typography-settings.scss'.
+*/
+@function getFontFamily($family) {
+  @if (type_of($family) == string) {
+    @if not exists(map-keys($font-families), $family) {
+      @error "Fontfamily with name '#{$family}' does not exist!";
+    }
+    @return map-get($font-families, $family);
+  } @else {
+    @return $family;
+  }
+}
+
+
+/*
+  Checks if the specified font size is a predefined font size or not. If so, the
+  function returns the predefined font size, if it exists, and if it does not
+  exist, it thorws an error. If the font size is not predefined, the function
+  just returns the received value. The predefined font sizees can be found in
+  the variables directory in the settings file '_typography-settings.scss'.
+*/
+@function getFontSize($font-size) {
+  @if (type_of($font-size) == string) {
+    @if not exists(map-keys($font-sizes), $font-size) {
+      @error "Font-size with name '#{$font-size}' does not exist!";
+    }
+    @return map-get($font-sizes, $font-size);
+  } @else {
+    @return $font-weight;
+  }
+}

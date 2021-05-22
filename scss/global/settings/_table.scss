@@ -1,0 +1,9 @@
+/*****************************************************************************
+                            Table - Settings
+******************************************************************************/
+
+// colors
+$table-row-background-night-primary: $background-color-night-child;
+$table-row-background-night-secondary: lighten($background-color-night-child, 3%);
+$table-row-background-light-primary: $background-color-light-child;
+$table-row-background-light-secondary: darken($background-color-light-child, 3%);

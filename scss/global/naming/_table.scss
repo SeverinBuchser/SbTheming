@@ -1,0 +1,20 @@
+/*****************************************************************************
+                            Table - Naming
+******************************************************************************/
+
+// colors
+$table-row-colors: (
+  'primary',
+  'secondary'
+);
+
+$table-row-colors: (
+  'night': (
+    'primary': $table-row-background-night-primary,
+    'secondary': $table-row-background-night-secondary
+  ),
+  'light': (
+    'primary': $table-row-background-light-primary,
+    'secondary': $table-row-background-light-secondary
+  )
+);

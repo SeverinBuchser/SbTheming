@@ -1,0 +1,22 @@
+/*****************************************************************************
+                            Typography - Mixins
+******************************************************************************/
+
+@mixin fontFamily($family) {
+  font-family: getFontFamily($family);
+}
+
+
+@mixin fontWeight($weight) {
+  font-weight: getFontWeight($weight);
+}
+
+@mixin fontSize($size) {
+  font-size: getFontSize($size);
+}
+
+@mixin font($family: 'default', $weight: 'regular', $size: 'd') {
+  @include fontFamily($weight);
+  @include fontWeight($weight);
+  @include fontSize($size);
+}

@@ -121,7 +121,7 @@ $sb-el-button-root: 'sb-el-btn';
 
   font-size: getFontSize('d');
   font-weight: getFontWeight('regular');
-  font-family: getFontface('default');
+  font-family: getFontFamily('default');
 
 
   &:disabled {

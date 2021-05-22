@@ -3,7 +3,7 @@
 ******************************************************************************/
 
 /*
-  Defines the root font-weight class with all its weights.
+  Defines the root font weight class with all its weights.
 
   Attributes:
   - weight: 'regular', 'bold'
@@ -12,26 +12,26 @@
 */
 @each $font-weight in map-keys($font-weights) {
   .sb-font-weight-#{$font-weight} {
-    font-weight: getFontWeight($font-weight);
+    @include fontWeight($font-weight);
   }
 }
 
 /*
-  Defines the root fontface class with all its fontfaces.
+  Defines the root font family class with all its font families.
 
   Attributes:
-  - fontface: 'default', 'display'
+  - family: 'default', 'display'
 
-  ROOT: .sb-fontface-[fontface]
+  ROOT: .sb-family-[family]
 */
-@each $fontface in map-keys($fontfaces) {
-  .sb-fontface-#{$fontface} {
-    font-family: getFontface($fontface);
+@each $family in map-keys($font-families) {
+  .sb-family-#{$family} {
+    @include fontFamily($family);
   }
 }
 
 /*
-  Defines the root font-size class with all its sizes.
+  Defines the root font size class with all its sizes.
 
   Attributes:
   - size: 's', 'm', 'l', 'd'
