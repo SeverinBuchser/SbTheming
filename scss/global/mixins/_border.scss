@@ -51,11 +51,11 @@
   border-top-right-radius: getBorderRadius($radius);
 }
 
-@mixin radiusBottomRight($radius) {
+@mixin radiusBottomLeft($radius) {
   border-bottom-left-radius: getBorderRadius($radius);
 }
 
-@mixin radiusBottomLeft($radius) {
+@mixin radiusBottomRight($radius) {
   border-bottom-right-radius: getBorderRadius($radius);
 }
 
