@@ -12,11 +12,12 @@
 */
 @mixin alert-size-class($size) {
   &.#{$sb-el-alert-root}--#{$size} {
-    top: - 4 * getSize('d');
+    $factor: 10;
+    top: - 10 * getSize('d');
     left: 0;
     &.is-active {
       .#{$sb-el-alert-root}__wrapper {
-        transform: translateY( 4.5 * getSize('d'));
+        transform: translateY( ($factor + 0.5) * getSize('d'));
       }
     }
 
@@ -35,7 +36,7 @@
 */
 $sb-el-alert-root: 'sb-el-alert';
 .#{$sb-el-alert-root} {
-  position: absolute;
+  position: fixed;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -47,7 +48,18 @@ $sb-el-alert-root: 'sb-el-alert';
     .#{$sb-el-alert-box-root} {
       @include boxShadow;
     }
-    @include ease(300ms, transform);
+  }
+
+  &.is-active {
+    .#{$sb-el-alert-root}__wrapper {
+      @include easeOut(300ms, transform);
+    }
+  }
+
+  &.is-inactive {
+    .#{$sb-el-alert-root}__wrapper {
+      @include easeIn(300ms, transform);
+    }
   }
 
   @each $size in $size-names {

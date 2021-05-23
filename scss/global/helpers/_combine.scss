@@ -10,9 +10,9 @@
   $transition: '';
   @each $target in $targets {
     @if $transition == '' {
-      $transition: #{$target} + ' ' + #{$time} + ' ease';
+      $transition: #{$target} + ' ' + #{$time} + ' ' + $timingfunction;
     } @else {
-      $transition: $transition + ', ' + #{$target} + ' ' + #{$time} + ' ease';
+      $transition: $transition + ', ' + #{$target} + ' ' + #{$time} + ' ' + $timingfunction;
     }
   }
   @return $transition;

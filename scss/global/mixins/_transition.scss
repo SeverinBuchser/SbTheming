@@ -13,7 +13,7 @@
   @include transition($time, ease-in-out, $targets);
 }
 
-@mixin easeIn($time, $target: all) {
+@mixin easeIn($time, $targets...) {
   @if (length($targets) == 0) {
     $targets: (all);
   }
