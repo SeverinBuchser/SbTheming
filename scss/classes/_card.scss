@@ -1,0 +1,83 @@
+/*****************************************************************************
+                            Card - Classes
+******************************************************************************/
+
+@mixin card-color-class($theme) {
+  &.#{$sb-el-card-root}--#{$theme} {
+    background: getThemeChildBackgroundColor($theme);
+    color: getThemeTextColor($theme);
+
+    hr {
+      border-color: darken(getThemeChildBackgroundColor($theme), 4%);
+    }
+  }
+}
+
+
+/*
+  Defines the root card class with all its sizes and colors.
+
+  ROOT .sb-el-card
+*/
+$sb-el-card-root: 'sb-el-card';
+.#{$sb-el-card-root} {
+  @include ease(100ms, box-shadow, transform);
+  box-shadow:
+    0 8px 26px rgba(0,0,0,0.1);
+  &.is-hover:hover {
+    transform: translateY(-5px) scale(1.005);
+    box-shadow:
+      0 18px 36px rgba(0,0,0,0.05),
+      0 18px 46px rgba(0,0,0,0.15);
+  }
+
+  hr {
+    border: 0;
+    border-bottom: 1px solid;
+    @include margin(0);
+    @include padding(0);
+  }
+
+  .#{$sb-el-card-root}__title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    @include fontSize('m');
+  }
+
+  .#{$sb-el-card-root}__content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .#{$sb-el-card-root}__footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    @include fontSize('s');
+
+  }
+
+  @each $theme in $theme-names {
+    @include card-color-class($theme);
+  }
+  @each $size in $spacing-names {
+    &.#{$sb-el-card-root}--#{$size} {
+      @include margin('s');
+      @include radius($size);
+
+      .#{$sb-el-card-root}__title {
+        @include padding($size);
+      }
+
+      .#{$sb-el-card-root}__content {
+        @include padding($size);
+      }
+
+      .#{$sb-el-card-root}__footer {
+        @include padding($size);
+      }
+    }
+  }
+}
