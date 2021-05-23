@@ -18,14 +18,14 @@
 
     .#{$sb-el-alert-box-root}__alert {
       .#{$sb-el-alert-box-root}__arrow {
-        .sb-el-icon {
+        .#{$sb-el-icon-root} {
           color: getThemeTextColorForBackground($theme, $color);
         }
       }
     }
 
     .#{$sb-el-alert-box-root}__icon {
-      .sb-el-icon {
+      .#{$sb-el-icon-root} {
         color: getThemeTextColorForBackground($theme, $color);
       }
     }
@@ -50,14 +50,14 @@
 
     .#{$sb-el-alert-box-root}__alert {
       .#{$sb-el-alert-box-root}__arrow {
-        .sb-el-icon {
+        .#{$sb-el-icon-root} {
           color: getThemeTextHoverColorForBackground($theme, $color);
         }
       }
     }
 
     .#{$sb-el-alert-box-root}__icon {
-      .sb-el-icon {
+      .#{$sb-el-icon-root} {
         color: getThemeTextHoverColorForBackground($theme, $color);
       }
     }
@@ -108,11 +108,21 @@ $sb-el-alert-box-root: 'sb-el-alert-box';
   justify-content: space-between;
   align-items: center;
 
+  &.is-center {
+    justify-content: center;
+  }
+
   .#{$sb-el-alert-box-root}__alert {
     display: grid;
     grid-gap: getSpacing('s');
     grid-auto-flow: column;
     align-items: center;
+  }
+
+  .#{$sb-el-alert-box-root}__icon {
+    .#{$sb-el-icon-root} {
+      @include marginLeft('s');
+    }
   }
 
   &.is-flipped {
