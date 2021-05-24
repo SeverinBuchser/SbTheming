@@ -46,7 +46,7 @@ $sb-el-alert-root: 'sb-el-alert';
     min-width: 300px;
     overflow: visible;
     .#{$sb-el-alert-box-root} {
-      @include boxShadow;
+      @include boxShadowSmooth;
     }
   }
 

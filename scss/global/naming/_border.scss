@@ -2,15 +2,43 @@
                             Border - Naming
 ******************************************************************************/
 
+// opacity names
+$border-color-opacity-names: (
+  'strong',
+  'weak'
+);
+
+// color names
+$border-color-names: (
+  'warn',
+  'success',
+  'info',
+  'primary',
+  'secondary',
+  'night',
+  'light'
+);
+
 // colors
 $border-colors: (
-  'warn': $border-color-warn,
-  'success': $border-color-success,
-  'info': $border-color-info,
-  'primary': $border-color-primary,
-  'secondary': $border-color-secondary,
-  'night': $border-color-night,
-  'light': $border-color-light,
+  'strong': (
+    'warn': $border-color-warn-strong,
+    'success': $border-color-success-strong,
+    'info': $border-color-info-strong,
+    'primary': $border-color-primary-strong,
+    'secondary': $border-color-secondary-strong,
+    'night': $border-color-night-strong,
+    'light': $border-color-light-strong,
+  ),
+  'weak': (
+    'warn': $border-color-warn-weak,
+    'success': $border-color-success-weak,
+    'info': $border-color-info-weak,
+    'primary': $border-color-primary-weak,
+    'secondary': $border-color-secondary-weak,
+    'night': $border-color-night-weak,
+    'light': $border-color-light-weak,
+  )
 );
 
 // widths

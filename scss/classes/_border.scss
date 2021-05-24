@@ -13,11 +13,13 @@
 
   ROOT '.sb-border-[color]-[width]-[radius]'
 */
-@each $color in map-keys($border-colors) {
-  @each $size in map-keys($border-widths) {
-    @each $radius in map-keys($border-radii) {
-      .sb-el-border-#{$color}-#{$size}-#{$radius} {
-        @include border($color, $size, $radius);
+@each $opacity in $border-color-opacity-names {
+  @each $color in $border-color-names {
+    @each $size in map-keys($border-widths) {
+      @each $radius in map-keys($border-radii) {
+        .sb-el-border-#{$color}-#{$opacity}-#{$size}-#{$radius} {
+          @include border($color, $opacity, $size, $radius);
+        }
       }
     }
   }

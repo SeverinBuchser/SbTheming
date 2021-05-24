@@ -6,11 +6,37 @@
   &.#{$sb-el-card-root}--#{$theme} {
     background: getThemeChildBackgroundColor($theme);
     color: getThemeTextColor($theme);
+    @include border($theme, 'weak', $size: 'd');
 
     hr {
-      border-color: darken(getThemeChildBackgroundColor($theme), 4%);
+      border: 0;
+      @include borderTop($theme, 'weak', $size: 's');
     }
   }
+}
+
+@mixin card-size-class($size) {
+  &.#{$sb-el-card-root}--#{$size} {
+    @include radius($size);
+
+    .#{$sb-el-card-root}__title {
+      @include padding($size);
+    }
+
+    .#{$sb-el-card-root}__content {
+      @include padding($size);
+    }
+
+    .#{$sb-el-card-root}__footer {
+      @include padding($size);
+    }
+  }
+}
+
+@mixin card-section {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 
@@ -21,40 +47,34 @@
 */
 $sb-el-card-root: 'sb-el-card';
 .#{$sb-el-card-root} {
-  @include ease(100ms, box-shadow, transform);
-  box-shadow:
-    0 8px 26px rgba(0,0,0,0.1);
-  &.is-hover:hover {
-    transform: translateY(-5px) scale(1.005);
-    box-shadow:
-      0 18px 36px rgba(0,0,0,0.05),
-      0 18px 46px rgba(0,0,0,0.15);
+  @include ease(300ms, box-shadow, transform);
+  @include margin(0);
+
+  &.is-shadow {
+    @include boxShadowWeak;
+  }
+
+  &.is-shadow.is-hover:hover {
+    transform: translateY(-2px);
+    @include boxShadowStrong;
   }
 
   hr {
-    border: 0;
-    border-bottom: 1px solid;
     @include margin(0);
     @include padding(0);
   }
 
   .#{$sb-el-card-root}__title {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    @include card-section;
     @include fontSize('m');
   }
 
   .#{$sb-el-card-root}__content {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    @include card-section;
   }
 
   .#{$sb-el-card-root}__footer {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    @include card-section;
     @include fontSize('s');
 
   }
@@ -63,21 +83,6 @@ $sb-el-card-root: 'sb-el-card';
     @include card-color-class($theme);
   }
   @each $size in $spacing-names {
-    &.#{$sb-el-card-root}--#{$size} {
-      @include margin('s');
-      @include radius($size);
-
-      .#{$sb-el-card-root}__title {
-        @include padding($size);
-      }
-
-      .#{$sb-el-card-root}__content {
-        @include padding($size);
-      }
-
-      .#{$sb-el-card-root}__footer {
-        @include padding($size);
-      }
-    }
+    @include card-size-class($size);
   }
 }

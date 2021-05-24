@@ -17,7 +17,7 @@
       color: getThemeTextColor($theme);
     }
     .#{$sb-el-input-root}__border {
-      @include border($theme, 'd');
+      @include border($theme, $size: 'd');
     }
     .#{$sb-el-input-root}__placeholder {
       background: getThemeChildBackgroundColor($theme);
@@ -29,7 +29,7 @@
     }
     &.focus {
       .#{$sb-el-input-root}__border {
-        @include border($color, 'd');
+        @include border($color, $size: 'd');
       }
     }
   }
