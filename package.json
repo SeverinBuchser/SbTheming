@@ -1,6 +1,6 @@
 {
   "name": "sb-theming",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "SCSS Library",
   "author": "Severin Buchser",
   "main": "build.js",
