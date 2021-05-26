@@ -1,0 +1,97 @@
+/*****************************************************************************
+                              Color - Naming
+******************************************************************************/
+
+// theme names:
+$theme-names: (
+  'night', 'light'
+);
+
+$color-names: (
+  'warn',
+  'success',
+  'info',
+  'primary',
+  'secondary'
+);
+
+// theme dependent background colors
+$theme-background-colors: (
+  'night': (
+    'root': $background-color-night-root,
+    'child': $background-color-night-child,
+  ),
+  'light': (
+    'root': $background-color-light-root,
+    'child': $background-color-light-child
+  )
+);
+
+// theme dependent text colors for the root and child background
+$theme-text-color-root-and-child: (
+  'night': $text-color-night,
+  'light': $text-color-light
+);
+
+// theme independent background colors
+$background-colors: (
+  'warn': $background-color-warn,
+  'success': $background-color-success,
+  'info': $background-color-info,
+  'primary': $background-color-primary,
+  'secondary': $background-color-secondary
+);
+
+// theme dependent text colors for theme independent background
+$theme-text-color-background: (
+  'night': (
+    'warn': $text-color-night-background-warn,
+    'success': $text-color-night-background-success,
+    'info': $text-color-night-background-info,
+    'primary': $text-color-night-background-primary,
+    'secondary': $text-color-night-background-secondary
+  ),
+  'light': (
+    'warn': $text-color-light-background-warn,
+    'success': $text-color-light-background-success,
+    'info': $text-color-light-background-info,
+    'primary': $text-color-light-background-primary,
+    'secondary': $text-color-light-background-secondary
+  )
+);
+
+// theme dependent background hover colors for every theme independent background
+$theme-background-hover-color-background: (
+  'night': (
+    'warn': $background-hover-color-night-background-warn,
+    'success': $background-hover-color-night-background-success,
+    'info': $background-hover-color-night-background-info,
+    'primary': $background-hover-color-night-background-primary,
+    'secondary': $background-hover-color-night-background-secondary
+  ),
+  'light': (
+    'warn': $background-hover-color-light-background-warn,
+    'success': $background-hover-color-light-background-success,
+    'info': $background-hover-color-light-background-info,
+    'primary': $background-hover-color-light-background-primary,
+    'secondary': $background-hover-color-light-background-secondary
+  )
+);
+
+// theme dependent text hover colors for theme dependent background hover color
+$theme-text-hover-color-theme-background: (
+  'night': (
+    'warn': $text-hover-color-night-background-warn,
+    'success': $text-hover-color-night-background-success,
+    'info': $text-hover-color-night-background-info,
+    'primary': $text-hover-color-night-background-primary,
+    'secondary': $text-hover-color-night-background-secondary
+  ),
+  'light': (
+    'warn': $text-hover-color-light-background-warn,
+    'success': $text-hover-color-light-background-success,
+    'info': $text-hover-color-light-background-info,
+    'primary': $text-hover-color-light-background-primary,
+    'secondary': $text-hover-color-light-background-secondary
+  )
+)

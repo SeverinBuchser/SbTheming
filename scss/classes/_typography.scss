@@ -1,0 +1,45 @@
+/*****************************************************************************
+                              Typography - Classes
+******************************************************************************/
+
+/*
+  Defines the root font weight class with all its weights.
+
+  Attributes:
+  - weight: 'regular', 'bold'
+
+  ROOT: .sb-font-weight-[weight]
+*/
+@each $font-weight in map-keys($font-weights) {
+  .sb-font-weight-#{$font-weight} {
+    @include fontWeight($font-weight);
+  }
+}
+
+/*
+  Defines the root font family class with all its font families.
+
+  Attributes:
+  - family: 'default', 'display'
+
+  ROOT: .sb-family-[family]
+*/
+@each $family in map-keys($font-families) {
+  .sb-family-#{$family} {
+    @include fontFamily($family);
+  }
+}
+
+/*
+  Defines the root font size class with all its sizes.
+
+  Attributes:
+  - size: 's', 'm', 'l', 'd'
+
+  ROOT: .sb-font-size-[size]
+*/
+@each $font-size in map-keys($font-sizes) {
+  .sb-font-size-#{$font-size} {
+    font-size: getFontSize($font-size);
+  }
+}

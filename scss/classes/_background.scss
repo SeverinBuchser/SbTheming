@@ -1,0 +1,18 @@
+/*****************************************************************************
+                            Background - Classes
+******************************************************************************/
+
+/*
+  Creates a background class for each background color.
+
+
+  Attributes:
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  ROOT '.sb-bg-[color]'
+*/
+@each $color in map-keys($background-colors) {
+  .sb-bg-#{$color} {
+    background-color: getBackgroundColor($color);
+  }
+}

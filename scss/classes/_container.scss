@@ -1,0 +1,25 @@
+/*****************************************************************************
+                            Container - Classes
+******************************************************************************/
+
+/*
+  Defines the root container class with all its sizes and colors.
+
+  ROOT .sb-el-container
+*/
+$sb-el-container-root: 'sb-el-container';
+.#{$sb-el-container-root} {
+  @each $theme in $theme-names {
+    &.#{$sb-el-container-root}--#{$theme} {
+      background: getThemeChildBackgroundColor($theme);
+      color: getThemeTextColor($theme);
+    }
+  }
+  @each $size in $spacing-names {
+    &.#{$sb-el-container-root}--#{$size} {
+      @include margin('s');
+      @include radius($size);
+      @include padding($size);
+    }
+  }
+}

@@ -1,0 +1,118 @@
+/*****************************************************************************
+                            Table - Classes
+******************************************************************************/
+
+@mixin table-data-color-class($theme, $color) {
+  &.#{$sb-el-table-root}__data--#{$color} {
+    background: getThemeBackgroundHoverColorForBackground($theme, $color);
+    color: getThemeTextHoverColorForBackground($theme, $color);
+  }
+}
+
+@mixin table-color-class($theme, $color) {
+
+  $row-colors: map-get($table-row-colors, $theme);
+
+  &.#{$sb-el-table-root}--#{$theme}-#{$color} {
+    .#{$sb-el-table-root}__body {
+      .#{$sb-el-table-root}__row {
+        .#{$sb-el-table-root}__data {
+          @each $color in $color-names {
+            @include table-data-color-class($theme, $color);
+          }
+        }
+      }
+    }
+
+    &.is-border-separation {
+      .#{$sb-el-table-root}__body {
+        .#{$sb-el-table-root}__row {
+          &:not(:last-child) {
+            @include borderBottom($theme);
+          }
+        }
+      }
+    }
+
+    &.is-color-separation {
+      .#{$sb-el-table-root}__body {
+        .#{$sb-el-table-root}__row {
+          &:nth-child(even) {
+            background: map-get($row-colors, 'primary');
+          }
+          &:nth-child(odd) {
+            background: map-get($row-colors, 'secondary');
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+  Defines the root table class with all its sizes and colors.
+
+  ROOT .sb-el-table
+*/
+$sb-el-table-root: 'sb-el-table';
+.#{$sb-el-table-root} {
+  border-collapse: collapse;
+
+  .#{$sb-el-table-root}__body {
+    .#{$sb-el-table-root}__row {
+      .#{$sb-el-table-root}__data {
+        @include padding(0);
+
+        .#{$sb-el-table-root}__data--content {
+          display: flex;
+          @include padding('s');
+        }
+
+        &.is-left {
+          .#{$sb-el-table-root}__data--content {
+            justify-content: flex-start;
+          }
+        }
+        &.is-center {
+          .#{$sb-el-table-root}__data--content {
+            justify-content: center;
+          }
+        }
+        &.is-right {
+          .#{$sb-el-table-root}__data--content {
+            justify-content: flex-end;
+          }
+        }
+      }
+
+      // set border radius to the whole table
+      &:first-child {
+        .#{$sb-el-table-root}__data {
+          &:first-child {
+            @include radiusTopLeft('s');
+          }
+          &:last-child {
+            @include radiusTopRight('s');
+          }
+        }
+      }
+
+      &:last-child {
+        .#{$sb-el-table-root}__data {
+          &:first-child {
+            @include radiusBottomLeft('s');
+          }
+          &:last-child {
+            @include radiusBottomRight('s');
+          }
+        }
+      }
+    }
+  }
+
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include table-color-class($theme, $color);
+    }
+  }
+}

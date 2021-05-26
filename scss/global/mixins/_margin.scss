@@ -1,0 +1,35 @@
+/*****************************************************************************
+                            Margin - Mixins
+******************************************************************************/
+
+@mixin marginLeft($margin) {
+  margin-left: getSpacing($margin);
+}
+
+@mixin marginRight($margin) {
+  margin-right: getSpacing($margin);
+}
+
+@mixin marginX($margin) {
+  $margin: getSpacing($margin);
+  margin-left: $margin;
+  margin-right: $margin;
+}
+
+@mixin marginTop($margin) {
+  margin-top: getSpacing($margin);
+}
+
+@mixin marginBottom($margin) {
+  margin-bottom: getSpacing($margin);
+}
+
+@mixin marginY($margin) {
+  $margin: getSpacing($margin);
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+
+@mixin margin($margin) {
+  margin: getSpacing($margin);
+}

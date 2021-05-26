@@ -1,0 +1,121 @@
+/*****************************************************************************
+                              Input - Classes
+******************************************************************************/
+
+/*
+  Adds color and hover to an input.
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary
+
+  OPTION '.sb-el-input--[theme]-[color]' for ROOT '.sb-el-input'
+*/
+@mixin input-color-class($theme, $color) {
+  &.#{$sb-el-input-root}--#{$theme}-#{$color} {
+    .#{$sb-el-input-root}__input {
+      color: getThemeTextColor($theme);
+    }
+    .#{$sb-el-input-root}__border {
+      @include border($theme, $size: 'd');
+    }
+    .#{$sb-el-input-root}__placeholder {
+      background: getThemeChildBackgroundColor($theme);
+      color: transparentize(getThemeTextColor($theme), 0.3);
+
+      &.is-top {
+        color: getThemeTextColor($theme);
+      }
+    }
+    &.focus {
+      .#{$sb-el-input-root}__border {
+        @include border($color, $size: 'd');
+      }
+    }
+  }
+}
+
+/*
+  Adds different sizes to the input.
+
+  Attributes:
+  - size: 's', 'm', 'l'[, 'd']
+
+  OPTION '.sb-el-input--[size]' for ROOT '.sb-el-input'
+*/
+@mixin input-size-class($size) {
+  &.#{$sb-el-input-root}--#{$size} {
+    $height: getSize($size);
+    .#{$sb-el-input-root}__input {
+      height: $height;
+      @include paddingX('s');
+    }
+
+    .#{$sb-el-input-root}__placeholder {
+      $top-offset: 4px;
+
+      top: calc(
+        #{$height} / 2 -
+        #{$input-font-size} / 2 -
+        #{$border-width-d} / 2
+      );
+      left: calc(#{$spacing-s} - 4px);
+      &.is-top {
+        transform: scale($input-font-scale) translateY(calc(
+          -#{$height} / 2 -
+          #{$input-font-size} / 2 -
+          #{$top-offset} +
+          #{$border-width-d}
+        )) !important;
+      }
+    }
+  }
+}
+
+/*
+  Defines the root input class with all its sizes and colors.
+
+  ROOT .sb-el-input
+*/
+$sb-el-input-root: 'sb-el-input';
+.#{$sb-el-input-root} {
+  position: relative;
+
+  .#{$sb-el-input-root}__input {
+    background: transparent;
+    outline: none;
+    border: 0;
+    @include padding(0);
+    font-family: getFontFamily('default');
+    font-size: $input-font-size;
+  }
+
+  .#{$sb-el-input-root}__placeholder {
+    position: absolute;
+    font-size: $input-font-size;
+    pointer-events: none;
+    transform-origin: left center;
+
+    @include paddingX(4px);
+    @include ease(200ms, transform, color);
+  }
+
+  .#{$sb-el-input-root}__border {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  @each $size in $size-names {
+    @include input-size-class($size);
+  }
+
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include input-color-class($theme, $color);
+    }
+  }
+}

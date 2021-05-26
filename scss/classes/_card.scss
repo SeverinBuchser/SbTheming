@@ -1,0 +1,88 @@
+/*****************************************************************************
+                            Card - Classes
+******************************************************************************/
+
+@mixin card-color-class($theme) {
+  &.#{$sb-el-card-root}--#{$theme} {
+    background: getThemeChildBackgroundColor($theme);
+    color: getThemeTextColor($theme);
+    @include border($theme, 'weak', $size: 'd');
+
+    hr {
+      border: 0;
+      @include borderTop($theme, 'weak', $size: 's');
+    }
+  }
+}
+
+@mixin card-size-class($size) {
+  &.#{$sb-el-card-root}--#{$size} {
+    @include radius($size);
+
+    .#{$sb-el-card-root}__title {
+      @include padding($size);
+    }
+
+    .#{$sb-el-card-root}__content {
+      @include padding($size);
+    }
+
+    .#{$sb-el-card-root}__footer {
+      @include padding($size);
+    }
+  }
+}
+
+@mixin card-section {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+
+/*
+  Defines the root card class with all its sizes and colors.
+
+  ROOT .sb-el-card
+*/
+$sb-el-card-root: 'sb-el-card';
+.#{$sb-el-card-root} {
+  @include ease(300ms, box-shadow, transform);
+  @include margin(0);
+
+  &.is-shadow {
+    @include boxShadowWeak;
+  }
+
+  &.is-shadow.is-hover:hover {
+    transform: translateY(-2px);
+    @include boxShadowStrong;
+  }
+
+  hr {
+    @include margin(0);
+    @include padding(0);
+  }
+
+  .#{$sb-el-card-root}__title {
+    @include card-section;
+    @include fontSize('m');
+  }
+
+  .#{$sb-el-card-root}__content {
+    @include card-section;
+  }
+
+  .#{$sb-el-card-root}__footer {
+    @include card-section;
+    @include fontSize('s');
+
+  }
+
+  @each $theme in $theme-names {
+    @include card-color-class($theme);
+  }
+  @each $size in $spacing-names {
+    @include card-size-class($size);
+  }
+}

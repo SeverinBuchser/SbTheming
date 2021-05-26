@@ -1,0 +1,33 @@
+/*****************************************************************************
+                            Border - Settings
+******************************************************************************/
+
+// strong colors
+$border-color-night-strong: darken($bright, 30%);
+$border-color-light-strong: lighten($night, 30%);
+$border-color-warn-strong: $warn;
+$border-color-success-strong: $success;
+$border-color-info-strong: $info;
+$border-color-primary-strong: $primary;
+$border-color-secondary-strong: $secondary;
+
+// weak colors
+$border-color-night-weak: lighten($night, 5%);
+$border-color-light-weak: darken($light, 5%);
+$border-color-warn-weak: $warn;
+$border-color-success-weak: $success;
+$border-color-info-weak: $info;
+$border-color-primary-weak: $primary;
+$border-color-secondary-weak: $secondary;
+
+// widths
+$border-width-s: 1px;
+$border-width-d: 2px;
+$border-width-m: 3px;
+$border-width-l: 4px;
+
+// radii
+$border-radius-s: $spacing-s / 1.3;
+$border-radius-d: $spacing-d / 1.3;
+$border-radius-m: $spacing-m / 1.3;
+$border-radius-l: $spacing-l / 1.3;

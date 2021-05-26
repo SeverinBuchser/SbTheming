@@ -1,0 +1,189 @@
+/*****************************************************************************
+                              Checkbox - Classes
+******************************************************************************/
+
+/*
+  Adds different colors to a checkbox. The coloring is based on the two states
+  of the checkbos: 'checked' and 'unchecked'. The two states have to be set
+  dynamically.
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.sb-el-checkbox--[theme]-[color]' for ROOT '.sb-el-checkbox'
+*/
+@mixin checkbox-color-class($theme, $color) {
+  &.#{$sb-el-checkbox-root}--#{$theme}-#{$color} {
+    .#{$sb-el-checkbox-root}__checkbox-wrapper .#{$sb-el-checkbox-root}__checkbox {
+      border-color: getBackgroundColor($color);
+    }
+    &.is-checked {
+      .#{$sb-el-checkbox-root}__checkbox-wrapper .#{$sb-el-checkbox-root}__checkbox {
+        background: getBackgroundColor($color);
+        .#{$sb-el-checkbox-root}__tick .sb-el-icon {
+          color: getThemeTextColorForBackground($theme, $color);
+        }
+      }
+    }
+  }
+}
+
+/*
+  Adds different sizes to a checkbox. The sizes concern widht, height and
+  border-radius.
+
+  Attributes:
+  - size: 's', 'd', 'm', 'l'
+
+  OPTION '.sb-el-checkbox--[size]' for ROOT '.sb-el-checkbox'
+*/
+@mixin checkbox-size-class($size) {
+  $height: getSize($size);
+
+  &.#{$sb-el-checkbox-root}--#{$size} {
+    .#{$sb-el-checkbox-root}__checkbox-wrapper .#{$sb-el-checkbox-root}__checkbox {
+      height: $height;
+      width: $height;
+      border-radius: $height / 3;
+
+      .#{$sb-el-checkbox-root}__tick {
+        .sb-el-icon {
+          font-size: $height / 5 * 4;
+        }
+      }
+    }
+  }
+}
+
+/*
+  Creates class for a checkbox. The class defines colors and sizes for The
+  checkbox and the tick.
+
+  Attributes:
+  - NONE
+
+  ROOT .sb-el-checkbox
+*/
+$sb-el-checkbox-root: 'sb-el-checkbox';
+.#{$sb-el-checkbox-root} {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: $spacing-s;
+
+  .#{$sb-el-checkbox-root}__label {
+    display: none;
+  }
+
+  &.is-label {
+    .#{$sb-el-checkbox-root}__label {
+      display: block;
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+    }
+
+    &.label-is-right {
+      .#{$sb-el-checkbox-root}__label {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+      .#{$sb-el-checkbox-root}__checkbox-wrapper {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+    }
+
+    &.label-is-left {
+      .sb-checkbox__label {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+      .#{$sb-el-checkbox-root}__checkbox-wrapper {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+    }
+
+    &.label-is-top {
+      grid-template-columns: auto;
+      .#{$sb-el-checkbox-root}__label {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+      .#{$sb-el-checkbox-root}__checkbox-wrapper {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+    }
+
+    &.label-is-bottom {
+      grid-template-columns: auto;
+      .#{$sb-el-checkbox-root}__label {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+      .#{$sb-el-checkbox-root}__checkbox-wrapper {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+    }
+  }
+
+  .#{$sb-el-checkbox-root}__checkbox-wrapper .#{$sb-el-checkbox-root}__checkbox {
+    box-sizing: border-box;
+    border: 2px solid;
+    cursor: pointer;
+    @include ease(300ms, border-color, background);
+
+    .#{$sb-el-checkbox-root}__tick {
+      height: 100%;
+      width: 100%;
+      .sb-el-icon {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include ease(300ms, color);
+      }
+    }
+  }
+
+
+  &.is-unchecked {
+    .#{$sb-el-checkbox-root}__checkbox-wrapper .#{$sb-el-checkbox-root}__checkbox {
+      .#{$sb-el-checkbox-root}__tick .sb-el-icon {
+        color: transparent;
+      }
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    &.is-label {
+      .#{$sb-el-checkbox-root}__label {
+        cursor: not-allowed;
+      }
+    }
+    .#{$sb-el-checkbox-root}__checkbox-wrapper .#{$sb-el-checkbox-root}__checkbox {
+      .#{$sb-el-checkbox-root}__tick {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include checkbox-color-class($theme, $color);
+    }
+  }
+
+  @each $size in $size-names {
+    @include checkbox-size-class($size);
+  }
+}

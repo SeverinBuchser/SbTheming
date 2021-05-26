@@ -1,0 +1,188 @@
+/*****************************************************************************
+                              Slider - Classes
+******************************************************************************/
+
+/*
+  Helper mixins for styling the sliders thumb.
+*/
+@mixin style-thumbs {
+  &::-webkit-slider-thumb {
+    @content;
+  }
+
+  &::-moz-range-thumb {
+    @content;
+  }
+
+  &::-ms-thumb {
+    @content;
+  }
+}
+
+/*
+  Helper mixins for styling the sliders track.
+*/
+@mixin style-tracks {
+  &::-webkit-slider-runnable-track {
+    @content;
+  }
+
+  &::-moz-range-track {
+    @content;
+  }
+
+  &::-ms-track {
+    @content;
+  }
+
+  &::-ms-fill-lower {
+    @content;
+  }
+
+  &::-ms-fill-upper {
+    @content;
+  }
+}
+
+/*
+  Adds different colors to a slider. The slider does not have any state
+  management when speaking in terms of coloring (no hover etc.).
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.sb-el-slider--[theme]-[color]' for ROOT '.sb-el-slider'
+*/
+@mixin slider-color-class($theme, $color) {
+  &.#{$sb-el-slider-root}--#{$theme}-#{$color} {
+    color: getThemeTextColor($theme);
+    .#{$sb-el-slider-root}__slider {
+      @include style-thumbs {
+        background: getBackgroundColor($color);
+      }
+
+      @include style-tracks {
+        background: getThemeBackgroundHoverColorForBackground($theme, $color);
+      }
+    }
+  }
+}
+
+/*
+  Adds different sizes to a slider. The sizes concern widht, height and
+  border-radius.
+
+  Attributes:
+  - size: 's', 'd', 'm', 'l'
+
+  OPTION '.sb-el-slider--[size]' for ROOT '.sb-el-slider'
+*/
+@mixin slider-size-class($size) {
+  $height: getSize($size);
+  &.#{$sb-el-slider-root}--#{$size} {
+    grid-gap: $height / 2;
+    .#{$sb-el-slider-root}__slider {
+      @include style-thumbs {
+        height: $height;
+        width: $height;
+        border-radius: $height / 2;
+        transform: translateY(-$height / 4);
+      }
+
+      @include style-tracks {
+        border-radius: $height / 2;
+        height: $height / 2;
+      }
+    }
+  }
+}
+
+/*
+  Creates class for a slider. The class defines colors and sizes for The
+  slider and its label and value.
+
+  Attributes:
+  - NONE
+
+  ROOT .sb-el-slider
+*/
+$sb-el-slider-root: 'sb-el-slider';
+.#{$sb-el-slider-root} {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-flow: column;
+
+  &.is-value.is-label {
+    .#{$sb-el-slider-root}__label {
+      grid-column: 1 / 2;
+    }
+  }
+  &.is-not-value.is-not-label {
+    .#{$sb-el-slider-root}__slider {
+      grid-row: 1 / 2;
+    }
+  }
+
+  .#{$sb-el-slider-root}__label {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .#{$sb-el-slider-root}__value {
+    vertical-align: middle;
+    text-align: center;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    min-width: 3*$spacing-l;
+  }
+
+  .#{$sb-el-slider-root}__slider {
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    @include margin(0);
+    &:focus {
+      outline: none;
+    }
+    &::-ms-track {
+      width: 100%;
+      cursor: pointer;
+
+      // Hides the slider so custom styles can be added
+      background: transparent;
+      border: 0;
+      color: transparent;
+    }
+
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+    &::-moz-range-thumb {
+      cursor: pointer;
+    }
+    &::-ms-thumb {
+      cursor: pointer;
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include slider-color-class($theme, $color);
+    }
+  }
+
+  @each $size in $size-names {
+    @include slider-size-class($size);
+  }
+
+}

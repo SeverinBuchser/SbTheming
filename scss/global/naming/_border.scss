@@ -1,0 +1,58 @@
+/*****************************************************************************
+                            Border - Naming
+******************************************************************************/
+
+// opacity names
+$border-color-opacity-names: (
+  'strong',
+  'weak'
+);
+
+// color names
+$border-color-names: (
+  'warn',
+  'success',
+  'info',
+  'primary',
+  'secondary',
+  'night',
+  'light'
+);
+
+// colors
+$border-colors: (
+  'strong': (
+    'warn': $border-color-warn-strong,
+    'success': $border-color-success-strong,
+    'info': $border-color-info-strong,
+    'primary': $border-color-primary-strong,
+    'secondary': $border-color-secondary-strong,
+    'night': $border-color-night-strong,
+    'light': $border-color-light-strong,
+  ),
+  'weak': (
+    'warn': $border-color-warn-weak,
+    'success': $border-color-success-weak,
+    'info': $border-color-info-weak,
+    'primary': $border-color-primary-weak,
+    'secondary': $border-color-secondary-weak,
+    'night': $border-color-night-weak,
+    'light': $border-color-light-weak,
+  )
+);
+
+// widths
+$border-widths: (
+  's': $border-width-s,
+  'd': $border-width-d,
+  'm': $border-width-m,
+  'l': $border-width-l
+);
+
+// radii
+$border-radii: (
+  's': $border-radius-s,
+  'd': $border-radius-d,
+  'm': $border-radius-m,
+  'l': $border-radius-l
+);

@@ -1,0 +1,84 @@
+/*****************************************************************************
+                              Checkbox-Group - Classes
+******************************************************************************/
+
+/*
+  Adds color to a form group separator. Sets the separator according to the
+  background.
+
+  Attributes:
+  - theme: 'light', 'night'
+
+  OPTION '.sb-el-form-group-separator--[theme]' for ROOT
+  '.sb-el-form-group-separator'
+*/
+@mixin form-group-separator-color-class($theme) {
+  &.#{$sb-el-form-group-separator-root}--#{$theme} {
+    border-color: getThemeTextColor($theme);
+  }
+}
+
+/*
+  Defines the root form group separator class;
+
+  ROOT .sb-el-form-group-separator
+*/
+$sb-el-form-group-separator-root: 'sb-el-form-group-separator';
+.#{$sb-el-form-group-separator-root} {
+  border: 1px solid;
+  border-bottom: 0;
+  @include margin('s');
+
+  @each $theme in $theme-names {
+    @include form-group-separator-color-class($theme);
+  }
+}
+
+/*
+  Adds color to a form group.
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.sb-el-form-group--[theme]-[color]' for ROOT '.sb-el-form-group'
+*/
+@mixin form-group-color-class($theme, $color) {
+  &.#{$sb-el-form-group-root}--#{$theme}-#{$color} {
+    color: getThemeTextColor($theme);
+  }
+}
+
+/*
+  Defines the root form group class with all its sizes and colors.
+
+  ROOT .sb-el-form-group
+*/
+$sb-el-form-group-root: 'sb-el-form-group';
+.#{$sb-el-form-group-root} {
+  display: flex;
+  flex-direction: column;
+
+  .#{$sb-el-form-group-root}__header {
+    font-size: getFontSize('m');
+    @include marginBottom('s');
+  }
+
+  &.is-left {
+    align-items: flex-start;
+  }
+
+  &.is-center {
+    align-items: center;
+  }
+
+  &.is-right {
+    align-items: flex-end;
+  }
+
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include form-group-color-class($theme, $color);
+    }
+  }
+}

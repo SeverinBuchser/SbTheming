@@ -1,0 +1,69 @@
+/*****************************************************************************
+                        Color - Settings
+******************************************************************************/
+
+$success: #28df99;
+$warn: #ff546d;
+$info: #FFD147;
+
+$primary: #3d8bfd;
+$secondary: #f75c9a;
+
+$dark: #22272C;
+$night: #2d343a;
+$bright: #FFFFFF;
+$light: #F2F2F2;
+
+
+// theme dependent background colors
+$background-color-night-root: $dark;
+$background-color-night-child: $night;
+$background-color-light-root: $bright;
+$background-color-light-child: $light;
+
+// theme dependent text colors for the root and child background
+$text-color-night: $bright;
+$text-color-light: $dark;
+
+// theme independent background colors
+$background-color-warn: $warn;
+$background-color-success: $success;
+$background-color-info: $info;
+$background-color-primary: $primary;
+$background-color-secondary: $secondary;
+
+// theme dependent text colors for theme independent background
+$text-color-night-background-warn: $dark;
+$text-color-night-background-success: $dark;
+$text-color-night-background-info: $dark;
+$text-color-night-background-primary: $bright;
+$text-color-night-background-secondary: $dark;
+$text-color-light-background-warn: $bright;
+$text-color-light-background-success: $bright;
+$text-color-light-background-info: $dark;
+$text-color-light-background-primary: $bright;
+$text-color-light-background-secondary: $bright;
+
+// theme dependent background hover colors for every theme independent background
+$background-hover-color-night-background-warn: transparentize($warn, 0.9);
+$background-hover-color-night-background-success: transparentize($success, 0.9);
+$background-hover-color-night-background-info: transparentize($info, 0.9);
+$background-hover-color-night-background-primary: transparentize($primary, 0.9);
+$background-hover-color-night-background-secondary: transparentize($secondary, 0.9);
+$background-hover-color-light-background-warn: transparentize($warn, 0.9);
+$background-hover-color-light-background-success: transparentize($success, 0.8);
+$background-hover-color-light-background-info: transparentize($info, 0.7);
+$background-hover-color-light-background-primary: transparentize($primary, 0.85);
+$background-hover-color-light-background-secondary: transparentize($secondary, 0.85);
+
+// theme dependent text hover colors for theme dependent background hover color
+$text-hover-color-night-background-warn: $warn;
+$text-hover-color-night-background-success: $success;
+$text-hover-color-night-background-info: $info;
+$text-hover-color-night-background-primary: $primary;
+$text-hover-color-night-background-secondary: $secondary;
+$text-hover-color-light-background-warn: $warn;
+$text-hover-color-light-background-success: $dark;
+$text-hover-color-light-background-info: $dark;
+$text-hover-color-light-background-primary: $primary;
+$text-hover-color-light-background-secondary: $secondary;
