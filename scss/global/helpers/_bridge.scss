@@ -1,0 +1,52 @@
+@function alphaBridge($color, $opacity){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color}-h);
+  $color-s: var(#{$color}-s);
+  $color-l: var(#{$color}-l);
+  @return hsla($color-h, $color-s, $color-l, $opacity);
+}
+
+@function transparentizeBridge($color, $amount){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color}-h);
+  $color-s: var(#{$color}-s);
+  $color-l: var(#{$color}-l);
+  $color-a: var(#{$color}-a);
+  $opacity: calc(#{$color-a} - #{$amount});
+  @return hsla($color-h, $color-s, $color-l, $opacity);
+}
+
+@function opaqueBridge($color, $amount){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color}-h);
+  $color-s: var(#{$color}-s);
+  $color-l: var(#{$color}-l);
+  $color-a: var(#{$color}-a);
+  $opacity: calc(#{$color-a} + #{$amount});
+  @return hsla($color-h, $color-s, $color-l, $opacity);
+}
+
+@function darkenBridge($color, $amount){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color}-h);
+  $color-s: var(#{$color}-s);
+  $color-l: var(#{$color}-l);
+  $color-a: var(#{$color}-a);
+  $lightness: calc(#{$color-l} + #{$amount});
+  @return hsla($color-h, $color-s, $lightness, $color-a);
+}
+
+@function lightenBridge($color, $amount){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color}-h);
+  $color-s: var(#{$color}-s);
+  $color-l: var(#{$color}-l);
+  $color-a: var(#{$color}-a);
+  $lightness: calc(#{$color-l} - #{$amount});
+  @return hsla($color-h, $color-s, $lightness, $color-a);
+}

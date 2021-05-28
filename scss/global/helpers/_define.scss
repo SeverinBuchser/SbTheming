@@ -1,0 +1,11 @@
+@mixin defineColorHSLA($name, $hue, $saturation, $lightness, $alpha) {
+  #{$name}: unquote("hsla(#{$hue}, #{$saturation}, #{$lightness}, #{$alpha})");
+  #{$name}-h: #{$hue};
+  #{$name}-s: #{$saturation};
+  #{$name}-l: #{$lightness};
+  #{$name}-a: #{$alpha};
+}
+
+@mixin defineColorHSL($name, $hue, $saturation, $lightness) {
+  @include defineColorHSLA($name, $hue, $saturation, $lightness, 100%);
+}
