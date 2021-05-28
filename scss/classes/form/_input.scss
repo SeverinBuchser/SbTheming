@@ -21,7 +21,7 @@
     }
     .#{$sb-el-input-root}__placeholder {
       background: getThemeChildBackgroundColor($theme);
-      color: transparentize(getThemeTextColor($theme), 0.3);
+      color: transparentizeBridge(getThemeTextColor($theme), 0.3);
 
       &.is-top {
         color: getThemeTextColor($theme);

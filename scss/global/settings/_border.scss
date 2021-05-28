@@ -3,8 +3,8 @@
 ******************************************************************************/
 
 // strong colors
-$border-color-night-strong: darken($bright, 30%);
-$border-color-light-strong: lighten($night, 30%);
+$border-color-night-strong: lightenBridge($bright, 30%);
+$border-color-light-strong: darkenBridge($night, 30%);
 $border-color-warn-strong: $warn;
 $border-color-success-strong: $success;
 $border-color-info-strong: $info;
@@ -12,8 +12,8 @@ $border-color-primary-strong: $primary;
 $border-color-secondary-strong: $secondary;
 
 // weak colors
-$border-color-night-weak: lighten($night, 5%);
-$border-color-light-weak: darken($light, 5%);
+$border-color-night-weak: lightenBridge($night, 5%);
+$border-color-light-weak: darkenBridge($light, 5%);
 $border-color-warn-weak: $warn;
 $border-color-success-weak: $success;
 $border-color-info-weak: $info;
