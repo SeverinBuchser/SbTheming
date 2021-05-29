@@ -70,7 +70,7 @@
   }
   @if (type_of($radius) == string) {
     @if not exists(map-keys($border-radii), $radius) {
-      @error "Border-radius with name '#{$radius}' does not exist!";
+      @return $radius;
     }
     @return map-get($border-radii, $radius);
   } @else {

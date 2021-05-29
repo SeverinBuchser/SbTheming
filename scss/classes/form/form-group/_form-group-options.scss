@@ -5,5 +5,5 @@
 $sb-el-form-group-options-root: 'sb-el-form-group-options';
 .#{$sb-el-form-group-options-root} {
   display: grid;
-  grid-gap: $spacing-s / 2;
+  grid-gap: calc(#{$spacing-s} / 2);
 }

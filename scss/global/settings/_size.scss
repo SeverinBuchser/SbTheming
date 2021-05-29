@@ -3,7 +3,7 @@
 ******************************************************************************/
 
 // sizes
-$size-s: $spacing-s * 2;
-$size-d: $spacing-d * 2;
-$size-m: $spacing-m * 2;
-$size-l: $spacing-l * 2;
+$size-s: calc(#{$spacing-s} * 2);
+$size-d: calc(#{$spacing-d} * 2);
+$size-m: calc(#{$spacing-m} * 2);
+$size-l: calc(#{$spacing-l} * 2);

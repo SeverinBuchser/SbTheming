@@ -81,18 +81,18 @@
 @mixin slider-size-class($size) {
   $height: getSize($size);
   &.#{$sb-el-slider-root}--#{$size} {
-    grid-gap: $height / 2;
+    grid-gap: combineCalc($height, 2, '/');
     .#{$sb-el-slider-root}__slider {
       @include style-thumbs {
         height: $height;
         width: $height;
-        border-radius: $height / 2;
-        transform: translateY(-$height / 4);
+        border-radius: combineCalc($height, 2, '/');
+        transform: translateY(combineCalc($height, -4, '/'));
       }
 
       @include style-tracks {
-        border-radius: $height / 2;
-        height: $height / 2;
+        border-radius: combineCalc($height, 2, '/');
+        height: combineCalc($height, 2, '/');
       }
     }
   }
@@ -134,7 +134,7 @@ $sb-el-slider-root: 'sb-el-slider';
     text-align: center;
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    min-width: 3*$spacing-l;
+    min-width: combineCalc($spacing-l, 3, '*');
   }
 
   .#{$sb-el-slider-root}__slider {

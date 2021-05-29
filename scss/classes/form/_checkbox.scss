@@ -45,11 +45,11 @@
     .#{$sb-el-checkbox-root}__checkbox-wrapper .#{$sb-el-checkbox-root}__checkbox {
       height: $height;
       width: $height;
-      border-radius: $height / 3;
+      border-radius: calc(#{$height} / 3);
 
       .#{$sb-el-checkbox-root}__tick {
         .sb-el-icon {
-          font-size: $height / 5 * 4;
+          font-size: calc(#{$height} * 4 / 5);
         }
       }
     }

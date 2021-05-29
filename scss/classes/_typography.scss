@@ -40,6 +40,6 @@
 */
 @each $font-size in map-keys($font-sizes) {
   .sb-font-size-#{$font-size} {
-    font-size: getFontSize($font-size);
+    @include fontSize($font-size);
   }
 }

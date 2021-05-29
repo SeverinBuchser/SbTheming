@@ -13,11 +13,11 @@
 @mixin alert-size-class($size) {
   &.#{$sb-el-alert-root}--#{$size} {
     $factor: 10;
-    top: - 10 * getSize('d');
+    top: combineCalc(getSize('d'), -10, '*');
     left: 0;
     &.is-active {
       .#{$sb-el-alert-root}__wrapper {
-        transform: translateY( ($factor + 0.5) * getSize('d'));
+        transform: translateY(combineCalc($factor + 0.5, getSize('d'), '*'));
       }
     }
 

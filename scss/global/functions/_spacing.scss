@@ -12,7 +12,7 @@
 @function getSpacing($spacing) {
   @if (type_of($spacing) == string) {
     @if not exists($spacing-names, $spacing) {
-      @error "Spacing with name '#{$spacing}' does not exist!";
+      @return $spacing;
     }
     @return map-get($spacings, $spacing);
   } @else {

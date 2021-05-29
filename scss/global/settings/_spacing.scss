@@ -3,7 +3,7 @@
 ******************************************************************************/
 
 // spacings
-$spacing-s: 0.7rem;
-$spacing-d: 1rem;
-$spacing-m: 1.4rem;
-$spacing-l: 1.8rem;
+$spacing-s: var(--spacing-s);
+$spacing-d: var(--spacing-d);
+$spacing-m: var(--spacing-m);
+$spacing-l: var(--spacing-l);

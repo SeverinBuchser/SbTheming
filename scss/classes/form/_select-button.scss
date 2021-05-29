@@ -63,15 +63,15 @@
   $height: getSize($size);
   &.#{$sb-el-select-button-root}--#{$size} {
     .#{$sb-el-select-button-root}__button {
-      width: 5 * $height;
+      width: combineCalc($height, 5, '*');
     }
 
     .#{$sb-el-select-button-root}__options-wrapper {
       .#{$sb-el-select-button-root}__options {
         .#{$sb-el-select-button-root}__option {
-          width: 5 * $height - 2 * $spacing-s;
+          width: combineCalc(combineCalc($height, 5, '*'), calc(#{$spacing-s} * 2), '-');
           @include paddingX('s');
-          @include paddingY($spacing-s / 2);
+          @include paddingY(calc(#{$spacing-s} / 2));
         }
       }
     }
@@ -88,11 +88,12 @@
   OPTION '.is-pill' for OPTION '.sb-el-btn--[size]' -> ROOT '.sb-el-btn'
 */
 @mixin select-button-pill-class($size) {
+  $radius: getSize($size);
   &.is-pill {
     .#{$sb-el-select-button-root}__options-wrapper {
       .#{$sb-el-select-button-root}__options {
-        border-bottom-left-radius: getSize($size) / 2;
-        border-bottom-right-radius: getSize($size) / 2;
+        border-bottom-left-radius: calc(#{$radius} / 2);
+        border-bottom-right-radius: calc(#{$radius} / 2);
       }
     }
   }

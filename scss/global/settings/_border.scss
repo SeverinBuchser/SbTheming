@@ -27,7 +27,7 @@ $border-width-m: 3px;
 $border-width-l: 4px;
 
 // radii
-$border-radius-s: $spacing-s / 1.3;
-$border-radius-d: $spacing-d / 1.3;
-$border-radius-m: $spacing-m / 1.3;
-$border-radius-l: $spacing-l / 1.3;
+$border-radius-s: calc(#{$spacing-s} / 1.3);
+$border-radius-d: calc(#{$spacing-d} / 1.3);
+$border-radius-m: calc(#{$spacing-m} / 1.3);
+$border-radius-l: calc(#{$spacing-l} / 1.3);

@@ -50,3 +50,17 @@
   $lightness: calc(#{$color-l} - #{$amount});
   @return hsla($color-h, $color-s, $lightness, $color-a);
 }
+
+@function combineCalc($calc1, $calc2, $operator) {
+  $is-calc1: isCalc($calc1);
+  $is-calc2: isCalc($calc2);
+  $calc1: removeCalc($calc1);
+  $calc2: removeCalc($calc2);
+  @if $is-calc1 {
+    $calc1: '(' + $calc1 + ')';
+  }
+  @if $is-calc2 {
+    $calc2: '(' + $calc2 + ')';
+  }
+  @return unquote('calc(' + $calc1 + ' ' + $operator + ' ' + $calc2 + ')');
+}

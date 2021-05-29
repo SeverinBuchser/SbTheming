@@ -62,9 +62,9 @@
 @mixin button-size-class($size) {
   $height: getSize($size);
   &.#{$sb-el-button-root}--#{$size} {
-    min-width: $height * 2;
+    min-width: calc(#{$height} * 2);
     height: $height;
-    @include paddingX($height/1.5);
+    @include paddingX(calc(#{$height} / 1.5));
 
     @include button-pill-class($size);
     @include button-round-class($size);
@@ -81,7 +81,7 @@
 */
 @mixin button-pill-class($size) {
   &.is-pill {
-    border-radius: getSize($size) / 2;
+    border-radius: calc(#{getSize($size)} / 2);
   }
 }
 
@@ -98,7 +98,7 @@
     $height: getSize($size);
     height: $height;
     width: $height;
-    border-radius: $height / 2;
+    border-radius: calc(#{$height} / 2);
     min-width: 0;
     padding: 0;
   }

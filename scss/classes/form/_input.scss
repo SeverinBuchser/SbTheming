@@ -54,18 +54,26 @@
     .#{$sb-el-input-root}__placeholder {
       $top-offset: 4px;
 
-      top: calc(
-        #{$height} / 2 -
-        #{$input-font-size} / 2 -
-        #{$border-width-d} / 2
+      top: combineCalc(
+        combineCalc(
+          combineCalc($height, 2, '/'),
+          combineCalc($input-font-size, 2, '/'),
+          '-'
+        ),
+        combineCalc($border-width-d, 2, '/'),
+        '-'
       );
+
       left: calc(#{$spacing-s} - 4px);
       &.is-top {
-        transform: scale($input-font-scale) translateY(calc(
-          -#{$height} / 2 -
-          #{$input-font-size} / 2 -
-          #{$top-offset} +
-          #{$border-width-d}
+        transform: scale($input-font-scale) translateY(combineCalc(
+          combineCalc(
+            combineCalc(#{$height}, (-2), '/'),
+            combineCalc(#{$input-font-size}, 2, '/'),
+            '-'
+          ),
+          calc(#{$top-offset} + #{$border-width-d}),
+          '-'
         )) !important;
       }
     }

@@ -12,7 +12,7 @@
 @function getSize($size) {
   @if (type_of($size) == string) {
     @if not exists($size-names, $size) {
-      @error "Size with name '#{$size}' does not exist!";
+      @return $size;
     }
     @return map-get($sizes, $size);
   } @else {
