@@ -3,13 +3,13 @@
 */
 module.exports = {
   dev: {
-    outStyle: 'expanded',
-    outFile: 'sb-theme.css',
-    outMapFile: 'sb-theme.css.map'
+    style: 'expanded',
+    out: 'sb-theme.css',
+    map: 'sb-theme.css.map'
   },
   prod: {
-    outStyle: 'compressed',
-    outFile: 'sb-theme.dist.css',
-    outMapFile: 'sb-theme.dist.css.map'
+    style: 'compressed',
+    out: 'sb-theme.dist.css',
+    map: 'sb-theme.dist.css.map'
   }
 };

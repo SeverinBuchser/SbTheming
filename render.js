@@ -1,5 +1,6 @@
 const sass = require('sass');
 const fs = require('fs');
+const logger = require('./logger');
 
 const entryFile = './scss/sb-theme.scss';
 
@@ -8,27 +9,35 @@ const entryFile = './scss/sb-theme.scss';
 
   The sass render call outputs the above files to the './dist' folder. The css
   is expanded (all whitespace still available) and a sourceMap is created in
-  the 'sb-theme.css.map' file.
+  the 'sb-theme.css.map' or 'sb-theme.dist.css.map' file.
 
   The render method includes all scss files inside the './scss' directory and
-  then outputs all css into one file: 'sb-theme.css';
+  then outputs all css into one file: 'sb-theme.css' or 'sb-theme.dist.css';
 */
 module.exports = function render(renderOptions) {
-  console.log("Entry file: ".green + entryFile.yellow);
+  logger.entry(entryFile)
+        .space();
+        
   sass.render({
     file: entryFile,
-    sourceMap: renderOptions.outMapFile,
-    sourceMapContents: true,
-    outFile: './dist/' +  renderOptions.outFile,
-    outputStyle: renderOptions.outStyle
+    outFile: dist(renderOptions.out),
+    sourceMap: dist(renderOptions.map),
+    outputStyle: renderOptions.style,
   }, (error, result) => {
-    if (error) console.log(error.message);
+    if (error) logger.error(error.message);
     else {
-      const map = JSON.parse(result.map.toString());
-      fs.writeFile(map.file, result.css, () => {});
-      fs.writeFile('./dist/' +  renderOptions.outMapFile, result.map, () => {});
-      console.log("Output File: ".green + ('./dist/' + renderOptions.outFile).yellow);
-      console.log("Output Map File: ".green + ('./dist/' + renderOptions.outMapFile).yellow);
+      fs.writeFileSync(dist(renderOptions.out), result.css);
+      fs.writeFileSync(dist(renderOptions.map), result.map);
+
+      logger.comiled(result.stats.duration)
+            .create(dist(renderOptions.out), dist(renderOptions.map))
+            .space(2)
+            .separate();
     }
   })
+}
+
+
+function dist(file) {
+  return './dist/' +  file;
 }

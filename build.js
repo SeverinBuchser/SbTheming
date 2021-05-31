@@ -1,10 +1,14 @@
 const render = require('./render')
 const renderOptions = require('./render-options');
 const colors = require('colors');
+const logger = require('./logger');
 
-console.log("Production:\n".red)
+logger.space()
+      .separate()
+      .space(2)
+      .info('Mode: Production')
+      .info('Inital render call:');
 /*
   Renders one time on initalizing.
 */
-console.log("Render Call:")
 render(renderOptions.prod);
