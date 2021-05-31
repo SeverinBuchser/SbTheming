@@ -17,12 +17,13 @@ const entryFile = './scss/sb-theme.scss';
 module.exports = function render(renderOptions) {
   logger.entry(entryFile)
         .space();
-        
+
   sass.render({
     file: entryFile,
     outFile: dist(renderOptions.out),
     sourceMap: dist(renderOptions.map),
     outputStyle: renderOptions.style,
+    omitSourceMapUrl: renderOptions.omitMap
   }, (error, result) => {
     if (error) logger.error(error.message);
     else {
