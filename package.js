@@ -13,5 +13,5 @@ module.exports = () => {
   delete content.devDependencies;
 
   fs.writeFileSync(dest, JSON.stringify(content, null, 2))
-  logger.create(dest);
+  logger.copy(dest);
 }

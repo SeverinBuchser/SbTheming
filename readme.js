@@ -7,5 +7,5 @@ const dest = './dist/' + readmeFileName;
 
 module.exports = () => {
   fs.copyFileSync(src, dest);
-  logger.create(dest);
+  logger.copy(dest);
 }

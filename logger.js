@@ -25,6 +25,10 @@ class Logger {
     return Logger;
   }
 
+  static copy(dest) {
+    console.log('COPY   '.green + dest);
+  }
+
   static info(message) {
     console.log(message);
     return Logger;
