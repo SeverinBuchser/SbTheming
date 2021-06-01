@@ -4,14 +4,14 @@
 module.exports = {
   dev: {
     style: 'expanded',
-    out: 'sb-theming.css',
-    map: 'sb-theming.css.map',
+    out: './example/sb-theming.css',
+    map: './example/sb-theming.css.map',
     omitMap: false
   },
   prod: {
     style: 'compressed',
-    out: 'sb-theming.dist.css',
-    map: 'sb-theming.dist.css.map',
+    out: './dist/sb-theming.css',
+    map: './dist/sb-theming.css.map',
     omitMap: true
   }
 };

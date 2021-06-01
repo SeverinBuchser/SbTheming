@@ -7,8 +7,8 @@ const entryFile = './scss/sb-theming.scss';
 /*
   Builds 'sb-theme.css' and 'sb-theme.css.map' in developement mode.
 
-  The sass render call outputs the above files to the './dist' folder. The css
-  is expanded (all whitespace still available) and a sourceMap is created in
+  The sass render call outputs the above files to the location which is
+  configured inside the 'render-options' file. A sourceMap is created in
   the 'sb-theme.css.map' or 'sb-theme.dist.css.map' file.
 
   The render method includes all scss files inside the './scss' directory and
@@ -20,25 +20,20 @@ module.exports = function render(renderOptions) {
 
   sass.render({
     file: entryFile,
-    outFile: dist(renderOptions.out),
-    sourceMap: dist(renderOptions.map),
+    outFile: renderOptions.out,
+    sourceMap: renderOptions.map,
     outputStyle: renderOptions.style,
     omitSourceMapUrl: renderOptions.omitMap
   }, (error, result) => {
     if (error) logger.error(error.message);
     else {
-      fs.writeFileSync(dist(renderOptions.out), result.css);
-      fs.writeFileSync(dist(renderOptions.map), result.map);
+      fs.writeFileSync(renderOptions.out, result.css);
+      fs.writeFileSync(renderOptions.map, result.map);
 
       logger.comiled(result.stats.duration)
-            .create(dist(renderOptions.out), dist(renderOptions.map))
+            .create(renderOptions.out, renderOptions.map)
             .space(2)
             .separate();
     }
   })
-}
-
-
-function dist(file) {
-  return './dist/' +  file;
 }
