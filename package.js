@@ -5,6 +5,13 @@ const packageFileName = 'package.json';
 const src = './' + packageFileName;
 const dest = './dist/' + packageFileName;
 
+
+/*
+  Gets the 'package.json' file from the file system and deletes the scripts,
+  dependencies and devDependencies. After deleting, a new file gets created in
+  the 'dist' folder. The new file contains the adjusted content of the original
+  'package.json'.
+*/
 module.exports = () => {
   let content = JSON.parse(fs.readFileSync(src).toString());
 
