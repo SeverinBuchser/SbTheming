@@ -2,7 +2,7 @@ const sass = require('sass');
 const fs = require('fs');
 const logger = require('./logger');
 
-const entryFile = './scss/sb-theme.scss';
+const entryFile = './scss/sb-theming.scss';
 
 /*
   Builds 'sb-theme.css' and 'sb-theme.css.map' in developement mode.
