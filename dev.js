@@ -6,13 +6,16 @@ const logger = require('./logger');
 
 logger.space()
       .separate()
-      .space(2)
+      .space()
       .info('Mode: Developement')
       .info('Inital render call:');
 /*
   Renders one time on initalizing. The watcher does not fire on initializing.
 */
 render(renderOptions.dev);
+
+logger.space()
+      .separate();
 /*
   Watches for changes on any file change in the './scss' directory with the help
   of chokidar.
@@ -20,8 +23,11 @@ render(renderOptions.dev);
 watcher((path) => {
   logger.space(5)
         .separate()
-        .space(2)
+        .space()
         .change('./' + path);
 
   render(renderOptions.dev);
+
+  logger.space()
+        .separate();
 });
