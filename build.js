@@ -8,17 +8,20 @@ const readme = require('./readme');
 
 logger.space()
       .separate()
-      .space(2)
+      .space()
       .info('Mode: Production')
       .info('Inital render call:');
 /*
   Renders one time on initalizing.
 */
 render(renderOptions.prod);
+// copies the package.json and adjusts it.
 package();
+// copies the scss directory into dist
 source();
+// copies the README file into dist
 readme();
 
 
-logger.space(2)
+logger.space()
       .separate();
