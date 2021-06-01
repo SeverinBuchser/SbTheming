@@ -1,0 +1,141 @@
+/*****************************************************************************
+                            Button - Classes
+******************************************************************************/
+
+/*
+  Adds color and hover to a button. Also creates the inverse of the colors.
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.sb-el-btn--[theme]-[color]' for ROOT '.sb-el-btn'
+*/
+@mixin button-color-class($theme, $color) {
+  &.#{$sb-el-button-root}--#{$theme}-#{$color} {
+    background: getBackgroundColor($color);
+    color: getThemeTextColorForBackground($theme, $color);
+    &:hover {
+      background: getThemeBackgroundHoverColorForBackground($theme, $color);
+      color: getThemeTextHoverColorForBackground($theme, $color);
+    }
+    &:disabled:hover {
+      background: getBackgroundColor($color);
+      color: getThemeTextColorForBackground($theme, $color);
+    }
+    @include button-plain-color-class($theme, $color);
+  }
+}
+
+/*
+  Adds inverse colors as in the normal class.
+
+  Attributes:
+  - NONE
+
+  OPTION '.is-plain' for OPTION '.sb-el-btn--[theme]-[color]'
+  -> ROOT '.sb-el-btn'
+*/
+@mixin button-plain-color-class($theme, $color) {
+  &.is-plain {
+    background: getThemeBackgroundHoverColorForBackground($theme, $color);
+    color: getThemeTextHoverColorForBackground($theme, $color);
+    &:hover {
+      background: getBackgroundColor($color);
+      color: getThemeTextColorForBackground($theme, $color);
+    }
+    &:disabled:hover {
+      background: getThemeBackgroundHoverColorForBackground($theme, $color);
+      color: getThemeTextHoverColorForBackground($theme, $color);
+    }
+  }
+}
+
+/*
+  Adds different sizes to the button.
+
+  Attributes:
+  - size: 's', 'm', 'l'[, 'd']
+
+  OPTION '.sb-el-btn--[size]' for ROOT '.sb-el-btn'
+*/
+@mixin button-size-class($size) {
+  $height: getSize($size);
+  &.#{$sb-el-button-root}--#{$size} {
+    min-width: calc(#{$height} * 2);
+    height: $height;
+    @include paddingX(calc(#{$height} / 1.5));
+
+    @include button-pill-class($size);
+    @include button-round-class($size);
+  }
+}
+
+/*
+  Adds option if button is pill or normal.
+
+  Attributes:
+  - NONE
+
+  OPTION '.is-pill' for OPTION '.sb-el-btn--[size]' -> ROOT '.sb-el-btn'
+*/
+@mixin button-pill-class($size) {
+  &.is-pill {
+    border-radius: calc(#{getSize($size)} / 2);
+  }
+}
+
+/*
+  Adds option if button is round or normal.
+
+  Attributes:
+  - NONE
+
+  OPTION '.is-round' for OPTION '.sb-el-btn--[size]' -> ROOT '.sb-el-btn'
+*/
+@mixin button-round-class($size) {
+  &.is-round {
+    $height: getSize($size);
+    height: $height;
+    width: $height;
+    border-radius: calc(#{$height} / 2);
+    min-width: 0;
+    padding: 0;
+  }
+}
+
+/*
+  Defines the root button class with all its sizes and colors.
+
+  ROOT .sb-el-btn
+*/
+$sb-el-button-root: 'sb-el-btn';
+.#{$sb-el-button-root} {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  @include ease(300ms, background, color);
+  @include radius('s');
+
+  font-size: getFontSize('d');
+  font-weight: getFontWeight('regular');
+  font-family: getFontFamily('default');
+
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  @each $size in $size-names {
+    @include button-size-class($size);
+  }
+
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include button-color-class($theme, $color);
+    }
+  }
+
+}

@@ -1,0 +1,91 @@
+/*****************************************************************************
+                            Border - Mixins
+******************************************************************************/
+
+@mixin borderSide($side, $color, $opacity: 'strong', $size: 's', $style: solid) {
+  @include borderSideColor($side, $color, $opacity);
+  border-#{$side}-width: getBorderWidth($size);
+  border-#{$side}-style: $style;
+  box-sizing: border-box;
+}
+
+@mixin border($color, $opacity: 'strong', $size: 's', $radius: 's', $style: solid) {
+  @include borderSide(left, $color, $opacity, $size, $style);
+  @include borderSide(right, $color, $opacity, $size, $style);
+  @include borderSide(top, $color, $opacity, $size, $style);
+  @include borderSide(bottom, $color, $opacity, $size, $style);
+  @include radius($radius);
+}
+
+@mixin borderLeft($color, $opacity: 'strong', $size: 's', $radius: 's', $style: solid) {
+  @include borderSide(left, $color, $opacity, $size, $style);
+  @include radius($radius);
+}
+
+@mixin borderRight($color, $opacity: 'strong', $size: 's', $radius: 's', $style: solid) {
+  @include borderSide(right, $color, $opacity, $size, $style);
+  @include radius($radius);
+}
+
+@mixin borderTop($color, $opacity: 'strong', $size: 's', $radius: 's', $style: solid) {
+  @include borderSide(top, $color, $opacity, $size, $style);
+  @include radius($radius);
+}
+
+@mixin borderBottom($color, $opacity: 'strong', $size: 's', $radius: 's', $style: solid) {
+  @include borderSide(bottom, $color, $opacity, $size, $style);
+  @include radius($radius);
+}
+
+
+@mixin borderSideColor($side, $color, $opacity: 'strong') {
+  @if ($color != none) {
+    border-#{$side}-color: getBorderColor($color, $opacity);
+  } @else {
+    border-#{$side}-color: transparent;
+  }
+}
+
+@mixin borderColor($color, $opacity: 'strong') {
+  @include borderSideColor(left, $color, $opacity);
+  @include borderSideColor(right, $color, $opacity);
+  @include borderSideColor(top, $color, $opacity);
+  @include borderSideColor(bottom, $color, $opacity);
+}
+
+@mixin borderLeftColor($color, $opacity: 'strong') {
+  @include borderSideColor(left, $color, $opacity);
+}
+
+@mixin borderRightColor($color, $opacity: 'strong') {
+  @include borderSideColor(right, $color, $opacity);
+}
+
+@mixin borderTopColor($color, $opacity: 'strong') {
+  @include borderSideColor(top, $color, $opacity);
+}
+
+@mixin borderBottomColor($color, $opacity: 'strong') {
+  @include borderSideColor(bottom, $color, $opacity);
+}
+
+
+@mixin radiusTopLeft($radius) {
+  border-top-left-radius: getBorderRadius($radius);
+}
+
+@mixin radiusTopRight($radius) {
+  border-top-right-radius: getBorderRadius($radius);
+}
+
+@mixin radiusBottomLeft($radius) {
+  border-bottom-left-radius: getBorderRadius($radius);
+}
+
+@mixin radiusBottomRight($radius) {
+  border-bottom-right-radius: getBorderRadius($radius);
+}
+
+@mixin radius($radius) {
+  border-radius: getBorderRadius($radius);
+}

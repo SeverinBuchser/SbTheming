@@ -1,0 +1,8 @@
+/*****************************************************************************
+                              Checkbox Group - Classes
+******************************************************************************/
+
+$sb-el-checkbox-group-root: 'sb-el-checkbox-group';
+.#{$sb-el-checkbox-group-root} {
+  @extend .#{$sb-el-form-group-options-root}
+}

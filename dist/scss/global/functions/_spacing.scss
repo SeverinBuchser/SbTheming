@@ -1,0 +1,21 @@
+/*****************************************************************************
+                            Spacing - Functions
+******************************************************************************/
+
+/*
+  Checks if the specified spacing is a predefined spacing or not. If so, the
+  function returns the predefined spacing, if it exists, and if it does not
+  exist, it thorws an error. If the padding is not predefined, the function just
+  returns the received value. The predefined spacings can be found in the
+  variables directory under '_spacing-settings.scss'.
+*/
+@function getSpacing($spacing) {
+  @if (type_of($spacing) == string) {
+    @if not exists($spacing-names, $spacing) {
+      @return $spacing;
+    }
+    @return map-get($spacings, $spacing);
+  } @else {
+    @return $spacing;
+  }
+}

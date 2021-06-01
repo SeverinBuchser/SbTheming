@@ -1,0 +1,111 @@
+/*****************************************************************************
+                              Toggle-Switch - Classes
+******************************************************************************/
+
+/*
+  Adds different colors to a toggle switch. The color changes if the state of
+  the toggle switch is changing. The state is determined by the OPTION '.is-on'
+  or '.is-off'. The states have to be set dynamically.
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.sb-el-toggle-switch--[theme]-[color]' for ROOT '.sb-el-toggle-switch'
+*/
+@mixin toggle-switch-color-class($theme, $color) {
+  &.#{$sb-el-toggle-switch-root}--#{$theme}-#{$color} {
+    border: 2px solid getThemeTextHoverColorForBackground($theme, $color);
+    &.is-off {
+      .#{$sb-el-toggle-switch-root}__toggle {
+        background: getThemeTextHoverColorForBackground($theme, $color);
+      }
+    }
+
+    &.is-on {
+      background: getBackgroundColor($color);
+      .#{$sb-el-toggle-switch-root}__toggle {
+        background: getThemeTextColorForBackground($theme, $color);
+      }
+    }
+  }
+}
+
+/*
+  Adds different sizes to a toggle switch. Movement of the toggle does also get
+  defined. The movement is based on the toggle switch OPTION '.is-on' or '.is-off'.
+  The options have to be set dynamically.
+
+  Attributes:
+  - size: 's', 'd', 'm', 'l'
+
+  OPTION '.sb-el-toggle-switch--[size]' for ROOT '.sb-el-toggle-switch'
+*/
+@mixin toggle-switch-size-class($size) {
+
+  $height: getSize($size);
+  $width: combineCalc($height, 2, '*');
+  $diameter: combineCalc($height, 2/3, '*');
+  $padding: combineCalc(combineCalc($height, $diameter, '-'), 2, '/');
+  $innerwidth: combineCalc($width,  combineCalc($padding, 2, '*'), '-');
+
+  &.#{$sb-el-toggle-switch-root}--#{$size} {
+    width: $width;
+    height: $height;
+    border-radius: combineCalc($height, 2, '/');
+
+    .#{$sb-el-toggle-switch-root}__toggle {
+      top: combineCalc($padding, 2px, '-');
+      left: combineCalc($padding, 2px, '-');
+      width: $diameter;
+      height: $diameter;
+      border-radius: combineCalc($diameter, 2, '/');
+    }
+
+    &.is-off {
+      .#{$sb-el-toggle-switch-root}__toggle {
+        transform: translateX(0);
+      }
+    }
+    &.is-on {
+      .#{$sb-el-toggle-switch-root}__toggle {
+        transform: translateX(combineCalc($innerwidth, $diameter, '-'));
+      }
+    }
+  }
+}
+
+/*
+  Creates class for a toggle switch. The class defines colors and sizes for The
+  toggle. The movement of the toggle is also defined in the size mixin.
+
+  Attributes:
+  - NONE
+
+  ROOT .sb-el-toggle-switch
+*/
+$sb-el-toggle-switch-root: 'sb-el-toggle-switch';
+.#{$sb-el-toggle-switch-root} {
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+  @include ease(300ms, background);
+  .#{$sb-el-toggle-switch-root}__toggle {
+    position: absolute;
+    @include ease(300ms, transform, background);
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include toggle-switch-color-class($theme, $color);
+    }
+  }
+
+  @each $size in $size-names {
+    @include toggle-switch-size-class($size);
+  }
+}

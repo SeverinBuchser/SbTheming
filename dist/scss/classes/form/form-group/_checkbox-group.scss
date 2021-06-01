@@ -1,0 +1,8 @@
+/*****************************************************************************
+                              Radio Button Group - Classes
+******************************************************************************/
+
+$sb-el-radio-button-group-root: 'sb-el-radio-button-group';
+.#{$sb-el-radio-button-group-root} {
+  @extend .#{$sb-el-form-group-options-root}
+}

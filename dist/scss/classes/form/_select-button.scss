@@ -1,0 +1,181 @@
+/*****************************************************************************
+                              Checkbox-Group - Classes
+******************************************************************************/
+
+/*
+  Adds color to a form group.
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.sb-el-form-group--[theme]-[color]' for ROOT '.sb-el-form-group'
+*/
+@mixin select-button-color-class($theme, $color) {
+  &.#{$sb-el-select-button-root}--#{$theme}-#{$color} {
+    color: getThemeTextColorForBackground($theme, $color);
+
+    .#{$sb-el-select-button-root}__button {
+      .sb-el-icon {
+        color: getThemeTextColorForBackground($theme, $color);
+      }
+      &:hover {
+        .sb-el-icon {
+          color: getThemeTextHoverColorForBackground($theme, $color);
+        }
+      }
+      &:disabled:hover {
+        .sb-el-icon {
+          color: getThemeTextColorForBackground($theme, $color);
+        }
+      }
+    }
+
+    .#{$sb-el-select-button-root}__options-wrapper {
+      .#{$sb-el-select-button-root}__options {
+        background: getThemeChildBackgroundColor($theme);
+        .#{$sb-el-select-button-root}__option {
+          background: getBackgroundColor($color);
+          color: getThemeTextColorForBackground($theme, $color);
+          &:hover {
+            background: getThemeBackgroundHoverColorForBackground($theme, $color);
+            color: getThemeTextHoverColorForBackground($theme, $color);
+          }
+          &:disabled:hover {
+            background: getBackgroundColor($color);
+            color: getThemeTextColorForBackground($theme, $color);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+  Adds different sizes to the button.
+
+  Attributes:
+  - size: 's', 'm', 'l'[, 'd']
+
+  OPTION '.sb-el-btn--[size]' for ROOT '.sb-el-btn'
+*/
+@mixin select-button-size-class($size) {
+  $height: getSize($size);
+  &.#{$sb-el-select-button-root}--#{$size} {
+    .#{$sb-el-select-button-root}__button {
+      width: combineCalc($height, 5, '*');
+    }
+
+    .#{$sb-el-select-button-root}__options-wrapper {
+      .#{$sb-el-select-button-root}__options {
+        .#{$sb-el-select-button-root}__option {
+          width: combineCalc(combineCalc($height, 5, '*'), calc(#{$spacing-s} * 2), '-');
+          @include paddingX('s');
+          @include paddingY(calc(#{$spacing-s} / 2));
+        }
+      }
+    }
+    @include select-button-pill-class($size);
+  }
+}
+
+/*
+  Adds option if button is pill or normal.
+
+  Attributes:
+  - NONE
+
+  OPTION '.is-pill' for OPTION '.sb-el-btn--[size]' -> ROOT '.sb-el-btn'
+*/
+@mixin select-button-pill-class($size) {
+  $radius: getSize($size);
+  &.is-pill {
+    .#{$sb-el-select-button-root}__options-wrapper {
+      .#{$sb-el-select-button-root}__options {
+        border-bottom-left-radius: calc(#{$radius} / 2);
+        border-bottom-right-radius: calc(#{$radius} / 2);
+      }
+    }
+  }
+}
+
+/*
+  Defines the root form group class with all its sizes and colors.
+
+  ROOT .sb-el-form-group
+*/
+$sb-el-select-button-root: 'sb-el-select-button';
+.#{$sb-el-select-button-root} {
+  position: relative;
+  cursor: pointer;
+
+  $button-animation-duration: 300ms;
+  $options-animation-duration: 100ms;
+
+  .#{$sb-el-select-button-root}__button {
+    @include ease($button-animation-duration, background, color, border-radius);
+    transition-delay: $options-animation-duration;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .sb-el-icon {
+      @include ease($button-animation-duration, color, transform);
+    }
+  }
+
+  .#{$sb-el-select-button-root}__options-wrapper {
+    .#{$sb-el-select-button-root}__options {
+      overflow: hidden;
+      height: auto;
+      transform-origin:top;
+      position: absolute;
+      transform: scaleY(0);
+      border-bottom-left-radius: $border-radius-s;
+      border-bottom-right-radius: $border-radius-s;
+      @include ease($options-animation-duration, transform);
+      z-index: 1000;
+
+      .#{$sb-el-select-button-root}__option {
+        display: flex;
+        justify-content: center;
+        @include ease(300ms, background, color);
+        &:hover {
+          background: black
+        }
+      }
+    }
+  }
+
+  &.is-open {
+    .#{$sb-el-select-button-root}__button {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      @include ease($button-animation-duration,
+        background,
+        color,
+        border-radius
+      );
+      transition-delay: 0;
+
+      .sb-el-icon {
+        transform: rotate(180deg);
+      }
+    }
+    .#{$sb-el-select-button-root}__options-wrapper {
+      .#{$sb-el-select-button-root}__options {
+        transition-delay: $button-animation-duration;
+        transform: scaleY(1);
+      }
+    }
+  }
+
+  @each $size in $size-names {
+    @include select-button-size-class($size);
+  }
+
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include select-button-color-class($theme, $color);
+    }
+  }
+}

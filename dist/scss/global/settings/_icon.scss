@@ -1,0 +1,24 @@
+/*****************************************************************************
+                              Icon - Settings
+******************************************************************************/
+
+/*
+  Imports material icons form the google fonts api (https://fonts.google.com/).
+
+  The icons can be found undr 'https://fonts.google.com/icons'.
+*/
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+// colors
+$icon-warn: $warn;
+$icon-success: $success;
+$icon-info: $info;
+$icon-primary: $primary;
+$icon-secondary: $secondary;
+
+// sizes
+$icon-size-factor: 1.5;
+$icon-size-s: calc(#{$font-size-s} * #{$icon-size-factor});
+$icon-size-d: calc(#{$font-size-d} * #{$icon-size-factor});
+$icon-size-m: calc(#{$font-size-m} * #{$icon-size-factor});
+$icon-size-l: calc(#{$font-size-l} * #{$icon-size-factor});

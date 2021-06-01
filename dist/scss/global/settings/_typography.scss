@@ -1,0 +1,37 @@
+/*****************************************************************************
+                              Typography - Settings
+******************************************************************************/
+
+/*
+  Imports the following font faces from goolge fonts api (https://fonts.google.com/):
+
+  - Inter (https://fonts.google.com/specimen/Inter)
+    - Thin 100
+    - Extra-light 200
+    - Light 300
+    - Regular 400
+    - Medium 500
+    - Semi-bold 600
+    - Bold 700
+    - Extra-bold 800
+    - Black 900
+
+  - Abril Fatface (https://fonts.google.com/specimen/Abril+Fatface)
+    - Regular 400
+*/
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// weights
+$font-weight-regular: var(--font-weight-regular);
+$font-weight-bold: var(--font-weight-bold);
+
+// families
+$font-family-default: var(--font-family-default);
+$font-family-display: var(--font-family-display);
+
+// sizes
+$font-size-s: var(--font-size-s);
+$font-size-d: var(--font-size-d);
+$font-size-m: var(--font-size-m);
+$font-size-l: var(--font-size-l);
+$font-size-xl: var(--font-size-xl);

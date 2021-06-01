@@ -1,0 +1,41 @@
+/*****************************************************************************
+                            Border - Classes
+******************************************************************************/
+
+/*
+  Creates a border class for each border color, width and radius.
+
+
+  Attributes:
+  - color: 'dark', 'bright'
+  - width: 's', 'd', 'm', 'l'
+  - radius: 's', 'd', 'm', 'l'
+
+  ROOT '.sb-border-[color]-[width]-[radius]'
+*/
+@each $opacity in $border-color-opacity-names {
+  @each $color in $border-color-names {
+    @each $size in map-keys($border-widths) {
+      @each $radius in map-keys($border-radii) {
+        .sb-el-border-#{$color}-#{$opacity}-#{$size}-#{$radius} {
+          @include border($color, $opacity, $size, $radius);
+        }
+      }
+    }
+  }
+}
+
+/*
+  Creates a border radius class for each border radius.
+
+
+  Attributes:
+  - radius: 's', 'd', 'm', 'l'
+
+  ROOT '.sb-border-radius-[radius]'
+*/
+@each $radius in map-keys($border-radii) {
+  .sb-el-border-radius-#{$radius} {
+    @include radius($radius);
+  }
+}

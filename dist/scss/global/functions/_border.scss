@@ -1,0 +1,79 @@
+/*****************************************************************************
+                            Border - Functions
+******************************************************************************/
+
+/*
+  Returns the border colors for the specified opacity.
+
+  Checks if the specified opacity colors exist or not. If
+  so, the function returns the colors for the opacity, and if it
+  does not exist, it thorws an error.
+*/
+@function getBorderColorOpacity($opacity) {
+  @if not exists(map-keys($border-colors), $opacity) {
+    @error "Border-colors for opacity with name '#{$opacity}' does not exist!";
+  }
+  @return map-get($border-colors, $opacity);
+}
+
+/*
+  Returns the border color, specified by the parameter.
+
+  Checks if the specified border color is a predefined border color or not. If
+  so, the function returns the predefined border color, if it exists, and if it
+  does not exist, it thorws an error. The predefined border colors can be
+  found in the border classes directory under '_border-settings.scss'.
+
+  The received value is not returned, because only certain colors are allowed
+  for usage.
+*/
+@function getBorderColor($color, $opacity) {
+  @if not exists($border-color-names, $color) {
+    @error "Border-color with name '#{$color}' does not exist!";
+  }
+  @return map-get(getBorderColorOpacity($opacity), $color);
+}
+
+/*
+  Returns the border width, specified by the parameter.
+
+  Checks if the specified border width is a predefined border width or not. If
+  so, the function returns the predefined border width, if it exists, and if it
+  does not exist, it thorws an error. If the border width is not predefined, the
+  function just returns the received value. The predefined border widths can be
+  found in the border classes directory under '_border-settings.scss'.
+*/
+@function getBorderWidth($width) {
+  @if (type_of($width) == string) {
+    @if not exists(map-keys($border-widths), $width) {
+      @error "Border-wdith with name '#{$width}' does not exist!";
+    }
+    @return map-get($border-widths, $width);
+  } @else {
+    @return $width;
+  }
+}
+
+
+/*
+  Returns the border radius, specified by the parameter.
+
+  Checks if the specified radius width is a predefined radius width or not. If
+  so, the function returns the predefined border radius, if it exists, and if it
+  does not exist, it thorws an error. If the border radius is not predefined,
+  the function just returns the received value. The predefined border radii can
+  be found in the border classes directory under '_border-settings.scss'.
+*/
+@function getBorderRadius($radius) {
+  @if ($radius == none) {
+    @return none;
+  }
+  @if (type_of($radius) == string) {
+    @if not exists(map-keys($border-radii), $radius) {
+      @return $radius;
+    }
+    @return map-get($border-radii, $radius);
+  } @else {
+    @return $radius;
+  }
+}

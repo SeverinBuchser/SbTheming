@@ -1,0 +1,69 @@
+/*****************************************************************************
+                        Color - Settings
+******************************************************************************/
+
+$success: var(--success);
+$warn: var(--warn);
+$info: var(--info);
+
+$primary: var(--primary);
+$secondary: var(--secondary);
+
+$dark: var(--dark);
+$night: var(--night);
+$bright: var(--bright);
+$light: var(--light);
+
+
+// theme dependent background colors
+$background-color-night-root: $dark;
+$background-color-night-child: $night;
+$background-color-light-root: $bright;
+$background-color-light-child: $light;
+
+// theme dependent text colors for the root and child background
+$text-color-night: $bright;
+$text-color-light: $dark;
+
+// theme independent background colors
+$background-color-warn: $warn;
+$background-color-success: $success;
+$background-color-info: $info;
+$background-color-primary: $primary;
+$background-color-secondary: $secondary;
+
+// theme dependent text colors for theme independent background
+$text-color-night-background-warn: $dark;
+$text-color-night-background-success: $dark;
+$text-color-night-background-info: $dark;
+$text-color-night-background-primary: $bright;
+$text-color-night-background-secondary: $dark;
+$text-color-light-background-warn: $bright;
+$text-color-light-background-success: $bright;
+$text-color-light-background-info: $dark;
+$text-color-light-background-primary: $bright;
+$text-color-light-background-secondary: $bright;
+
+// theme dependent background hover colors for every theme independent background
+$background-hover-color-night-background-warn: alphaBridge($warn, 10%);
+$background-hover-color-night-background-success: alphaBridge($success, 10%);
+$background-hover-color-night-background-info: alphaBridge($info, 10%);
+$background-hover-color-night-background-primary: alphaBridge($primary, 10%);
+$background-hover-color-night-background-secondary: alphaBridge($secondary, 10%);
+$background-hover-color-light-background-warn: alphaBridge($warn, 10%);
+$background-hover-color-light-background-success: alphaBridge($success, 20%);
+$background-hover-color-light-background-info: alphaBridge($info, 30%);
+$background-hover-color-light-background-primary: alphaBridge($primary, 15%);
+$background-hover-color-light-background-secondary: alphaBridge($secondary, 15%);
+
+// theme dependent text hover colors for theme dependent background hover color
+$text-hover-color-night-background-warn: $warn;
+$text-hover-color-night-background-success: $success;
+$text-hover-color-night-background-info: $info;
+$text-hover-color-night-background-primary: $primary;
+$text-hover-color-night-background-secondary: $secondary;
+$text-hover-color-light-background-warn: $warn;
+$text-hover-color-light-background-success: $dark;
+$text-hover-color-light-background-info: $dark;
+$text-hover-color-light-background-primary: $primary;
+$text-hover-color-light-background-secondary: $secondary;

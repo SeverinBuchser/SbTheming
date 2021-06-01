@@ -1,0 +1,35 @@
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+@function removeCalc($calc) {
+  @if type_of($calc) == number {
+    @return $calc;
+  }
+  @else {
+    $last-char: str-slice($calc, str-length($calc), str-length($calc) + 1);
+    $first-chars: str-slice($calc, 0, 5);
+    @if $first-chars == 'calc(' and $last-char == ')' {
+      $calc: str-slice($calc, 1, str-length($calc) - 1);
+      $calc: str-replace($calc, 'calc(');
+    }
+  }
+  @return $calc;
+}
+
+@function isCalc($calc) {
+  @if type_of($calc) == string {
+    $last-char: str-slice($calc, str-length($calc), str-length($calc) + 1);
+    $first-chars: str-slice($calc, 0, 5);
+    @if $first-chars == 'calc(' and $last-char == ')' {
+      @return true;
+    }
+    @return false;
+  } @else {
+    @return false;
+  }
+}

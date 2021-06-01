@@ -1,0 +1,84 @@
+/*****************************************************************************
+                            Form - Classes
+******************************************************************************/
+
+@mixin form-color-class($theme, $color) {
+  &.#{$sb-el-form-root}--#{$theme}-#{$color} {
+    .#{$sb-el-form-root}__header {
+      color: getThemeTextColor($theme);
+    }
+    .#{$sb-el-form-root}__footer {
+      border-color: getThemeTextColor($theme);
+    }
+  }
+}
+
+/*
+  Defines the root button class with all its sizes and colors.
+
+  ROOT .sb-el-form
+*/
+$sb-el-form-root: 'sb-el-form';
+.#{$sb-el-form-root} {
+  .#{$sb-el-form-root}__header {
+    font-size: getFontSize('l');
+    display: flex;
+    @include marginBottom('d');
+
+    &.is-left {
+      justify-content: flex-start;
+    }
+
+    &.is-center {
+      justify-content: center;
+    }
+
+    &.is-right {
+      justify-content: flex-end;
+    }
+  }
+
+  .#{$sb-el-form-root}__content {
+    display: grid;
+    grid-gap: getSpacing('d');
+
+    .sb-el-form-group-separator {
+      @include margin(0);
+    }
+
+    .sb-el-form-group {
+      padding: 0;
+    }
+  }
+
+  .#{$sb-el-form-root}__footer {
+    border-top: 1px solid;
+    @include paddingTop('s');
+    @include marginTop('d');
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    &.is-left {
+      justify-content: flex-start;
+    }
+
+    &.is-center {
+      justify-content: center;
+    }
+
+    &.is-right {
+      justify-content: flex-end;
+    }
+
+    .#{$sb-el-form-root}__footer-element {
+
+    }
+  }
+
+  @each $theme in $theme-names {
+    @each $color in $color-names {
+      @include form-color-class($theme, $color);
+    }
+  }
+}

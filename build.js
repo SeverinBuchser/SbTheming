@@ -3,6 +3,7 @@ const renderOptions = require('./render-options');
 const colors = require('colors');
 const logger = require('./logger');
 const package = require('./package');
+const source = require('./source');
 
 logger.space()
       .separate()
@@ -14,3 +15,4 @@ logger.space()
 */
 render(renderOptions.prod);
 package('.', './dist');
+source();

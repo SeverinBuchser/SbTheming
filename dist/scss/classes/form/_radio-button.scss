@@ -1,0 +1,167 @@
+/*****************************************************************************
+                              Radio-Button - Classes
+******************************************************************************/
+
+/*
+  Adds different colors to a radio button. The coloring is based on the two states
+  of the checkbos: 'checked' and 'unchecked'. The two states have to be set
+  dynamically.
+
+  Attributes:
+  - theme: 'light', 'night'
+  - color: 'warn', 'success', 'info', 'primary', 'secondary'
+
+  OPTION '.sb-el-radio-button--[theme]-[color]' for ROOT '.sb-el-radio-button'
+*/
+@mixin radio-button-color-class($color) {
+  &.#{$sb-el-radio-button-root}--#{$color} {
+    .#{$sb-el-radio-button-root}__radio-wrapper .#{$sb-el-radio-button-root}__radio {
+      border-color: getBackgroundColor($color);
+    }
+
+    &.is-checked {
+      .#{$sb-el-radio-button-root}__radio-wrapper .#{$sb-el-radio-button-root}__radio {
+        background: getBackgroundColor($color);
+      }
+    }
+  }
+}
+
+/*
+  Adds different sizes to a radio button. The sizes concern widht, height and
+  border-radius (circle).
+
+  Attributes:
+  - size: 's', 'd', 'm', 'l'
+
+  OPTION '.sb-el-radio-button--[size]' for ROOT '.sb-el-radio-button'
+*/
+@mixin radio-button-size-class($size) {
+  $height: getSize($size);
+
+  &.#{$sb-el-radio-button-root}--#{$size} {
+    .#{$sb-el-radio-button-root}__radio-wrapper .#{$sb-el-radio-button-root}__radio {
+      height: $height;
+      width: $height;
+    }
+  }
+}
+
+/*
+  Creates class for a radio button. The class defines colors and sizes for The
+  radio button and the mark.
+
+  Attributes:
+  - NONE
+
+  ROOT .sb-el-radio-button
+*/
+$sb-el-radio-button-root: 'sb-el-radio-button';
+.#{$sb-el-radio-button-root} {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: $spacing-s;
+
+  .#{$sb-el-radio-button-root}__label {
+    display: none;
+  }
+
+  &.is-label {
+    .#{$sb-el-radio-button-root}__label {
+      display: block;
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+    }
+
+    &.label-is-right {
+      .#{$sb-el-radio-button-root}__label {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+      .#{$sb-el-radio-button-root}__radio-wrapper {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+    }
+
+    &.label-is-left {
+      .#{$sb-el-radio-button-root}__label {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+      .#{$sb-el-radio-button-root}__radio-wrapper {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+    }
+
+    &.label-is-top {
+      grid-template-columns: auto;
+      .#{$sb-el-radio-button-root}__label {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+      .#{$sb-el-radio-button-root}__radio-wrapper {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+    }
+
+    &.label-is-bottom {
+      grid-template-columns: auto;
+      .#{$sb-el-radio-button-root}__label {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+      .#{$sb-el-radio-button-root}__radio-wrapper {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    &.is-label {
+      .#{$sb-el-radio-button-root}__label {
+        cursor: not-allowed;
+      }
+      .#{$sb-el-radio-button-root}__radio-wrapper {
+        .#{$sb-el-radio-button-root}__radio {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  .#{$sb-el-radio-button-root}__radio-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .#{$sb-el-radio-button-root}__radio {
+      box-sizing: border-box;
+      border: 2px solid;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      @include ease(300ms, background);
+    }
+  }
+
+  @each $color in $color-names {
+    @include radio-button-color-class($color);
+  }
+
+  @each $size in $size-names {
+    @include radio-button-size-class($size);
+  }
+}

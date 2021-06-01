@@ -1,5 +1,5 @@
 const sass = require('sass');
-const fs = require('fs');
+const fse = require('fs-extra');
 const logger = require('./logger');
 
 const entryFile = './scss/sb-theming.scss';
@@ -27,8 +27,8 @@ module.exports = function render(renderOptions) {
   }, (error, result) => {
     if (error) logger.error(error.message);
     else {
-      fs.writeFileSync(renderOptions.out, result.css);
-      fs.writeFileSync(renderOptions.map, result.map);
+      fse.outputFileSync(renderOptions.out, result.css);
+      fse.outputFileSync(renderOptions.map, result.map);
 
       logger.comiled(result.stats.duration)
             .create(renderOptions.out, renderOptions.map)

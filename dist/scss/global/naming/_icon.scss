@@ -1,0 +1,20 @@
+/*****************************************************************************
+                              Icon - Naming
+******************************************************************************/
+
+// colors
+$icon-colors: (
+  'warn': $icon-warn,
+  'success': $icon-success,
+  'info': $icon-info,
+  'primary': $icon-primary,
+  'secondary': $icon-secondary
+);
+
+// sizes
+$icon-sizes: (
+  's': $icon-size-s,
+  'm': $icon-size-m,
+  'd': $icon-size-d,
+  'l': $icon-size-l
+);

@@ -1,0 +1,68 @@
+/*****************************************************************************
+                            Alert Box - Classes
+******************************************************************************/
+
+/*
+  Adds different sizes to the alert box.
+
+  Attributes:
+  - size: 's', 'm', 'l'[, 'd']
+
+  OPTION '.sb-el-alert--[size]' for ROOT '.sb-el-alert'
+*/
+@mixin alert-size-class($size) {
+  &.#{$sb-el-alert-root}--#{$size} {
+    $factor: 10;
+    top: combineCalc(getSize('d'), -10, '*');
+    left: 0;
+    &.is-active {
+      .#{$sb-el-alert-root}__wrapper {
+        transform: translateY(combineCalc($factor + 0.5, getSize('d'), '*'));
+      }
+    }
+
+    &.is-inactive {
+      .#{$sb-el-alert-root}__wrapper {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+/*
+  Defines the root alert class with all its sizes and colors.
+
+  ROOT .sb-el-alert
+*/
+$sb-el-alert-root: 'sb-el-alert';
+.#{$sb-el-alert-root} {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  .#{$sb-el-alert-root}__wrapper {
+    min-width: 300px;
+    overflow: visible;
+    .#{$sb-el-alert-box-root} {
+      @include boxShadowSmooth;
+    }
+  }
+
+  &.is-active {
+    .#{$sb-el-alert-root}__wrapper {
+      @include easeOut(300ms, transform);
+    }
+  }
+
+  &.is-inactive {
+    .#{$sb-el-alert-root}__wrapper {
+      @include easeIn(300ms, transform);
+    }
+  }
+
+  @each $size in $size-names {
+    @include alert-size-class($size);
+  }
+}
