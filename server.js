@@ -9,8 +9,7 @@ const connectLivereload = require('connect-livereload');
 const liveReloadServer = livereload.createServer();
 
 liveReloadServer.watch([
-  path.join(__dirname, '/example'),
-  path.join(__dirname, '/dist')
+  path.join(__dirname, '/example')
 ]);
 liveReloadServer.server.once("connection", () => {
   setTimeout(() => {
@@ -20,12 +19,12 @@ liveReloadServer.server.once("connection", () => {
 
 const files = {
   map: {
-    file: '/sb-theme.css.map',
-    dir: '/dist'
+    file: '/sb-theming.css.map',
+    dir: '/example'
   },
   themeCss: {
-    file: '/sb-theme.css',
-    dir: '/dist'
+    file: '/sb-theming.css',
+    dir: '/example'
   },
   indexHtml: {
     file: '/index.html',
