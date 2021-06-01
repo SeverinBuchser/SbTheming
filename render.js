@@ -18,22 +18,17 @@ module.exports = function render(renderOptions) {
   logger.entry(entryFile)
         .space();
 
-  sass.render({
+  let result = sass.renderSync({
     file: entryFile,
     outFile: renderOptions.out,
     sourceMap: renderOptions.map,
     outputStyle: renderOptions.style,
     omitSourceMapUrl: renderOptions.omitMap
-  }, (error, result) => {
-    if (error) logger.error(error.message);
-    else {
-      fse.outputFileSync(renderOptions.out, result.css);
-      fse.outputFileSync(renderOptions.map, result.map);
-
-      logger.comiled(result.stats.duration)
-            .create(renderOptions.out, renderOptions.map)
-            .space(2)
-            .separate();
-    }
   })
+
+  fse.outputFileSync(renderOptions.out, result.css);
+  fse.outputFileSync(renderOptions.map, result.map);
+  
+  logger.comiled(result.stats.duration)
+        .create(renderOptions.out, renderOptions.map);
 }

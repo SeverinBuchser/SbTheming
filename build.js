@@ -4,6 +4,7 @@ const colors = require('colors');
 const logger = require('./logger');
 const package = require('./package');
 const source = require('./source');
+const readme = require('./readme');
 
 logger.space()
       .separate()
@@ -14,5 +15,10 @@ logger.space()
   Renders one time on initalizing.
 */
 render(renderOptions.prod);
-package('.', './dist');
+package();
 source();
+readme();
+
+
+logger.space(2)
+      .separate();
