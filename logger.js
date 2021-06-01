@@ -19,12 +19,7 @@ class Logger {
   static change(file) {
     console.log('CHANGE '.yellow + file);
   }
-
-  static error(message) {
-    console.log('ERROR  '.red + message);
-    return Logger;
-  }
-
+  
   static copy(dest) {
     console.log('COPY   '.green + dest);
   }

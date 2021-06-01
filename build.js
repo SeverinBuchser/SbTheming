@@ -11,9 +11,8 @@ logger.space()
       .space()
       .info('Mode: Production')
       .info('Inital render call:');
-/*
-  Renders one time on initalizing.
-*/
+      
+// renders one time on initalizing.
 render(renderOptions.prod);
 // copies the package.json and adjusts it.
 package();
