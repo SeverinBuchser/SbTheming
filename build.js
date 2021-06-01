@@ -2,6 +2,7 @@ const render = require('./render')
 const renderOptions = require('./render-options');
 const colors = require('colors');
 const logger = require('./logger');
+const package = require('./package');
 
 logger.space()
       .separate()
@@ -12,3 +13,4 @@ logger.space()
   Renders one time on initalizing.
 */
 render(renderOptions.prod);
+package('.', './dist');
